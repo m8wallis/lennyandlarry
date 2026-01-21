@@ -37,15 +37,15 @@
     
         	<div class="section__dropdown">
         		<div class="dropdown js-dropdown" id="dropdown-nav">
-        			<span class="dropdown__label js-btn-toggle js-btn-toggle-dropdown" data-js-target="#dropdown-nav" data-js-class="is-expanded">
+        			<button type="button" class="dropdown__label js-btn-toggle js-btn-toggle-dropdown" data-js-target="#dropdown-nav" data-js-class="is-expanded" aria-label="Filter collections" aria-expanded="false" aria-haspopup="true">
         				{%- if filter_label_list != '' -%}
         					{{ filter_label_list }}
       					{%- else -%}
       						{{ filter_label }}
         				{%- endif -%}
-        			</span>
+        			</button>
     
-        			<div class="dropdown__body">
+        			<div class="dropdown__body" role="menu">
         				<ul>
         					{{ menu_list_html }}
         				</ul>
@@ -55,7 +55,7 @@
       	{%- endif -%}
     
          {% if collection.image %}
-            <img src="{{ collection.image | img_url: 'master' }}" alt="{{ collection.title }}">
+            <img src="{{ collection.image | img_url: 'master' }}" alt="{% if collection.image.alt != blank %}{{ collection.image.alt }}{% else %}{{ collection.title }}{% endif %}" loading="lazy">
           {% endif %}
 
       </div><!-- /.section__body -->

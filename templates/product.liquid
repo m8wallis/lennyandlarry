@@ -100,8 +100,8 @@
             <div class="slider__slide slider__slide--{{ forloop.index0 }}" data-slide-index="{{ forloop.index0 }}" data-slide-image-src="{{ image.src }}">
                 {% assign old_url =  image | img_url: 'master' %}
                 {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '1240', options: 'dpr:2' %}{% endcapture %}
-              <a href="{{ imageboss_url }}" class="js-popup-image">
-                <img src="{{ imageboss_url }}" alt="{{ image.alt }}">
+              <a href="{{ imageboss_url }}" class="js-popup-image" aria-label="View larger image of {{ product.title }}">
+                <img src="{{ imageboss_url }}" alt="{% if image.alt != blank %}{{ image.alt }}{% else %}{{ product.title }} - Image {{ forloop.index }}{% endif %}" loading="lazy">
               </a>
             </div><!-- /.slider__slide -->
             {%- endcapture -%}
@@ -114,7 +114,7 @@
                 <figure>
                 {% assign old_url =  image | img_url: 'master' %}
                 {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '160', options: 'dpr:2' %}{% endcapture %}
-                <img src="{{ imageboss_url }}" alt="{{ image.alt }}">
+                <img src="{{ imageboss_url }}" alt="{% if image.alt != blank %}{{ image.alt }} thumbnail{% else %}{{ product.title }} thumbnail - Image {{ forloop.index }}{% endif %}" loading="lazy">
                 </figure>
               </div>
             </div><!-- /.slider__thumb -->

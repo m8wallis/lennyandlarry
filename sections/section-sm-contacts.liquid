@@ -13,12 +13,12 @@
 <li>
   <div>
     {%- if _block.link != blank -%}
-    <a href="{{ _block.link }}"></a>
+    <a href="{{ _block.link }}" aria-label="Visit {{ _block.title }}"></a>
     {%- endif -%}
 
     {%- if _block.image != blank -%}
     <figure>
-      {{ _block.image | img_url: '80x' | img_tag }}
+      <img src="{{ _block.image | img_url: '80x' }}" alt="{% if _block.image.alt != blank %}{{ _block.image.alt }}{% elsif _block.title != blank %}{{ _block.title }}{% else %}Contact image{% endif %}" loading="lazy">
     </figure>
     {%- endif -%}
 
@@ -42,7 +42,7 @@
           <figure>
             {% assign old_url =  _section.image | img_url: 'master' %}
             {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '9210', options: 'dpr:2' %}{% endcapture %}
-            <img src="{{ imageboss_url }}">
+            <img src="{{ imageboss_url }}" alt="{% if _section.image.alt != blank %}{{ _section.image.alt }}{% else %}Contact section image{% endif %}" loading="lazy">
           </figure>
         </div><!-- /.section__image -->
         {%- endif -%}

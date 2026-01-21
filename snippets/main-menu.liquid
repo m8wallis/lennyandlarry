@@ -31,7 +31,7 @@
               <li>
                 <div>
                   {%- if _block.link != blank -%}
-                    <a href="{{ _block.link }}"></a>
+                    <a href="{{ _block.link }}" aria-label="View {{ _block.title }}"></a>
                   {%- endif -%}
 
                   {%- if _block.image != blank -%}
@@ -66,7 +66,7 @@
     {%- endif -%}
 
     <li class="{{ class_dropdown }}{% if link.active %} is-current{% endif %}">
-      <a href="{{ link.url }}" title="{{ link.title }}">
+      <a href="{{ link.url }}">
         <span>
           {{ link.title }}
         </span>
@@ -85,7 +85,7 @@
                       <ul>
                         {%- for sub_sub_link in sub_link.links -%}
                           <li>
-                            <a href="{{ sub_sub_link.url }}" title="{{ sub_sub_link.title }}">{{ sub_sub_link.title }}</a>
+                            <a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a>
                           </li>
                         {%- endfor -%}
                       </ul>

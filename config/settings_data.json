@@ -1,1 +1,1550 @@
-{"current":{"favicon":"shopify://shop_images/fav.png","products_per_page":16,"collection_menu":"collection-menu","search_items_per_page":16,"cart_target_price":"55.00","cart_wholesale_price":"119.00","cart_until_message":"Only {{ price }} more until you have FREE Shipping!","subscribe_api_key":"Huq26X","share_image":"","social_facebook_link":"https://www.facebook.com/lennyandlarrys/","social_instagram_link":"https://www.instagram.com/lennyandlarrys/","sug_product_title":"Try These Tasty Treats","sug_product_one":"chocolate-5-71oz-9-boxes-of-12-cookies","sug_product_two":"vanilla-5-71oz-9-boxes-of-12-cookies","sug_product_three":"4-25-the-complete-crunchy-cookie-chocolate-chip","imageboss_enable":false,"imageboss_source":"lennylarry","checkout_header_image":"","checkout_logo_image":"shopify://shop_images/logo.png","checkout_logo_position":"left","checkout_logo_size":"large","checkout_body_background_image":"","checkout_body_background_color":"#fff","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#f4f7fc","checkout_heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_body_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_accent_color":"#197bbd","checkout_button_color":"#ffa300","checkout_error_color":"#e32c2b","announcement_bar":"","logo_image":"","main_menu":"","subscribe_title":"","subscribe_text":"","subscribe_embed":"","footer_menu":"","copyright":"","footer_bottom_menu":"","social_twitter_link":"","social_pinterest_link":"","social_tumblr_link":"","social_snapchat_link":"","social_youtube_link":"","social_vimeo_link":"","image":"","sections":{"1601881215559":{"type":"section-products","blocks":{"item_FwjBKt":{"type":"item","settings":{"image":"shopify://shop_images/1_Hero_Fitzels-20g_TT_3oz8ct_1000x_c3c58cf3-77c2-4634-acb8-3180c2fb367c.png","subtitle":"Fitzels\u2122","price":"$19.99","title":"Taco Tuesday","btn_text":"Shop Now","btn_link":"shopify://products/taco-tuesday-3oz-box-of-8"}},"item_TVehRn":{"type":"item","settings":{"image":"shopify://shop_images/1_Hero_Fitzels-20g_BB_3oz8ct_1000x_b740e774-a56d-4b5a-a57d-f330fc1e7c45.png","subtitle":"Fitzels\u2122","price":"$19.99","title":"Beastly Buffalo","btn_text":"Shop Now","btn_link":"shopify://products/beastly-buffalo-3oz-box-of-8"}},"item_yeyWJT":{"type":"item","settings":{"image":"shopify://shop_images/1_Hero_Fitzels-20g_CF_3oz8ct_1000x_d4d55891-2f75-4688-84b3-54ff84751ee0.png","subtitle":"Fitzels\u2122","price":"$19.99","title":"Caramel Fix","btn_text":"Shop Now","btn_link":"shopify://products/caramel-fix-3oz-box-of-8"}},"1601881308213":{"type":"item","settings":{"image":"shopify://shop_images/1a_Hero_FilmStrip_ChocolateLoversVP_1000x_eb85fdd6-a814-4b00-8d55-65936d61fc07.png","subtitle":"The Complete Cookie\u00ae","price":"$25.99","title":"Chocolate Lover's Variety Pack","btn_text":"Shop Now","btn_link":"shopify://products/chocolate-lovers-variety-pack"}},"de5e1dd3-3590-4082-9748-18cdb328230f":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/BakersDozen_13ct_CompleteCookie_1000x_2c42bb7d-bf19-4307-90b8-d20ec41646ab.png","subtitle":"The Complete Cookie\u00ae","price":"23.99","title":"Bakers Dozen Variety Pack - 10 flavors","btn_text":"Shop Now","btn_link":"shopify://products/bakers-dozen-variety-pack-10-flavors"}},"d2ae5077-bf11-420a-942b-d31a64ed070d":{"type":"item","settings":{"image":"shopify://shop_images/1_B__Hero_PMK_Cookie-LE-4oz12ct_1000x_e652b13f-77ae-4416-8c97-ea0ba4f12286.png","subtitle":"The Complete Cookie\u00ae","price":"","title":"Pumpkin Spice","btn_text":"Shop Now","btn_link":"shopify://products/the-complete-cookie-pumpkin-spice"}},"908bcf2d-48bc-4256-a836-e7de7b8a4995":{"type":"item","settings":{"image":"shopify://shop_images/1_B__Hero_AP_Cookie-LE-4oz12ct_1000x_57ea4979-c4cb-438a-9b1f-42b48019b16f.png","subtitle":"The Complete Cookie\u00ae","price":"$24.49","title":"Apple Pie","btn_text":"Shop Now","btn_link":"shopify://products/the-complete-cookie-apple-pie"}},"item_PWzjeM":{"type":"item","settings":{"image":"shopify://shop_images/Fitzels-20g_CLT_3oz8ct_1000x_2024.png","subtitle":"Fitzels\u2122","price":"$19.99","title":"Chili Lime Time","btn_text":"Shop Now","btn_link":"shopify://products/chilli-lime-time-3oz-box-of-8"}},"43bc983c-fd7b-47e8-8ec4-7d6e7ce16843":{"type":"item","settings":{"image":"shopify://shop_images/Fitzels-20g_CB_3oz8ct_1000x_2024.png","subtitle":"Fitzels\u2122","price":"$19.99","title":"Cinnamon Buns","btn_text":"Shop Now","btn_link":"shopify://products/cinnamon-buns-3oz-box-of-8"}},"0fda4ee1-1912-4d38-9501-a285e5f070ac":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/1_B__Hero_SS_Cookie-LE-4oz12ct_1000x_8199271e-d22c-4994-a9e3-0f5069da6123.png","subtitle":"The Complete Cookie\u00ae","price":"$22.95","title":"Strawberry Shortcake","btn_text":"Shop Now","btn_link":"shopify://products/strawberry-shortcake-4oz-box-of-12"}},"item_6JpaRA":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/B_Hero_Cookie_PBCC_4oz6ct_1000x_43a8cf7b-f2ba-457e-905c-1e52f475ff7f.png","subtitle":"The Complete Cookie\u00ae","price":"$7.99","title":"Peanut Butter Chocolate Chip- 6CT","btn_text":"Shop Now","btn_link":"shopify://products/peanut-butter-chocolate-chip-4oz-box-of-4-copy"}},"item_PiGwiC":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/Hero_FilmStrip_CC_4oz6ct_1000x_2024_1.png","subtitle":"The Complete Cookie\u00ae","price":"$7.99","title":"Chocolate Chip- 6ct","btn_text":"Shop Now","btn_link":"shopify://products/chocolate-chip-4oz-box-of-12-copy"}},"1601881220733":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/CC_2oz12ct_Group_Lockups_1000_3.png","subtitle":"The Complete Cookie\u00ae","price":"$15.99","title":"Chocolate Chip-2oz","btn_text":"Shop Now","btn_link":"shopify://products/chocolate-chip-2oz-box-of-12"}},"item_wfj3F7":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/Hero_FilmStrip_CCCD_90g-12ct_LAnagleOpen_1000x_092424.png","subtitle":"Cookie-fied\u00ae Big Bar","price":"$35.49","title":"Chocolate Chip Cookie Dough","btn_text":"Shop Now","btn_link":"shopify://products/cookie-fied\u00ae-big-bar-chocolate-chip-cookie-dough-box-of-12"}},"item_zHpgFk":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/1_Hero_FilmStrip_WCM_45g-9ct_Standing_100324_1000x_7dcfafea-3cfc-4cf3-9040-5c1e3496b5f2.png","subtitle":"Cookie-fied\u00ae Bar","price":"$16.99","title":"White Chip Macadamia","btn_text":"Shop Now","btn_link":"shopify://products/white-chip-macadamia"}},"item_YtPzyB":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/1_Hero_FilmStrip_CCCD_45g-9ct_Standing_100324_1000x_5aaf2b51-343e-47c6-a6ab-3efa08879030.png","subtitle":"Cookie-fied\u00ae Bar","price":"$16.99","title":"Chocolate Chip Cookie Dough","btn_text":"Shop Now","btn_link":"shopify://products/chocolate-chip-cookie-dough"}},"item_9FXTWL":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/Fitzels-20g_PP_3oz8ct_1000x_2024.png","subtitle":"Fitzels\u2122","price":"$19.99","title":"Pizza Palooza","btn_text":"Shop Now","btn_link":"shopify://products/pizza-palooza-3oz-box-of-8"}},"item_Mn8Rwp":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/Fitzels-20g_EB_3oz8ct_1000x_2024.png","subtitle":"Fitzels\u2122","price":"$19.99","title":"Everything Bagel","btn_text":"Shop Now","btn_link":"shopify://products/everything-bagel-3oz-box-of-8"}},"item_yj7hzr":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/Fitzels-20g_BM_3oz8ct_1000x_2024.png","subtitle":"Fitzels\u2122","price":"$19.99","title":"Boujie Mustard","btn_text":"Shop Now","btn_link":"shopify://products/boujie-mustard-3oz-box-of-8"}},"431b15f2-aa3e-410f-aff6-e564e918f0c1":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/BakersDozen_13ct_CompleteCookie_1000x_5a979ce0-b190-43c8-b059-885c96af0b4f.png","subtitle":"The Complete Cookie\u00ae","price":"$23.99","title":"Bakers Dozen Variety Pack - 10 Flavors","btn_text":"Shop Now","btn_link":"shopify://products/bakers-dozen-variety-pack-10-flavors"}},"c72d834f-e5cb-4f5c-9801-009b624710d3":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/Hero_FilmStrip_PBC_58g-12ct_Lockups_1000x_052323.png","subtitle":"Lenny & Larry's\u00ae Dip'd\u2122 Wafer","price":"$15.99","title":"Peanut Butter Cup","btn_text":"Shop Now","btn_link":"shopify://products/peanut-butter-cup-2-05oz-box-of-12"}},"50e6536b-bd2e-4971-a7b7-bce0e14bfd2b":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/Hero_FilmStrip_Complete_Cookie_WINTER_PC_Lockups_1000x_042023.png","subtitle":"The Complete Cookie\u00ae","price":"","title":"Peppermint Chocolate","btn_text":"Shop Now","btn_link":"shopify://products/the-complete-cookie-peppermint-chocolate"}},"fe95d97b-3843-44b3-a5b1-9c79d796c5da":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/Hero_FilmStrip_Complete_Cookie_WINTER_GB_Lockups_1000x_042023.png","subtitle":"The Complete Cookie\u00ae","price":"","title":"Gingerbread","btn_text":"Shop Now","btn_link":"shopify://products/the-complete-cookie-gingerbread"}},"item_YVHTdp":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/Complete_Cookie_PBCC_4oz4ct_102523_RAClosed_2400.png","subtitle":"The Complete Cookie\u00ae","price":"$6.98","title":"Peanut Butter Chocolate Chip","btn_text":"Shop Now","btn_link":"shopify://products/chocolate-chip-4oz-box-of-4"}},"c9f0fcdf-9f61-41b2-b82f-15e98e6f908b":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/WCM_4oz12ct_Group_Lockups_1000.png","subtitle":"The Complete Cookie\u00ae","price":"$22.95","title":"White Chocolate Flavored Macadamia","btn_text":"Shop Now","btn_link":"shopify://products/the-complete-cookie-white-chocolaty-macadamia"}},"d273ddec-2ff2-4df0-b6a9-14efe59072f7":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/Hero_FilmStrip_CCR_90g-12ct_Lockups_1000x_050323_2.png","subtitle":"Cookie-fied\u00ae Big Bar","price":"$35.49","title":"Cookies & Creme","btn_text":"Shop Now","btn_link":"shopify://products/cookies-creme"}},"b0d8f68e-ae6b-4cf5-b435-2b05ae00f707":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/Hero_FilmStrip_PBCC_90g-12ct_Lockups_1000x_050323_2.png","subtitle":"Cookie-fied\u00ae Big Bar","price":"$35.49","title":"Peanut Butter Chocolate Chip","btn_text":"Shop Now","btn_link":"shopify://products/cookiefied-bar-peanut-butter-chocolate-chip"}},"27e59c13-c143-47ab-8bae-d7a693923948":{"type":"item","disabled":true,"settings":{"image":"shopify://shop_images/Hero_FilmStrip_SCR_45g-9ct_Lockups-WO_1000x_070623.png","subtitle":"Cookie-fied\u00ae Bar","price":"","title":"Strawberries & Creme","btn_text":"Shop Now","btn_link":"shopify://products/strawberries-creme-box-of-9"}}},"block_order":["item_FwjBKt","item_TVehRn","item_yeyWJT","1601881308213","de5e1dd3-3590-4082-9748-18cdb328230f","d2ae5077-bf11-420a-942b-d31a64ed070d","908bcf2d-48bc-4256-a836-e7de7b8a4995","item_PWzjeM","43bc983c-fd7b-47e8-8ec4-7d6e7ce16843","0fda4ee1-1912-4d38-9501-a285e5f070ac","item_6JpaRA","item_PiGwiC","1601881220733","item_wfj3F7","item_zHpgFk","item_YtPzyB","item_9FXTWL","item_Mn8Rwp","item_yj7hzr","431b15f2-aa3e-410f-aff6-e564e918f0c1","c72d834f-e5cb-4f5c-9801-009b624710d3","50e6536b-bd2e-4971-a7b7-bce0e14bfd2b","fe95d97b-3843-44b3-a5b1-9c79d796c5da","item_YVHTdp","c9f0fcdf-9f61-41b2-b82f-15e98e6f908b","d273ddec-2ff2-4df0-b6a9-14efe59072f7","b0d8f68e-ae6b-4cf5-b435-2b05ae00f707","27e59c13-c143-47ab-8bae-d7a693923948"],"settings":{"subtitle":"Our most popular treats","title":"Bite into this"}},"1601888807064":{"type":"section-testimonials","blocks":{"1601889247217":{"type":"testimonial","settings":{"title":"\"I wasn't sure how well these would taste.. since they virtually have no ingredients to make \"real\" cookies. But they're really fluffy and taste almost better than \"normal\" cookies. I Already bought 3 boxes after tasting just one of these beautiful things.\"","text":"Jan R.  |  Portland, Oregon"}},"c1f6abef-8217-4a43-ab90-76d12debdb11":{"type":"testimonial","settings":{"title":"\"Lenny & Larry's cookies are a mainstay in our house. My 18 year old son includes one as part of his post workout training because of the high protein, no soy and all around great taste. The rest of us enjoy them as a somewhat guilt free snack.\"","text":"Halley B. | Austin, Texas"}},"80ce6c0d-5226-408d-96cb-3b437d592706":{"type":"testimonial","settings":{"title":"\"Really tasty, really filling, and really fresh! I eat these for lunch with a coffee or iced tea and they keep me full all day.  With all the fiber and protein, I have the cookie at 12:30 pm and don\u2019t get hungry until 7:00 pm.\"","text":"Prince L. | Los Angeles, California"}}},"block_order":["1601889247217","c1f6abef-8217-4a43-ab90-76d12debdb11","80ce6c0d-5226-408d-96cb-3b437d592706"],"disabled":true,"settings":{"image":"shopify://shop_images/HomePg-Ing-Left-Sprinkles_1000x1000_0e376227-547d-4865-abcc-6cd68df15386.png","image_bottom":"shopify://shop_images/HomePg-Ing-Right-SD_1000x1000_2f996a91-757d-4bf1-b115-0e9f139bac1d.png"}},"1601898003969":{"type":"section-logos-slider","blocks":{"1601898278747":{"type":"logo","settings":{"image":"shopify://shop_images/slider-logo-image1.png","link":"https://www.latimes.com/lifestyle/story/2020-04-07/healthy-snacks-delivered-to-your-door"}},"1601898308875":{"type":"logo","settings":{"image":"shopify://shop_images/slider-logo-image2.png","link":"https://vegnews.com/2020/5/vegan-brand-plans-to-donate-50-000-cookies-to-ups-drivers"}},"1601898318138":{"type":"logo","settings":{"image":"shopify://shop_images/slider-logo-image3.png","link":"https://www.foodbusinessnews.net/articles/6262-q-a-protein-cookie-company-on-the-cutting-edge"}},"1601898324683":{"type":"logo","settings":{"image":"shopify://shop_images/slider-logo-image4.png","link":"https://www.usmagazine.com/"}},"1601898332698":{"type":"logo","settings":{"image":"shopify://shop_images/slider-logo-image5.png","link":"https://www.menshealth.com/nutrition/g21053235/best-protein-cookies/"}}},"block_order":["1601898278747","1601898308875","1601898318138","1601898324683","1601898332698"],"settings":{"subtitle":"As Seen In"}},"1601901953719":{"type":"section-product-index","disabled":true,"settings":{"subtitle":"New to the shop","title":"Fresh out of the Oven!"}},"1601984375083":{"type":"section-logos","blocks":{"1601984380303":{"type":"logo","settings":{"image":"shopify://shop_images/protein_2x_770af7f3-ada2-469c-9288-45c7c6b3db34.png","link":"#"}},"1601984390291":{"type":"logo","settings":{"image":"shopify://shop_images/non-gmo_2x_20c72f31-8b9d-46a5-b13e-4a291e94c74c.png","link":""}},"1601984397091":{"type":"logo","settings":{"image":"shopify://shop_images/fiber_2x_b5d011fa-58eb-4013-8acc-ea25a318ca3f.png","link":""}},"1601984405733":{"type":"logo","settings":{"image":"shopify://shop_images/nutritious_2x_80c75b7a-2697-4522-aaa5-36681575a2fc.png","link":""}}},"block_order":["1601984380303","1601984390291","1601984397091","1601984405733"],"settings":{}},"1601987395661":{"type":"section-instafeed","settings":{"title":"@LENNYANDLARRYS","link":"https://www.instagram.com/p/CHqJ4qMldKA/"}},"header":{"type":"header","blocks":{"1602070321476":{"type":"item","settings":{"dropdown_handle":"Shop","image":"shopify://shop_images/NavBar_CompleteCookie_360x360_b1a53c4f-24ff-4e5e-8217-d565d7df2dea.png","title":"the complete cookie\u00ae","subtitle":"Soft-Baked Protein Cookie","link":"shopify://collections/the-complete-cookie\u00ae"}},"378f82bb-e5e1-4c85-a383-2e1b414aedb2":{"type":"item","disabled":true,"settings":{"dropdown_handle":"Shop","image":"shopify://shop_images/NavBar_Kickstart_ACBL_360x360_f481b979-c7a5-4a90-9c21-6ad175d244b4.jpg","title":"The Complete KickStart","subtitle":"Plant-Based Protein & Probiotic Breakfast Bar","link":"shopify://collections/the-complete-kickstart"}},"f0b7446c-6e28-4b4f-854a-e05b5634c3f2":{"type":"item","settings":{"dropdown_handle":"Shop","image":"shopify://shop_images/NavBar_Cremes_CHOCVAN_360x360_0b7857fc-5ab7-4825-b8c7-42d25b5e4e1c.jpg","title":"The Complete Cremes\u00ae","subtitle":"Better-For-You Sandwich Cookies","link":"shopify://collections/the-complete-cremes"}},"085aff21-1ab8-41c8-a6da-766ca2cd35b3":{"type":"item","settings":{"dropdown_handle":"Shop","image":"shopify://shop_images/NavBar_CBAR_360x360_71337523-a366-43a4-ad43-fc41521b2670.png","title":"Cookie-fied\u00ae Bar","subtitle":"Two Sizes of Chewy-Crunchy-Yummy Snack Bars","link":"shopify://collections/cookie-fied-bar"}},"1602070509882":{"type":"item","settings":{"dropdown_handle":"Shop","image":"shopify://shop_images/NavBar_CrunchyCCDC_042124_360x360_f45fda8e-33ac-469e-87de-717711fe4458.png","title":"The Complete Crunchy cookies\u00ae","subtitle":"Our Delicious Flavors With a Crunch","link":"shopify://collections/the-complete-crunchy-cookies"}},"1284a278-1726-47f6-ab28-08591a2f0d7a":{"type":"item","disabled":true,"settings":{"dropdown_handle":"Shop","image":"shopify://shop_images/NavBar_Dip_d_Wafer_Bar_360x_052323.png","title":"Dip'd\u2122 Wafer","subtitle":"Light & Crispy Protein Wafer Bars","link":"shopify://collections/dipped-wafer"}},"item_Ne7V3b":{"type":"item","settings":{"dropdown_handle":"Shop","image":"shopify://shop_images/NavBar_Fitzels_360x360_bfe4ab38-6578-445d-8276-daae0bdca21c.png","title":"Fitzels","subtitle":"Plant-Based Protein Packed Pretzel","link":"shopify://collections/fitzels"}},"680d3e1d-78f6-4716-8131-3c895e083908":{"type":"item","disabled":true,"settings":{"dropdown_handle":"Shop","image":"shopify://shop_images/NavBar_BOSS_Cookie_CCPBCC_360x360_a2b66b45-9b42-4cee-a2f4-c3c06cb77acc.png","title":"The BOSS! Cookie","subtitle":"Our Dairy & Plant-Based Protein Cookie","link":"shopify://collections/the-boss-cookie"}},"863abd4f-c69d-4fad-84bf-a222500d07a2":{"type":"item","disabled":true,"settings":{"dropdown_handle":"Shop","image":"shopify://shop_images/NavBar_BOSS_ImmunityBar_CMBPBC_360x360_1.png","title":"The BOSS! Immunity Bar","subtitle":"Our Dairy & Plant-Based Protein Crunchy Wafer Bars","link":"shopify://collections/the-boss-immunity-bar"}},"1602070662475":{"type":"item","disabled":true,"settings":{"dropdown_handle":"Shop","image":"shopify://shop_images/NavBar_Keto_CCPB_360x360_90c8f3b6-3f84-442c-9f08-d11c050f5c02.jpg","title":"keto cookie","subtitle":"Your Low Carb Go-To","link":"shopify://collections/keto-cookie\u2122"}},"item_gYh4Db":{"type":"item","settings":{"dropdown_handle":"Shop","image":"shopify://shop_images/NavBar_Complete_FALL_LE_360x360_0c988e38-bd01-48e7-895b-40e7e5a5850f.png","title":"Limited Edition","subtitle":"Delicious Flavors Back for a Limited Time!","link":"shopify://collections/limited-edition"}},"a2c9df12-3ded-46a5-b42f-b579db60fe50":{"type":"item","settings":{"dropdown_handle":"Shop","image":"shopify://shop_images/NavBar_VarietyPacks_360x360_c8a5eba3-adf9-4fc9-a471-a7e964262af6.png","title":"Variety Packs","subtitle":"Get a Set of Your Favorite Cookies","link":"shopify://collections/variety-packs"}}},"block_order":["1602070321476","378f82bb-e5e1-4c85-a383-2e1b414aedb2","f0b7446c-6e28-4b4f-854a-e05b5634c3f2","085aff21-1ab8-41c8-a6da-766ca2cd35b3","1602070509882","1284a278-1726-47f6-ab28-08591a2f0d7a","item_Ne7V3b","680d3e1d-78f6-4716-8131-3c895e083908","863abd4f-c69d-4fad-84bf-a222500d07a2","1602070662475","item_gYh4Db","a2c9df12-3ded-46a5-b42f-b579db60fe50"],"settings":{"announcement_bar":"Only {{ price }} more until you have free shipping!","announcement_bar_text_after":"Free Shipping!","logo_image":"shopify://shop_images/logo.png","main_menu":"main-menu","mobile_main_menu":"mobile-main-menu","mobile_bottom_menu":"mobile-header-menu-bottom","dropdown_btn_text":"Shop All Cookies & Bars","dropdown_btn_link":"shopify://collections/shop"}},"footer":{"type":"footer","settings":{"subscribe_title":"Connect with us","subscribe_text":"Let\u2019s be friends! Sign up for new flavor launches, awesome deals, and more.","subscribe_embed":"<div class=\"klaviyo-form-TeYc63\"></div>","footer_menu":"footer","copyright":"<p>Copyright \u00a9\u00a0[year] Lenny & Larry\u2019s, LLC</p>","footer_bottom_menu":"footer-bottom-menu"}},"badges":{"type":"badges","blocks":{"1602600878319":{"type":"badge","settings":{"title":"New!","image":"shopify://shop_images/Badges_NEW_140x140_ea982d55-74d7-46ca-9333-18d65d02bdc7.png"}},"74059cbc-43b3-4346-bd8c-19e03a0f6817":{"type":"badge","settings":{"title":"limited","image":"shopify://shop_images/Badges_LIMITEDTIME_140x140_4b10b191-4b69-4411-9ca3-3a4ee3dee3b2.png"}},"85ca20ec-4923-4c6f-b8d1-9b8b0a3c4f3a":{"type":"badge","settings":{"title":"best_seller","image":"shopify://shop_images/Badges_BESTSELLER_140x140_d7ff6069-378b-41d6-b72b-62e69aa932b8.png"}},"1602600822902":{"type":"badge","settings":{"title":"sale","image":"shopify://shop_images/Badges_SALEYELLOW_140x140_bef56ffc-d464-4669-a714-dd9bacc83369.png"}}},"block_order":["1602600878319","74059cbc-43b3-4346-bd8c-19e03a0f6817","85ca20ec-4923-4c6f-b8d1-9b8b0a3c4f3a","1602600822902"],"settings":{}},"section-contacts":{"type":"section-contacts","blocks":{"1602831570908":{"type":"item","settings":{"image":"shopify://shop_images/contact-item-image1.png","title":"help@lennylarry.com","link":"mailto:help@lennylarry.com"}},"1602831612610":{"type":"item","settings":{"image":"shopify://shop_images/contact-item-image2.png","title":"14300 Arminta St\nPanorama City, CA 91402","link":"#"}}},"block_order":["1602831570908","1602831612610"],"settings":{"select_options":"Department\nAccount\nSales\nInternational Sales","image":"shopify://shop_images/contact-image1.png"}},"section-slider-about":{"type":"section-slider-about","blocks":{"1602839208201":{"type":"slide","settings":{"image":"shopify://shop_images/slide-about-image1.png","subtitle":"1993","title":"Cookie Creators","text":"Two gym rats named Benny and Barry get tired of eating the same boring things to get their protein. They imagine adding protein to their favorite foods starting with a high protein muffin. Boom! Lenny & Larry\u02bcs is created, making clean eating the new cool."}},"1602839221750":{"type":"slide","settings":{"image":"shopify://shop_images/WholeFoods_Market_455x455_8cea4bca-db4d-4c60-8b28-6af371e77dd3.png","subtitle":"1994","title":"Retailer Debut","text":"Lenny & Larry's starts to gain traction with local Southern California retailers including Mrs. Gooch's, Erwhon, Rainbow Acres, Mother's Markets, Gold's Gym, and Powerhouse Gym. This is also the year that we get into Whole Foods!"}},"1602839233612":{"type":"slide","settings":{"image":"shopify://shop_images/LennyLarry_LogoOrange_455x455_d34922c1-02c1-46a4-b093-c1efc778fe1b.png","subtitle":"2001","title":"New Ownership","text":"By now Benny has gone on to pursue other things, and Barry is left to do some soul searching. Should he buckle down and stay, or is he meant to do other things? After much deliberation and with a heavy heart, Barry ends up selling the business."}},"1602839241986":{"type":"slide","settings":{"image":"shopify://shop_images/PB_Muscle-Brownie_Circa_455x455_2c35e454-82aa-4e4a-9b84-96383160a082.png","subtitle":"2007","title":"Reunited","text":"Plagued with the feeling that he should never have left, Barry eagerly returns to Lenny & Larry\u2019s as a partner to jumpstart the business and give it another go. They introduce a new product line called the Muscle Brownie\u00ae."}},"1602839298704":{"type":"slide","settings":{"image":"shopify://shop_images/CC_PackagingCirca2014_455x455_e0ea02d6-c2f5-46ad-b364-1afe7f66f454.png","subtitle":"2013","title":"The Complete Cookie","text":"Ever innovating, Lenny & Larry\u2019s starts to focus on The Complete Cookie\u00ae product line and revamps the packaging. Lenny & Larry\u2019s makes Inc.\u2019s list of fastest growing companies five years in a row."}},"1602839309791":{"type":"slide","settings":{"image":"shopify://shop_images/BC_2oz_PackagingCirca2017_455x455_93b4b305-b5bf-486f-8d18-e243d039462e.png","subtitle":"2016","title":"Gaining Traction","text":"In addition to being available in Walmart, Kroger, Vitamin Shoppe, and 7-Eleven, The Complete Cookie lands in Target and Walgreens stores. With demand only increasing, Lenny & Larry\u2019s launches a smaller 2oz Complete Cookie to please the fans."}},"1602839318646":{"type":"slide","settings":{"image":"shopify://shop_images/CDKetoCrunchy_Innovation_455x455_478eb1be-042d-4b21-97f3-6358e65cbfa9.png","subtitle":"2019","title":"Innovation","text":"Today, Lenny & Larry\u2019s The Complete Cookie\u00ae is available in most major retailers nationwide, and over 30 countries worldwide. True to our beginnings, Lenny & Larry\u2019s continues to develop new flavors and products. You can bet there\u2019s more on the way!"}},"e1edd2a2-c867-4f1c-9e5d-c73611b3107c":{"type":"slide","disabled":true,"settings":{"image":"shopify://shop_images/BOSSup_Spring-2021_455x455_850e9a6a-d3ed-4605-be5f-9b5d94c47632.png","subtitle":"Spring 2021","title":"BOSS UP!","text":"Lenny & Larry's crafted The BOSS! Cookie for those looking for more protein, more fiber and less sugar. Loaded with 18 grams of dairy and plant-based protein, but with only 1 gram of sugar, this cookie will show your under who's The BOSS!"}},"61a8810b-0732-42ec-8aab-792ff1788b93":{"type":"slide","disabled":true,"settings":{"image":"shopify://shop_images/CookieInABar_Summer-2021_455x455_8c567eb2-deea-4a46-b55c-fe225926a8cd.png","subtitle":"Summer 2021","title":"Cookie in a bar","text":"What's more fun than a cookie in a bar?! At Lenny & Larry's, we created The Complete Cookie-fied Bar\u2122 made with our signature cookie pieces that gives you a fun crunch in every delicious bite. The soft, chewy bar also contains 12g plant-based protein, 5g prebiotic fiber, 6g of sugar and is gluten free. Get ready to be Cookie-fied\u2122!"}}},"block_order":["1602839208201","1602839221750","1602839233612","1602839241986","1602839298704","1602839309791","1602839318646","e1edd2a2-c867-4f1c-9e5d-c73611b3107c","61a8810b-0732-42ec-8aab-792ff1788b93"],"settings":{}},"section-image-text-about":{"type":"section-image-text-about","settings":{"subtitle":"Introducing","title":"Our Newest Bites","image":"shopify://shop_images/about-image-bottom_1240x-boss.png","content_subtitle":"Innovation never stops at Lenny & Larry\u02bcs and now we present","content_title":"Lenny & Larry's The BOSS! Cookie\u2122","content_text":"Loaded with 18g of protein, but with 1g of sugar, this cookie will show your hunger who's The BOSS!","btn_text":"Shop All The Boss! cookie Flavors","btn_link":"shopify://collections/the-boss-cookie"}},"section-blog-about":{"type":"section-blog-about","settings":{"subtitle":"Fresh from","title":"The Lenny & Larry\u2019s Blog","blog":"news"}},"section-blog":{"type":"section-blog","settings":{"featured_article":"news/the-do-anywhere-workout-you-can-fit-into-any-day","articles_per_page":16}},"section-faq":{"type":"section-faq","blocks":{"eacd9222-8bbf-4900-8a5b-63422855ebba":{"type":"accordion","settings":{"select_faq":"general","heading":true,"title":"WHO ARE LENNY & LARRY?","text":"<p>Benny & Barry were two buddies who were tired of the same old protein options. In 1993 they started Lenny & Larry's with the idea of turning delicious delights into clean, protein powerhouse foods. They started with a muffin and Lenny & Larry\u2019s was born.</p><p></p><p><strong>Who owns Lenny & Larry's?<br/></strong>Lenny & Larry\u2019s is privately held and the founder, Barry Turner, is a part owner of the brand. </p><p><br/><strong>Who Founded Lenny & Larry\u2019s?</strong><br/>Lenny & Larry\u2019s was founded by buddies Benny and Barry. Over 25 years ago, two weightlifters named Benny & Barry decided protein should not only taste delicious but be enjoyable to eat and the first protein muffin was born! But Benny & Barry didn\u2019t stop at muffins!  Their passion for protein packed snacks with high-quality ingredients and heavenly taste continued.</p>"}},"7fb9d189-5cc5-40bc-89c3-4a0637fe2db7":{"type":"accordion","settings":{"select_faq":"general","heading":true,"title":"HOW MUCH PROTEIN ARE IN LENNY & LARRY\u2019S PRODUCTS?","text":"<p>Lenny & Larry\u2019s products include 5 to 18g of protein depending on the product and serving size. Take a look at the protein levels in each of our snacks below.</p><p></p><p><strong>The Amount of Protein in The Complete Cookie\u00ae</strong><br/>The Complete Cookie\u00ae 2oz contains 8g of plant-based proteins<br/>The Complete Cookie\u00ae 4oz contains 16g of plant-based proteins</p><p><strong>The Amount of Protein in The Complete Cookie-fied Bar\u00ae</strong><br/>The Complete Cookie-fied Bar\u00ae contains 12g of plant-based proteins</p><p><strong>The Amount of Protein in The Complete Cremes\u00ae</strong><br/>The Complete Cremes\u00ae contains 5g of plant-based proteins per serving</p><p><strong>The Amount of Protein in The Complete Crunchy Cookies\u00ae</strong><br/>The Complete Crunchy Cookies\u00ae contains 6g of plant-based proteins per serving</p><p><strong>The Amount of Protein in Fitzels\u00ae</strong><br/>Fitzels\u00ae contains 20g of plant-based proteins</p><p><strong>What Kind of Protein Is in Lenny & Larry\u2019s Snacks?<br/></strong>Plant-based proteins are the key protein type in all of our snacks. A majority of our products use pea protein, rice protein and vital wheat gluten. Our gluten-free products use a brown rice and pea protein blend, or an almond and pea protein blend. The BOSS! products also include dairy protein. For more specific information per product, look under Additional Information.</p>"}},"012b8a9e-9f07-47d0-b689-b28285662581":{"type":"accordion","settings":{"select_faq":"general","heading":true,"title":"ARE LENNY & LARRY\u2019S PRODUCTS VEGAN?","text":"<p>Yes, most of our products are vegan.</p><p><strong>Is The Complete Cookie\u00ae vegan?</strong><br/>Yes, The Complete Cookie\u00ae is vegan.</p><p><strong>Is The Complete Cookie-fied Bar\u00ae vegan?</strong><br/>Yes, The Complete Cookie-fied Bar\u00ae is vegan.</p><p><strong>Is Fitzels vegan?<br/></strong>Yes, Fitzels are vegan.</p><p><strong>Is The Complete Cremes\u00ae vegan?</strong><br/>Yes, The Complete Cremes\u00ae are Certified Vegan.</p><p><strong>Are The Complete Crunchy Cookies\u00ae vegan?</strong><br/>Yes, The Complete Crunchy Cookies\u00ae are vegan.</p>"}},"ae515180-f0fa-42e1-af21-91c0f4d0d1bc":{"type":"accordion","settings":{"select_faq":"general","heading":true,"title":"ARE LENNY & LARRY\u2019S PRODUCTS HIGH IN FIBER?","text":"<p>Lenny & Larry\u2019s cookies and bars include fiber to provide a delicious, fun way to increase dietary fiber in your diet. The<br/>American Heart Association suggests eating 25-40 grams of fiber a day based on a 2,000 calorie diet for adults. It is estimated that only 20% of Americans get enough fiber. Below is a list of fiber levels for each product.</p><p><strong>The Amount of Fiber in The Complete Cookie\u00ae</strong><br/>The Complete Cookie\u00ae 2oz contains 5g of plant-based proteins<br/>The Complete Cookie\u00ae 4oz contains 10g of fiber</p><p><strong>The Amount of Fiber in The Complete Cookie-fied Bar\u00ae</strong><br/>The Complete Cookie-fied Bar\u00ae contains 5g of fiber </p><p><strong>The Amount of Fiber in The Complete Cremes\u00ae</strong><br/>The Complete Cremes\u00ae contains 3g of prebiotic fiber per serving</p><p><strong>The Amount of Fiber in The Complete Crunchy Cookies\u00ae<br/></strong>The Complete Crunchy Cookies\u00ae contains 4g of fiber per serving</p><p></p>"}},"02f13157-d474-4960-a6f3-9ce15bc7df6f":{"type":"accordion","settings":{"select_faq":"general","heading":true,"title":"ARE LENNY & LARRY\u2019S PRODUCTS DAIRY FREE?","text":"<p>Yes, all of our products are dairy free. </p>"}},"20f8f157-52d5-4a1c-a769-0cdd8f332895":{"type":"accordion","settings":{"select_faq":"general","heading":true,"title":"ARE LENNY & LARRY\u2019S PRODUCTS GLUTEN FREE?","text":"<p>The Complete Cookie-fied Bar\u00ae is gluten free. Gluten can be found in other  Lenny & Larry\u2019s products.</p>"}},"2a4839fe-8742-4ede-98ec-a69199658e32":{"type":"accordion","settings":{"select_faq":"general","heading":true,"title":"HOW CAN I SIGN UP FOR THE LENNY & LARRY\u2019S REWARDS PROGRAM?","text":"<p>To become part of The Cookie Crew rewards program, all you have to do is <a href=\"https://www.lennylarry.com/account/register\" title=\"https://www.lennylarry.com/account/register\">sign up for Lenny & Larry\u2019s account</a>. If you have an existing account on our website, you are automatically enrolled in our rewards program. Each purchase you\u2019ve made since January 4th, 2022 has accumulated reward points. To view your  rewards points, <a href=\"https://www.lennylarry.com/account/login\" title=\"https://www.lennylarry.com/account/login\">log into the Lenny & Larry\u2019s website</a> and visit <a href=\"https://www.lennylarry.com/pages/rewards\" title=\"https://www.lennylarry.com/pages/rewards\">The Cookie Crew rewards page</a>.</p><p>Interested in earning points and getting a discount at the same time? Sign up for Lenny & Larry\u2019s email list and you can receive exclusive offers like free shipping and more\u2014all while you earn reward points. You can sign up by going to the footer of our website.</p><p>Full <a href=\"https://www.lennylarry.com/pages/rewards\" title=\"https://www.lennylarry.com/pages/rewards\">rewards program</a> details are found below in the Additional Product Information section.</p>"}},"1603178133416":{"type":"accordion","settings":{"select_faq":"additional_info","heading":true,"title":"General Product Information","text":"<p><strong>Vegan Products</strong></p><p>Our Complete Cookies, Complete Crunchy Cookies, The Complete Cremes\u2122, and Keto Cookies\u2122 are 100% Vegan and do not contain any dairy, eggs or any animal-products, including honey. </p><p><strong>Dietary Fiber</strong></p><p>Lenny & Larry\u2019s offers protein-packed, fiber fortified products\u00a0that provide consumers with a delicious, fun way to increase dietary fiber in their diet. The American Heart Association suggests eating 25-30 grams of fiber a day, based on a 2,000 calorie diet for adults. \u00a0It is estimated only 20% of Americans get enough fiber.</p><p>Similar to gradually building muscle by regularly exercising over time, our bodies need to adjust to\u00a0a high fiber diet. During this adjustment period, you may experience some discomfort from the dietary fiber\u00a0feeding the good bacteria in your digestive system, or symptoms like bloating and excess production of gas. The duration of this adjustment period varies, but symptoms generally subside within 5-7 days.\u00a0We recommend consulting your physician for questions about your fiber intake.</p><p><strong>Gluten-Free</strong></p><p>Our Complete Cookies, Complete Crunchy Cookies and BOSS! Cookies are not gluten free. However, our Keto Cookies and Complete Cookie-fied Bars are!</p><p><strong>Non-GMO</strong></p><p>All our products are Non-GMO. Please look for the\u00a0<strong>\"</strong>Non-GMO Project Verified<strong>\"</strong>\u00a0seal on the product pages.</p><p><strong>Fair Trade</strong></p><p>Our cocoa suppliers practice Fair Trade laws.\u00a0</p><p><strong>Palm Oil</strong></p><p>We do use sustainable sources and we are certified by the RSPO (Round Table on Sustainable Palm Oil).\u00a0</p><p><strong>Phosphorus + Potassium</strong></p><p>We do not test for these levels.\u00a0</p><p><strong>Cane Sugar</strong></p><p>Our cane sugar is not processed with bone char. Our Complete Cookies, Complete Cookiefied Bar, and Crunchy Complete Cookies\u00a0are 100% vegan, including each ingredients\u2019 varying processes.</p><p><strong>Freezing product</strong></p><p>Our delicious cookies may be kept in the freezer for up to 6-months.\u00a0</p><p><strong>Allergens</strong></p><p>We contract with multiple bakery partners and some are producing our product exclusively, but many are producing product that shares production lines and equipment with traditional bakery products that do contain common allergens.\u00a0Of course, each bakery cleans the production line and equipment thoroughly between products, following HACCP guidelines to prevent cross-contamination, but in the bakeries where other non-Lenny & Larry product is produced, the production is not segregated or isolated to its own production line.\u00a0All of our cookie manufacturers are Kosher Certified and overseen on site, so that gives us a higher level of comfort in the cleaning and ingredient management, but since the lines are not designated for our product alone, there is a potential for cross-contamination.</p><p><strong>The Muscle Muffin\u00ae & Muscle Brownies</strong></p><p>As of January 2020, The Muscle Muffin\u00ae and Muscle Brownies\u00a0have\u00a0been discontinued. As an innovative company, we continually assess our portfolio\u2019s ability to meet consumers\u2019 demand and we are excited to continue to offer new and exciting products.</p>"}},"7338ec6b-902c-425a-bda5-3e93f074a9ae":{"type":"accordion","settings":{"select_faq":"additional_info","heading":true,"title":"The Cookie Crew Rewards Program Information","text":"<p><strong>The Cookie Crew Overview</strong><br/>We created the Cookie Crew to reward our biggest fans. That\u2019s you! The Cookie Crew is our rewards program that rewards you for things you already do. It\u2019s super simple- just <a href=\"https://www.lennylarry.com/account/register\" target=\"_blank\" title=\"https://www.lennylarry.com/account/register\">sign up</a>, earn points, and redeem points for discounts off your purchase. As you earn more points, level up and unlock more exclusive rewards. Want to learn more? Check it out <a href=\"/pages/rewards\" title=\"Rewards\">here</a>!<br/></p>"}},"1603178140151":{"type":"accordion","settings":{"select_faq":"additional_info","heading":true,"title":"The Complete Cookie\u00ae Product Information","text":"<p><strong>protein + fiber content</strong></p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 The 2oz Complete Cookies each contain 8g of Plant-Based Proteins and 5g of Fiber. <br/>\u00a0 \u00a0\u2022\u00a0 \u00a0 The 4oz Complete Cookies each contain 16g of Plant-Based Proteins and 10g of Fiber.<br/><br/></p><p><strong>types of protein</strong></p><p>The Complete Cookies are made with plant-based proteins:</p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 Pea Protein<br/>\u00a0 \u00a0\u2022\u00a0 \u00a0 Rice Protein<br/>\u00a0 \u00a0\u2022\u00a0 \u00a0 Vital Wheat Gluten<br/><br/></p><p><strong>serving sizes</strong></p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 Each 4oz Complete Cookie contains 2 servings.<br/>\u00a0 \u00a0\u2022\u00a0 \u00a0 Each 2oz Complete Cookie is one serving.<br/><br/></p><p><strong>shelf-life</strong></p><p>12-months</p><p><strong>SUMMER SNACKIN\u2019 STRAWBERRY SHORTCAKE FLAVOR</strong></p><p>This 2oz cookie comes in a box of is only around for a limited time while supplies last. Although it does contain non GMO ingredients, it is not Non GMO Project Verified, nor is it kosher like our other Complete Cookies.</p>"}},"bbc34172-5689-4c8d-88d6-447fcdafbb93":{"type":"accordion","settings":{"select_faq":"additional_info","heading":true,"title":"The Cookie-fied Bar\u2122 Product Information","text":"<p><strong>Protein + Fiber Content</strong></p><p>Each bar contains 12g of plant-based protein and 5g of prebiotic fiber.</p><p></p><p></p><p><strong>Types of Protein</strong></p><p>The Complete Cookie-fied Bar is made with plant-based proteins:</p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 Brown rice protein</p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 Pea protein</p><p></p><p></p><p><strong>Serving Sizes</strong></p><p>Each 1.59oz bar is one serving. </p><p>Yes, our Complete Cookie-fied Bar is small... but it's mighty! We have 12g of protein and 5g of fiber packed into a 45-gram bar - other bars like Larabar and KIND are the same size. We are confident that our small bar will satisfy your big snack attacks and sweet cravings. Size doesn't matter \ud83d\ude09</p><p></p><p></p><p><strong>Shelf Life</strong></p><p>12 months</p>"}},"1603178153791":{"type":"accordion","settings":{"select_faq":"additional_info","heading":true,"title":"The Complete Cremes\u00ae Product Information","text":"<p><strong>BACK AND HERE TO STAY</strong></p><p>Back by popular demand, The Complete Cremes\u00ae are here to stay! The Complete Cremes\u00ae are better-for-you sandwich cookies with a creamy filling and made with 5 grams of plant-based protein, 3 grams of prebiotic fiber, and 1/3 less sugar than the leading sandwich cookie brand (per serving size).</p><p></p><p><strong>HOW MANY COOKIES DO I GET?</strong></p><p>A 5.71oz box includes 12 cookies. A 2.86oz pack includes 6 cookies.</p><p>\u00a0</p><p><strong>WHAT IS THE SERVING SIZE?</strong></p><p>2 cookies per serving</p><p>\u00a0</p><p><strong>HOW MUCH PROTEIN DO THEY CONTAIN?</strong></p><p>5g of protein per serving</p><p>A 5.71oz box includes 12 cookies, which is 6 servings. This box has 30g of protein.</p><p>A 2.86oz pack includes 6 cookies, which is 3 servings. This pack has 15g of protein.</p><p>\u00a0</p><p><strong>WHAT TYPES OF PROTEIN ARE USED?</strong></p><p>The Complete Cremes\u00ae are made with a plant-based protein blend of vital wheat gluten and pea protein</p><p>\u00a0</p><p><strong>HOW MUCH FIBER DO THEY CONTAIN?</strong></p><p>3g of fiber per serving</p><p>\u00a0</p><p><strong>1/3 LESS SUGAR CALCULATION</strong></p><p>Our cookies have 1/3 less sugar than the leading sandwich cookie brand per serving size. Because the serving sizes are different, we used 30g of cookies as the benchmark serving size. 30g is the amount of food the FDA considers to be the Reference Amount Customarily Consumed (RACC) for cookies. When comparing our cookies to the leading sandwich cookie brand per 30g serving, our cookies have 1/3 less sugar per serving.</p><p>The Complete Cremes: Sugar (7g) per serving (27g) = 0.26 // Sugar per serving (0.26) multiplied by RACC (30g) = 7.78</p><p>The Leading Sandwich Cookie Brand: Sugar (14g) per serving (34g) = 0.41 // Sugar per serving (0.26) multiplied by RACC (30g) = 12.35</p><p>(7.78/12.35) -1 = 37%. Our cookies have 1/3 less sugar per serving than the leading sandwich cookie brand</p><p>\u00a0</p><p><strong>ARE THEY VEGAN?</strong></p><p>Yes, The Complete Cremes\u00ae are Certified Vegan</p><p>\u00a0</p><p><strong>ARE THEY GLUTEN FREE?</strong></p><p>No, The Complete Cremes\u00ae are not gluten free. They include vital wheat gluten.</p><p>\u00a0</p><p><strong>ARE THEY NON-GMO?</strong></p><p>Yes, The Complete Cremes\u00ae are Non-GMO Project Verified</p><p><strong>\u00a0</strong></p><p><strong>WHAT IS THE SHELF-LIFE?</strong></p><p>12-months</p>"}},"1603178147205":{"type":"accordion","settings":{"select_faq":"additional_info","heading":true,"title":"The Complete Crunchy Cookies Product Information","text":"<p><strong>protein + fiber content</strong></p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 The\u00a01.25oz\u00a0single serving packs each contain 6g of Plant-Based\u00a0Proteins and 4g of Fiber.\u00a0<br/>\u00a0 \u00a0\u2022\u00a0 \u00a0 The\u00a04.25oz\u00a0resealable bags each contain 20g of Plant-Based Proteins and 14g of Fiber<br/><br/></p><p><strong>types of protein</strong></p><p>The Complete Crunchy Cookies are made with plant-based proteins:</p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 Pea Protein<br/>\u00a0 \u00a0\u2022\u00a0 \u00a0 Rice Protein<br/>\u00a0 \u00a0\u2022\u00a0 \u00a0 Vital Wheat Gluten<br/><br/></p><p><strong>serving sizes</strong></p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 The 1.25oz\u00a0packs are\u00a0single serving and\u00a0each contain\u00a06-7 cookies.<br/>\u00a0 \u00a0\u2022\u00a0 \u00a0 The\u00a04.25oz<strong>\u00a0</strong>resealable bags are 3 servings and each\u00a0contain 20-21 cookies.<br/><br/></p><p><strong>shelf-life</strong></p><p>12-months</p>"}},"1603178169864":{"type":"accordion","settings":{"select_faq":"additional_info","heading":true,"title":"Wholesale Program Information","text":"<p><strong>B2B Wholesale Program</strong></p><p>Lenny & Larry's is happy to offer a B2B wholesale program designed for smaller establishments like convenience  stores, bodegas, fitness studios, juice bars, etc. There are specific terms and policies your company must meet before being approved to become a wholesale account. Please visit our <a href=\"https://www.lennylarry.com/pages/wholesale\" target=\"_blank\" title=\"Wholesale Sign Up Page\">Wholesale Sign Up page</a> for more details. Please reach out to sales@lennylarry.com if you are a larger footprint retailer, multi-store chain or a distributor.</p>"}},"1603178178840":{"type":"accordion","settings":{"select_faq":"additional_info","heading":true,"title":"Account Issues & Information","text":"<p><strong>Forgot Password</strong></p><p>If you forgot your password, you can reset your password\u00a0<a href=\"/account\" target=\"_blank\" title=\"/account\">HERE</a></p><p><strong>Forgot Login Email</strong></p><p>If you forgot your login email, you can email\u00a0<a href=\"https://web.archive.org/web/20200906160527/mailto:websupport@lennylarry.com\"><br/>websupport@lennylarry.com</a>\u00a0for assistance. Alternatively, you can create a new account with a new email address.</p><p><strong>Deactivate Account</strong></p><p>If you would like to deactivate your Lenny & Larry\u2019s Account, please log in and go to \"My Account\". Then click on \"Delete Account\" and follow the instructions.\u00a0</p>"}},"1603178197075":{"type":"accordion","settings":{"select_faq":"additional_info","heading":true,"title":"Order Process","text":"<p><strong>Discount Codes</strong></p><p>Only one discount code may be used per order. During checkout, you may enter the discount code at any time. <br/><br/>Customers are responsible for making sure that the discount code is inputted and valid before completing their orders.</p><p><strong>Shipping Address Error</strong></p><p>Our system will show an error if you enter a shipping address that is not validated by USPS. This mostly pertains to locations in rural areas. If you see a valid address error, we recommend that you try shipping to an alternate address that can be validated by USPS. <br/><br/>If you do not have an alternate address or believe your shipping address is valid, please email\u00a0<a href=\"https://web.archive.org/web/20200906160527/mailto:websupport@lennylarry.com\">websupport@lennylarry.com</a> <br/><br/>Please note, we do not ship to P.O. Boxes or college dorms.</p><p></p><p><strong>Order Cancellation</strong></p><p>To cancel your order, please contact <a href=\"mailto:orders@lennylarry.com\">orders@lennylarry.com</a> and we will do our best to assist you.</p>"}},"1603178205694":{"type":"accordion","settings":{"select_faq":"additional_info","heading":true,"title":"Return Policy","text":"<p>Due to the nature of our products, we are unable to accept product returns.\u00a0If you would like to submit a claim due to defective or damaged product, please do so <a href=\"https://www.lennylarry.com/pages/drop-us-a-line\" title=\"https://www.lennylarry.com/pages/drop-us-a-line\">here </a>within 30 days of your purchase for a refund. We handle all claims on a case-by-case basis. Customer satisfaction is extremely important to us and we will work with you to make it right.<br/></p><p>*Note: We only offer refunds on products purchased directly at lennylarry.com.<br/><br/><strong>Click\u00a0</strong><a href=\"/pages/support\" title=\"Order & Product Support\"><strong>HERE</strong></a><strong>\u00a0to create a claim</strong>.</p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 If you ordered from our website, please click on \"Order Issues\"</p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 If you\u00a0purchased from a retailer, please click on \"Product Issues\"</p><p>Our 30 Day Satisfaction Guarantee excludes issues relating to personal preference regarding taste or texture.</p><p><strong>Purchased at Retailer</strong></p><p>Unfortunately, any products purchased from a retailer, third party Ecommerce site, or distributor must be returned or exchanged where purchased.</p>"}},"1603178213908":{"type":"accordion","settings":{"select_faq":"additional_info","heading":true,"title":"Shipping Information","text":"<p><strong>Free Shipping</strong></p><p>Free shipping only applies to orders using the UPS Ground option. It does not apply to 2-3 Day shipping options.<br/><br/>To receive FREE shipping:</p><p>\u00a0 \u00a01.\u00a0 \u00a0 Place your online order of $55 or more (after discount, excluding tax)</p><p>\u00a0 \u00a02.\u00a0 \u00a0 Ship to an address within the United States (P.O. Boxes, Canada and Mexico excluded). We do not ship to FPO, DPO or APO. </p><p>\u00a0 \u00a03\u00a0 \u00a0 Your shipment should arrive within 1-5\u00a0business days after processing</p><p>\u00a0 \u00a04\u00a0 \u00a0 Orders under 9 pounds may be shipped with UPS SurePost (additional 1-2 business days compared to UPS Ground)</p><p>*Processing takes 1-2 business days</p><p><strong>Shipping Options</strong></p><p>We ship within the United States to all 50 states and Washing D.C. (excluding US Territories)</p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 UPS Ground/SurePost (1-8\u00a0business days)</p><p>\u00a0 \u00a0\u00a0 \u00a0\u00a0 \u00a0\u2022\u00a0 \u00a0 $6.95 shipping fee for all orders below $55, FREE for all orders $55+</p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 UPS 2nd\u00a0Day Air (2 business days from date of order)</p><p>\u00a0 \u00a0\u00a0 \u00a0\u00a0 \u00a0\u2022\u00a0 \u00a0 Fee varies by location</p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 UPS 3 Day Select (3 business days from date of order)</p><p>\u00a0 \u00a0\u00a0 \u00a0\u00a0 \u00a0\u2022\u00a0 \u00a0 Fee varies by location\u00a0</p><p>Hawaii & Alaska</p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 UPS Ground (1-6\u00a0business days)</p><p>\u00a0 \u00a0\u00a0 \u00a0\u00a0 \u00a0\u2022\u00a0 \u00a0 Fee varies by address</p><p>\u00a0 \u00a0\u2022\u00a0 \u00a0 UPS 2nd\u00a0Day Air (2 business days from date of order)</p><p>\u00a0 \u00a0\u00a0 \u00a0\u00a0 \u00a0\u2022\u00a0 \u00a0 Fee varies by address</p><p><strong>Shipping & Handling Time</strong></p><p>All in-stock products are generally processed within 1-2 business days after the order is placed. Shipping times will vary based on location relative to our warehouses.</p><p><strong>P.O. Boxes</strong></p><p>Unfortunately, we are unable to ship to any P.O. Box.</p><p><strong>UPS Access Point</strong></p><p>Your package may be sent to the nearest UPS Access Point for security reasons or after the 1st\u00a0delivery attempt. You will have 7 days to pick it up before it is automatically sent back to us. Please check your Tracking Link to see the status of your package. Returned packages to our warehouse can only be reshipped to customers with added shipping costs.</p><p><strong>UPS SurePost</strong></p><p>UPS SurePost is a service we may use for orders under 9 pounds. Using this service, the package is delivered by UPS or the customer's local post office. If for any reason the package is undeliverable, it will be held at the local post office where customers can pick it up with a valid ID. Packages can only be held at the local post office for 7 days before being returned to our warehouse. Customers must pay to reship a returned package.</p><p><strong>Incorrect Address</strong></p><p>Lenny & Larry's is not responsible for any lost package that is incorrectly addressed due to customer error. We generate our shipping labels from the information the customer provides, so if you enter an incorrect or incomplete address (incorrect zip code, missing apartment / suite / office number / name) and your package is lost, Lenny & Larry's is not responsible. If you enter your address incorrectly on our website and need it re-routed by UPS to the correct address, you will be charged a minimum UPS fee of $13.90 to cover the rerouting costs. UPS fuel surcharge fees may also apply and the total amount charged will vary depending on the actual distance that the package is rerouted.If you have inputted the incorrect address on your order, CANCEL your order immediately by logging into your account. Then, place your order again using the correct address. Once your package is processed and shipped, we cannot make any more modifications to your shipment.\u00a0</p><p><strong>International Shipping</strong></p><p>We currently do not ship internationally. If you are interested in carrying Lenny & Larry\u2019s products internationally, please email us at help@lennylarry.com</p>"}}},"block_order":["eacd9222-8bbf-4900-8a5b-63422855ebba","7fb9d189-5cc5-40bc-89c3-4a0637fe2db7","012b8a9e-9f07-47d0-b689-b28285662581","ae515180-f0fa-42e1-af21-91c0f4d0d1bc","02f13157-d474-4960-a6f3-9ce15bc7df6f","20f8f157-52d5-4a1c-a769-0cdd8f332895","2a4839fe-8742-4ede-98ec-a69199658e32","1603178133416","7338ec6b-902c-425a-bda5-3e93f074a9ae","1603178140151","bbc34172-5689-4c8d-88d6-447fcdafbb93","1603178153791","1603178147205","1603178169864","1603178178840","1603178197075","1603178205694","1603178213908"],"settings":{"text":"<p>We love our customers! That\u2019s why we're transparent and upfront about our products and everything we do. If you have questions, please look below for answers. Can\u2019t find what you\u2019re looking for? <a href=\"https://www.lennylarry.com/pages/drop-us-a-line\" title=\"https://www.lennylarry.com/pages/drop-us-a-line\">Contact us</a>, and we\u2019ll help you out!</p>"}},"section-store-locator":{"type":"section-store-locator","blocks":{"1603184266600":{"type":"image","settings":{"image":"shopify://shop_images/logo-image1.png","link":""}},"1603184277110":{"type":"image","settings":{"image":"shopify://shop_images/logo-image2.png","link":""}},"1603184283944":{"type":"image","settings":{"image":"shopify://shop_images/logo-image3.png","link":""}},"1603184290860":{"type":"image","settings":{"image":"shopify://shop_images/logo-image4.png","link":""}},"1603184297335":{"type":"image","settings":{"image":"shopify://shop_images/logo-image5.png","link":""}}},"block_order":["1603184266600","1603184277110","1603184283944","1603184290860","1603184297335"],"settings":{"subtitle":"Please disregard the error message when searching to buy on other online retailers","title":"lenny & larry\u2019s is also sold at these retailers:","text":"(Please call your local store to confirm availability)"}},"section-error":{"type":"section-error","settings":{"image":"shopify://shop_images/404.jpg","subtitle":"Opps! Page Not Found","title":"That\u2019s the Way the Cookie Crumbles","btn_blue_text":"Return Home","btn_blue_link":"/","btn_orange_text":"To the Shop","btn_orange_link":"shopify://collections/all"}},"section-blog-press":{"type":"section-blog-press","settings":{"featured_article":"press/lenny-larrys-introduces-its-first-nutrition-bar-to-the-boss-\u2122-product-portfolio","articles_per_page":16}},"section-blog-videos":{"type":"section-blog-videos","settings":{"featured_article":"videos/50-000-cookies-donated-to-ups-drivers-videos","articles_per_page":16}},"section-sm-contacts":{"type":"section-sm-contacts","blocks":{"e89cabe7-2b70-4f00-85b8-897d5ee50bfe":{"type":"item","settings":{"image":"shopify://shop_images/contact-item-image1.png","title":"help@lennylarry.com","link":"mailto:help@lennylarry.com"}},"170c63e3-beb2-4844-be8e-e7cb5aba4ba8":{"type":"item","settings":{"image":"shopify://shop_images/contact-item-image2.png","title":"15303 Ventura Blvd., Suite 900\nSherman Oaks, CA 91403","link":"https://www.google.com/maps/place/15303+Ventura+Blvd+%23900,+Sherman+Oaks,+CA+91403/@34.1555965,-118.468785,17z/data=!3m1!4b1!4m5!3m4!1s0x80c29794d210e397:0x55dcad733d2166f1!8m2!3d34.1555965!4d-118.4665963"}}},"block_order":["e89cabe7-2b70-4f00-85b8-897d5ee50bfe","170c63e3-beb2-4844-be8e-e7cb5aba4ba8"],"settings":{"select_options":""}},"collection-header":{"type":"collection-header","settings":{"fullwidthbanner":false}},"section-faq-rewards":{"type":"section-faq-rewards","blocks":{"d0018f72-4ee0-4684-9f34-d7a7f94e9631":{"type":"accordion","settings":{"title":"The Cookie Crew Overview","text":"<p>We created the Cookie Crew to reward our biggest fans. That\u2019s you! The Cookie Crew is our rewards program that rewards you for things you already do. It\u2019s super simple- just sign up, earn points, and redeem points for discounts off your purchase on lennylarry.com. As you earn more points, level up and unlock more exclusive rewards. </p>"}},"d930f8d2-9893-4fe8-a6d2-91cd82d43393":{"type":"accordion","settings":{"title":"How to sign up","text":"<p>Starting 01/04/2022, if you\u2019ve made an account or placed an order with us, you are earning points with each purchase. You will need to opt into the Cookie Crew rewards program to redeem those points. Here\u2019s how to opt in:</p><p>If you already have an account with us, simply <a href=\"https://www.lennylarry.com/account/login?return_url=%2Faccount\" target=\"_blank\" title=\"https://www.lennylarry.com/account/login?return_url=%2Faccount\">log in here.</a> Once you log in, go to the Rewards page to see how many points you have earned.</p><p>If you don\u2019t have an account with us, simply <a href=\"https://www.lennylarry.com/account/register\" target=\"_blank\" title=\"https://www.lennylarry.com/account/register\">sign up here</a>. Fill out basic information to create an account and start earning points.</p>"}},"49d8cb30-b463-4c10-89d7-cb73accc0947":{"type":"accordion","settings":{"title":"How to earn points","text":"<p>There are so many ways to earn points! Be sure to log in to your account first. Please note that past purchases do not earn you points. You will be rewarded points for your cart total minus discounts and excluding shipping.</p><p>Make a Purchase: Earn points on every dollar spent on lennylarry.com. At the Cookies level, earn 1 point/dollar. When you level up to Bars, earn 1.25 points/dollar. When you level up to Fitzels, earn 1.5 points/dollar. Points will be added to your account after your order has been fulfilled.</p><p>Create an Account: 25 points- Just create an account <a href=\"https://www.lennylarry.com/account/register\" target=\"_blank\" title=\"https://www.lennylarry.com/account/register\">here!</a></p><p>Referrals: 100 points- Give a friend $5 and get $5 worth of points (100 points) for every successful <a href=\"/pages/refer\" target=\"_blank\" title=\"Refer\">referral</a>. A referral is considered successful after your friend makes their first purchase. The referral code will not work if the friend has already had a purchase on lennylarry.com. No minimum purchase amount required.</p><p>Level Up: After you spend $200, level up to Bars and earn 25 points. After you spend $500, level up to Fitzels and earn 50 points.</p>"}},"9643f7ba-730b-46dc-b6db-72fd7a3c4c44":{"type":"accordion","settings":{"title":"How to redeem points","text":"<p>If you have earned enough points to redeem a discount off your order, you will be given the option to redeem the discount at checkout. Redeem a $5 discount off your order after you earn 100 points. Redeem a $10 discount with 200 points, a $15 discount with 300 points, and a $20 discount with 400 points. The maximum you can redeem in one purchase is $20/400 points. This redemption cannot be combined with any other discount code. Only one discount code per order. Reward points cannot be redeemed if checking out via ShopPay.</p>"}},"39b304de-ffa6-44f1-8a5c-ca1718f86e74":{"type":"accordion","settings":{"title":"Different Levels","text":"<p>The level you are in is based on how many dollars you have spent over 12 months since entering that level. If you spend $0-199, you are in the Cookies level. After you spend $200, you level up to Bars. After you spend $500, you level up to Fitzels.</p><p>Total points won\u2019t reset if you change levels. Your level isn\u2019t associated with how many points you have available to redeem</p><p>After 12 months of inactivity, all points will expire and your level will reset to Cookies level. Your account is considered inactive if you have not earned or redeemed any points within 12 months.</p>"}},"ff7096f5-c45e-4e58-8dce-9923948b9bf4":{"type":"accordion","settings":{"title":"How Referrals Work","text":"<p>Sign into your account to get a referral code <a href=\"https://www.lennylarry.com/pages/refer\"><span style=\"text-decoration:underline\">here</span></a>. Then, simply email your friend or family member that referral code. We\u2019ll give them $5 off their first purchase on lennylarry.com, and you get 100 points for each successful referral. A referral is considered successful if the recipient<br/>uses the referral code to make their first purchase on lennylarry.com. The referral code will not work, and you will not receive any points, if the recipient has previously made a purchase on lennylarry.com or otherwise does not use the referral code with their purchase. No minimum purchase amount required.</p><p>This code does not have an expiration date and is not redeemable for cash. The entire amount of the referral code ($5) will be redeemed, even if the purchase is for less than $5. In order to redeem the referral code, a purchase must not have been made previously on lennylarrry.com.</p>"}},"18c68df6-d7f2-4df5-bcc3-125688c21931":{"type":"accordion","settings":{"title":"Terms & Conditions","text":"<p>To learn more about The Cookie Crew Terms & Conditions, please go <a href=\"/pages/terms-of-service\" title=\"Terms of Service\">here</a>.</p>"}}},"block_order":["d0018f72-4ee0-4684-9f34-d7a7f94e9631","d930f8d2-9893-4fe8-a6d2-91cd82d43393","49d8cb30-b463-4c10-89d7-cb73accc0947","9643f7ba-730b-46dc-b6db-72fd7a3c4c44","39b304de-ffa6-44f1-8a5c-ca1718f86e74","ff7096f5-c45e-4e58-8dce-9923948b9bf4","18c68df6-d7f2-4df5-bcc3-125688c21931"],"settings":{"text":""}},"section-blog-partner":{"type":"section-blog-partner","settings":{"banner":"shopify://shop_images/LL_NPS_Banner_2200x570_no_button_final_v2.jpg","banner_url":"","cta_copy":"Shop Now","cta_url":"https://www.lennylarry.com/collections/shop","featured_article":"partnerships/lenny-larry-s-pledges-150-000-to-the-national-park-foundation","articles_per_page":16}},"wholesaleText":{"type":"wholesaleText","settings":{"content":"<p><strong>Proof of Business:</strong> A valid re-sale license, TIN or EIN (that is associated with the business) is required.</p><p><strong>USA Sales Only:</strong> We do not allow international sales of our USA labeled products, nor allow freight forwarding to other countries.</p><p><strong>Products Sold As Is:</strong> Private Labeling is not available.</p><p><strong>Ordering Information:</strong> All orders must be placed online <a href=\"https://www.lennylarry.com/shop/\" target=\"_blank\" title=\"https://www.lennylarry.com/shop/\">here.</a></p><p><strong>Payment:</strong> Payment with a credit card is required to process your order</p><p><strong>Minimum Order Requirement:</strong> $119 Free Shipping Minimum. Orders below $119 will be charged shipping and handling.</p><p><strong>Shipping & Handling:</strong> Lenny & Larry's ships via UPS Ground. We do not ship wholesale products to PO Boxes or residential addresses. Orders under $119 will be charged a flat shipping rate of $14.98 per order. Orders are generally shipped out within 2-3 business days. </p><p><strong>E-COMMERCE:</strong> <strong>Lenny & Larry\u2019s does not allow any customers to resell products on their own DTC websites</strong> (Shopify, Squarespace, Wix, etc.) <strong>or resell on any 3rd party marketplaces, such as, but not limited to:</strong> eBay, Amazon, Walmart, Bonanza, etc. <strong>We will not accept applications for any companies selling on these platforms.</strong></p><p><strong>Returns & Damaged Products:</strong> Returns will be accepted with prior approval within 30 days of purchase. Returns after 30 days need to be preauthorized and if approved, a 5% restocking fee will be applied to the refund. We will not accept returns in an unsellable condition.</p>"}},"product-recommendation":{"type":"product-recommendation","settings":{}},"1662140000f20774a8":{"type":"section-rewards-form","disabled":true,"settings":{"subtitle":"Get access to exclusive discounts, new product launches & more!","title":"Unlock 20% Off","terms":"Get 20% off when you sign up for emails. By providing your email address, you agree to our <a href>Terms</a> & <a href=\"/pages/privacy-policy\">Privacy Policy</a>","image":"shopify://shop_images/EmailModules_800x800_Q3-2022_1.jpg","embed":"<div class=\"klaviyo-form-XHgdsC\"></div>"}},"section-shopAll-form":{"type":"section-shopAll-form","settings":{"subtitle":"Get 20% off your first purchase!","title":"Like what you see?","terms":"Get 20% off when you sign up for emails. By providing your email address, you agree to our <a href>Terms</a> & <a href=\"/pages/privacy-policy\">Privacy Policy</a>","image":"shopify://shop_images/EmailModules_800x800_Q3-2022_1.jpg","embed":"<div class=\"klaviyo-form-W7WxVY\"></div>"}},"section-blog-form":{"type":"section-blog-form","settings":{"subtitle":"Get 20% off your first purchase!","title":"You\u2019ve Found a Treasure!","content":"You\u2019ve found a rare, hidden treasure that only the most loyal fans find.","terms":"Get 20% off when you sign up for emails. By providing your email address, you agree to our <a href=\"/pages/terms-of-service\">Terms</a> & <a href=\"/pages/privacy-policy\">Privacy Policy</a>","image":"shopify://shop_images/EmailModules_800x800_Q3-2022_1.jpg","embed":"<div class=\"klaviyo-form-W7WxVY\"></div>"}},"section-landingPage-form":{"type":"section-landingPage-form","settings":{"subtitle":"We'll treat you to 20% off when you sign up!","title":"Glad you made it here!","content":"Get access to exclusive discounts, new products, & more. Wasn't that easy?","terms":"Get 20% off when you sign up for emails. By providing your email address, you agree to our <a href=\"/pages/terms-of-service\">Terms</a> & <a href=\"/pages/privacy-policy\">Privacy Policy</a>","image":"shopify://shop_images/EmailModules_800x800_Q3-2022_1.jpg","embed":"<div class=\"klaviyo-form-W7WxVY\"></div>"}},"5d7509d5-633c-4157-9162-9be7ad64eda5":{"type":"section-slider","blocks":{"slide_CKDjt3":{"type":"slide","settings":{"link":"shopify://products/beastly-buffalo-3oz-box-of-8","highlight_color":"#0086d6","image":"shopify://shop_images/StockUpforSuperbowl_Desktop.jpg","image_mobile":"shopify://shop_images/StockUpforSuperbowl_Mobile.jpg","slider_alignment":"none","eyebrow_text":"","slider_heading":"","slider_description":"","description_color":"#4e3629","slider_button_text":"","slider_button_url":"shopify://products/beastly-buffalo-3oz-box-of-8","slider_button_text_color":"#ffffff","slider_button_background_color":"#00507f"}},"slide_Mmx3yP":{"type":"slide","settings":{"link":"shopify://collections/fitzels","highlight_color":"#0086d6","image":"shopify://shop_images/Desktop_Banner_NewFitzelsPretzels_Fall_BB-CF-TT_2025.jpg","image_mobile":"shopify://shop_images/Mobile_Banner_NewFitzelsPretzels_Fall_BB-CF-TT_2025.jpg","slider_alignment":"none","eyebrow_text":"","slider_heading":"","slider_description":"","description_color":"#4e3629","slider_button_text":"","slider_button_url":"","slider_button_text_color":"#ffffff","slider_button_background_color":"#00507f"}},"slide_yQ3jH4":{"type":"slide","settings":{"link":"shopify://products/the-complete-cookie-peanut-butter-chocolate-chip","highlight_color":"#0086d6","image":"shopify://shop_images/Desktop_Banner_FeelingNutty_2026.jpg","image_mobile":"shopify://shop_images/Mobile_Banner_FeelingNutty_2026.jpg","slider_alignment":"none","eyebrow_text":"","slider_heading":"","slider_description":"","description_color":"#4e3629","slider_button_text":"","slider_button_url":"shopify://products/the-complete-cookie-peanut-butter-chocolate-chip","slider_button_text_color":"#ffffff","slider_button_background_color":"#00507f"}},"slide_bWJ6WU":{"type":"slide","disabled":true,"settings":{"link":"shopify://collections/the-complete-cookie","highlight_color":"#0086d6","image":"shopify://shop_images/Desktop_Banner_Cookies_Fall_PMK_2025_2215b93f-e5a2-4c7b-8e4f-14258e38c775.jpg","image_mobile":"shopify://shop_images/Mobile_Banner_Cookies_Fall_PMK_2025.jpg","slider_alignment":"none","eyebrow_text":"","slider_heading":"","slider_description":"","description_color":"#4e3629","slider_button_text":"","slider_button_url":"shopify://collections/the-complete-cookie","slider_button_text_color":"#ffffff","slider_button_background_color":"#00507f"}},"slide_9ChQk8":{"type":"slide","disabled":true,"settings":{"link":"shopify://collections/cookie-fied-bar","highlight_color":"#0086d6","image":"shopify://shop_images/Desktop_Banner_BARS_Fall_CCR_2025.jpg","image_mobile":"shopify://shop_images/Mobile_Banner_BARS_Fall_CCR_2025.jpg","slider_alignment":"none","eyebrow_text":"","slider_heading":"","slider_description":"","description_color":"#4e3629","slider_button_text":"","slider_button_url":"shopify://collections/cookie-fied-bar","slider_button_text_color":"#ffffff","slider_button_background_color":"#00507f"}},"slide_nPdrrz":{"type":"slide","disabled":true,"settings":{"link":"shopify://collections/fitzels","highlight_color":"#0086d6","image":"shopify://shop_images/Desktop_Banner_Pretzels_Fall_PP_2025.jpg","image_mobile":"shopify://shop_images/Mobile_Banner_Pretzels_Fall_PP_2025.jpg","slider_alignment":"none","eyebrow_text":"","slider_heading":"","slider_description":"","description_color":"#4e3629","slider_button_text":"","slider_button_url":"shopify://collections/fitzels","slider_button_text_color":"#ffffff","slider_button_background_color":"#00507f"}}},"block_order":["slide_CKDjt3","slide_Mmx3yP","slide_yQ3jH4","slide_bWJ6WU","slide_9ChQk8","slide_nPdrrz"],"settings":{}},"full-width-video-slider":{"type":"full-width-video-slider","blocks":{"video_hMh9JH":{"type":"video","settings":{"video":"https://cdn.shopify.com/videos/c/o/v/6b2239632bd94d998d8e60c6f6e0872d.mp4","image":"shopify://shop_images/6b2239632bd94d998d8e60c6f6e0872d.thumbnail.0000000000_1000x_4c7703c8-69b5-4c09-a9c8-f46a8da1d64b.webp","content":"Watch Video!"}},"video_MTpJBP":{"type":"video","settings":{"video":"https://cdn.shopify.com/videos/c/o/v/2a2f39aec1d042819c174dded54fb7f6.mp4","content":"Watch Video!"}},"video_zibUAz":{"type":"video","settings":{"video":"https://cdn.shopify.com/videos/c/o/v/50ee3730fa124b428da08ef09e3b4db6.mp4","content":"Watch Video!"}},"video_6xBXdn":{"type":"video","settings":{"video":"https://cdn.shopify.com/videos/c/o/v/a69badfb80d04a9eaf07080083aa070c.mp4","content":"Watch Video!"}}},"block_order":["video_hMh9JH","video_MTpJBP","video_zibUAz","video_6xBXdn"],"settings":{"title":"Campaign Videos"}},"section_video_banner_H9GJ6R":{"type":"section-video-banner","name":"Section Video Banner","settings":{"video":""}}},"content_for_index":["5d7509d5-633c-4157-9162-9be7ad64eda5","1601984375083","1601881215559","1601901953719","1601888807064","1662140000f20774a8","section_video_banner_H9GJ6R","1601898003969","1601987395661"]}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "favicon": "shopify://shop_images/fav.png",
+    "products_per_page": 16,
+    "collection_menu": "collection-menu",
+    "search_items_per_page": 16,
+    "cart_target_price": "55.00",
+    "cart_wholesale_price": "119.00",
+    "cart_until_message": "Only {{ price }} more until you have FREE Shipping!",
+    "subscribe_api_key": "Huq26X",
+    "share_image": "",
+    "social_facebook_link": "https://www.facebook.com/lennyandlarrys/",
+    "social_instagram_link": "https://www.instagram.com/lennyandlarrys/",
+    "sug_product_title": "Try These Tasty Treats",
+    "sug_product_one": "chocolate-5-71oz-9-boxes-of-12-cookies",
+    "sug_product_two": "vanilla-5-71oz-9-boxes-of-12-cookies",
+    "sug_product_three": "4-25-the-complete-crunchy-cookie-chocolate-chip",
+    "imageboss_enable": false,
+    "imageboss_source": "lennylarry",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify://shop_images/logo.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "large",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#f4f7fc",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#ffa300",
+    "checkout_error_color": "#e32c2b",
+    "announcement_bar": "",
+    "logo_image": "",
+    "main_menu": "",
+    "subscribe_title": "",
+    "subscribe_text": "",
+    "subscribe_embed": "",
+    "footer_menu": "",
+    "copyright": "",
+    "footer_bottom_menu": "",
+    "social_twitter_link": "",
+    "social_pinterest_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "image": "",
+    "sections": {
+      "1601881215559": {
+        "type": "section-products",
+        "blocks": {
+          "item_FwjBKt": {
+            "type": "item",
+            "settings": {
+              "image": "shopify://shop_images/1_Hero_Fitzels-20g_TT_3oz8ct_1000x_c3c58cf3-77c2-4634-acb8-3180c2fb367c.png",
+              "subtitle": "Fitzels™",
+              "price": "$19.99",
+              "title": "Taco Tuesday",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/taco-tuesday-3oz-box-of-8"
+            }
+          },
+          "item_TVehRn": {
+            "type": "item",
+            "settings": {
+              "image": "shopify://shop_images/1_Hero_Fitzels-20g_BB_3oz8ct_1000x_b740e774-a56d-4b5a-a57d-f330fc1e7c45.png",
+              "subtitle": "Fitzels™",
+              "price": "$19.99",
+              "title": "Beastly Buffalo",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/beastly-buffalo-3oz-box-of-8"
+            }
+          },
+          "item_yeyWJT": {
+            "type": "item",
+            "settings": {
+              "image": "shopify://shop_images/1_Hero_Fitzels-20g_CF_3oz8ct_1000x_d4d55891-2f75-4688-84b3-54ff84751ee0.png",
+              "subtitle": "Fitzels™",
+              "price": "$19.99",
+              "title": "Caramel Fix",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/caramel-fix-3oz-box-of-8"
+            }
+          },
+          "1601881308213": {
+            "type": "item",
+            "settings": {
+              "image": "shopify://shop_images/1a_Hero_FilmStrip_ChocolateLoversVP_1000x_eb85fdd6-a814-4b00-8d55-65936d61fc07.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "$25.99",
+              "title": "Chocolate Lover's Variety Pack",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/chocolate-lovers-variety-pack"
+            }
+          },
+          "de5e1dd3-3590-4082-9748-18cdb328230f": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/BakersDozen_13ct_CompleteCookie_1000x_2c42bb7d-bf19-4307-90b8-d20ec41646ab.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "23.99",
+              "title": "Bakers Dozen Variety Pack - 10 flavors",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/bakers-dozen-variety-pack-10-flavors"
+            }
+          },
+          "d2ae5077-bf11-420a-942b-d31a64ed070d": {
+            "type": "item",
+            "settings": {
+              "image": "shopify://shop_images/1_B__Hero_PMK_Cookie-LE-4oz12ct_1000x_e652b13f-77ae-4416-8c97-ea0ba4f12286.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "",
+              "title": "Pumpkin Spice",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/the-complete-cookie-pumpkin-spice"
+            }
+          },
+          "908bcf2d-48bc-4256-a836-e7de7b8a4995": {
+            "type": "item",
+            "settings": {
+              "image": "shopify://shop_images/1_B__Hero_AP_Cookie-LE-4oz12ct_1000x_57ea4979-c4cb-438a-9b1f-42b48019b16f.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "$24.49",
+              "title": "Apple Pie",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/the-complete-cookie-apple-pie"
+            }
+          },
+          "item_PWzjeM": {
+            "type": "item",
+            "settings": {
+              "image": "shopify://shop_images/Fitzels-20g_CLT_3oz8ct_1000x_2024.png",
+              "subtitle": "Fitzels™",
+              "price": "$19.99",
+              "title": "Chili Lime Time",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/chilli-lime-time-3oz-box-of-8"
+            }
+          },
+          "43bc983c-fd7b-47e8-8ec4-7d6e7ce16843": {
+            "type": "item",
+            "settings": {
+              "image": "shopify://shop_images/Fitzels-20g_CB_3oz8ct_1000x_2024.png",
+              "subtitle": "Fitzels™",
+              "price": "$19.99",
+              "title": "Cinnamon Buns",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/cinnamon-buns-3oz-box-of-8"
+            }
+          },
+          "0fda4ee1-1912-4d38-9501-a285e5f070ac": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/1_B__Hero_SS_Cookie-LE-4oz12ct_1000x_8199271e-d22c-4994-a9e3-0f5069da6123.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "$22.95",
+              "title": "Strawberry Shortcake",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/strawberry-shortcake-4oz-box-of-12"
+            }
+          },
+          "item_6JpaRA": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/B_Hero_Cookie_PBCC_4oz6ct_1000x_43a8cf7b-f2ba-457e-905c-1e52f475ff7f.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "$7.99",
+              "title": "Peanut Butter Chocolate Chip- 6CT",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/peanut-butter-chocolate-chip-4oz-box-of-4-copy"
+            }
+          },
+          "item_PiGwiC": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Hero_FilmStrip_CC_4oz6ct_1000x_2024_1.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "$7.99",
+              "title": "Chocolate Chip- 6ct",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/chocolate-chip-4oz-box-of-12-copy"
+            }
+          },
+          "1601881220733": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/CC_2oz12ct_Group_Lockups_1000_3.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "$15.99",
+              "title": "Chocolate Chip-2oz",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/chocolate-chip-2oz-box-of-12"
+            }
+          },
+          "item_wfj3F7": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Hero_FilmStrip_CCCD_90g-12ct_LAnagleOpen_1000x_092424.png",
+              "subtitle": "Cookie-fied® Big Bar",
+              "price": "$35.49",
+              "title": "Chocolate Chip Cookie Dough",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/cookie-fied®-big-bar-chocolate-chip-cookie-dough-box-of-12"
+            }
+          },
+          "item_zHpgFk": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/1_Hero_FilmStrip_WCM_45g-9ct_Standing_100324_1000x_7dcfafea-3cfc-4cf3-9040-5c1e3496b5f2.png",
+              "subtitle": "Cookie-fied® Bar",
+              "price": "$16.99",
+              "title": "White Chip Macadamia",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/white-chip-macadamia"
+            }
+          },
+          "item_YtPzyB": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/1_Hero_FilmStrip_CCCD_45g-9ct_Standing_100324_1000x_5aaf2b51-343e-47c6-a6ab-3efa08879030.png",
+              "subtitle": "Cookie-fied® Bar",
+              "price": "$16.99",
+              "title": "Chocolate Chip Cookie Dough",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/chocolate-chip-cookie-dough"
+            }
+          },
+          "item_9FXTWL": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Fitzels-20g_PP_3oz8ct_1000x_2024.png",
+              "subtitle": "Fitzels™",
+              "price": "$19.99",
+              "title": "Pizza Palooza",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/pizza-palooza-3oz-box-of-8"
+            }
+          },
+          "item_Mn8Rwp": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Fitzels-20g_EB_3oz8ct_1000x_2024.png",
+              "subtitle": "Fitzels™",
+              "price": "$19.99",
+              "title": "Everything Bagel",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/everything-bagel-3oz-box-of-8"
+            }
+          },
+          "item_yj7hzr": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Fitzels-20g_BM_3oz8ct_1000x_2024.png",
+              "subtitle": "Fitzels™",
+              "price": "$19.99",
+              "title": "Boujie Mustard",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/boujie-mustard-3oz-box-of-8"
+            }
+          },
+          "431b15f2-aa3e-410f-aff6-e564e918f0c1": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/BakersDozen_13ct_CompleteCookie_1000x_5a979ce0-b190-43c8-b059-885c96af0b4f.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "$23.99",
+              "title": "Bakers Dozen Variety Pack - 10 Flavors",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/bakers-dozen-variety-pack-10-flavors"
+            }
+          },
+          "c72d834f-e5cb-4f5c-9801-009b624710d3": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Hero_FilmStrip_PBC_58g-12ct_Lockups_1000x_052323.png",
+              "subtitle": "Lenny & Larry's® Dip'd™ Wafer",
+              "price": "$15.99",
+              "title": "Peanut Butter Cup",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/peanut-butter-cup-2-05oz-box-of-12"
+            }
+          },
+          "50e6536b-bd2e-4971-a7b7-bce0e14bfd2b": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Hero_FilmStrip_Complete_Cookie_WINTER_PC_Lockups_1000x_042023.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "",
+              "title": "Peppermint Chocolate",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/the-complete-cookie-peppermint-chocolate"
+            }
+          },
+          "fe95d97b-3843-44b3-a5b1-9c79d796c5da": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Hero_FilmStrip_Complete_Cookie_WINTER_GB_Lockups_1000x_042023.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "",
+              "title": "Gingerbread",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/the-complete-cookie-gingerbread"
+            }
+          },
+          "item_YVHTdp": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Complete_Cookie_PBCC_4oz4ct_102523_RAClosed_2400.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "$6.98",
+              "title": "Peanut Butter Chocolate Chip",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/chocolate-chip-4oz-box-of-4"
+            }
+          },
+          "c9f0fcdf-9f61-41b2-b82f-15e98e6f908b": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/WCM_4oz12ct_Group_Lockups_1000.png",
+              "subtitle": "The Complete Cookie®",
+              "price": "$22.95",
+              "title": "White Chocolate Flavored Macadamia",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/the-complete-cookie-white-chocolaty-macadamia"
+            }
+          },
+          "d273ddec-2ff2-4df0-b6a9-14efe59072f7": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Hero_FilmStrip_CCR_90g-12ct_Lockups_1000x_050323_2.png",
+              "subtitle": "Cookie-fied® Big Bar",
+              "price": "$35.49",
+              "title": "Cookies & Creme",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/cookies-creme"
+            }
+          },
+          "b0d8f68e-ae6b-4cf5-b435-2b05ae00f707": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Hero_FilmStrip_PBCC_90g-12ct_Lockups_1000x_050323_2.png",
+              "subtitle": "Cookie-fied® Big Bar",
+              "price": "$35.49",
+              "title": "Peanut Butter Chocolate Chip",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/cookiefied-bar-peanut-butter-chocolate-chip"
+            }
+          },
+          "27e59c13-c143-47ab-8bae-d7a693923948": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Hero_FilmStrip_SCR_45g-9ct_Lockups-WO_1000x_070623.png",
+              "subtitle": "Cookie-fied® Bar",
+              "price": "",
+              "title": "Strawberries & Creme",
+              "btn_text": "Shop Now",
+              "btn_link": "shopify://products/strawberries-creme-box-of-9"
+            }
+          }
+        },
+        "block_order": [
+          "item_FwjBKt",
+          "item_TVehRn",
+          "item_yeyWJT",
+          "1601881308213",
+          "de5e1dd3-3590-4082-9748-18cdb328230f",
+          "d2ae5077-bf11-420a-942b-d31a64ed070d",
+          "908bcf2d-48bc-4256-a836-e7de7b8a4995",
+          "item_PWzjeM",
+          "43bc983c-fd7b-47e8-8ec4-7d6e7ce16843",
+          "0fda4ee1-1912-4d38-9501-a285e5f070ac",
+          "item_6JpaRA",
+          "item_PiGwiC",
+          "1601881220733",
+          "item_wfj3F7",
+          "item_zHpgFk",
+          "item_YtPzyB",
+          "item_9FXTWL",
+          "item_Mn8Rwp",
+          "item_yj7hzr",
+          "431b15f2-aa3e-410f-aff6-e564e918f0c1",
+          "c72d834f-e5cb-4f5c-9801-009b624710d3",
+          "50e6536b-bd2e-4971-a7b7-bce0e14bfd2b",
+          "fe95d97b-3843-44b3-a5b1-9c79d796c5da",
+          "item_YVHTdp",
+          "c9f0fcdf-9f61-41b2-b82f-15e98e6f908b",
+          "d273ddec-2ff2-4df0-b6a9-14efe59072f7",
+          "b0d8f68e-ae6b-4cf5-b435-2b05ae00f707",
+          "27e59c13-c143-47ab-8bae-d7a693923948"
+        ],
+        "settings": {
+          "subtitle": "Our most popular treats",
+          "title": "Bite into this"
+        }
+      },
+      "1601888807064": {
+        "type": "section-testimonials",
+        "blocks": {
+          "1601889247217": {
+            "type": "testimonial",
+            "settings": {
+              "title": "\"I wasn't sure how well these would taste.. since they virtually have no ingredients to make \"real\" cookies. But they're really fluffy and taste almost better than \"normal\" cookies. I Already bought 3 boxes after tasting just one of these beautiful things.\"",
+              "text": "Jan R.  |  Portland, Oregon"
+            }
+          },
+          "c1f6abef-8217-4a43-ab90-76d12debdb11": {
+            "type": "testimonial",
+            "settings": {
+              "title": "\"Lenny & Larry's cookies are a mainstay in our house. My 18 year old son includes one as part of his post workout training because of the high protein, no soy and all around great taste. The rest of us enjoy them as a somewhat guilt free snack.\"",
+              "text": "Halley B. | Austin, Texas"
+            }
+          },
+          "80ce6c0d-5226-408d-96cb-3b437d592706": {
+            "type": "testimonial",
+            "settings": {
+              "title": "\"Really tasty, really filling, and really fresh! I eat these for lunch with a coffee or iced tea and they keep me full all day.  With all the fiber and protein, I have the cookie at 12:30 pm and don’t get hungry until 7:00 pm.\"",
+              "text": "Prince L. | Los Angeles, California"
+            }
+          }
+        },
+        "block_order": [
+          "1601889247217",
+          "c1f6abef-8217-4a43-ab90-76d12debdb11",
+          "80ce6c0d-5226-408d-96cb-3b437d592706"
+        ],
+        "disabled": true,
+        "settings": {
+          "image": "shopify://shop_images/HomePg-Ing-Left-Sprinkles_1000x1000_0e376227-547d-4865-abcc-6cd68df15386.png",
+          "image_bottom": "shopify://shop_images/HomePg-Ing-Right-SD_1000x1000_2f996a91-757d-4bf1-b115-0e9f139bac1d.png"
+        }
+      },
+      "1601898003969": {
+        "type": "section-logos-slider",
+        "blocks": {
+          "1601898278747": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/slider-logo-image1.png",
+              "link": "https://www.latimes.com/lifestyle/story/2020-04-07/healthy-snacks-delivered-to-your-door"
+            }
+          },
+          "1601898308875": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/slider-logo-image2.png",
+              "link": "https://vegnews.com/2020/5/vegan-brand-plans-to-donate-50-000-cookies-to-ups-drivers"
+            }
+          },
+          "1601898318138": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/slider-logo-image3.png",
+              "link": "https://www.foodbusinessnews.net/articles/6262-q-a-protein-cookie-company-on-the-cutting-edge"
+            }
+          },
+          "1601898324683": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/slider-logo-image4.png",
+              "link": "https://www.usmagazine.com/"
+            }
+          },
+          "1601898332698": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/slider-logo-image5.png",
+              "link": "https://www.menshealth.com/nutrition/g21053235/best-protein-cookies/"
+            }
+          }
+        },
+        "block_order": [
+          "1601898278747",
+          "1601898308875",
+          "1601898318138",
+          "1601898324683",
+          "1601898332698"
+        ],
+        "settings": {
+          "subtitle": "As Seen In"
+        }
+      },
+      "1601901953719": {
+        "type": "section-product-index",
+        "disabled": true,
+        "settings": {
+          "subtitle": "New to the shop",
+          "title": "Fresh out of the Oven!"
+        }
+      },
+      "1601984375083": {
+        "type": "section-logos",
+        "blocks": {
+          "1601984380303": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/protein_2x_770af7f3-ada2-469c-9288-45c7c6b3db34.png",
+              "link": "#"
+            }
+          },
+          "1601984390291": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/non-gmo_2x_20c72f31-8b9d-46a5-b13e-4a291e94c74c.png",
+              "link": ""
+            }
+          },
+          "1601984397091": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/fiber_2x_b5d011fa-58eb-4013-8acc-ea25a318ca3f.png",
+              "link": ""
+            }
+          },
+          "1601984405733": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/nutritious_2x_80c75b7a-2697-4522-aaa5-36681575a2fc.png",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1601984380303",
+          "1601984390291",
+          "1601984397091",
+          "1601984405733"
+        ],
+        "settings": {}
+      },
+      "1601987395661": {
+        "type": "section-instafeed",
+        "settings": {
+          "title": "@LENNYANDLARRYS",
+          "link": "https://www.instagram.com/p/CHqJ4qMldKA/"
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "1602070321476": {
+            "type": "item",
+            "settings": {
+              "dropdown_handle": "Shop",
+              "image": "shopify://shop_images/NavBar_CompleteCookie_360x360_b1a53c4f-24ff-4e5e-8217-d565d7df2dea.png",
+              "title": "the complete cookie®",
+              "subtitle": "Soft-Baked Protein Cookie",
+              "link": "shopify://collections/the-complete-cookie®"
+            }
+          },
+          "378f82bb-e5e1-4c85-a383-2e1b414aedb2": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "dropdown_handle": "Shop",
+              "image": "shopify://shop_images/NavBar_Kickstart_ACBL_360x360_f481b979-c7a5-4a90-9c21-6ad175d244b4.jpg",
+              "title": "The Complete KickStart",
+              "subtitle": "Plant-Based Protein & Probiotic Breakfast Bar",
+              "link": "shopify://collections/the-complete-kickstart"
+            }
+          },
+          "f0b7446c-6e28-4b4f-854a-e05b5634c3f2": {
+            "type": "item",
+            "settings": {
+              "dropdown_handle": "Shop",
+              "image": "shopify://shop_images/NavBar_Cremes_CHOCVAN_360x360_0b7857fc-5ab7-4825-b8c7-42d25b5e4e1c.jpg",
+              "title": "The Complete Cremes®",
+              "subtitle": "Better-For-You Sandwich Cookies",
+              "link": "shopify://collections/the-complete-cremes"
+            }
+          },
+          "085aff21-1ab8-41c8-a6da-766ca2cd35b3": {
+            "type": "item",
+            "settings": {
+              "dropdown_handle": "Shop",
+              "image": "shopify://shop_images/NavBar_CBAR_360x360_71337523-a366-43a4-ad43-fc41521b2670.png",
+              "title": "Cookie-fied® Bar",
+              "subtitle": "Two Sizes of Chewy-Crunchy-Yummy Snack Bars",
+              "link": "shopify://collections/cookie-fied-bar"
+            }
+          },
+          "1602070509882": {
+            "type": "item",
+            "settings": {
+              "dropdown_handle": "Shop",
+              "image": "shopify://shop_images/NavBar_CrunchyCCDC_042124_360x360_f45fda8e-33ac-469e-87de-717711fe4458.png",
+              "title": "The Complete Crunchy cookies®",
+              "subtitle": "Our Delicious Flavors With a Crunch",
+              "link": "shopify://collections/the-complete-crunchy-cookies"
+            }
+          },
+          "1284a278-1726-47f6-ab28-08591a2f0d7a": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "dropdown_handle": "Shop",
+              "image": "shopify://shop_images/NavBar_Dip_d_Wafer_Bar_360x_052323.png",
+              "title": "Dip'd™ Wafer",
+              "subtitle": "Light & Crispy Protein Wafer Bars",
+              "link": "shopify://collections/dipped-wafer"
+            }
+          },
+          "item_Ne7V3b": {
+            "type": "item",
+            "settings": {
+              "dropdown_handle": "Shop",
+              "image": "shopify://shop_images/NavBar_Fitzels_360x360_bfe4ab38-6578-445d-8276-daae0bdca21c.png",
+              "title": "Fitzels",
+              "subtitle": "Plant-Based Protein Packed Pretzel",
+              "link": "shopify://collections/fitzels"
+            }
+          },
+          "680d3e1d-78f6-4716-8131-3c895e083908": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "dropdown_handle": "Shop",
+              "image": "shopify://shop_images/NavBar_BOSS_Cookie_CCPBCC_360x360_a2b66b45-9b42-4cee-a2f4-c3c06cb77acc.png",
+              "title": "The BOSS! Cookie",
+              "subtitle": "Our Dairy & Plant-Based Protein Cookie",
+              "link": "shopify://collections/the-boss-cookie"
+            }
+          },
+          "863abd4f-c69d-4fad-84bf-a222500d07a2": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "dropdown_handle": "Shop",
+              "image": "shopify://shop_images/NavBar_BOSS_ImmunityBar_CMBPBC_360x360_1.png",
+              "title": "The BOSS! Immunity Bar",
+              "subtitle": "Our Dairy & Plant-Based Protein Crunchy Wafer Bars",
+              "link": "shopify://collections/the-boss-immunity-bar"
+            }
+          },
+          "1602070662475": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "dropdown_handle": "Shop",
+              "image": "shopify://shop_images/NavBar_Keto_CCPB_360x360_90c8f3b6-3f84-442c-9f08-d11c050f5c02.jpg",
+              "title": "keto cookie",
+              "subtitle": "Your Low Carb Go-To",
+              "link": "shopify://collections/keto-cookie™"
+            }
+          },
+          "item_gYh4Db": {
+            "type": "item",
+            "settings": {
+              "dropdown_handle": "Shop",
+              "image": "shopify://shop_images/NavBar_Complete_FALL_LE_360x360_0c988e38-bd01-48e7-895b-40e7e5a5850f.png",
+              "title": "Limited Edition",
+              "subtitle": "Delicious Flavors Back for a Limited Time!",
+              "link": "shopify://collections/limited-edition"
+            }
+          },
+          "a2c9df12-3ded-46a5-b42f-b579db60fe50": {
+            "type": "item",
+            "settings": {
+              "dropdown_handle": "Shop",
+              "image": "shopify://shop_images/NavBar_VarietyPacks_360x360_c8a5eba3-adf9-4fc9-a471-a7e964262af6.png",
+              "title": "Variety Packs",
+              "subtitle": "Get a Set of Your Favorite Cookies",
+              "link": "shopify://collections/variety-packs"
+            }
+          }
+        },
+        "block_order": [
+          "1602070321476",
+          "378f82bb-e5e1-4c85-a383-2e1b414aedb2",
+          "f0b7446c-6e28-4b4f-854a-e05b5634c3f2",
+          "085aff21-1ab8-41c8-a6da-766ca2cd35b3",
+          "1602070509882",
+          "1284a278-1726-47f6-ab28-08591a2f0d7a",
+          "item_Ne7V3b",
+          "680d3e1d-78f6-4716-8131-3c895e083908",
+          "863abd4f-c69d-4fad-84bf-a222500d07a2",
+          "1602070662475",
+          "item_gYh4Db",
+          "a2c9df12-3ded-46a5-b42f-b579db60fe50"
+        ],
+        "settings": {
+          "announcement_bar": "Only {{ price }} more until you have free shipping!",
+          "announcement_bar_text_after": "Free Shipping!",
+          "logo_image": "shopify://shop_images/logo.png",
+          "main_menu": "main-menu",
+          "mobile_main_menu": "mobile-main-menu",
+          "mobile_bottom_menu": "mobile-header-menu-bottom",
+          "dropdown_btn_text": "Shop All Cookies & Bars",
+          "dropdown_btn_link": "shopify://collections/shop"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "subscribe_title": "Connect with us",
+          "subscribe_text": "Let’s be friends! Sign up for new flavor launches, awesome deals, and more.",
+          "subscribe_embed": "<div class=\"klaviyo-form-TeYc63\"></div>",
+          "footer_menu": "footer",
+          "copyright": "<p>Copyright © [year] Lenny & Larry’s, LLC</p>",
+          "footer_bottom_menu": "footer-bottom-menu"
+        }
+      },
+      "badges": {
+        "type": "badges",
+        "blocks": {
+          "1602600878319": {
+            "type": "badge",
+            "settings": {
+              "title": "New!",
+              "image": "shopify://shop_images/Badges_NEW_140x140_ea982d55-74d7-46ca-9333-18d65d02bdc7.png"
+            }
+          },
+          "74059cbc-43b3-4346-bd8c-19e03a0f6817": {
+            "type": "badge",
+            "settings": {
+              "title": "limited",
+              "image": "shopify://shop_images/Badges_LIMITEDTIME_140x140_4b10b191-4b69-4411-9ca3-3a4ee3dee3b2.png"
+            }
+          },
+          "85ca20ec-4923-4c6f-b8d1-9b8b0a3c4f3a": {
+            "type": "badge",
+            "settings": {
+              "title": "best_seller",
+              "image": "shopify://shop_images/Badges_BESTSELLER_140x140_d7ff6069-378b-41d6-b72b-62e69aa932b8.png"
+            }
+          },
+          "1602600822902": {
+            "type": "badge",
+            "settings": {
+              "title": "sale",
+              "image": "shopify://shop_images/Badges_SALEYELLOW_140x140_bef56ffc-d464-4669-a714-dd9bacc83369.png"
+            }
+          }
+        },
+        "block_order": [
+          "1602600878319",
+          "74059cbc-43b3-4346-bd8c-19e03a0f6817",
+          "85ca20ec-4923-4c6f-b8d1-9b8b0a3c4f3a",
+          "1602600822902"
+        ],
+        "settings": {}
+      },
+      "section-contacts": {
+        "type": "section-contacts",
+        "blocks": {
+          "1602831570908": {
+            "type": "item",
+            "settings": {
+              "image": "shopify://shop_images/contact-item-image1.png",
+              "title": "help@lennylarry.com",
+              "link": "mailto:help@lennylarry.com"
+            }
+          },
+          "1602831612610": {
+            "type": "item",
+            "settings": {
+              "image": "shopify://shop_images/contact-item-image2.png",
+              "title": "14300 Arminta St\nPanorama City, CA 91402",
+              "link": "#"
+            }
+          }
+        },
+        "block_order": [
+          "1602831570908",
+          "1602831612610"
+        ],
+        "settings": {
+          "select_options": "Department\nAccount\nSales\nInternational Sales",
+          "image": "shopify://shop_images/contact-image1.png"
+        }
+      },
+      "section-slider-about": {
+        "type": "section-slider-about",
+        "blocks": {
+          "1602839208201": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/slide-about-image1.png",
+              "subtitle": "1993",
+              "title": "Cookie Creators",
+              "text": "Two gym rats named Benny and Barry get tired of eating the same boring things to get their protein. They imagine adding protein to their favorite foods starting with a high protein muffin. Boom! Lenny & Larryʼs is created, making clean eating the new cool."
+            }
+          },
+          "1602839221750": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/WholeFoods_Market_455x455_8cea4bca-db4d-4c60-8b28-6af371e77dd3.png",
+              "subtitle": "1994",
+              "title": "Retailer Debut",
+              "text": "Lenny & Larry's starts to gain traction with local Southern California retailers including Mrs. Gooch's, Erwhon, Rainbow Acres, Mother's Markets, Gold's Gym, and Powerhouse Gym. This is also the year that we get into Whole Foods!"
+            }
+          },
+          "1602839233612": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/LennyLarry_LogoOrange_455x455_d34922c1-02c1-46a4-b093-c1efc778fe1b.png",
+              "subtitle": "2001",
+              "title": "New Ownership",
+              "text": "By now Benny has gone on to pursue other things, and Barry is left to do some soul searching. Should he buckle down and stay, or is he meant to do other things? After much deliberation and with a heavy heart, Barry ends up selling the business."
+            }
+          },
+          "1602839241986": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/PB_Muscle-Brownie_Circa_455x455_2c35e454-82aa-4e4a-9b84-96383160a082.png",
+              "subtitle": "2007",
+              "title": "Reunited",
+              "text": "Plagued with the feeling that he should never have left, Barry eagerly returns to Lenny & Larry’s as a partner to jumpstart the business and give it another go. They introduce a new product line called the Muscle Brownie®."
+            }
+          },
+          "1602839298704": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/CC_PackagingCirca2014_455x455_e0ea02d6-c2f5-46ad-b364-1afe7f66f454.png",
+              "subtitle": "2013",
+              "title": "The Complete Cookie",
+              "text": "Ever innovating, Lenny & Larry’s starts to focus on The Complete Cookie® product line and revamps the packaging. Lenny & Larry’s makes Inc.’s list of fastest growing companies five years in a row."
+            }
+          },
+          "1602839309791": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/BC_2oz_PackagingCirca2017_455x455_93b4b305-b5bf-486f-8d18-e243d039462e.png",
+              "subtitle": "2016",
+              "title": "Gaining Traction",
+              "text": "In addition to being available in Walmart, Kroger, Vitamin Shoppe, and 7-Eleven, The Complete Cookie lands in Target and Walgreens stores. With demand only increasing, Lenny & Larry’s launches a smaller 2oz Complete Cookie to please the fans."
+            }
+          },
+          "1602839318646": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/CDKetoCrunchy_Innovation_455x455_478eb1be-042d-4b21-97f3-6358e65cbfa9.png",
+              "subtitle": "2019",
+              "title": "Innovation",
+              "text": "Today, Lenny & Larry’s The Complete Cookie® is available in most major retailers nationwide, and over 30 countries worldwide. True to our beginnings, Lenny & Larry’s continues to develop new flavors and products. You can bet there’s more on the way!"
+            }
+          },
+          "e1edd2a2-c867-4f1c-9e5d-c73611b3107c": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/BOSSup_Spring-2021_455x455_850e9a6a-d3ed-4605-be5f-9b5d94c47632.png",
+              "subtitle": "Spring 2021",
+              "title": "BOSS UP!",
+              "text": "Lenny & Larry's crafted The BOSS! Cookie for those looking for more protein, more fiber and less sugar. Loaded with 18 grams of dairy and plant-based protein, but with only 1 gram of sugar, this cookie will show your under who's The BOSS!"
+            }
+          },
+          "61a8810b-0732-42ec-8aab-792ff1788b93": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/CookieInABar_Summer-2021_455x455_8c567eb2-deea-4a46-b55c-fe225926a8cd.png",
+              "subtitle": "Summer 2021",
+              "title": "Cookie in a bar",
+              "text": "What's more fun than a cookie in a bar?! At Lenny & Larry's, we created The Complete Cookie-fied Bar™ made with our signature cookie pieces that gives you a fun crunch in every delicious bite. The soft, chewy bar also contains 12g plant-based protein, 5g prebiotic fiber, 6g of sugar and is gluten free. Get ready to be Cookie-fied™!"
+            }
+          }
+        },
+        "block_order": [
+          "1602839208201",
+          "1602839221750",
+          "1602839233612",
+          "1602839241986",
+          "1602839298704",
+          "1602839309791",
+          "1602839318646",
+          "e1edd2a2-c867-4f1c-9e5d-c73611b3107c",
+          "61a8810b-0732-42ec-8aab-792ff1788b93"
+        ],
+        "settings": {}
+      },
+      "section-image-text-about": {
+        "type": "section-image-text-about",
+        "settings": {
+          "subtitle": "Introducing",
+          "title": "Our Newest Bites",
+          "image": "shopify://shop_images/about-image-bottom_1240x-boss.png",
+          "content_subtitle": "Innovation never stops at Lenny & Larryʼs and now we present",
+          "content_title": "Lenny & Larry's The BOSS! Cookie™",
+          "content_text": "Loaded with 18g of protein, but with 1g of sugar, this cookie will show your hunger who's The BOSS!",
+          "btn_text": "Shop All The Boss! cookie Flavors",
+          "btn_link": "shopify://collections/the-boss-cookie"
+        }
+      },
+      "section-blog-about": {
+        "type": "section-blog-about",
+        "settings": {
+          "subtitle": "Fresh from",
+          "title": "The Lenny & Larry’s Blog",
+          "blog": "news"
+        }
+      },
+      "section-blog": {
+        "type": "section-blog",
+        "settings": {
+          "featured_article": "news/the-do-anywhere-workout-you-can-fit-into-any-day",
+          "articles_per_page": 16
+        }
+      },
+      "section-faq": {
+        "type": "section-faq",
+        "blocks": {
+          "eacd9222-8bbf-4900-8a5b-63422855ebba": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "general",
+              "heading": true,
+              "title": "WHO ARE LENNY & LARRY?",
+              "text": "<p>Benny & Barry were two buddies who were tired of the same old protein options. In 1993 they started Lenny & Larry's with the idea of turning delicious delights into clean, protein powerhouse foods. They started with a muffin and Lenny & Larry’s was born.</p><p></p><p><strong>Who owns Lenny & Larry's?<br/></strong>Lenny & Larry’s is privately held and the founder, Barry Turner, is a part owner of the brand. </p><p><br/><strong>Who Founded Lenny & Larry’s?</strong><br/>Lenny & Larry’s was founded by buddies Benny and Barry. Over 25 years ago, two weightlifters named Benny & Barry decided protein should not only taste delicious but be enjoyable to eat and the first protein muffin was born! But Benny & Barry didn’t stop at muffins!  Their passion for protein packed snacks with high-quality ingredients and heavenly taste continued.</p>"
+            }
+          },
+          "7fb9d189-5cc5-40bc-89c3-4a0637fe2db7": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "general",
+              "heading": true,
+              "title": "HOW MUCH PROTEIN ARE IN LENNY & LARRY’S PRODUCTS?",
+              "text": "<p>Lenny & Larry’s products include 5 to 18g of protein depending on the product and serving size. Take a look at the protein levels in each of our snacks below.</p><p></p><p><strong>The Amount of Protein in The Complete Cookie®</strong><br/>The Complete Cookie® 2oz contains 8g of plant-based proteins<br/>The Complete Cookie® 4oz contains 16g of plant-based proteins</p><p><strong>The Amount of Protein in The Complete Cookie-fied Bar®</strong><br/>The Complete Cookie-fied Bar® contains 12g of plant-based proteins</p><p><strong>The Amount of Protein in The Complete Cremes®</strong><br/>The Complete Cremes® contains 5g of plant-based proteins per serving</p><p><strong>The Amount of Protein in The Complete Crunchy Cookies®</strong><br/>The Complete Crunchy Cookies® contains 6g of plant-based proteins per serving</p><p><strong>The Amount of Protein in Fitzels®</strong><br/>Fitzels® contains 20g of plant-based proteins</p><p><strong>What Kind of Protein Is in Lenny & Larry’s Snacks?<br/></strong>Plant-based proteins are the key protein type in all of our snacks. A majority of our products use pea protein, rice protein and vital wheat gluten. Our gluten-free products use a brown rice and pea protein blend, or an almond and pea protein blend. The BOSS! products also include dairy protein. For more specific information per product, look under Additional Information.</p>"
+            }
+          },
+          "012b8a9e-9f07-47d0-b689-b28285662581": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "general",
+              "heading": true,
+              "title": "ARE LENNY & LARRY’S PRODUCTS VEGAN?",
+              "text": "<p>Yes, most of our products are vegan.</p><p><strong>Is The Complete Cookie® vegan?</strong><br/>Yes, The Complete Cookie® is vegan.</p><p><strong>Is The Complete Cookie-fied Bar® vegan?</strong><br/>Yes, The Complete Cookie-fied Bar® is vegan.</p><p><strong>Is Fitzels vegan?<br/></strong>Yes, Fitzels are vegan.</p><p><strong>Is The Complete Cremes® vegan?</strong><br/>Yes, The Complete Cremes® are Certified Vegan.</p><p><strong>Are The Complete Crunchy Cookies® vegan?</strong><br/>Yes, The Complete Crunchy Cookies® are vegan.</p>"
+            }
+          },
+          "ae515180-f0fa-42e1-af21-91c0f4d0d1bc": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "general",
+              "heading": true,
+              "title": "ARE LENNY & LARRY’S PRODUCTS HIGH IN FIBER?",
+              "text": "<p>Lenny & Larry’s cookies and bars include fiber to provide a delicious, fun way to increase dietary fiber in your diet. The<br/>American Heart Association suggests eating 25-40 grams of fiber a day based on a 2,000 calorie diet for adults. It is estimated that only 20% of Americans get enough fiber. Below is a list of fiber levels for each product.</p><p><strong>The Amount of Fiber in The Complete Cookie®</strong><br/>The Complete Cookie® 2oz contains 5g of plant-based proteins<br/>The Complete Cookie® 4oz contains 10g of fiber</p><p><strong>The Amount of Fiber in The Complete Cookie-fied Bar®</strong><br/>The Complete Cookie-fied Bar® contains 5g of fiber </p><p><strong>The Amount of Fiber in The Complete Cremes®</strong><br/>The Complete Cremes® contains 3g of prebiotic fiber per serving</p><p><strong>The Amount of Fiber in The Complete Crunchy Cookies®<br/></strong>The Complete Crunchy Cookies® contains 4g of fiber per serving</p><p></p>"
+            }
+          },
+          "02f13157-d474-4960-a6f3-9ce15bc7df6f": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "general",
+              "heading": true,
+              "title": "ARE LENNY & LARRY’S PRODUCTS DAIRY FREE?",
+              "text": "<p>Yes, all of our products are dairy free. </p>"
+            }
+          },
+          "20f8f157-52d5-4a1c-a769-0cdd8f332895": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "general",
+              "heading": true,
+              "title": "ARE LENNY & LARRY’S PRODUCTS GLUTEN FREE?",
+              "text": "<p>The Complete Cookie-fied Bar® is gluten free. Gluten can be found in other  Lenny & Larry’s products.</p>"
+            }
+          },
+          "2a4839fe-8742-4ede-98ec-a69199658e32": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "general",
+              "heading": true,
+              "title": "HOW CAN I SIGN UP FOR THE LENNY & LARRY’S REWARDS PROGRAM?",
+              "text": "<p>To become part of The Cookie Crew rewards program, all you have to do is <a href=\"https://www.lennylarry.com/account/register\" title=\"https://www.lennylarry.com/account/register\">sign up for Lenny & Larry’s account</a>. If you have an existing account on our website, you are automatically enrolled in our rewards program. Each purchase you’ve made since January 4th, 2022 has accumulated reward points. To view your  rewards points, <a href=\"https://www.lennylarry.com/account/login\" title=\"https://www.lennylarry.com/account/login\">log into the Lenny & Larry’s website</a> and visit <a href=\"https://www.lennylarry.com/pages/rewards\" title=\"https://www.lennylarry.com/pages/rewards\">The Cookie Crew rewards page</a>.</p><p>Interested in earning points and getting a discount at the same time? Sign up for Lenny & Larry’s email list and you can receive exclusive offers like free shipping and more—all while you earn reward points. You can sign up by going to the footer of our website.</p><p>Full <a href=\"https://www.lennylarry.com/pages/rewards\" title=\"https://www.lennylarry.com/pages/rewards\">rewards program</a> details are found below in the Additional Product Information section.</p>"
+            }
+          },
+          "1603178133416": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "additional_info",
+              "heading": true,
+              "title": "General Product Information",
+              "text": "<p><strong>Vegan Products</strong></p><p>Our Complete Cookies, Complete Crunchy Cookies, The Complete Cremes™, and Keto Cookies™ are 100% Vegan and do not contain any dairy, eggs or any animal-products, including honey. </p><p><strong>Dietary Fiber</strong></p><p>Lenny & Larry’s offers protein-packed, fiber fortified products that provide consumers with a delicious, fun way to increase dietary fiber in their diet. The American Heart Association suggests eating 25-30 grams of fiber a day, based on a 2,000 calorie diet for adults.  It is estimated only 20% of Americans get enough fiber.</p><p>Similar to gradually building muscle by regularly exercising over time, our bodies need to adjust to a high fiber diet. During this adjustment period, you may experience some discomfort from the dietary fiber feeding the good bacteria in your digestive system, or symptoms like bloating and excess production of gas. The duration of this adjustment period varies, but symptoms generally subside within 5-7 days. We recommend consulting your physician for questions about your fiber intake.</p><p><strong>Gluten-Free</strong></p><p>Our Complete Cookies, Complete Crunchy Cookies and BOSS! Cookies are not gluten free. However, our Keto Cookies and Complete Cookie-fied Bars are!</p><p><strong>Non-GMO</strong></p><p>All our products are Non-GMO. Please look for the <strong>\"</strong>Non-GMO Project Verified<strong>\"</strong> seal on the product pages.</p><p><strong>Fair Trade</strong></p><p>Our cocoa suppliers practice Fair Trade laws. </p><p><strong>Palm Oil</strong></p><p>We do use sustainable sources and we are certified by the RSPO (Round Table on Sustainable Palm Oil). </p><p><strong>Phosphorus + Potassium</strong></p><p>We do not test for these levels. </p><p><strong>Cane Sugar</strong></p><p>Our cane sugar is not processed with bone char. Our Complete Cookies, Complete Cookiefied Bar, and Crunchy Complete Cookies are 100% vegan, including each ingredients’ varying processes.</p><p><strong>Freezing product</strong></p><p>Our delicious cookies may be kept in the freezer for up to 6-months. </p><p><strong>Allergens</strong></p><p>We contract with multiple bakery partners and some are producing our product exclusively, but many are producing product that shares production lines and equipment with traditional bakery products that do contain common allergens. Of course, each bakery cleans the production line and equipment thoroughly between products, following HACCP guidelines to prevent cross-contamination, but in the bakeries where other non-Lenny & Larry product is produced, the production is not segregated or isolated to its own production line. All of our cookie manufacturers are Kosher Certified and overseen on site, so that gives us a higher level of comfort in the cleaning and ingredient management, but since the lines are not designated for our product alone, there is a potential for cross-contamination.</p><p><strong>The Muscle Muffin® & Muscle Brownies</strong></p><p>As of January 2020, The Muscle Muffin® and Muscle Brownies have been discontinued. As an innovative company, we continually assess our portfolio’s ability to meet consumers’ demand and we are excited to continue to offer new and exciting products.</p>"
+            }
+          },
+          "7338ec6b-902c-425a-bda5-3e93f074a9ae": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "additional_info",
+              "heading": true,
+              "title": "The Cookie Crew Rewards Program Information",
+              "text": "<p><strong>The Cookie Crew Overview</strong><br/>We created the Cookie Crew to reward our biggest fans. That’s you! The Cookie Crew is our rewards program that rewards you for things you already do. It’s super simple- just <a href=\"https://www.lennylarry.com/account/register\" target=\"_blank\" title=\"https://www.lennylarry.com/account/register\">sign up</a>, earn points, and redeem points for discounts off your purchase. As you earn more points, level up and unlock more exclusive rewards. Want to learn more? Check it out <a href=\"/pages/rewards\" title=\"Rewards\">here</a>!<br/></p>"
+            }
+          },
+          "1603178140151": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "additional_info",
+              "heading": true,
+              "title": "The Complete Cookie® Product Information",
+              "text": "<p><strong>protein + fiber content</strong></p><p>   •    The 2oz Complete Cookies each contain 8g of Plant-Based Proteins and 5g of Fiber. <br/>   •    The 4oz Complete Cookies each contain 16g of Plant-Based Proteins and 10g of Fiber.<br/><br/></p><p><strong>types of protein</strong></p><p>The Complete Cookies are made with plant-based proteins:</p><p>   •    Pea Protein<br/>   •    Rice Protein<br/>   •    Vital Wheat Gluten<br/><br/></p><p><strong>serving sizes</strong></p><p>   •    Each 4oz Complete Cookie contains 2 servings.<br/>   •    Each 2oz Complete Cookie is one serving.<br/><br/></p><p><strong>shelf-life</strong></p><p>12-months</p><p><strong>SUMMER SNACKIN’ STRAWBERRY SHORTCAKE FLAVOR</strong></p><p>This 2oz cookie comes in a box of is only around for a limited time while supplies last. Although it does contain non GMO ingredients, it is not Non GMO Project Verified, nor is it kosher like our other Complete Cookies.</p>"
+            }
+          },
+          "bbc34172-5689-4c8d-88d6-447fcdafbb93": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "additional_info",
+              "heading": true,
+              "title": "The Cookie-fied Bar™ Product Information",
+              "text": "<p><strong>Protein + Fiber Content</strong></p><p>Each bar contains 12g of plant-based protein and 5g of prebiotic fiber.</p><p></p><p></p><p><strong>Types of Protein</strong></p><p>The Complete Cookie-fied Bar is made with plant-based proteins:</p><p>   •    Brown rice protein</p><p>   •    Pea protein</p><p></p><p></p><p><strong>Serving Sizes</strong></p><p>Each 1.59oz bar is one serving. </p><p>Yes, our Complete Cookie-fied Bar is small... but it's mighty! We have 12g of protein and 5g of fiber packed into a 45-gram bar - other bars like Larabar and KIND are the same size. We are confident that our small bar will satisfy your big snack attacks and sweet cravings. Size doesn't matter 😉</p><p></p><p></p><p><strong>Shelf Life</strong></p><p>12 months</p>"
+            }
+          },
+          "1603178153791": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "additional_info",
+              "heading": true,
+              "title": "The Complete Cremes® Product Information",
+              "text": "<p><strong>BACK AND HERE TO STAY</strong></p><p>Back by popular demand, The Complete Cremes® are here to stay! The Complete Cremes® are better-for-you sandwich cookies with a creamy filling and made with 5 grams of plant-based protein, 3 grams of prebiotic fiber, and 1/3 less sugar than the leading sandwich cookie brand (per serving size).</p><p></p><p><strong>HOW MANY COOKIES DO I GET?</strong></p><p>A 5.71oz box includes 12 cookies. A 2.86oz pack includes 6 cookies.</p><p> </p><p><strong>WHAT IS THE SERVING SIZE?</strong></p><p>2 cookies per serving</p><p> </p><p><strong>HOW MUCH PROTEIN DO THEY CONTAIN?</strong></p><p>5g of protein per serving</p><p>A 5.71oz box includes 12 cookies, which is 6 servings. This box has 30g of protein.</p><p>A 2.86oz pack includes 6 cookies, which is 3 servings. This pack has 15g of protein.</p><p> </p><p><strong>WHAT TYPES OF PROTEIN ARE USED?</strong></p><p>The Complete Cremes® are made with a plant-based protein blend of vital wheat gluten and pea protein</p><p> </p><p><strong>HOW MUCH FIBER DO THEY CONTAIN?</strong></p><p>3g of fiber per serving</p><p> </p><p><strong>1/3 LESS SUGAR CALCULATION</strong></p><p>Our cookies have 1/3 less sugar than the leading sandwich cookie brand per serving size. Because the serving sizes are different, we used 30g of cookies as the benchmark serving size. 30g is the amount of food the FDA considers to be the Reference Amount Customarily Consumed (RACC) for cookies. When comparing our cookies to the leading sandwich cookie brand per 30g serving, our cookies have 1/3 less sugar per serving.</p><p>The Complete Cremes: Sugar (7g) per serving (27g) = 0.26 // Sugar per serving (0.26) multiplied by RACC (30g) = 7.78</p><p>The Leading Sandwich Cookie Brand: Sugar (14g) per serving (34g) = 0.41 // Sugar per serving (0.26) multiplied by RACC (30g) = 12.35</p><p>(7.78/12.35) -1 = 37%. Our cookies have 1/3 less sugar per serving than the leading sandwich cookie brand</p><p> </p><p><strong>ARE THEY VEGAN?</strong></p><p>Yes, The Complete Cremes® are Certified Vegan</p><p> </p><p><strong>ARE THEY GLUTEN FREE?</strong></p><p>No, The Complete Cremes® are not gluten free. They include vital wheat gluten.</p><p> </p><p><strong>ARE THEY NON-GMO?</strong></p><p>Yes, The Complete Cremes® are Non-GMO Project Verified</p><p><strong> </strong></p><p><strong>WHAT IS THE SHELF-LIFE?</strong></p><p>12-months</p>"
+            }
+          },
+          "1603178147205": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "additional_info",
+              "heading": true,
+              "title": "The Complete Crunchy Cookies Product Information",
+              "text": "<p><strong>protein + fiber content</strong></p><p>   •    The 1.25oz single serving packs each contain 6g of Plant-Based Proteins and 4g of Fiber. <br/>   •    The 4.25oz resealable bags each contain 20g of Plant-Based Proteins and 14g of Fiber<br/><br/></p><p><strong>types of protein</strong></p><p>The Complete Crunchy Cookies are made with plant-based proteins:</p><p>   •    Pea Protein<br/>   •    Rice Protein<br/>   •    Vital Wheat Gluten<br/><br/></p><p><strong>serving sizes</strong></p><p>   •    The 1.25oz packs are single serving and each contain 6-7 cookies.<br/>   •    The 4.25oz<strong> </strong>resealable bags are 3 servings and each contain 20-21 cookies.<br/><br/></p><p><strong>shelf-life</strong></p><p>12-months</p>"
+            }
+          },
+          "1603178169864": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "additional_info",
+              "heading": true,
+              "title": "Wholesale Program Information",
+              "text": "<p><strong>B2B Wholesale Program</strong></p><p>Lenny & Larry's is happy to offer a B2B wholesale program designed for smaller establishments like convenience  stores, bodegas, fitness studios, juice bars, etc. There are specific terms and policies your company must meet before being approved to become a wholesale account. Please visit our <a href=\"https://www.lennylarry.com/pages/wholesale\" target=\"_blank\" title=\"Wholesale Sign Up Page\">Wholesale Sign Up page</a> for more details. Please reach out to sales@lennylarry.com if you are a larger footprint retailer, multi-store chain or a distributor.</p>"
+            }
+          },
+          "1603178178840": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "additional_info",
+              "heading": true,
+              "title": "Account Issues & Information",
+              "text": "<p><strong>Forgot Password</strong></p><p>If you forgot your password, you can reset your password <a href=\"/account\" target=\"_blank\" title=\"/account\">HERE</a></p><p><strong>Forgot Login Email</strong></p><p>If you forgot your login email, you can email <a href=\"https://web.archive.org/web/20200906160527/mailto:websupport@lennylarry.com\"><br/>websupport@lennylarry.com</a> for assistance. Alternatively, you can create a new account with a new email address.</p><p><strong>Deactivate Account</strong></p><p>If you would like to deactivate your Lenny & Larry’s Account, please log in and go to \"My Account\". Then click on \"Delete Account\" and follow the instructions. </p>"
+            }
+          },
+          "1603178197075": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "additional_info",
+              "heading": true,
+              "title": "Order Process",
+              "text": "<p><strong>Discount Codes</strong></p><p>Only one discount code may be used per order. During checkout, you may enter the discount code at any time. <br/><br/>Customers are responsible for making sure that the discount code is inputted and valid before completing their orders.</p><p><strong>Shipping Address Error</strong></p><p>Our system will show an error if you enter a shipping address that is not validated by USPS. This mostly pertains to locations in rural areas. If you see a valid address error, we recommend that you try shipping to an alternate address that can be validated by USPS. <br/><br/>If you do not have an alternate address or believe your shipping address is valid, please email <a href=\"https://web.archive.org/web/20200906160527/mailto:websupport@lennylarry.com\">websupport@lennylarry.com</a> <br/><br/>Please note, we do not ship to P.O. Boxes or college dorms.</p><p></p><p><strong>Order Cancellation</strong></p><p>To cancel your order, please contact <a href=\"mailto:orders@lennylarry.com\">orders@lennylarry.com</a> and we will do our best to assist you.</p>"
+            }
+          },
+          "1603178205694": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "additional_info",
+              "heading": true,
+              "title": "Return Policy",
+              "text": "<p>Due to the nature of our products, we are unable to accept product returns. If you would like to submit a claim due to defective or damaged product, please do so <a href=\"https://www.lennylarry.com/pages/drop-us-a-line\" title=\"https://www.lennylarry.com/pages/drop-us-a-line\">here </a>within 30 days of your purchase for a refund. We handle all claims on a case-by-case basis. Customer satisfaction is extremely important to us and we will work with you to make it right.<br/></p><p>*Note: We only offer refunds on products purchased directly at lennylarry.com.<br/><br/><strong>Click </strong><a href=\"/pages/support\" title=\"Order & Product Support\"><strong>HERE</strong></a><strong> to create a claim</strong>.</p><p>   •    If you ordered from our website, please click on \"Order Issues\"</p><p>   •    If you purchased from a retailer, please click on \"Product Issues\"</p><p>Our 30 Day Satisfaction Guarantee excludes issues relating to personal preference regarding taste or texture.</p><p><strong>Purchased at Retailer</strong></p><p>Unfortunately, any products purchased from a retailer, third party Ecommerce site, or distributor must be returned or exchanged where purchased.</p>"
+            }
+          },
+          "1603178213908": {
+            "type": "accordion",
+            "settings": {
+              "select_faq": "additional_info",
+              "heading": true,
+              "title": "Shipping Information",
+              "text": "<p><strong>Free Shipping</strong></p><p>Free shipping only applies to orders using the UPS Ground option. It does not apply to 2-3 Day shipping options.<br/><br/>To receive FREE shipping:</p><p>   1.    Place your online order of $55 or more (after discount, excluding tax)</p><p>   2.    Ship to an address within the United States (P.O. Boxes, Canada and Mexico excluded). We do not ship to FPO, DPO or APO. </p><p>   3    Your shipment should arrive within 1-5 business days after processing</p><p>   4    Orders under 9 pounds may be shipped with UPS SurePost (additional 1-2 business days compared to UPS Ground)</p><p>*Processing takes 1-2 business days</p><p><strong>Shipping Options</strong></p><p>We ship within the United States to all 50 states and Washing D.C. (excluding US Territories)</p><p>   •    UPS Ground/SurePost (1-8 business days)</p><p>         •    $6.95 shipping fee for all orders below $55, FREE for all orders $55+</p><p>   •    UPS 2nd Day Air (2 business days from date of order)</p><p>         •    Fee varies by location</p><p>   •    UPS 3 Day Select (3 business days from date of order)</p><p>         •    Fee varies by location </p><p>Hawaii & Alaska</p><p>   •    UPS Ground (1-6 business days)</p><p>         •    Fee varies by address</p><p>   •    UPS 2nd Day Air (2 business days from date of order)</p><p>         •    Fee varies by address</p><p><strong>Shipping & Handling Time</strong></p><p>All in-stock products are generally processed within 1-2 business days after the order is placed. Shipping times will vary based on location relative to our warehouses.</p><p><strong>P.O. Boxes</strong></p><p>Unfortunately, we are unable to ship to any P.O. Box.</p><p><strong>UPS Access Point</strong></p><p>Your package may be sent to the nearest UPS Access Point for security reasons or after the 1st delivery attempt. You will have 7 days to pick it up before it is automatically sent back to us. Please check your Tracking Link to see the status of your package. Returned packages to our warehouse can only be reshipped to customers with added shipping costs.</p><p><strong>UPS SurePost</strong></p><p>UPS SurePost is a service we may use for orders under 9 pounds. Using this service, the package is delivered by UPS or the customer's local post office. If for any reason the package is undeliverable, it will be held at the local post office where customers can pick it up with a valid ID. Packages can only be held at the local post office for 7 days before being returned to our warehouse. Customers must pay to reship a returned package.</p><p><strong>Incorrect Address</strong></p><p>Lenny & Larry's is not responsible for any lost package that is incorrectly addressed due to customer error. We generate our shipping labels from the information the customer provides, so if you enter an incorrect or incomplete address (incorrect zip code, missing apartment / suite / office number / name) and your package is lost, Lenny & Larry's is not responsible. If you enter your address incorrectly on our website and need it re-routed by UPS to the correct address, you will be charged a minimum UPS fee of $13.90 to cover the rerouting costs. UPS fuel surcharge fees may also apply and the total amount charged will vary depending on the actual distance that the package is rerouted.If you have inputted the incorrect address on your order, CANCEL your order immediately by logging into your account. Then, place your order again using the correct address. Once your package is processed and shipped, we cannot make any more modifications to your shipment. </p><p><strong>International Shipping</strong></p><p>We currently do not ship internationally. If you are interested in carrying Lenny & Larry’s products internationally, please email us at help@lennylarry.com</p>"
+            }
+          }
+        },
+        "block_order": [
+          "eacd9222-8bbf-4900-8a5b-63422855ebba",
+          "7fb9d189-5cc5-40bc-89c3-4a0637fe2db7",
+          "012b8a9e-9f07-47d0-b689-b28285662581",
+          "ae515180-f0fa-42e1-af21-91c0f4d0d1bc",
+          "02f13157-d474-4960-a6f3-9ce15bc7df6f",
+          "20f8f157-52d5-4a1c-a769-0cdd8f332895",
+          "2a4839fe-8742-4ede-98ec-a69199658e32",
+          "1603178133416",
+          "7338ec6b-902c-425a-bda5-3e93f074a9ae",
+          "1603178140151",
+          "bbc34172-5689-4c8d-88d6-447fcdafbb93",
+          "1603178153791",
+          "1603178147205",
+          "1603178169864",
+          "1603178178840",
+          "1603178197075",
+          "1603178205694",
+          "1603178213908"
+        ],
+        "settings": {
+          "text": "<p>We love our customers! That’s why we're transparent and upfront about our products and everything we do. If you have questions, please look below for answers. Can’t find what you’re looking for? <a href=\"https://www.lennylarry.com/pages/drop-us-a-line\" title=\"https://www.lennylarry.com/pages/drop-us-a-line\">Contact us</a>, and we’ll help you out!</p>"
+        }
+      },
+      "section-store-locator": {
+        "type": "section-store-locator",
+        "blocks": {
+          "1603184266600": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/logo-image1.png",
+              "link": ""
+            }
+          },
+          "1603184277110": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/logo-image2.png",
+              "link": ""
+            }
+          },
+          "1603184283944": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/logo-image3.png",
+              "link": ""
+            }
+          },
+          "1603184290860": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/logo-image4.png",
+              "link": ""
+            }
+          },
+          "1603184297335": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/logo-image5.png",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1603184266600",
+          "1603184277110",
+          "1603184283944",
+          "1603184290860",
+          "1603184297335"
+        ],
+        "settings": {
+          "subtitle": "Please disregard the error message when searching to buy on other online retailers",
+          "title": "lenny & larry’s is also sold at these retailers:",
+          "text": "(Please call your local store to confirm availability)"
+        }
+      },
+      "section-error": {
+        "type": "section-error",
+        "settings": {
+          "image": "shopify://shop_images/404.jpg",
+          "subtitle": "Opps! Page Not Found",
+          "title": "That’s the Way the Cookie Crumbles",
+          "btn_blue_text": "Return Home",
+          "btn_blue_link": "/",
+          "btn_orange_text": "To the Shop",
+          "btn_orange_link": "shopify://collections/all"
+        }
+      },
+      "section-blog-press": {
+        "type": "section-blog-press",
+        "settings": {
+          "featured_article": "press/lenny-larrys-introduces-its-first-nutrition-bar-to-the-boss-™-product-portfolio",
+          "articles_per_page": 16
+        }
+      },
+      "section-blog-videos": {
+        "type": "section-blog-videos",
+        "settings": {
+          "featured_article": "videos/50-000-cookies-donated-to-ups-drivers-videos",
+          "articles_per_page": 16
+        }
+      },
+      "section-sm-contacts": {
+        "type": "section-sm-contacts",
+        "blocks": {
+          "e89cabe7-2b70-4f00-85b8-897d5ee50bfe": {
+            "type": "item",
+            "settings": {
+              "image": "shopify://shop_images/contact-item-image1.png",
+              "title": "help@lennylarry.com",
+              "link": "mailto:help@lennylarry.com"
+            }
+          },
+          "170c63e3-beb2-4844-be8e-e7cb5aba4ba8": {
+            "type": "item",
+            "settings": {
+              "image": "shopify://shop_images/contact-item-image2.png",
+              "title": "15303 Ventura Blvd., Suite 900\nSherman Oaks, CA 91403",
+              "link": "https://www.google.com/maps/place/15303+Ventura+Blvd+%23900,+Sherman+Oaks,+CA+91403/@34.1555965,-118.468785,17z/data=!3m1!4b1!4m5!3m4!1s0x80c29794d210e397:0x55dcad733d2166f1!8m2!3d34.1555965!4d-118.4665963"
+            }
+          }
+        },
+        "block_order": [
+          "e89cabe7-2b70-4f00-85b8-897d5ee50bfe",
+          "170c63e3-beb2-4844-be8e-e7cb5aba4ba8"
+        ],
+        "settings": {
+          "select_options": ""
+        }
+      },
+      "collection-header": {
+        "type": "collection-header",
+        "settings": {
+          "fullwidthbanner": false
+        }
+      },
+      "section-faq-rewards": {
+        "type": "section-faq-rewards",
+        "blocks": {
+          "d0018f72-4ee0-4684-9f34-d7a7f94e9631": {
+            "type": "accordion",
+            "settings": {
+              "title": "The Cookie Crew Overview",
+              "text": "<p>We created the Cookie Crew to reward our biggest fans. That’s you! The Cookie Crew is our rewards program that rewards you for things you already do. It’s super simple- just sign up, earn points, and redeem points for discounts off your purchase on lennylarry.com. As you earn more points, level up and unlock more exclusive rewards. </p>"
+            }
+          },
+          "d930f8d2-9893-4fe8-a6d2-91cd82d43393": {
+            "type": "accordion",
+            "settings": {
+              "title": "How to sign up",
+              "text": "<p>Starting 01/04/2022, if you’ve made an account or placed an order with us, you are earning points with each purchase. You will need to opt into the Cookie Crew rewards program to redeem those points. Here’s how to opt in:</p><p>If you already have an account with us, simply <a href=\"https://www.lennylarry.com/account/login?return_url=%2Faccount\" target=\"_blank\" title=\"https://www.lennylarry.com/account/login?return_url=%2Faccount\">log in here.</a> Once you log in, go to the Rewards page to see how many points you have earned.</p><p>If you don’t have an account with us, simply <a href=\"https://www.lennylarry.com/account/register\" target=\"_blank\" title=\"https://www.lennylarry.com/account/register\">sign up here</a>. Fill out basic information to create an account and start earning points.</p>"
+            }
+          },
+          "49d8cb30-b463-4c10-89d7-cb73accc0947": {
+            "type": "accordion",
+            "settings": {
+              "title": "How to earn points",
+              "text": "<p>There are so many ways to earn points! Be sure to log in to your account first. Please note that past purchases do not earn you points. You will be rewarded points for your cart total minus discounts and excluding shipping.</p><p>Make a Purchase: Earn points on every dollar spent on lennylarry.com. At the Cookies level, earn 1 point/dollar. When you level up to Bars, earn 1.25 points/dollar. When you level up to Fitzels, earn 1.5 points/dollar. Points will be added to your account after your order has been fulfilled.</p><p>Create an Account: 25 points- Just create an account <a href=\"https://www.lennylarry.com/account/register\" target=\"_blank\" title=\"https://www.lennylarry.com/account/register\">here!</a></p><p>Referrals: 100 points- Give a friend $5 and get $5 worth of points (100 points) for every successful <a href=\"/pages/refer\" target=\"_blank\" title=\"Refer\">referral</a>. A referral is considered successful after your friend makes their first purchase. The referral code will not work if the friend has already had a purchase on lennylarry.com. No minimum purchase amount required.</p><p>Level Up: After you spend $200, level up to Bars and earn 25 points. After you spend $500, level up to Fitzels and earn 50 points.</p>"
+            }
+          },
+          "9643f7ba-730b-46dc-b6db-72fd7a3c4c44": {
+            "type": "accordion",
+            "settings": {
+              "title": "How to redeem points",
+              "text": "<p>If you have earned enough points to redeem a discount off your order, you will be given the option to redeem the discount at checkout. Redeem a $5 discount off your order after you earn 100 points. Redeem a $10 discount with 200 points, a $15 discount with 300 points, and a $20 discount with 400 points. The maximum you can redeem in one purchase is $20/400 points. This redemption cannot be combined with any other discount code. Only one discount code per order. Reward points cannot be redeemed if checking out via ShopPay.</p>"
+            }
+          },
+          "39b304de-ffa6-44f1-8a5c-ca1718f86e74": {
+            "type": "accordion",
+            "settings": {
+              "title": "Different Levels",
+              "text": "<p>The level you are in is based on how many dollars you have spent over 12 months since entering that level. If you spend $0-199, you are in the Cookies level. After you spend $200, you level up to Bars. After you spend $500, you level up to Fitzels.</p><p>Total points won’t reset if you change levels. Your level isn’t associated with how many points you have available to redeem</p><p>After 12 months of inactivity, all points will expire and your level will reset to Cookies level. Your account is considered inactive if you have not earned or redeemed any points within 12 months.</p>"
+            }
+          },
+          "ff7096f5-c45e-4e58-8dce-9923948b9bf4": {
+            "type": "accordion",
+            "settings": {
+              "title": "How Referrals Work",
+              "text": "<p>Sign into your account to get a referral code <a href=\"https://www.lennylarry.com/pages/refer\"><span style=\"text-decoration:underline\">here</span></a>. Then, simply email your friend or family member that referral code. We’ll give them $5 off their first purchase on lennylarry.com, and you get 100 points for each successful referral. A referral is considered successful if the recipient<br/>uses the referral code to make their first purchase on lennylarry.com. The referral code will not work, and you will not receive any points, if the recipient has previously made a purchase on lennylarry.com or otherwise does not use the referral code with their purchase. No minimum purchase amount required.</p><p>This code does not have an expiration date and is not redeemable for cash. The entire amount of the referral code ($5) will be redeemed, even if the purchase is for less than $5. In order to redeem the referral code, a purchase must not have been made previously on lennylarrry.com.</p>"
+            }
+          },
+          "18c68df6-d7f2-4df5-bcc3-125688c21931": {
+            "type": "accordion",
+            "settings": {
+              "title": "Terms & Conditions",
+              "text": "<p>To learn more about The Cookie Crew Terms & Conditions, please go <a href=\"/pages/terms-of-service\" title=\"Terms of Service\">here</a>.</p>"
+            }
+          }
+        },
+        "block_order": [
+          "d0018f72-4ee0-4684-9f34-d7a7f94e9631",
+          "d930f8d2-9893-4fe8-a6d2-91cd82d43393",
+          "49d8cb30-b463-4c10-89d7-cb73accc0947",
+          "9643f7ba-730b-46dc-b6db-72fd7a3c4c44",
+          "39b304de-ffa6-44f1-8a5c-ca1718f86e74",
+          "ff7096f5-c45e-4e58-8dce-9923948b9bf4",
+          "18c68df6-d7f2-4df5-bcc3-125688c21931"
+        ],
+        "settings": {
+          "text": ""
+        }
+      },
+      "section-blog-partner": {
+        "type": "section-blog-partner",
+        "settings": {
+          "banner": "shopify://shop_images/LL_NPS_Banner_2200x570_no_button_final_v2.jpg",
+          "banner_url": "",
+          "cta_copy": "Shop Now",
+          "cta_url": "https://www.lennylarry.com/collections/shop",
+          "featured_article": "partnerships/lenny-larry-s-pledges-150-000-to-the-national-park-foundation",
+          "articles_per_page": 16
+        }
+      },
+      "wholesaleText": {
+        "type": "wholesaleText",
+        "settings": {
+          "content": "<p><strong>Proof of Business:</strong> A valid re-sale license, TIN or EIN (that is associated with the business) is required.</p><p><strong>USA Sales Only:</strong> We do not allow international sales of our USA labeled products, nor allow freight forwarding to other countries.</p><p><strong>Products Sold As Is:</strong> Private Labeling is not available.</p><p><strong>Ordering Information:</strong> All orders must be placed online <a href=\"https://www.lennylarry.com/shop/\" target=\"_blank\" title=\"https://www.lennylarry.com/shop/\">here.</a></p><p><strong>Payment:</strong> Payment with a credit card is required to process your order</p><p><strong>Minimum Order Requirement:</strong> $119 Free Shipping Minimum. Orders below $119 will be charged shipping and handling.</p><p><strong>Shipping & Handling:</strong> Lenny & Larry's ships via UPS Ground. We do not ship wholesale products to PO Boxes or residential addresses. Orders under $119 will be charged a flat shipping rate of $14.98 per order. Orders are generally shipped out within 2-3 business days. </p><p><strong>E-COMMERCE:</strong> <strong>Lenny & Larry’s does not allow any customers to resell products on their own DTC websites</strong> (Shopify, Squarespace, Wix, etc.) <strong>or resell on any 3rd party marketplaces, such as, but not limited to:</strong> eBay, Amazon, Walmart, Bonanza, etc. <strong>We will not accept applications for any companies selling on these platforms.</strong></p><p><strong>Returns & Damaged Products:</strong> Returns will be accepted with prior approval within 30 days of purchase. Returns after 30 days need to be preauthorized and if approved, a 5% restocking fee will be applied to the refund. We will not accept returns in an unsellable condition.</p>"
+        }
+      },
+      "product-recommendation": {
+        "type": "product-recommendation",
+        "settings": {}
+      },
+      "1662140000f20774a8": {
+        "type": "section-rewards-form",
+        "disabled": true,
+        "settings": {
+          "subtitle": "Get access to exclusive discounts, new product launches & more!",
+          "title": "Unlock 20% Off",
+          "terms": "Get 20% off when you sign up for emails. By providing your email address, you agree to our <a href>Terms</a> & <a href=\"/pages/privacy-policy\">Privacy Policy</a>",
+          "image": "shopify://shop_images/EmailModules_800x800_Q3-2022_1.jpg",
+          "embed": "<div class=\"klaviyo-form-XHgdsC\"></div>"
+        }
+      },
+      "section-shopAll-form": {
+        "type": "section-shopAll-form",
+        "settings": {
+          "subtitle": "Get 20% off your first purchase!",
+          "title": "Like what you see?",
+          "terms": "Get 20% off when you sign up for emails. By providing your email address, you agree to our <a href>Terms</a> & <a href=\"/pages/privacy-policy\">Privacy Policy</a>",
+          "image": "shopify://shop_images/EmailModules_800x800_Q3-2022_1.jpg",
+          "embed": "<div class=\"klaviyo-form-W7WxVY\"></div>"
+        }
+      },
+      "section-blog-form": {
+        "type": "section-blog-form",
+        "settings": {
+          "subtitle": "Get 20% off your first purchase!",
+          "title": "You’ve Found a Treasure!",
+          "content": "You’ve found a rare, hidden treasure that only the most loyal fans find.",
+          "terms": "Get 20% off when you sign up for emails. By providing your email address, you agree to our <a href=\"/pages/terms-of-service\">Terms</a> & <a href=\"/pages/privacy-policy\">Privacy Policy</a>",
+          "image": "shopify://shop_images/EmailModules_800x800_Q3-2022_1.jpg",
+          "embed": "<div class=\"klaviyo-form-W7WxVY\"></div>"
+        }
+      },
+      "section-landingPage-form": {
+        "type": "section-landingPage-form",
+        "settings": {
+          "subtitle": "We'll treat you to 20% off when you sign up!",
+          "title": "Glad you made it here!",
+          "content": "Get access to exclusive discounts, new products, & more. Wasn't that easy?",
+          "terms": "Get 20% off when you sign up for emails. By providing your email address, you agree to our <a href=\"/pages/terms-of-service\">Terms</a> & <a href=\"/pages/privacy-policy\">Privacy Policy</a>",
+          "image": "shopify://shop_images/EmailModules_800x800_Q3-2022_1.jpg",
+          "embed": "<div class=\"klaviyo-form-W7WxVY\"></div>"
+        }
+      },
+      "5d7509d5-633c-4157-9162-9be7ad64eda5": {
+        "type": "section-slider",
+        "blocks": {
+          "slide_CKDjt3": {
+            "type": "slide",
+            "settings": {
+              "link": "shopify://products/beastly-buffalo-3oz-box-of-8",
+              "highlight_color": "#0086d6",
+              "image": "shopify://shop_images/StockUpforSuperbowl_Desktop.jpg",
+              "image_mobile": "shopify://shop_images/StockUpforSuperbowl_Mobile.jpg",
+              "slider_alignment": "none",
+              "eyebrow_text": "",
+              "slider_heading": "",
+              "slider_description": "",
+              "description_color": "#4e3629",
+              "slider_button_text": "",
+              "slider_button_url": "shopify://products/beastly-buffalo-3oz-box-of-8",
+              "slider_button_text_color": "#ffffff",
+              "slider_button_background_color": "#00507f"
+            }
+          },
+          "slide_Mmx3yP": {
+            "type": "slide",
+            "settings": {
+              "link": "shopify://collections/fitzels",
+              "highlight_color": "#0086d6",
+              "image": "shopify://shop_images/Desktop_Banner_NewFitzelsPretzels_Fall_BB-CF-TT_2025.jpg",
+              "image_mobile": "shopify://shop_images/Mobile_Banner_NewFitzelsPretzels_Fall_BB-CF-TT_2025.jpg",
+              "slider_alignment": "none",
+              "eyebrow_text": "",
+              "slider_heading": "",
+              "slider_description": "",
+              "description_color": "#4e3629",
+              "slider_button_text": "",
+              "slider_button_url": "",
+              "slider_button_text_color": "#ffffff",
+              "slider_button_background_color": "#00507f"
+            }
+          },
+          "slide_yQ3jH4": {
+            "type": "slide",
+            "settings": {
+              "link": "shopify://products/the-complete-cookie-peanut-butter-chocolate-chip",
+              "highlight_color": "#0086d6",
+              "image": "shopify://shop_images/Desktop_Banner_FeelingNutty_2026.jpg",
+              "image_mobile": "shopify://shop_images/Mobile_Banner_FeelingNutty_2026.jpg",
+              "slider_alignment": "none",
+              "eyebrow_text": "",
+              "slider_heading": "",
+              "slider_description": "",
+              "description_color": "#4e3629",
+              "slider_button_text": "",
+              "slider_button_url": "shopify://products/the-complete-cookie-peanut-butter-chocolate-chip",
+              "slider_button_text_color": "#ffffff",
+              "slider_button_background_color": "#00507f"
+            }
+          },
+          "slide_bWJ6WU": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "link": "shopify://collections/the-complete-cookie",
+              "highlight_color": "#0086d6",
+              "image": "shopify://shop_images/Desktop_Banner_Cookies_Fall_PMK_2025_2215b93f-e5a2-4c7b-8e4f-14258e38c775.jpg",
+              "image_mobile": "shopify://shop_images/Mobile_Banner_Cookies_Fall_PMK_2025.jpg",
+              "slider_alignment": "none",
+              "eyebrow_text": "",
+              "slider_heading": "",
+              "slider_description": "",
+              "description_color": "#4e3629",
+              "slider_button_text": "",
+              "slider_button_url": "shopify://collections/the-complete-cookie",
+              "slider_button_text_color": "#ffffff",
+              "slider_button_background_color": "#00507f"
+            }
+          },
+          "slide_9ChQk8": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "link": "shopify://collections/cookie-fied-bar",
+              "highlight_color": "#0086d6",
+              "image": "shopify://shop_images/Desktop_Banner_BARS_Fall_CCR_2025.jpg",
+              "image_mobile": "shopify://shop_images/Mobile_Banner_BARS_Fall_CCR_2025.jpg",
+              "slider_alignment": "none",
+              "eyebrow_text": "",
+              "slider_heading": "",
+              "slider_description": "",
+              "description_color": "#4e3629",
+              "slider_button_text": "",
+              "slider_button_url": "shopify://collections/cookie-fied-bar",
+              "slider_button_text_color": "#ffffff",
+              "slider_button_background_color": "#00507f"
+            }
+          },
+          "slide_nPdrrz": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "link": "shopify://collections/fitzels",
+              "highlight_color": "#0086d6",
+              "image": "shopify://shop_images/Desktop_Banner_Pretzels_Fall_PP_2025.jpg",
+              "image_mobile": "shopify://shop_images/Mobile_Banner_Pretzels_Fall_PP_2025.jpg",
+              "slider_alignment": "none",
+              "eyebrow_text": "",
+              "slider_heading": "",
+              "slider_description": "",
+              "description_color": "#4e3629",
+              "slider_button_text": "",
+              "slider_button_url": "shopify://collections/fitzels",
+              "slider_button_text_color": "#ffffff",
+              "slider_button_background_color": "#00507f"
+            }
+          }
+        },
+        "block_order": [
+          "slide_CKDjt3",
+          "slide_Mmx3yP",
+          "slide_yQ3jH4",
+          "slide_bWJ6WU",
+          "slide_9ChQk8",
+          "slide_nPdrrz"
+        ],
+        "settings": {}
+      },
+      "full-width-video-slider": {
+        "type": "full-width-video-slider",
+        "blocks": {
+          "video_hMh9JH": {
+            "type": "video",
+            "settings": {
+              "video": "https://cdn.shopify.com/videos/c/o/v/6b2239632bd94d998d8e60c6f6e0872d.mp4",
+              "image": "shopify://shop_images/6b2239632bd94d998d8e60c6f6e0872d.thumbnail.0000000000_1000x_4c7703c8-69b5-4c09-a9c8-f46a8da1d64b.webp",
+              "content": "Watch Video!"
+            }
+          },
+          "video_MTpJBP": {
+            "type": "video",
+            "settings": {
+              "video": "https://cdn.shopify.com/videos/c/o/v/2a2f39aec1d042819c174dded54fb7f6.mp4",
+              "content": "Watch Video!"
+            }
+          },
+          "video_zibUAz": {
+            "type": "video",
+            "settings": {
+              "video": "https://cdn.shopify.com/videos/c/o/v/50ee3730fa124b428da08ef09e3b4db6.mp4",
+              "content": "Watch Video!"
+            }
+          },
+          "video_6xBXdn": {
+            "type": "video",
+            "settings": {
+              "video": "https://cdn.shopify.com/videos/c/o/v/a69badfb80d04a9eaf07080083aa070c.mp4",
+              "content": "Watch Video!"
+            }
+          }
+        },
+        "block_order": [
+          "video_hMh9JH",
+          "video_MTpJBP",
+          "video_zibUAz",
+          "video_6xBXdn"
+        ],
+        "settings": {
+          "title": "Campaign Videos"
+        }
+      },
+      "section_video_banner_H9GJ6R": {
+        "type": "section-video-banner",
+        "name": "Section Video Banner",
+        "settings": {
+          "video": "shopify://files/videos/Lenny & Larry - Everest.mp4"
+        }
+      }
+    },
+    "content_for_index": [
+      "5d7509d5-633c-4157-9162-9be7ad64eda5",
+      "1601984375083",
+      "1601881215559",
+      "1601901953719",
+      "1601888807064",
+      "1662140000f20774a8",
+      "section_video_banner_H9GJ6R",
+      "1601898003969",
+      "1601987395661"
+    ]
+  }
+}

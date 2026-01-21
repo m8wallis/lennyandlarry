@@ -68,7 +68,7 @@
     {%- endif -%}
 
     <li class="{{ class_dropdown }}{% if link.active %} is-current{% endif %}">
-      <a href="{{ link.url }}" title="{{ link.title }}">
+      <a href="{{ link.url }}">
         <span>
           {{ link.title }}
         </span>
@@ -87,7 +87,7 @@
                       <ul>
                         {%- for sub_sub_link in sub_link.links -%}
                           <li>
-                            <a href="{{ sub_sub_link.url }}" title="{{ sub_sub_link.title }}">{{ sub_sub_link.title }}</a>
+                            <a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a>
                           </li>
                         {%- endfor -%}
                       </ul>
@@ -103,12 +103,12 @@
           <div class="nav__dropdown-body js-nav-dropdown">
             <div class="nav__dropdown-content">
               <div class="tabs">
-                <div class="tab-buttons">
-                    <button class="tab-button active" data-tab="tab1">Complete Series</button>
-                    <button class="tab-button" data-tab="tab2">Boss! Series</button>
-                    <button class="tab-button" data-tab="tab3">More</button>
+                <div class="tab-buttons" role="tablist">
+                    <button class="tab-button active" data-tab="tab1" role="tab" aria-selected="true" aria-controls="tab1">Complete Series</button>
+                    <button class="tab-button" data-tab="tab2" role="tab" aria-selected="false" aria-controls="tab2">Boss! Series</button>
+                    <button class="tab-button" data-tab="tab3" role="tab" aria-selected="false" aria-controls="tab3">More</button>
                 </div>
-                <div class="tab-content active" id="tab1">
+                <div class="tab-content active" id="tab1" role="tabpanel" aria-labelledby="tab1">
                   <ul class="list-items list-items--nav{% if dropdown_items_counter == 6 %} list-items--six{% endif %}">
                   {%  for block in section.blocks %}
                     {% if block.settings.nav_tab == 'complete' %}
@@ -143,7 +143,7 @@
                   {%  endfor  %}
                   </ul><!-- /.list-items -->
                 </div><!-- /#tab1 -->
-                <div class="tab-content" id="tab2">
+                <div class="tab-content" id="tab2" role="tabpanel" aria-labelledby="tab2">
                                     <ul class="list-items list-items--nav{% if dropdown_items_counter == 6 %} list-items--six{% endif %}">
                   {%  for block in section.blocks %}
                     {% if block.settings.nav_tab == 'boss' %}
@@ -178,7 +178,7 @@
                   {%  endfor  %}
                   </ul><!-- /.list-items -->
                 </div><!-- /#tab2 -->
-                <div class="tab-content" id="tab3">
+                <div class="tab-content" id="tab3" role="tabpanel" aria-labelledby="tab3">
                                     <ul class="list-items list-items--nav{% if dropdown_items_counter == 6 %} list-items--six{% endif %}">
                   {%  for block in section.blocks %}
                     {% if block.settings.nav_tab == 'more' %}

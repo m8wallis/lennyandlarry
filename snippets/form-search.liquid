@@ -10,8 +10,8 @@
 
   		<input type="search" name="q" id="q-{{ search_idx }}" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" class="form-search__field">
 
-      <button type="submit" class="form-search__btn">
-        <i class="ico-search">
+      <button type="submit" class="form-search__btn" aria-label="Search">
+        <i class="ico-search" aria-hidden="true">
           {%- render 'svg-elements' name: 'search' -%}
         </i>
       </button>

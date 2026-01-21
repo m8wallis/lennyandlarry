@@ -25,7 +25,7 @@
     <div class="{{ image_class }}" role="img" aria-label="{{ section_image_alt }}" style="background-image: url('{{ section_image_src }}');"></div>
   {%- else -%}
     <div class="{{ image_class }}">
-      <img src="{{ section_image_src }}" alt="{{ section_image_alt }}">
+      <img src="{{ section_image_src }}" alt="{{ section_image_alt }}" loading="lazy">
     </div>
   {%- endif -%}
 {%- endif -%}
@@ -47,7 +47,7 @@
     <div class="{{ image_class_mobile }}" role="img" aria-label="{{ section_image_mobile_alt }}" style="background-image: url('{{ section_image_mobile_src }}');"></div>
   {%- else -%}
     <div class="{{ image_class_mobile }}">
-      <img src="{{ section_image_mobile_src }}" alt="{{ section_image_mobile_alt }}">
+      <img src="{{ section_image_mobile_src }}" alt="{{ section_image_mobile_alt }}" loading="lazy">
     </div>
   {%- endif -%}
 {%- endif -%}

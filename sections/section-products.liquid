@@ -42,7 +42,7 @@
         <figure>
           {% assign old_url =  block_image | img_url: 'master' %}
           {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '580', options: 'dpr:2' %}{% endcapture %}
-          <img src="{{ imageboss_url }}" alt="{{ block_title }}}">
+          <img src="{{ imageboss_url }}" alt="{% if block_image.alt != blank %}{{ block_image.alt }}{% elsif block_title != blank %}{{ block_title }}{% else %}Product image{% endif %}" loading="lazy">
         </figure>
         <div class="product-item__actions">
           {{ block_btn_html }}

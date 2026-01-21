@@ -19,12 +19,12 @@
   <input type="hidden" name="id" value="{{ first_available_variant.id }}">
   <div class="product-item__inner">
     <div class="product-item__image">
-      <a href="{{ _product.url | within: collection }}"></a>
+      <a href="{{ _product.url | within: collection }}" aria-label="View {{ _product.title }}"></a>
 
       <figure>
         {% assign old_url =  _product.featured_image | img_url: 'master' %}
         {% capture imageboss_url %}{% render 'imageboss' src:old_url, operation: 'width', size: '600', options: 'dpr:2' %}{% endcapture %}
-        <img src="{{ imageboss_url }}" alt="{{ _product.title }}">
+        <img src="{{ imageboss_url }}" alt="{% if _product.featured_image.alt != blank %}{{ _product.featured_image.alt }}{% else %}{{ _product.title }}{% endif %}" loading="lazy">
       </figure>
       <div class="product-item__actions">
          {% unless _product.metafields.accentuate.out_of_stock %}
@@ -32,7 +32,7 @@
          type="submit"
          name="add"
          class="btn form__btn product-item__btn js-product-btn"
-  
+         aria-label="Add {{ _product.title }} to cart"
          {% unless _product.available %}
          disabled
          {% endunless %}
@@ -49,6 +49,7 @@
        type="submit"
        name="add"
        class="btn form__btn product-item__btn js-product-btn"
+       aria-label="{{ _product.title }} is sold out"
        disabled
        >
        Sold Out

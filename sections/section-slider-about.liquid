@@ -32,7 +32,7 @@
         <figure>
           {% assign old_url =  _block.image | img_url: 'master' %}
           {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '910', options: 'dpr:2' %}{% endcapture %}
-          <img src="{{ imageboss_url }}" alt="{{ _block.title }}}">
+          <img src="{{ imageboss_url }}" alt="{% if _block.image.alt != blank %}{{ _block.image.alt }}{% elsif _block.title != blank %}{{ _block.title }}{% else %}Slide image {{ forloop.index }}{% endif %}" loading="lazy">
         </figure>
       </div><!-- /.item-inline__image -->
       {%- endif -%}

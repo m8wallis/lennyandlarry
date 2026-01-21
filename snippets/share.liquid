@@ -28,8 +28,8 @@ email|Send Email|mailto:?subject={{ mailto_title_prefix | append: share_title_en
       {%- endif -%}
 
       <li>
-        <a href="{{ link[2] }}"{% if forloop.index != 5 %} target="_blank"{% endif %} title="{{ link[1] }}" aria-label="{{ link[1] }}"{% if forloop.index == 2 %} class="js-link-copy"{% endif %}>
-          <i class="ico-{{ link[0] }} ico-{{ link[0] }}--small">
+        <a href="{{ link[2] }}"{% if forloop.index != 5 %} target="_blank"{% endif %} aria-label="{{ link[1] }}"{% if forloop.index == 2 %} class="js-link-copy"{% endif %}>
+          <i class="ico-{{ link[0] }} ico-{{ link[0] }}--small" aria-hidden="true">
             {%- render 'svg-elements' name: link[0] -%}
           </i>
 

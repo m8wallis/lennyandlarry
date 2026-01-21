@@ -13,14 +13,14 @@
 <li>
   <div>
     {%- if _block.link != blank -%}
-    <a href="{{ _block.link }}"></a>
+    <a href="{{ _block.link }}" aria-label="Visit {{ _block.title }}"></a>
     {%- endif -%}
 
     {%- if _block.image != blank -%}
     <figure>
       {% assign old_url =  _block.image | img_url: 'master' %}
       {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '80', options: 'dpr:2' %}{% endcapture %}
-      <img src="{{ imageboss_url }}" alt="{{ image.alt }}">
+      <img src="{{ imageboss_url }}" alt="{% if _block.image.alt != blank %}{{ _block.image.alt }}{% elsif _block.title != blank %}{{ _block.title }}{% else %}Contact image{% endif %}" loading="lazy">
     </figure>
     {%- endif -%}
 

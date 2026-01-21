@@ -11,7 +11,7 @@
 
         <div class="slider__slide slider__align-{{ block.settings.slider_alignment }}">
           {%- if _block.link != blank -%}
-            <a href="{{ _block.link }}" class="slider__slide-link"></a>
+            <a href="{{ _block.link }}" class="slider__slide-link" aria-label="{% if _block.slider_heading != blank %}{{ _block.slider_heading }}{% else %}View slide{% endif %}"></a>
           {%- endif -%}
           <div class="slider__wrapper">
           {% if block.settings.slider_alignment == 'none' %}
@@ -161,7 +161,7 @@
           </svg>
         </div>
         <div class="section__body">
-          <div class="slider js-slider">
+          <div class="slider js-slider" role="region" aria-label="Image carousel">
             <div class="slider__clip">
               <div class="slider__slides">
                 {{ slides_html }}

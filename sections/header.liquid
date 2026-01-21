@@ -50,8 +50,8 @@ _section.announcement_bar, announcement_bar_text_after: _section.announcement_ba
             <ul>
               <li>
                 <a href="#" class="nav-utilities__search-btn js-btn-toggle" data-js-class="is-search-expanded"
-                data-js-target="#header">
-                <i class="ico-search">
+                data-js-target="#header" aria-label="Search">
+                <i class="ico-search" aria-hidden="true">
                   {%- render 'svg-elements' name: 'search' -%}
                 </i>
               </a>
@@ -73,8 +73,8 @@ _section.announcement_bar, announcement_bar_text_after: _section.announcement_ba
               <a href="/cart"
               class="nav-utilities__cart js-btn-cart{% unless template.name == 'cart' %} js-btn-toggle{% endunless %}"
               {% unless template.name=='cart' %} data-js-target="#widget-cart" data-js-class="is-expanded" {%
-              endunless %}>
-              <i class="ico-cart">
+              endunless %} aria-label="Shopping cart, {{ cart.item_count }} items">
+              <i class="ico-cart" aria-hidden="true">
                 {%- render 'svg-elements' name: 'cart' -%}
               </i>
 
@@ -100,8 +100,8 @@ _section.announcement_bar, announcement_bar_text_after: _section.announcement_ba
           <ul>
             <li>
               <a href="#" class="nav-utilities__search-btn js-btn-toggle" data-js-class="is-search-expanded"
-              data-js-target="#header">
-              <i class="ico-search">
+              data-js-target="#header" aria-label="Search">
+              <i class="ico-search" aria-hidden="true">
                 {%- render 'svg-elements' name: 'search' -%}
               </i>
             </a>
@@ -112,8 +112,8 @@ _section.announcement_bar, announcement_bar_text_after: _section.announcement_ba
           </li>
 
           <li>
-            <a href="/pages/score-at-a-store-near-you">
-              <i class="ico-pin">
+            <a href="/pages/score-at-a-store-near-you" aria-label="Find a store near you">
+              <i class="ico-pin" aria-hidden="true">
                 {%- render 'svg-elements' name: 'pin' -%}
               </i>
             </a>
@@ -123,8 +123,8 @@ _section.announcement_bar, announcement_bar_text_after: _section.announcement_ba
             <a href="/cart"
             class="nav-utilities__cart js-btn-cart{% unless template.name == 'cart' %} js-btn-toggle{% endunless %}"
             {% unless template.name=='cart' %} data-js-target="#widget-cart" data-js-class="is-expanded" {%
-            endunless %}>
-            <i class="ico-cart">
+            endunless %} aria-label="Shopping cart, {{ cart.item_count }} items">
+            <i class="ico-cart" aria-hidden="true">
               {%- render 'svg-elements' name: 'cart' -%}
             </i>
 
@@ -174,8 +174,8 @@ _section.announcement_bar, announcement_bar_text_after: _section.announcement_ba
                 <a href="/cart"
                 class="nav-utilities__cart js-btn-cart{% unless template.name == 'cart' %} js-btn-toggle{% endunless %}"
                 {% unless template.name=='cart' %} data-js-target="#widget-cart" data-js-class="is-expanded" {%
-                endunless %}>
-                <i class="ico-cart">
+                endunless %} aria-label="Shopping cart, {{ cart.item_count }} items">
+                <i class="ico-cart" aria-hidden="true">
                   {%- render 'svg-elements' name: 'cart' -%}
                 </i>
 
