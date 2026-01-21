@@ -1,0 +1,169 @@
+{%- assign _section = section.settings -%}
+{%- assign _blocks = section.blocks -%}
+{%- assign blocks_html = '' -%}
+{%- assign subtitle = 'faq.general.subtitle' | t -%}
+
+{%- render 'section-triangles-top' section_subtitle: subtitle, section_title: page.title, section_content: page.content, section_modifier: 'section--triangles-secondary section--alt section--faq' -%}
+
+{%- if _blocks.size > 0 -%}
+  {%- for block in _blocks -%}
+    {%- assign _block = block.settings -%}
+
+    {%- if _block.title != blank and _block.text != blank -%}
+      {%- capture blocks_html -%}
+        {{ blocks_html }}
+
+        <div class="{% if _block.heading == blank %}h3-indented {% endif %} accordion__section">
+          <div class="accordion__head js-accordion-head">
+            {%- if _block.heading == blank -%}
+            <h3 class="h4 h4--small accordion__title">{{ _block.title | newline_to_br }}</h3><!-- /.accordion__title -->
+            {%- else -%}
+            <h2 class="h4 h4--small accordion__title">{{ _block.title | newline_to_br }}</h2><!-- /.accordion__title -->
+            {%- endif -%}
+          </div><!-- /.accordion__head -->
+
+          <div class="accordion__body">
+            <div class="accordion__inner">
+              <div class="accordion__content">
+                <div class="accordion__entry entry">
+                  {{ _block.text }}
+                </div><!-- /.accordion__entry -->
+              </div><!-- /.accordion__content -->
+            </div><!-- /.accordion__inner -->
+          </div><!-- /.accordion__body -->
+        </div><!-- /.accordion__section -->
+      {%- endcapture -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+  <section class="section-accordion section-accordion--secondary">
+    <div class="shell">
+      <div class="section__body">
+        <div class="accordion accordion--secondary js-accordion">
+          {%- if _section.text != blank -%}
+            <div class="accordion__text entry">
+              {{ _section.text }}
+            </div><!-- /.accordion__text -->
+          {%- endif -%}
+          <h2 class="accordion-section-heading">
+            <span>General Questions</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="624" height="3" viewBox="0 0 624 3" fill="none">
+              <path d="M2 1.5H624" stroke="#4E3629" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-dasharray="0 10"/>
+            </svg>
+          </h2>
+          <div class="accordion__container">
+            {% for block in section.blocks %}
+              {% if block.settings.select_faq == 'general' %}
+                <div class="{% if block.settings.heading == blank %}h3-indented {% endif %} accordion__section">
+                <div class="accordion__head js-accordion-head">
+                  {%- if block.settings.heading == blank -%}
+                  <h3 class="h4 h4--small accordion__title">{{ block.settings.title | newline_to_br }}</h3><!-- /.accordion__title -->
+                  {%- else -%}
+                  <h2 class="h4 h4--small accordion__title">{{ block.settings.title | newline_to_br }}</h2><!-- /.accordion__title -->
+                  {%- endif -%}
+                </div><!-- /.accordion__head -->
+                <div class="accordion__body">
+                  <div class="accordion__inner">
+                    <div class="accordion__content">
+                      <div class="accordion__entry entry">
+                        {{ block.settings.text }}
+                      </div><!-- /.accordion__entry -->
+                    </div><!-- /.accordion__content -->
+                  </div><!-- /.accordion__inner -->
+                </div><!-- /.accordion__body -->
+              </div><!-- /.accordion__section -->
+              {% endif %}
+            {% endfor %}
+          </div><!-- /.accordion__container -->
+          <h2 class="accordion-section-heading">
+            <span>Additional Product Information</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="624" height="3" viewBox="0 0 624 3" fill="none">
+              <path d="M2 1.5H624" stroke="#4E3629" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-dasharray="0 10"/>
+            </svg>
+          </h2>
+          <div class="accordion__container">
+            {% for block in section.blocks %}
+              {% if block.settings.select_faq == 'additional_info' %}
+                <div class="{% if block.settings.heading == blank %}h3-indented {% endif %} accordion__section">
+                <div class="accordion__head js-accordion-head">
+                  {%- if block.settings.heading == blank -%}
+                  <h3 class="h4 h4--small accordion__title">{{ block.settings.title | newline_to_br }}</h3><!-- /.accordion__title -->
+                  {%- else -%}
+                  <h2 class="h4 h4--small accordion__title">{{ block.settings.title | newline_to_br }}</h2><!-- /.accordion__title -->
+                  {%- endif -%}
+                </div><!-- /.accordion__head -->
+                <div class="accordion__body">
+                  <div class="accordion__inner">
+                    <div class="accordion__content">
+                      <div class="accordion__entry entry">
+                        {{ block.settings.text }}
+                      </div><!-- /.accordion__entry -->
+                    </div><!-- /.accordion__content -->
+                  </div><!-- /.accordion__inner -->
+                </div><!-- /.accordion__body -->
+              </div><!-- /.accordion__section -->
+              {% endif %}
+            {% endfor %}
+          </div><!-- /.accordion__container -->
+        </div><!-- /.accordion js-accordion -->
+      </div><!-- /.section__body -->
+    </div><!-- /.shell -->
+  </section><!-- /.section-accordion -->
+
+<style>
+.accordion__section.h3-indented {
+  margin-left: 70px;
+}
+</style>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion",
+      "name": "Accordion - H3",
+      "settings": [
+        {
+          "type": "select",
+          "id": "select_faq",
+          "label": "Select FAQ Section",
+          "options": [
+            {
+              "value": "general",
+              "label": "General Questions"
+            },
+            {
+              "value": "additional_info",
+              "label": "Additional Product Information"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "heading",
+          "label": "H2?"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

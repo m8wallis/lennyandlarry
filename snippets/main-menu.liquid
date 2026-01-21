@@ -1,0 +1,118 @@
+{%- assign _blocks = _blocks | default: '' -%}
+{%- assign _section = _section | default: '' -%}
+{%- assign handle = handle | default: '' -%}
+{%- assign btn_html = '' -%}
+
+{%- if _section.dropdown_btn_text != blank and _section.dropdown_btn_link != blank -%}
+  {%- capture btn_html -%}
+    <a href="{{ _section.dropdown_btn_link }}" class="btn btn--large-secondary nav__dropdown-btn">{{ _section.dropdown_btn_text }}</a>
+  {%- endcapture -%}
+{%- endif -%}
+
+<ul>
+  {% for link in linklists[handle].links %}
+    {%- assign link_handle = link.title | handle -%}
+    {%- assign class_dropdown = '' -%}
+    {%- assign dropdown_items = '' -%}
+    {%- assign dropdown_items_counter = 0 -%}
+
+    {%- if _blocks.size > 0 -%}
+      {%- for block in _blocks -%}
+        {%- assign _block = block.settings -%}
+        {%- assign _block_handle = _block.dropdown_handle | handle -%}
+
+        {%- if link_handle == _block_handle -%}
+          {%- capture dropdown_items -%}
+            {{ dropdown_items }}
+
+            {%- if _block.image != blank or _block.title != blank or _block.subtitle != blank -%}
+              {%- assign dropdown_items_counter = dropdown_items_counter | plus: 1 -%}
+
+              <li>
+                <div>
+                  {%- if _block.link != blank -%}
+                    <a href="{{ _block.link }}"></a>
+                  {%- endif -%}
+
+                  {%- if _block.image != blank -%}
+                    <small>{{ _block.image | img_url: '360x' | img_tag }}</small>
+                  {%- endif -%}
+
+                  {%- if _block.title != blank -%}
+                    <span>
+                      {%- if _block.link != blank -%}
+                        <a href="{{ _block.link }}">
+                          {{ _block.title | newline_to_br }}
+                        </a>
+                      {%- else -%}
+                        {{ _block.title | newline_to_br }}
+                      {%- endif -%}
+                    </span>
+                  {%- endif -%}
+
+                  {%- if _block.subtitle != blank -%}
+                    <p>{{ _block.subtitle | newline_to_br }}</p>
+                  {%- endif -%}
+                </div>
+              </li>
+            {%- endif -%}
+          {%- endcapture -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+
+    {%- if link.links.size > 0 or dropdown_items != '' -%}
+      {%- assign class_dropdown = 'nav__has-dropdown' -%}
+    {%- endif -%}
+
+    <li class="{{ class_dropdown }}{% if link.active %} is-current{% endif %}">
+      <a href="{{ link.url }}" title="{{ link.title }}">
+        <span>
+          {{ link.title }}
+        </span>
+      </a>
+
+      {%- if link.links.size > 0 -%}
+        <div class="nav__dropdown">
+          <div class="nav__dropdown-body js-nav-dropdown">
+            <div class="nav__dropdown-list">
+              <ul>
+                {% for sub_link in link.links %}
+                  <li>
+                    <a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+
+                    {%- if sub_link.links.size > 0 -%}
+                      <ul>
+                        {%- for sub_sub_link in sub_link.links -%}
+                          <li>
+                            <a href="{{ sub_sub_link.url }}" title="{{ sub_sub_link.title }}">{{ sub_sub_link.title }}</a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div><!-- /.nav__dropdown-list -->
+          </div><!-- /.nav__dropdown-body -->
+        </div><!-- /.nav__dropdown -->
+      {%- elsif dropdown_items != '' -%}
+        <div class="nav__dropdown">
+          <div class="nav__dropdown-body js-nav-dropdown">
+            <div class="nav__dropdown-content">
+              <ul class="list-items list-items--nav{% if dropdown_items_counter == 6 %} list-items--six{% endif %}">
+                {{ dropdown_items }}
+              </ul><!-- /.list-items -->
+            </div><!-- /.nav__dropdown-content -->
+          </div><!-- /.nav__dropdown-body -->
+
+          {%- if btn_html != '' -%}
+            <div class="nav__dropdown-actions">
+              {{ btn_html }}
+            </div><!-- /.nav__dropdown-actions -->
+          {%- endif -%}
+        </div><!-- /.nav__dropdown -->
+      {%- endif -%}
+    </li>
+  {% endfor %}
+</ul>

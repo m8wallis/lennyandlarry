@@ -1,0 +1,43 @@
+{%- if content contains title_start -%}
+  {%- assign acc_arr = content | split: title_start -%}
+
+  {%- for acc in acc_arr -%}
+    {%- if acc contains title_end -%}
+      {%- assign acc_content_arr = acc | prepend: title_start | split: title_end -%}
+      {%- assign acc_head = acc_content_arr | first | append: title_end -%}
+      {%- assign acc_body_arr_last = '' -%}
+      {%- assign acc_body_next = '' -%}
+      {%- assign acc_body_prev = '' -%}
+
+      {%- if acc_content_arr.size > 1 -%}
+        {%- assign acc_body_arr_last = acc_content_arr | last -%}
+      {%- endif -%}
+
+      {%- if acc_body_arr_last contains text_start -%}
+        {%- assign acc_body_next_arr = acc_body_arr_last | split: text_start | last | prepend: text_start | split: text_end -%}
+        {%- assign acc_body_next = acc_body_next_arr | last -%}
+
+        {%- if acc_body_next contains title_start -%}
+          {%- assign acc_body_next = acc_body_next | split: title_start | first -%}
+        {%- endif -%}
+
+        {%- if acc_body_next_arr.size < 2 -%}
+          {%- assign acc_body_next = '' -%}
+        {%- endif -%}
+
+        {%- assign acc_body_prev = acc_body_arr_last | split: text_end | reverse | join: text_end | remove_first: acc_body_next | split: text_end | reverse | join: text_end -%}
+      {%- else -%}
+        {%- assign acc_body_next = acc_body_arr_last -%}
+      {%- endif -%}
+
+      {%- assign acc_body = '<div class="' | append: accordion_body_class | append: '">' | append: acc_body_prev | append: '</div>' | append: acc_body_next -%}
+
+      {{ acc_head }}
+      {{ acc_body }}
+    {%- else -%}
+      {{ acc }}
+    {%- endif -%}
+  {%- endfor -%}
+{%- else -%}
+  {{ content }}
+{%- endif -%}

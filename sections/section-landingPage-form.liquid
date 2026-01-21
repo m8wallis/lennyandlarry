@@ -1,0 +1,76 @@
+{%- assign _section = section.settings -%}
+{%- assign section_title = _section.title -%}
+{%- assign section_subtitle = _section.subtitle -%}
+
+<section class="section section--white section--white-overlay rewards-form">
+  <div class="shell shell--wide">
+    <div class="section__container">
+      <div class="section__body shell">
+
+        <h3 class="section__title h2 title-hollie hide-desktop">{{ section_title | newline_to_br }}</h3>
+        <h4 class="section__subtitle h4 h4--mobile-small title-rust hide-desktop">{{ section_subtitle | newline_to_br }}</h4>
+        <p class="hide-desktop" style="width:100%; text-align: center; font-size: 20px; margin-bottom: 0;">{{ _section.content }}</p>
+
+        <div class="flex">
+          <div class="left-col">
+            {{ _section.image | img_url: 'master' | img_tag }}
+          </div>
+
+          <div class="right-col">
+            <div class="section__head shell shell--wide">
+              <h3 class="section__title h2 title-hollie hide-mobile">{{ section_title | newline_to_br }}</h3>
+              <h4 class="section__subtitle h4 h4--mobile-small title-rust hide-mobile">{{ section_subtitle | newline_to_br }}</h4>
+        <p class="hide-mobile" style="width:100%; text-align: center; font-size: 20px; margin-bottom: 0;">{{ _section.content }}</p>
+              {{ _section.embed }}
+              <p class="" style="width:100%; text-align: center; margin-bottom: 20px;">{{ _section.terms }}</p>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /.section__body -->
+    </div><!-- /.section__container -->
+  </div><!-- /.shell -->
+</section><!-- /.section -->
+
+{% schema %}
+{
+  "name": "Section Landing Page Form",
+  "settings": [
+  {
+    "type": "textarea",
+    "id": "subtitle",
+    "label": "Subtitle"
+  },
+  {
+    "type": "textarea",
+    "id": "title",
+    "label": "Title"
+  },
+  {
+    "type": "textarea",
+    "id": "content",
+    "label": "Content"
+  },
+  {
+    "type": "textarea",
+    "id": "terms",
+    "label": "Terms"
+  },
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+  },
+  {
+    "type": "textarea",
+    "id": "embed",
+    "label": "Klaviyo Form Embed"
+  }
+  ],
+  "presets": [
+  {
+    "name": "Section Landing Page Form"
+  }
+  ]
+}
+{% endschema %}

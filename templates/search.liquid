@@ -1,0 +1,46 @@
+{%- assign items_per_page = settings.search_items_per_page | default: 16 -%}
+{%- assign section_title = 'general.search.title' | t -%}
+
+{%- capture section_search_html -%}
+	<div class="section__body">
+  	{%- render 'form-search' form_search_modifier: 'form-search--secondary section__form', search_idx: 1 -%}
+
+  	{%- if search.results != empty and search.performed -%}
+			<p class="section__entry section__entry--results">
+				{{- 'general.search.results_for_html' | t: terms: search.terms, number_results: search.results_count -}}
+			</p>
+		{%- elsif search.results == empty and search.performed -%}
+			<p class="section__entry section__entry--no-results">
+				{{- 'general.search.no_results_html' | t: terms: search.terms -}}
+			</p>
+		{%- endif -%}
+  </div><!-- /.section__body -->
+{%- endcapture -%}
+
+{%- render 'section-triangles-top' section_title: section_title, section_content: section_search_html, section_modifier: 'section--collection', section_entry: true -%}
+
+<section class="section-default section-default--search">
+	<div class="shell">
+		{%- if search.performed -%}
+			{%- paginate search.results by items_per_page -%}
+				<div class="section__body">
+					{%- if search.results != empty and search.terms != "" -%}
+						<div class="product-items js-items-load-more">
+							{%- for _item in search.results -%}
+								{%- if _item.object_type == 'product' -%}
+									{% render 'product-item' _product: _item, modifier: 'product-item--default product-items__item' %}
+								{%- endif -%}
+							{%- endfor -%}
+						</div><!-- /.product-items -->
+					{%- endif -%}
+				</div><!-- /.section__body -->
+
+				<div class="section__actions js-load-actions">
+					{%- if paginate.next.is_link -%}
+						<a href="{{ paginate.next.url }}" class="section__btn btn btn--xxlarge btn--blue btn--inverse js-load-actions-btn">{{ 'collections.general.view_more' | t }}</a>
+					{%- endif -%}
+				</div><!-- /.section__actions -->
+			{%- endpaginate -%}
+		{%- endif -%}
+	</div><!-- /.shell -->
+</section><!-- /.section-default -->

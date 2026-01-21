@@ -1,0 +1,65 @@
+{%- assign section_image = section_image | default: _section.image -%}
+{%- assign section_image_mobile = section_image_mobile | default: _section.image_mobile -%}
+{%- assign image_check_class = image_check_class | default: 'section__bg' -%}
+{%- assign image_check_res_desktop = image_check_res_desktop | default: '3840x' -%}
+{%- assign image_check_res_mobile = image_check_res_mobile | default: '1534x' -%}
+{%- assign image_check_meta = image_check_meta | default: false -%}
+{%- assign image_check_bg = image_check_bg | default: false -%}
+{%- assign section_image_alt = section_image_alt | default: section_image.alt -%}
+{%- assign section_image_mobile_alt = section_image_mobile_alt | default: section_image_mobile.alt -%}
+
+{%- if section_image != blank -%}
+  {%- assign image_class = image_check_class -%}
+
+  {%- if section_image_mobile != blank -%}
+    {%- assign image_class = image_check_class | append: ' hidden-xs' -%}
+  {%- endif -%}
+
+  {%- assign section_image_src = section_image | img_url: image_check_res_desktop -%}
+
+  {%- if image_check_meta == true -%}
+    {%- assign section_image_src = section_image -%}
+  {%- endif -%}
+
+  {%- if image_check_bg == true -%}
+    <div class="{{ image_class }}" role="img" aria-label="{{ section_image_alt }}" style="background-image: url('{{ section_image_src }}');"></div>
+  {%- else -%}
+    <div class="{{ image_class }}">
+      <img src="{{ section_image_src }}" alt="{{ section_image_alt }}">
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{%- if section_image_mobile != blank -%}
+  {%- assign image_class_mobile = image_check_class -%}
+
+  {%- if section_image != blank -%}
+    {%- assign image_class_mobile = image_check_class | append: ' visible-xs-block' -%}
+  {%- endif -%}
+
+  {%- assign section_image_mobile_src = section_image_mobile | img_url: image_check_res_mobile -%}
+
+  {%- if image_check_meta == true -%}
+    {%- assign section_image_mobile_src = section_image_mobile -%}
+  {%- endif -%}
+
+  {%- if image_check_bg == true -%}
+    <div class="{{ image_class_mobile }}" role="img" aria-label="{{ section_image_mobile_alt }}" style="background-image: url('{{ section_image_mobile_src }}');"></div>
+  {%- else -%}
+    <div class="{{ image_class_mobile }}">
+      <img src="{{ section_image_mobile_src }}" alt="{{ section_image_mobile_alt }}">
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{%- assign section_image = '' -%}
+{%- assign section_image_mobile = '' -%}
+{%- assign image_class = '' -%}
+{%- assign image_class_mobile = '' -%}
+{%- assign image_check_class = 'section__bg' -%}
+{%- assign image_check_res_desktop = '3840x' -%}
+{%- assign image_check_res_mobile = '1534x' -%}
+{%- assign image_check_meta = false -%}
+{%- assign image_check_bg = false -%}
+{%- assign section_image_src = '' -%}
+{%- assign section_image_mobile_src = '' -%}

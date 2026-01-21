@@ -1,0 +1,134 @@
+<div class="form form--triangles form--xsmall form--register js-form-validate">
+	{% form 'create_customer' %}
+		{%- assign error_class = 'form__row--error' | prepend: ' ' -%}
+		{%- capture error_first_name -%}{%- if form.errors contains 'first_name' -%}{{- error_class -}}{%- endif -%}{%- endcapture -%}
+		{%- capture error_last_name -%}{%- if form.errors contains 'last_name' -%}{{- error_class -}}{%- endif -%}{%- endcapture -%}
+		{%- capture error_email -%}{%- if form.errors contains 'email' -%}{{- error_class -}}{%- endif -%}{%- endcapture -%}
+		{%- capture error_password -%}{%- if form.errors contains 'password' -%}{{- error_class -}}{%- endif -%}{%- endcapture -%}
+		{%- capture error_birthday -%}{%- if form.errors contains 'error_birthday' -%}{{- error_class -}}{%- endif -%}{%- endcapture -%}
+
+		<div class="form__triangles">
+			<div class="shell">
+				<div class="form__holder">
+					<div class="form__head">
+						<h1 class="h2 form__title">
+							<span>
+								{{- 'customer.register.title' | t -}}
+							</span>
+						</h1><!-- /.form__title -->
+					</div><!-- /.form__head -->
+
+					<div class="form__description entry">
+						<p>
+							<span>{{ 'customer.register.have_account' | t }}</span>
+
+							<a href="/account/login">{{ 'customer.register.login' | t }}</a>
+						</p>
+					</div><!-- /.form__description -->
+				</div><!-- /.form__holder -->
+			</div><!-- /.shell -->
+		</div><!-- /.form__triangles -->
+
+		<div class="form__container">
+			<div class="shell">
+				<div class="form__holder">
+					{% if form.errors %}
+						<div class="form__errors">
+							{{- form.errors | default_errors -}}
+						</div><!-- /.form__errors -->
+					{% endif %}
+				<input type="hidden" id="customer_tags" name="customer[tags]" value="customer"/>
+				<input type="hidden" name="customer[tags]" value="newsletter">
+					<div class="form__body">
+						<div class="form__row{{- error_first_name -}}">
+							<label for="field-first-name" class="form__label">{{- 'customer.register.first_name' | t -}}</label>
+
+							<div class="form__controls">
+								<input type="text" class="field" name="customer[first_name]" id="field-first-name" value="{{- form.first_name -}}" placeholder="{{- 'customer.register.first_name' | t -}}">
+							</div><!-- /.form__controls -->
+						</div><!-- /.form__row -->
+
+						<div class="form__row{{- error_last_name -}}">
+							<label for="field-last-name" class="form__label">{{- 'customer.register.last_name' | t -}}</label>
+
+							<div class="form__controls">
+								<input type="text" class="field" name="customer[last_name]" id="field-last-name" value="{{- form.last_name -}}" placeholder="{{- 'customer.register.last_name' | t -}}">
+							</div><!-- /.form__controls -->
+						</div><!-- /.form__row -->
+
+						<div class="form__row{{- error_email -}}">
+							<label for="field-email" class="form__label">{{- 'customer.register.email' | t -}}</label>
+
+							<div class="form__controls">
+								<input type="email" class="field" name="customer[email]" id="field-email" value="{{- form.email -}}" placeholder="{{- 'customer.register.email' | t -}}" required>
+							</div><!-- /.form__controls -->
+						</div><!-- /.form__row -->
+
+						<div class="form__row{{- error_password -}}">
+							<label for="field-password" class="form__label">{{- 'customer.register.password' | t -}}</label>
+
+							<div class="form__controls">
+								<input type="password" class="field js-pass" name="customer[password]" id="field-password" value="" placeholder="{{- 'customer.register.password' | t -}}" required>
+							</div><!-- /.form__controls -->
+						</div><!-- /.form__row -->
+
+						<div class="form__row">
+			        <label for="field-password2" class="form__label">{{- 'customer.register.confirm_password' | t -}}</label>
+
+			        <div class="form__controls">
+			          <input type="password" class="field js-pass-confirm" name="customer-pass-confirm" id="field-password2" value="" placeholder="{{- 'customer.register.confirm_password' | t -}}" required>
+			        </div><!-- /.form__controls -->
+			      </div><!-- /.form__row -->
+
+                      
+
+						<div class="form__row{{- error_birthday -}}">
+							<div id="birthday-wrapper" class="clearfix large_form" style="width: fit-content; margin: 0 auto;">
+
+<label for="birthday" class="label">Birthday</label>
+
+<input type="date" value="" name="customer[note][birthday]" id="birthday" class="text" size="30" /></div>
+						</div><!-- /.form__row -->
+					</div><!-- /.form__body -->
+
+					<div class="form__foot">
+						<div class="checkbox form__checkbox">
+							<input type="checkbox" name="customer[accepts_marketing]" checked="checked" value="true" id="field-checkbox">
+
+							<label for="field-checkbox">Sign up for our newsletter for exclusive discounts, launches, & more</label>
+						</div><!-- /.checkbox -->
+            <div class="terms-check">
+              <p>By creating an account, you agree to our <a href="/pages/terms-of-service" target="_blank">Terms of Service</a>.</p>
+            </div>
+						<div class="form__actions">
+							<ul>
+								<li>
+                  {% comment %}
+									<button type="submit" class="form__btn btn btn--xlarge">
+										{{- 'customer.register.submit' | t -}}
+									</button>
+                  {% endcomment %}
+                  <button type="submit" class="form__btn btn btn--xlarge">
+										{{- 'customer.register.submit' | t -}}
+									</button>
+								</li>
+							</ul>
+						</div><!-- /.form__actions -->
+					</div><!-- /.form__foot -->
+				</div><!-- /.form__holder -->
+			</div><!-- /.shell -->
+		</div><!-- /.form__container -->
+	{% endform %}
+</div><!-- /.form -->
+
+<script>
+
+$('#create_customer').submit(function (event) {
+   window.dataLayer = window.dataLayer || [];
+
+  window.dataLayer.push({
+    'event': 'sign_up'
+  });
+});
+  
+</script>

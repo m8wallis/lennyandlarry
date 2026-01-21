@@ -1,0 +1,197 @@
+{%- assign products_per_page = settings.products_per_page | default: 16 -%}
+{%- assign subtitle = 'collections.general.subtitle' | t -%}
+
+{% if collection.handle contains "vendors" %}
+  {% section 'section-error' %}
+  {% assign page_title = '404 Not Found' %}
+  {% assign og_title = page_title %}
+  {% assign canonical_url = 'https://www.lennylarry.com/404' %}
+{% else %}
+    
+    {%- capture section_collection_html -%}
+    	<div class="section__body">
+      
+      	{%- if settings.collection_menu != blank and linklists[settings.collection_menu].links.size > 0 -%}
+      		{%- assign menu_list_html = '' -%}
+      		{%- assign filter_label = 'collections.general.filters_label' | t -%}
+      		{%- assign filter_label_list = '' -%}
+      		{%- for link in linklists[settings.collection_menu].links -%}
+      			{%- assign _link_url = link.url -%}
+      			{%- if _link_url contains '/collections/' -%}
+      				{%- assign _link_url = _link_url | split: '/collections/' | last | split: '/' | first -%}
+      				{%- assign _link_url = '/collections/' | append: _link_url -%}
+      			{%- endif -%}
+    
+      			{%- capture menu_list_html -%}
+      				{{ menu_list_html }}
+    
+    					<li>
+    						<a href="{{ link.url }}">{{ link.title }}</a>
+    					</li>
+      			{%- endcapture -%}
+    
+      			{%- if collection.url == _link_url -%}
+    					{%- assign filter_label_list = link.title -%}
+    				{%- endif -%}
+    			{%- endfor -%}
+    
+        	<div class="section__dropdown">
+        		<div class="dropdown js-dropdown" id="dropdown-nav">
+        			<span class="dropdown__label js-btn-toggle js-btn-toggle-dropdown" data-js-target="#dropdown-nav" data-js-class="is-expanded">
+        				{%- if filter_label_list != '' -%}
+        					{{ filter_label_list }}
+      					{%- else -%}
+      						{{ filter_label }}
+        				{%- endif -%}
+        			</span>
+    
+        			<div class="dropdown__body">
+        				<ul>
+        					{{ menu_list_html }}
+        				</ul>
+        			</div><!-- /.dropdown__body -->
+        		</div><!-- /.dropdown -->
+        	</div><!-- /.section__dropdown -->
+      	{%- endif -%}
+    
+         {% if collection.image %}
+            <img src="{{ collection.image | img_url: 'master' }}" alt="{{ collection.title }}">
+          {% endif %}
+
+      </div><!-- /.section__body -->
+    {%- endcapture -%}
+    
+    {%- render 'section-triangles-top' section_subtitle: subtitle, section_title: collection.title, section_content: section_collection_html, section_modifier: 'section--collection', section_entry: true -%}
+    
+    <section class="section-default section-default--collection">
+    	<div class="shell">
+    		{%- paginate collection.products by products_per_page -%}
+    			<div class="section__body">
+    				<div class="product-items product-items--tertiary js-items-load-more">
+    					{%- for _product in collection.products -%}
+                      		<script type="application/json" class="bold-product-json">{{ _product | json }}</script>
+                      
+    						{% render 'product-item' _product: _product, modifier: 'product-item--default product-items__item' %}
+    					{%- else -%}
+    						<div class="product-item product-item--no-items product-items__item">
+    							<p>
+    								<em>
+    									{{- 'collections.general.no_matches' | t -}}
+    								</em>
+    							</p>
+    						</div><!-- /.product-item -->
+    					{%- endfor -%}
+    				</div><!-- /.product-items -->
+    			</div><!-- /.section__body -->
+    
+    			<div class="section__actions js-load-actions">
+    				{%- if paginate.next.is_link -%}
+    					<a href="{{ paginate.next.url }}" class="section__btn btn btn--xxlarge btn--blue btn--inverse js-load-actions-btn">{{ 'collections.general.view_more' | t }}</a>
+    				{%- endif -%}
+    			</div><!-- /.section__actions -->
+    		{%- endpaginate -%}
+
+  {% comment %}
+    	{% section "section-shopAll-form" %}
+  {% endcomment %}
+    
+    		{%- if collection.description != blank -%}
+    			<footer class="section__foot">
+    				<div class="section__entry entry entry--accordion js-entry-accordion" id="entry-collection">
+    					{%- capture accordion_richtext -%}
+    						<h6>{{ 'collections.general.learn_more' | t }}</h6>
+    
+    						<div class="entry__accordion js-entry-accordion-body">
+    							{{ collection.description }}
+    						</div><!-- /.entry__accordion -->
+    					{%- endcapture -%}
+    
+    					{%- assign continue_reading_text = 'collections.general.continue_reading' | t -%}
+    					{%- assign continue_reading_btn = '<a href="#" class="link-primary entry__link js-btn-toggle" data-js-target="#entry-collection" data-js-class="is-expanded" data-js-this-active-class="is-active">' | append: continue_reading_text | append: '</a>' -%}
+    					{{ accordion_richtext | replace: '<p>----</p>', continue_reading_btn | replace: '----', continue_reading_btn }}
+    				</div><!-- /.section__entry -->
+    			</footer><!-- /.section__foot -->
+    		{%- endif -%}
+    	</div><!-- /.shell -->
+    </section><!-- /.section-default -->
+    {% if customer.tags contains 'wholesale'%}
+    <script>
+    
+    setTimeout( function(){ 
+    	$(".js-update-price-for-wholesale[data-attr-price]" ).each(function() {
+     let countvariant = $(this).attr('data-count-variant');
+    console.log(countvariant);
+    
+    if(countvariant)
+    {
+    let price = $(this).text();
+    console.log(price);
+    price = price.substring(1);
+    
+    price = parseFloat(price) * .9;
+    price  = price.toFixed(3)*100;
+    price  = Math.round(price)/100;
+    price = price.toFixed(2);
+    console.log("$" + price);
+    $(this).text("$" + price);
+    
+    }
+    });
+      }  , 1000 );
+    
+    
+    
+    
+    
+    </script>
+    
+    {%endif%}
+    <script>
+    /* $(document).ready(function() {
+      $('.js-load-actions-btn').click(function() {
+      setTimeout(function() {
+        let api = new Yotpo.API(yotpo);	
+        api.refreshWidgets();
+        }, 1500);
+      });
+    }); */
+    function waitForEle(elementPath, callBack){
+        window.setTimeout(function(){
+           if($(elementPath).length){
+              callBack(elementPath, $(elementPath));
+           }
+           else{
+                waitForEle(elementPath, callBack);
+           }
+        },500)
+    }
+    
+    let api;
+      
+    $(document).ready(function() {
+      //wait until yotpo loads
+       waitForEle(".star-clickable",function(){
+      	api = new Yotpo.API(yotpo);
+       });
+      
+      
+      $('.js-load-actions-btn').click(function() {
+      	setTimeout(function() {
+        console.log('Called!');
+          if (api) {
+        	api.refreshWidgets();
+          }
+          $('.js-load-actions-btn').click(function() {
+            setTimeout(function() {
+            console.log('Called!');
+              if (api) {
+                api.refreshWidgets();
+              }
+            }, 1000);
+          });
+        }, 1000);
+      });
+    });
+    </script>
+
+{% endif %}

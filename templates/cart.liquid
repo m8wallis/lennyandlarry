@@ -1,0 +1,306 @@
+<script>
+var url = window.location.search;
+if (url.match("nav_to_checkout").length > 0) {
+  window.location = '/cart';
+}
+</script>
+
+<div class="cart js-cart-section-container">
+  <section class="section section--triangles section--cart">
+    <div class="shell">
+      <div class="section__holder">
+        {%- if cart.item_count > 0 -%}
+          <header class="section__head">
+            <h2 class="section__title">
+              <span>
+                {{- 'cart.general.title' | t -}}
+              </span>
+            </h2><!-- /.section__title -->
+          </header><!-- /.section__head -->
+        {%- else -%}
+          <header class="section__head">
+            <h2 class="section__title">
+              <span>
+                {{- 'cart.general.empty' | t -}}
+              </span>
+            </h2><!-- /.section__title -->
+          </header><!-- /.section__head -->
+
+          <div class="section__actions">
+            {{- 'cart.general.continue_browsing_empty_html' | t -}}
+          </div><!-- /.section__actions -->
+        {%- endif -%}
+      </div><!-- /.section__holder -->
+    </div><!-- /.shell -->
+  </section><!-- /.section -->
+
+  <section class="section-default section-default--cart">
+    <div class="shell">
+      {%- if cart.item_count > 0 -%}
+        <div class="section__body">
+          <form action="/cart" method="post" novalidate class="form-cart">
+            <div class="form__body">
+              <div class="table table--cart">
+                <table>
+                  <thead>
+                    <tr>
+                      <th class="table__name">
+                        {{- 'cart.label.name' | t -}}
+                      </th>
+
+                      <th class="table__price abbb">
+                        {{- 'cart.label.price' | t -}}
+                      </th>
+
+                      <th class="table__quantity">
+                        {{- 'cart.label.quantity' | t -}}
+                      </th>
+
+                      <th class="table__total">
+                        {{- 'cart.label.total' | t -}}
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {%- for line_item in cart.items -%}
+                      <tr>
+                        <td class="table__name" data-heading="{{- 'cart.label.name' | t -}}">
+                          <div class="table__inner">
+                            <div class="table__image">
+                              <div class="table__image-inner">
+                                <a href="{{- line_item.url -}}"></a>
+
+                                <figure>
+                                  {{- line_item | img_tag: line_item.image.alt, 'table__thumbnail', '260x'  -}}
+                                </figure>
+                              </div><!-- /.table__image-inner -->
+                            </div><!-- /.table__image -->
+
+                            <div class="table__content">
+                              <h5 class="table__title title-rust">
+                                <a href="{{- line_item.url -}}">
+                                  {{- line_item.product.title -}}
+                                </a>
+                              </h5>
+
+                              {%- unless line_item.variant.title contains 'Default' -%}
+                                <p class="table__variant">{{- line_item.variant.title -}}</p><!-- /.table__variant -->
+                              {%- endunless -%}
+
+                              {%- assign property_size = line_item.properties | size -%}
+
+                              {%- if property_size > 0 -%}
+                                <p class="table__properties">
+                                  {%- for p in line_item.properties -%}
+                                    {%- unless p.last == blank -%}
+                                      <span>
+                                        {{- p.first -}}:
+
+                                        {%- if p.last contains '/uploads/' -%}
+                                          <a href="{{- p.last -}}">{{- p.last | split: '/' | last -}}</a>
+                                        {%- else -%}
+                                          {{- p.last -}}
+                                        {%- endif -%}
+                                      </span>
+                                    {%- endunless -%}
+                                  {%- endfor -%}
+                                </p><!-- /.table__properties -->
+                              {%- endif -%}
+
+                              <a href="/cart/change?line={{- forloop.index -}}&amp;quantity=0" class="remove link link--blue">
+                                <span></span>
+
+                                {{- 'cart.general.remove' | t -}}
+                              </a>
+                            </div><!-- /.table__content -->
+                          </div><!-- /.table__inner -->
+                        </td>
+
+                        <td class="table__price price1 ws-item-price-{{line_item.key|replace:':','_'}}" data-heading="{{- 'cart.label.price' | t -}}">
+                          
+                          <span class="money" data-line-index="{{ forloop.index0 }}">{{- line_item.price | money -}}</span>
+                        </td>
+
+                        <td class="table__quantity" data-heading="{{- 'cart.label.quantity' | t -}}">
+                          <div class="qty qty--primary js-qty">
+                            <div class="qty__inner">
+                              <span class="qty__btn qty__btn--minus" tabindex="0" role="button">-</span>
+                              <label class="sr-only" for="field-quantity">Quantity</label>
+                              <input type="number" class="field-quantity qty__field" id="field-quantity" name="updates[]" value="{{- line_item.quantity -}}" min="1">
+                              <span class="qty__btn qty__btn--plus" tabindex="0" role="button">+</span>
+                              
+                            </div><!-- /.qty__inner -->
+                          </div><!-- /.qty -->
+                        </td>
+                        
+						
+                        <td class="table__total" data-heading="{{- 'cart.label.total' | t -}}">
+                          <span class=" total1 ws-item-total-price-{{line_item.key|replace:':','_'}}">
+                          
+                            {{- line_item.price | money -}}
+                            </span>
+                        </td>
+                     
+               
+                      </tr>
+                    {%- endfor -%}
+                  </tbody>
+                </table>
+              </div><!-- /.table table-cart -->
+            </div><!-- /.form-body -->
+
+            {%- assign calc_freeshipping = '' -%}
+            {%- assign calc_freeshipping_message = settings.cart_until_message -%}
+            {%- assign calc_freeshipping_free_message = 'cart.general.shipping_free_message' | t -%}
+
+            
+            {%- capture calc_freeshipping -%}
+  
+{%- if customer.tags contains 'wholesale' -%}
+{%- render 'calc-freeshipping' announcement_bar_target_price: settings.cart_wholesale_price, announcement_bar:
+calc_freeshipping_message, announcement_bar_text_after: calc_freeshipping_free_message -%}
+
+{%- else -%}
+{%- render 'calc-freeshipping' announcement_bar_target_price: settings.cart_target_price, announcement_bar:
+calc_freeshipping_message, announcement_bar_text_after: calc_freeshipping_free_message -%}
+
+{%- endif -%}
+
+{%- endcapture -%}
+            
+            
+           
+
+            <div class="form__foot">
+              <div class="form__foot-content">
+                <textarea name="note" class="form__textarea textarea" rows="1" id="cart-notes" placeholder="{{ 'cart.general.note' | t }}" >{{ cart.note }}</textarea>
+              </div><!-- /.form__foot-content -->
+
+              <div class="form__foot-aside">
+                <div class="form__list">
+                  <ul>
+                    
+                    <div class="discount-code-form"></div>
+                      <div class="discount-code-alerts"></div>
+                    
+                    <li>
+                      
+                      
+
+                      <strong>
+                        {{- 'cart.general.subtotal' | t -}}
+                      </strong>
+
+                      <div class="subnew">
+                        <span>{{- cart.total_price | money -}}</span>
+
+                        {%- if cart.total_discounts > 0 -%}
+                          {%- assign savings = cart.total_discounts | money -%}
+
+                          <span class="table__subtotal-savings">
+                            {{- 'cart.general.savings_html' | t: price: savings -}}
+                          </span>
+                        {%- endif -%}
+                      </div>
+                    </li>
+
+                    <li>
+                      <strong>
+                        {{- 'cart.general.shipping' | t -}}
+                      </strong>
+
+                      {%- if calc_freeshipping != '' -%}
+                        <div class="js-cart-calc-item">
+                          {{ calc_freeshipping | replace: 'class-until', 'form__list-elem is-until' | replace: 'class-after', 'form__list-elem is-after' }}
+                        </div>
+                      {%- endif -%}
+                    </li>
+                  </ul>
+                </div><!-- /.form__list -->
+
+                <div class="form__actions">
+                  <button type="submit" name="checkout" class="form__btn btn btn--block btn--checkout">
+                    {{- 'cart.general.checkout' | t -}}
+                  </button>
+
+                  {{- 'cart.general.continue_browsing_html' | t -}}
+
+                  {%- comment -%}
+                    {%- if additional_checkout_buttons -%}
+                      <div class="form__additional-buttons">
+                        {{- content_for_additional_checkout_buttons -}}
+                      </div>
+                    {%- endif -%}
+                  {%- endcomment -%}
+                </div><!-- /.form__actions -->
+              </div><!-- /.form__foot-aside -->
+            </div><!-- /.form__foot -->
+          </form>
+        </div><!-- /.section__body -->
+      {%- endif -%}
+    </div><!-- /.shell -->
+  </section><!-- /.section-default -->
+</div><!-- /.cart -->
+
+<div class="widget-cart-container js-widget-cart-container is-hidden hidden">
+  <div class="widget__container js-cart-container">
+    <form action="/cart" method="post" novalidate>
+      <div class="form__head">
+        <h1 class="form__title title-rust h6">{{ 'cart.general.title' | t }} ({{ cart.item_count }})</h1>
+      </div><!-- /.form__head -->
+
+      {%- if cart.item_count > 0 -%}
+        <div class="form__body">
+          <div class="cart-items cart-items--widget">
+            {%- for line_item in cart.items -%}
+              {%- render 'cart-item' modifier: 'cart-item--widget', line_item: line_item -%}
+            {%- endfor -%}
+          </div><!-- /.cart-items -->
+        </div><!-- /.form__body -->
+
+      
+      <div class="discount-code-form"></div>
+                      <div class="discount-code-alerts"></div>
+      
+        <div class="form__foot">
+          <div class="form__foot-row">
+            <strong>{{- 'cart.general.subtotal' | t -}}</strong>
+
+            <strong>
+              <span class="drawer_sub wsaio--subtotal">
+                <span class="money" data-cart-total>{{- cart.total_price | money -}}</span>
+              </span>
+
+              {%- if cart.total_discounts > 0 -%}
+                {%- assign savings = cart.total_discounts | money -%}
+
+                <span class="form__foot-subtotal-savings">
+                  {{- 'cart.general.savings_html' | t: price: savings -}}
+                </span>
+              {%- endif -%}
+            </strong>
+          </div><!-- /.form__foot-row -->
+
+          <div class="form__actions">
+            <button type="submit" name="checkout" class="form__btn btn btn--checkout btn--block">
+              {{- 'cart.general.checkout' | t -}}
+            </button>
+
+            <a href="/cart" class="form__btn btn btn--blue btn--inverse btn--block" >{{- 'cart.general.view_cart' | t -}}</a>
+          </div><!-- /.form__actions -->
+        </div><!-- /.form__foot -->
+      {%- else -%}
+        <div class="form__empty">
+          <p>
+            {{- 'cart.general.empty' | t -}}
+          </p>
+        </div><!-- /.form__empty -->
+      {%- endif -%}
+    </form>
+  </div><!-- /.widget__container -->
+
+  <div class="cart-global-total js-cart-global-total" data-js-cart-total-price="{{ cart.total_price }}">
+    <small{% unless cart.item_count > 0 %} class="is-disabled"{% endunless %}>{{ cart.item_count }}</small>
+  </div><!-- /.cart-global-total -->
+</div><!-- /.widget-cart-container -->

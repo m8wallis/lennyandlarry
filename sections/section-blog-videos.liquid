@@ -1,0 +1,27 @@
+{%- assign subtitle = 'blogs.blog.title' | t -%}
+
+{%- render 'section-triangles-top' section_subtitle: subtitle, section_title: blog.title, section_modifier: 'section--triangles-secondary section--blog' -%}
+
+{%- render 'blog-element' _section: section.settings, is_video: true -%}
+
+{% schema %}
+{
+  "name": "Blog",
+  "settings": [
+    {
+      "type": "article",
+      "id": "featured_article",
+      "label": "Featured Article"
+    },
+    {
+      "type": "range",
+      "id": "articles_per_page",
+      "min": 1,
+      "max": 48,
+      "step": 1,
+      "label": "Articles Per Page",
+      "default": 16
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,118 @@
+{%- assign _blocks = section.blocks -%}
+{%- assign slides_html = '' -%}
+{%- assign slider_dot = '' -%}
+
+{%- if _blocks.size > 0 -%}
+{%- for block in _blocks -%}
+{%- assign _block = block.settings -%}
+
+{%- if _block.image != blank or _block.subtitle != blank or _block.title != blank or _block.text != blank -%}
+{%- capture slider_dot -%}
+{{ slider_dot }}
+
+<div class="slider__dot">
+  <span></span>
+
+  <strong class="h5 h5--mobile-small title-rust">
+    {%- if _block.subtitle != blank -%}
+    {{ _block.subtitle | newline_to_br }}
+    {%- endif -%}
+  </strong>
+</div><!-- /.slider__dot -->
+{%- endcapture -%}
+
+{%- capture slides_html -%}
+{{ slides_html }}
+
+<div class="slider__slide">
+  <div class="item-inline">
+    <div class="item-inline__inner">
+      {%- if _block.image != blank -%}
+      <div class="item-inline__image">
+        <figure>
+          {% assign old_url =  _block.image | img_url: 'master' %}
+          {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '910', options: 'dpr:2' %}{% endcapture %}
+          <img src="{{ imageboss_url }}" alt="{{ _block.title }}}">
+        </figure>
+      </div><!-- /.item-inline__image -->
+      {%- endif -%}
+
+      {%- if _block.subtitle != blank or _block.title != blank or _block.text != blank -%}
+      <div class="item-inline__content">
+        {%- if _block.subtitle != blank -%}
+        <h5 class="h5 h5--mobile-small title-rust item-inline__subtitle">{{ _block.subtitle | newline_to_br }}</h5>
+        {%- endif -%}
+
+        {%- if _block.title != blank -%}
+        <h3 class="h3 h3--mobile-large item-inline__title">{{ _block.title | newline_to_br }}</h3>
+        {%- endif -%}
+
+        {%- if _block.text != blank -%}
+        <div class="item-inline__entry">
+          <p>{{ _block.text | newline_to_br }}</p>
+        </div><!-- /.item-inline__entry -->
+        {%- endif -%}
+      </div><!-- /.item-inline__content -->
+      {%- endif -%}
+    </div><!-- /.item-inline__inner -->
+  </div><!-- /.item-inline -->
+</div><!-- /.slider__slide -->
+{%- endcapture -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+
+{%- if slides_html != '' -%}
+<section class="section-about">
+  <div class="shell">
+    <div class="section__body">
+      <div class="slider-timeline js-slider-timeline">
+        <div class="slider__slides js-slider-timeline-slides">
+          {{ slides_html }}
+        </div><!-- /.slider__slides -->
+
+        <div class="slider__dots js-slider-timeline-dots">
+          {{ slider_dot }}
+        </div><!-- /.slider__dots -->
+      </div><!-- /.slider -->
+    </div><!-- /.section__body -->
+  </div><!-- /.shell -->
+</section><!-- /.section-about -->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Section Slider",
+  "blocks": [
+  {
+    "type": "slide",
+    "name": "Slide",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "1993"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Cookie Creators"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Two gym rats named Benny and Barry get tired of eating the same boring things to get their protein. They imagine adding protein to their favorite foods starting with a high protein muffin. Boom! Lenny & Larryʼs is created, making clean eating the new cool."
+    }
+    ]
+  }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,328 @@
+{%- assign _section = section.settings -%}
+{%- assign calc_freeshipping = '' -%}
+
+{%- capture calc_freeshipping -%}
+
+{%- if customer.tags contains 'wholesale' -%}
+{%- render 'calc-freeshipping' announcement_bar_target_price: settings.cart_wholesale_price, announcement_bar:
+_section.announcement_bar, announcement_bar_text_after: _section.announcement_bar_text_after -%}
+{%- else -%}
+{%- render 'calc-freeshipping' announcement_bar_target_price: settings.cart_target_price, announcement_bar:
+_section.announcement_bar, announcement_bar_text_after: _section.announcement_bar_text_after -%}
+{%- endif -%}
+
+{%- endcapture -%}
+<header class="header js-header" id="header">
+  {%- if calc_freeshipping != '' -%}
+  <div class="header__bar js-header-bar">
+    <div class="shell header__shell">
+      {{ calc_freeshipping | replace: 'class-until', 'header__bar-content header__bar-content--until' | replace:
+      'class-after', 'header__bar-content header__bar-content--after' }}
+    </div><!-- /.shell -->
+  </div><!-- /.header__bar -->
+  {%- endif -%}
+  
+
+  <div class="header__container">
+    <div class="shell header__shell">
+      <div class="header__inner">
+        <div class="header__aside">
+          {% comment %}Logo{% endcomment %}
+          <a href="/" class="logo header__logo">
+            {%- if _section.logo_image != blank -%}
+            {% assign old_url =  _section.logo_image | img_url: 'master' %}
+            {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '300', options: 'dpr:2' %}{% endcapture %}
+            <img src="{{ imageboss_url }}" alt="Lenny Larry Logo">
+            {%- endif -%}
+            {{- shop.name -}}
+          </a>
+        </div><!-- /.header__aside -->
+
+        <div class="flex-end">
+          {% comment %}Main Menu{% endcomment %}
+          <nav class="nav js-nav header__nav{% if _section.mobile_main_menu != blank %} hidden-xs hidden-sm{% endif %}">
+            {%- assign main_menu = _section.main_menu | default: 'main-menu' -%}
+
+            {%- render 'main-menu', handle: main_menu, _blocks: section.blocks, _section: _section -%}
+          </nav><!-- /.nav -->
+
+          <nav class="nav-utilities nav-utilities--primary header__nav-utilities hidden-xs hidden-sm">
+            <ul>
+              <li>
+                <a href="#" class="nav-utilities__search-btn js-btn-toggle" data-js-class="is-search-expanded"
+                data-js-target="#header">
+                <i class="ico-search">
+                  {%- render 'svg-elements' name: 'search' -%}
+                </i>
+              </a>
+
+              {%- render 'form-search' form_search_modifier: 'form-search--primary nav-utilities__search',
+              search_idx:
+              0 -%}
+            </li>
+
+<!--             <li>
+              <a href="/pages/score-at-a-store-near-you">
+                <i class="ico-pin">
+                  {%- render 'svg-elements' name: 'pin' -%}
+                </i>
+              </a>
+            </li> -->
+
+            <li>
+              <a href="/cart"
+              class="nav-utilities__cart js-btn-cart{% unless template.name == 'cart' %} js-btn-toggle{% endunless %}"
+              {% unless template.name=='cart' %} data-js-target="#widget-cart" data-js-class="is-expanded" {%
+              endunless %}>
+              <i class="ico-cart">
+                {%- render 'svg-elements' name: 'cart' -%}
+              </i>
+
+              <strong>
+                <small{% unless cart.item_count> 0 %} class="is-disabled"{% endunless %}>{{ cart.item_count
+                }}</small>
+              </strong>
+            </a>
+          </li>
+
+          <li class="desktop-ada"> {% render 'ada-icon' %}</li>
+        </ul>
+      </nav><!-- /.nav-utilities -->
+      <div class="header__content">
+
+        {%- if _section.mobile_main_menu != blank -%}
+        <nav class="nav js-nav header__nav">
+          {%- render 'menu', handle: _section.mobile_main_menu -%}
+        </nav><!-- /.nav -->
+        {%- endif -%}
+
+        <nav class="nav-utilities nav-utilities--primary header__nav-utilities">
+          <ul>
+            <li>
+              <a href="#" class="nav-utilities__search-btn js-btn-toggle" data-js-class="is-search-expanded"
+              data-js-target="#header">
+              <i class="ico-search">
+                {%- render 'svg-elements' name: 'search' -%}
+              </i>
+            </a>
+
+            {%- render 'form-search' form_search_modifier: 'form-search--primary nav-utilities__search',
+            search_idx:
+            0 -%}
+          </li>
+
+          <li>
+            <a href="/pages/score-at-a-store-near-you">
+              <i class="ico-pin">
+                {%- render 'svg-elements' name: 'pin' -%}
+              </i>
+            </a>
+          </li>
+
+          <li>
+            <a href="/cart"
+            class="nav-utilities__cart js-btn-cart{% unless template.name == 'cart' %} js-btn-toggle{% endunless %}"
+            {% unless template.name=='cart' %} data-js-target="#widget-cart" data-js-class="is-expanded" {%
+            endunless %}>
+            <i class="ico-cart">
+              {%- render 'svg-elements' name: 'cart' -%}
+            </i>
+
+            <strong>
+              <small{% unless cart.item_count> 0 %} class="is-disabled"{% endunless %}>{{ cart.item_count
+              }}</small>
+            </strong>
+          </a>
+        </li>
+      </ul>
+    </nav><!-- /.nav-utilities -->
+
+    {%- render 'socials' socials_modifier: 'header__socials' -%}
+
+    {%- if _section.mobile_bottom_menu != blank -%}
+    <nav class="nav-block js-nav header__nav-block">
+      {%- render 'menu', handle: _section.mobile_bottom_menu -%}
+    </nav><!-- /.nav-block -->
+    {%- endif -%}
+
+    {% render 'ada-icon' %}
+
+
+            <!-- {%- if _section.desktop_hamburger_menu != blank -%}
+          <div class="hidden-xs hidden-sm">
+            <button  class="btn-burger header__btn-desktop-burger js-btn-toggle hidden-xs hidden-sm" data-js-class="is-desktop-nav-expanded" data-js-target="#header" aria-label="Open Mobile Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div class="header__content-desktop">
+              {%- if _section.desktop_hamburger_menu != blank -%}
+              <nav class="nav-block js-nav header__nav-block">
+                {%- render 'menu', handle: _section.desktop_hamburger_menu -%}
+              </nav>
+            {%- endif -%}
+  
+            </div>
+          </div>
+          {%- endif -%} -->
+
+        </div><!-- /.header__content -->
+        <div class="header__actions ">
+          <nav class="nav-utilities nav-utilities--secondary header__nav-utilities-secondary hidden-md hidden-lg">
+            <ul>
+              <li>
+                <a href="/cart"
+                class="nav-utilities__cart js-btn-cart{% unless template.name == 'cart' %} js-btn-toggle{% endunless %}"
+                {% unless template.name=='cart' %} data-js-target="#widget-cart" data-js-class="is-expanded" {%
+                endunless %}>
+                <i class="ico-cart">
+                  {%- render 'svg-elements' name: 'cart' -%}
+                </i>
+
+                <strong>
+                  <small{% unless cart.item_count> 0 %} class="is-disabled"{% endunless %}>{{ cart.item_count
+                  }}</small>
+                </strong>
+              </a>
+            </li>
+          </ul>
+        </nav><!-- /.nav-utilities -->
+        <button class="btn-burger header__btn-burger js-btn-toggle" data-js-class="is-nav-expanded"
+        data-js-target="#header" aria-label="Open Mobile Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div><!-- /.header__actions -->
+
+    {%- unless template.name == 'cart' -%}
+    {%- render 'widget-cart' widget_cart_modifier: 'header__cart' -%}
+    {%- endunless -%}
+  </div>
+
+
+</div><!-- /.header__inner -->
+</div><!-- /.shell -->
+</div><!-- /.header__container -->
+</header><!-- /.header -->
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "header-outer",
+  "settings": [
+  {
+    "type": "header",
+    "content": "Announcement Bar"
+  },
+  {
+    "type": "textarea",
+    "id": "announcement_bar",
+    "label": "Text Until Target Price",
+    "default": "Only {{ price }} more until you have free shipping!",
+    "info": "You can use `{{ price }}` for placeholder"
+  },
+  {
+    "type": "textarea",
+    "id": "announcement_bar_text_after",
+    "label": "Text After Target Price"
+  },
+  {
+    "type": "header",
+    "content": "Logo"
+  },
+  {
+    "type": "image_picker",
+    "id": "logo_image",
+    "label": "Logo Image"
+  },
+  {
+    "type": "header",
+    "content": "Navigation"
+  },
+  {
+    "type": "link_list",
+    "id": "main_menu",
+    "label": "Menu"
+  },
+  {
+    "type": "link_list",
+    "id": "mobile_main_menu",
+    "label": "Mobile Menu"
+  },
+  {
+    "type": "link_list",
+    "id": "mobile_bottom_menu",
+    "label": "Mobile Bottom Menu"
+  },
+  {
+    "type": "header",
+    "content": "Dropdown"
+  },
+  {
+    "type": "text",
+    "id": "dropdown_btn_text",
+    "label": "Dropdown Button Text",
+    "default": "Shop All Cookies"
+  },
+  {
+    "type": "url",
+    "id": "dropdown_btn_link",
+    "label": "Dropdown Button Link"
+  }
+  ],
+  "blocks": [
+  {
+    "type": "item",
+    "name": "Item",
+    "settings": [
+    {
+      "type": "select",
+      "id": "nav_tab",
+      "label": "Tab",
+      "options": [
+        {
+          "value": "complete",
+          "label": "Complete Series"
+        },
+        {
+          "value": "boss",
+          "label": "Bossi Series"
+        },
+        {
+          "value": "more",
+          "label": "More"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "dropdown_handle",
+      "label": "Handle",
+      "info": "The string should be exactly the same as first level title of the menu"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+    ]
+  }
+  ]
+}
+{% endschema %}

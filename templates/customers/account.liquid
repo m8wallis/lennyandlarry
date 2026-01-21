@@ -1,0 +1,136 @@
+<script>
+  var ref = document.referrer;
+  if (ref.includes('account/login')){
+    console.log('referred from login page');
+    window.location.href = "/collections/all";
+  }
+  else{
+    console.log('referred from somewhere else');
+  }
+</script>
+
+{%- assign account_title = 'customer.account.title' | t -%}
+
+{%- render 'section-triangles-top' section_title: account_title, section_modifier: 'section--triangles-secondary section--account' -%}
+
+<section class="section-default section-default--account">
+	<div class="shell">
+		<div class="section__bar">
+			<a href="/account/logout" class="link link--blue">{{ 'customer.account.log_out' | t }}</a>
+		</div><!-- /.section__bar -->
+
+		<div class="section__body">
+			<aside class="section__aside">
+				<div class="address address--block section__aside-address">
+					<div class="address__body">
+						{%- render 'address-element' -%}
+					</div><!-- /.address__body -->
+
+					<div class="address__actions">
+						<ul>
+							<li>
+								<a href="/account/addresses" class="link link--blue">
+									{{ 'customer.account.edit' | t }}
+								</a>
+							</li>
+
+							<li>
+								<a href="/account/addresses" class="link link--blue">
+									{{ 'customer.account.delete' | t }}
+								</a>
+							</li>
+						</ul>
+					</div><!-- /.address__actions -->
+				</div><!-- /.address -->
+			</aside><!-- /.section__aside -->
+
+			<div class="section__content">
+				{%- paginate customer.orders by 50 -%}
+					{%- if customer.orders.size != 0 -%}
+						<div class="table table--orders table--mobile-primary">
+							<table>
+								<thead>
+									<tr class="order">
+										<th class="order__number">
+											{{- 'customer.orders.order_number' | t -}}
+										</th>
+
+										<th class="order__date">
+											{{- 'customer.orders.date' | t -}}
+										</th>
+
+										<th class="order__payment-status">
+											{{- 'customer.orders.payment_status' | t -}}
+										</th>
+
+										<th class="order__fulfillment-status">
+											{{- 'customer.orders.fulfillment_status' | t -}}
+										</th>
+
+										<th class="order__total">
+											{{- 'customer.orders.total' | t -}}
+										</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									{%- for order in customer.orders -%}
+										<tr class="order">
+											<td
+												class="order__number"
+												data-heading="{{- 'customer.orders.order_number' | t -}}"
+											>
+												{{- order.name | link_to: order.customer_url -}}
+											</td>
+
+											<td
+												class="order__date"
+												data-heading="{{- 'customer.orders.date' | t -}}"
+											>
+												{%- assign dateFormat = '%b %d, %Y' -%}
+
+												{{- order.created_at | date: dateFormat -}}
+											</td>
+
+											<td
+												class="order__payment-status"
+												data-heading="{{- 'customer.orders.payment_status' | t -}}"
+											>
+												{{- order.financial_status_label -}}
+											</td>
+
+											<td
+												class="order__fulfillment-status"
+												data-heading="{{- 'customer.orders.fulfillment_status' | t -}}"
+											>
+												{{- order.fulfillment_status_label -}}
+											</td>
+
+											<td
+												class="order__total"
+												data-heading="{{- 'customer.orders.total' | t -}}"
+											>
+												{{- order.total_price | money -}}
+											</td>
+										</tr>
+									{%- endfor -%}
+								</tbody>
+							</table>
+						</div><!-- /.table -->
+
+						{%- include 'pagination' -%}
+					{%- else -%}
+						<div class="no-orders">
+							<p>
+								{{- 'customer.orders.none' | t -}}
+							</p>
+						</div><!-- /.no-orders -->
+					{%- endif -%}
+				{%- endpaginate -%}
+			</div><!-- /.section__content -->
+		</div><!-- /.section__body -->
+	</div><!-- /.shell -->
+</section><!-- /.section-default -->
+<!--Yotpo Loyalty Dev-->
+<div class="yotpo-widget-instance" data-yotpo-instance-id="33600"></div>
+<!--End Yotpo Loyalty Dev-->

@@ -1,0 +1,39 @@
+{%- assign date_format = 'date_formats.short' | t -%}
+{%- assign published_at = page.published_at | date: date_format -%}
+{%- assign subtitle = 'page.general.posted_on_date' | t: date: published_at -%}
+{%- capture subtitle_html -%}
+	<div class="section__meta">
+		<span>{{ subtitle }}</span>
+	</div><!-- /.section__meta -->
+{%- endcapture -%}
+
+
+	<section class="section-default section-default--page">
+		<div class="shell shell--small">
+			<div class="section__body">
+				<div class="section__entry entry">
+                  {{ page.content }}
+					<div class="cookiepagediv">
+                      <h3>Be the first to try...</h3>
+                      <h4>Our Newest Flavor: Cookies & creme</h4>
+                      <img src="https://cdn.shopify.com/s/files/1/0472/1324/8670/files/cookie.png?v=1629770866" class="cookieimgnew">
+                     <div class="columnsfull">
+                       <div class="col-half">
+                         <div class="bacgroundcolor">
+                         <h5>Enter your email address and we'll notify you once they are available online.</h5>
+                         <div class="subscribe__body">
+        <div class="klaviyo-form-RGyr6A"></div>
+      </div><!-- /.subscribe__body -->
+                         </div>
+                       </div>
+                       
+                       <div class="col-half secondhalfsection">
+                         <p>The Complete Cookie-fied Bar<sup>TM</sup> Cookies & Creme flavor is a soft, chewy rich chocolate bar filled with sweet white chips and our signature cookie pieces that gives your mouth an explosion of delicious flavor and fun crunchy cookie bits. The perfect balance between rich chocolate and sweet creamy flavor. </p>
+<p>Get ready to Cookie-fy your life! </p>
+                       </div>
+                      </div> 
+                  </div>
+				</div><!-- /.section__entry -->
+			</div><!-- /.section__body -->
+		</div><!-- /.shell -->
+	</section><!-- /.section-default -->

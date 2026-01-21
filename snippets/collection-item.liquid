@@ -1,0 +1,26 @@
+{%- assign _collection = _collection | default: '' -%}
+{%- assign collection_image = _collection.image | default: _collection.products.first.featured_image -%}
+{%- assign modifier = modifier | default: '' -%}
+
+<div class="collection-item {{ modifier }}">
+  <div class="collection-item__inner">
+    <div class="collection-item__image">
+      <a href="{{ _collection.url }}"></a>
+
+      <figure>
+
+        {% assign old_url =  collection_image | img_url: 'master' %}
+        {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '600', options: 'dpr:2' %}{% endcapture %}
+        <img src="{{ imageboss_url }}">
+      </figure>
+    </div><!-- /.collection-item__image -->
+
+    <div class="collection-item__content">
+      <h4 class="collection-item__title h4 h4--mobile-small">
+        <a href="{{ _collection.url }}">
+         {{- _collection.title -}}
+       </a>
+     </h4>
+   </div><!-- /.collection-item__content -->
+ </div><!-- /.collection-item__inner -->
+</div><!-- /.collection-item -->

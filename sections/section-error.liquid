@@ -1,0 +1,121 @@
+{%- assign _section = section.settings -%}
+{%- assign section_image = _section.image -%}
+{%- assign section_subtitle = _section.subtitle -%}
+{%- assign section_title = _section.title -%}
+{%- assign section_btn_blue_text = _section.btn_blue_text -%}
+{%- assign section_btn_blue_link = _section.btn_blue_link -%}
+{%- assign section_btn_blue_html = '' -%}
+{%- assign section_btn_orange_text = _section.btn_orange_text -%}
+{%- assign section_btn_orange_link = _section.btn_orange_link -%}
+{%- assign section_btn_orange_html = '' -%}
+
+{%- if section_btn_blue_text != blank and section_btn_blue_link != blank -%}
+{%- capture section_btn_blue_html -%}
+<a href="{{ section_btn_blue_link }}" class="btn btn--blue btn--inverse section__btn">{{ section_btn_blue_text }}</a>
+{%- endcapture -%}
+{%- endif -%}
+
+{%- if section_btn_orange_text != blank and section_btn_orange_link != blank -%}
+{%- capture section_btn_orange_html -%}
+<a href="{{ section_btn_orange_link }}" class="btn section__btn">{{ section_btn_orange_text }}</a>
+{%- endcapture -%}
+{%- endif -%}
+
+{%- if section_subtitle != blank or section_title != blank or section_btn_blue_html != '' or section_btn_orange_html != '' -%}
+<section class="section-primary section-primary--error">
+  <div class="shell">
+    <div class="section__inner">
+      {%- if section_image != blank -%}
+      {% assign old_url =  section_image | img_url: 'master' %}
+      {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '3840', options: 'dpr:2' %}{% endcapture %}
+      <div class="section__bg" role="img" aria-label="{{ section_image.alt }}" style="background-image: url('{{ imageboss_url }}');"></div><!-- /.section__bg -->
+      {%- endif -%}
+
+      <div class="section__body">
+        <div class="section__content">
+          {%- if section_subtitle != blank -%}
+          <h4 class="section__subtitle h4 h4--mobile-small title-hollie">{{ section_subtitle | newline_to_br }}</h4><!-- /.section__subtitle -->
+          {%- endif -%}
+
+          {%- if section_title != blank -%}
+          <h1 class="h2 section__title">{{ section_title | newline_to_br }}</h1><!-- /.section__title -->
+          {%- endif -%}
+        </div><!-- /.section__content -->
+
+        {%- if section_btn_blue_html != '' or section_btn_orange_html != '' -%}
+        <div class="section__actions">
+          <ul>
+            {%- if section_btn_blue_html != '' -%}
+            <li>
+              {{ section_btn_blue_html }}
+            </li>
+            {%- endif -%}
+
+            {%- if section_btn_orange_html != '' -%}
+            <li>
+              {{ section_btn_orange_html }}
+            </li>
+            {%- endif -%}
+          </ul>
+        </div><!-- /.section__actions -->
+        {%- endif -%}
+      </div><!-- /.section__body -->
+    </div><!-- /.section__inner -->
+  </div><!-- /.shell -->
+</section><!-- /.section-primary -->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "404",
+  "settings": [
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+  },
+  {
+    "type": "textarea",
+    "id": "subtitle",
+    "label": "Subtitle",
+    "default": "Opps! Page Not Found"
+  },
+  {
+    "type": "textarea",
+    "id": "title",
+    "label": "Title",
+    "default": "That’s the Way the Cookie Crumbles"
+  },
+  {
+    "type": "header",
+    "content": "Button Blue"
+  },
+  {
+    "type": "text",
+    "id": "btn_blue_text",
+    "label": "Button Text",
+    "default": "Return Home"
+  },
+  {
+    "type": "url",
+    "id": "btn_blue_link",
+    "label": "Button Link"
+  },
+  {
+    "type": "header",
+    "content": "Button Orange"
+  },
+  {
+    "type": "text",
+    "id": "btn_orange_text",
+    "label": "Button Text",
+    "default": "To the Shop"
+  },
+  {
+    "type": "url",
+    "id": "btn_orange_link",
+    "label": "Button Link"
+  }
+  ]
+}
+{% endschema %}

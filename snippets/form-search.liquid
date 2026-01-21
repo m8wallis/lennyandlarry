@@ -1,0 +1,20 @@
+{%- assign search_idx = search_idx | default: 0 | plus: 1 -%}
+{%- assign form_search_modifier = form_search_modifier | default: '' -%}
+
+<div class="form-search {{ form_search_modifier }}">
+	<form action="/search" method="get">
+    <div class="form-search__inner">
+      <input type="hidden" name="type" value="product" />
+
+  		<label for="q-{{ search_idx }}" class="form-search__label is-hidden">{{ 'general.search.label' | t }}</label>
+
+  		<input type="search" name="q" id="q-{{ search_idx }}" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" class="form-search__field">
+
+      <button type="submit" class="form-search__btn">
+        <i class="ico-search">
+          {%- render 'svg-elements' name: 'search' -%}
+        </i>
+      </button>
+    </div><!-- /.form-search__inner -->
+	</form>
+</div><!-- /.form__search -->

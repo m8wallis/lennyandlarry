@@ -1,0 +1,37 @@
+{% if content_for_header contains "under_constrution_front.js" and request.design_mode != true %}
+                            {% capture CFH %}{{ content_for_header }}{% endcapture %}
+                                    {% assign show_under_construction_page = false %}
+                                    {% if CFH contains "admin_bar_iframe" or theme.role == "unpublished" %}
+                                           {% assign show_under_construction_page = true %}
+                                    {% endif %}
+                                    {% if shop.metafields.under_construction.password_active == 1 %}
+                                      {% assign UC_APP_PASS = cart.attributes["UC_APP_PASS"] | md5  %}
+                                      {% if UC_APP_PASS == shop.metafields.under_construction.password_input %}
+                                           {% assign show_under_construction_page = true %}
+                                      {% endif %}
+                                    {% endif %} 
+                                    {% assign whitelist_page = false %}
+                                    {% if shop.metafields.under_construction.whitelist != "NO_WHITELIST_URL" and show_under_construction_page == true %}
+                                      {% assign uc_whitelist_urls = shop.metafields.under_construction.whitelist | split: "," %}
+                                      {% for url in uc_whitelist_urls %}
+                                        {% assign url = url | strip %}
+                                         {% if url == "/" %}
+                                            {% assign whitelist_page = true %}
+                                            {% assign show_under_construction_page = true %}
+                                         {% elsif url == request.path %}
+                                            {% assign whitelist_page = true %}
+                                            {% assign show_under_construction_page = true %}
+                                        {% endif %}
+                                      {% endfor %}
+                                    {% endif %}
+                                    {% if CFH contains "design_mode" %}
+                                           {% assign show_under_construction_page = true %}
+                                           {% assign whitelist_page = true %}
+                                    {% endif %}
+                                    {% unless show_under_construction_page and whitelist_page %}
+                                    <style>body{display:none;}</style>
+                                    <script>
+                                        window.location.pathname == "/apps/under-construction" ? "" : window.location.href = "{{shop.url}}/apps/under-construction";
+                                    </script>
+                                    {% endunless %}
+                                    {% endif %}

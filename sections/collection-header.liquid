@@ -1,0 +1,141 @@
+{% schema %}
+{
+  "name": "Collections Header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "fullwidthbanner",
+      "label": "Full Width Banner Mode"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% if section.settings.fullwidthbanner == true %}
+  <style>
+  .full__shell {
+     padding-left: unset !important;
+      padding-right: unset !important;
+      max-width: 100vw !important;
+  }
+
+  .full__shell .section__image img {
+     width: 100vw !important;
+     /*display: flex !important;
+      min-width: 100vw !important;
+      justify-content: center !important;
+      padding-left: unset !important;
+      padding-right: unset !important;*/
+  }
+  .section__bg img {
+    width: 100vw !important;
+  }
+  .section--triangles .section__holder:before, .section--triangles .section__holder:before {
+    width: 50%;
+    display: none;
+  }
+   .section--triangles .section__holder:after {
+    width: 50%;
+     display: none;
+  }
+    .section__dropdown {
+     margin-bottom: 30px; 
+    }
+  .section__ramp { 
+    height: 87px;
+    width: 50vw;
+    position: absolute;
+    bottom: 0;
+    background: transparent;
+    z-index: 99;
+  }
+    
+  .section__holder {
+    padding-bottom: 0px !important;
+  }
+  </style>
+ <script>
+ 	$(document).ready(function() {
+      $('.section--triangles .shell').addClass('full__shell');
+      
+      let curUrl = window.location.href;
+      console.log(curUrl);
+      if (curUrl.includes('collections/shop') == true) {
+        //$('.section__holder .section__body').css('padding-bottom', '65px !important');
+        $('.section--collection .section__body').css('padding-bottom', '65px');
+      }
+    });
+ </script> 
+{% endif %}
+
+
+{%- capture section_collection_html -%}
+	<div class="section__body">
+  	{%- if settings.collection_menu != blank and linklists[settings.collection_menu].links.size > 0 -%}
+  		{%- assign menu_list_html = '' -%}
+  		{%- assign filter_label = 'collections.general.filters_label' | t -%}
+  		{%- assign filter_label_list = '' -%}
+  		{%- for link in linklists[settings.collection_menu].links -%}
+  			{%- assign _link_url = link.url -%}
+  			{%- if _link_url contains '/collections/' -%}
+  				{%- assign _link_url = _link_url | split: '/collections/' | last | split: '/' | first -%}
+  				{%- assign _link_url = '/collections/' | append: _link_url -%}
+  			{%- endif -%}
+
+  			{%- capture menu_list_html -%}
+  				{{ menu_list_html }}
+
+					<li>
+						<a href="{{ link.url }}">{{ link.title }}</a>
+					</li>
+  			{%- endcapture -%}
+
+  			{%- if collection.url == _link_url -%}
+					{%- assign filter_label_list = link.title -%}
+				{%- endif -%}
+			{%- endfor -%}
+
+    	<div class="section__dropdown">
+    		<div class="dropdown js-dropdown" id="dropdown-nav">
+    			<span class="dropdown__label js-btn-toggle js-btn-toggle-dropdown" data-js-target="#dropdown-nav" data-js-class="is-expanded">
+    				{%- if filter_label_list != '' -%}
+    					{{ filter_label_list }}
+  					{%- else -%}
+  						{{ filter_label }}
+    				{%- endif -%}
+    			</span>
+
+    			<div class="dropdown__body">
+    				<ul>
+    					{{ menu_list_html }}
+    				</ul>
+    			</div><!-- /.dropdown__body -->
+    		</div><!-- /.dropdown -->
+    	</div><!-- /.section__dropdown -->
+  	{%- endif -%}
+
+     {% if section.settings.fullwidthbanner == true %} 
+      	<div class="section__ramp section__ramp--left">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="100,0 100,100 0,100" style="fill:#f4f7fc;stroke:transparent;stroke-width:0;"></polygon>
+          </svg>
+        </div>
+      <div class="section__ramp section__ramp--right">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="0,0 0,100 100,100" style="fill:#f4f7fc;stroke:transparent;stroke-width:0;"></polygon>
+          </svg>
+        </div>
+     {% endif %}
+      
+     {% if section.settings.fullwidthbanner == true %} 
+     {%- render 'image-mobile-check' section_image: collection.metafields.collection_details.image[0].src, section_image_mobile: collection.metafields.collection_details.image_mobile[0].src, section_image_alt: collection.metafields.collection_details.image[0].alt, section_image_mobile_alt: collection.metafields.collection_details.image_mobile[0].alt, image_check_meta: true -%}
+  	 {% else %}
+     {%- render 'image-mobile-check' section_image: collection.metafields.collection_details.image[0].src, section_image_mobile: collection.metafields.collection_details.image_mobile[0].src, image_check_class: 'section__image', section_image_alt: collection.metafields.collection_details.image[0].alt, section_image_mobile_alt: collection.metafields.collection_details.image_mobile[0].alt, image_check_meta: true -%}
+	 {% endif %}
+      
+  </div><!-- /.section__body -->
+{%- endcapture -%}
+
+
+{%- render 'section-triangles-top' section_subtitle: subtitle, section_title: collection.title, section_content: section_collection_html, section_modifier: 'section--collection', section_entry: true -%}

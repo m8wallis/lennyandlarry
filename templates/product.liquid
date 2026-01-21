@@ -1,0 +1,486 @@
+{%- assign _product = product.selected_or_first_available_variant -%}
+
+<section class="section-product js-product">
+  <div class="shell">
+    <div class="section__holder">
+      <div class="section__bar hidden-xs hidden-sm">
+        {%- render 'breadcrumbs' -%}
+      </div><!-- /.section__bar -->
+
+      <div class="section__body">
+        <div class="section__content">
+          <div class="section__content-head">
+            {%- if product.metafields.product_details.subtitle != blank -%}
+            <div class="section__subtitle-wrapper">
+              <h6 class="section__subtitle h6 h6--mobile-small title-rust">
+                <span>{{ product.metafields.product_details.subtitle | newline_to_br }}</span>
+              </h6><!-- /.section__subtitle -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="425" height="3" viewBox="0 0 425 3" fill="none">
+                <path d="M425 1.5H2" stroke="#4E3629" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-dasharray="0 10"/>
+              </svg>
+            </div><!-- /.section__subtitle-wrapper -->
+            {%- endif -%}
+
+            <h1 class="section__title">
+              {%- if product.metafields.product_details.title != blank -%}
+              {{ product.metafields.product_details.title | newline_to_br }}
+              {%- else -%}
+              {{- product.title -}}
+              {%- endif -%}
+            </h1><!-- /.section__title -->
+          </div><!-- /.section__content-head -->
+
+          <!-- yotpo -->
+          <div class="yotpo bottomLine"
+          data-product-id="{{ product.id }}">
+          {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+          {%- assign time_now = 'now' | date: '%s' %}
+          {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+          {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+          {%- assign yotpo_bottomline_last_updated = product.metafields.yotpo.bottomline_update_time | date: '%s' %}
+          {%- assign diff_seconds_from_last_bottomline_update = time_now | minus: yotpo_bottomline_last_updated %}
+          {%- if yotpo_live_time and diff_seconds_from_live < 86400 or yotpo_bottomline_last_updated and diff_seconds_from_last_bottomline_update < 86400 -%}
+          {%- assign yotpo_bottomline_obsolete = false %}
+          {%- else %}
+          {%- assign yotpo_bottomline_obsolete = true %}
+          {%- endif %}
+          {%- if yotpo_offload_content == 'yes' and yotpo_bottomline_obsolete != true -%}
+          {{ product.metafields.yotpo.bottomline }}
+          {%- endif %}
+        </div>
+
+        <script>
+          let reviewclick = false;
+
+          function waitForEle(elementPath, callBack){
+            window.setTimeout(function(){
+              if($(elementPath).length){
+                callBack(elementPath, $(elementPath));
+              }else{
+                waitForEle(elementPath, callBack);
+              }
+            },500)
+          }
+
+          $(document).ready(function() {
+            waitForEle(".star-clickable",function(){
+             $('.star-clickable').click(function() {
+               if (reviewclick == false) {
+                $('.js-accordion-head').eq(2).click();
+                      //reviewclick = true;
+                    }
+                  });
+           });
+
+            waitForEle(".star-clickable",function(){
+              $('.write-review-btn-hidden').click(function() {
+               if (reviewclick == false) {
+                $('.js-accordion-head').eq(2).click();
+                      //reviewclick = true;
+                    }
+                  });
+            });
+
+            $('.js-accordion-head').eq(2).click(function() {
+              reviewclick = !reviewclick;
+            });
+          });
+        </script>
+        <!-- ./yotpo -->
+
+        <div class="section__content-slider">
+          <div class="section__imagеs">
+            {%- assign slides_images = '' -%}
+            {%- assign thumbs_images = '' -%}
+
+            {%- for image in product.images -%}
+            {%- capture slides_images -%}
+            {{ slides_images }}
+
+            <div class="slider__slide slider__slide--{{ forloop.index0 }}" data-slide-index="{{ forloop.index0 }}" data-slide-image-src="{{ image.src }}">
+                {% assign old_url =  image | img_url: 'master' %}
+                {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '1240', options: 'dpr:2' %}{% endcapture %}
+              <a href="{{ imageboss_url }}" class="js-popup-image">
+                <img src="{{ imageboss_url }}" alt="{{ image.alt }}">
+              </a>
+            </div><!-- /.slider__slide -->
+            {%- endcapture -%}
+
+            {%- capture thumbs_images -%}
+            {{ thumbs_images }}
+
+            <div class="slider__thumb">
+              <div>
+                <figure>
+                {% assign old_url =  image | img_url: 'master' %}
+                {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '160', options: 'dpr:2' %}{% endcapture %}
+                <img src="{{ imageboss_url }}" alt="{{ image.alt }}">
+                </figure>
+              </div>
+            </div><!-- /.slider__thumb -->
+            {%- endcapture -%}
+            {%- endfor -%}
+
+            <div class="slider-product section__slider js-slider-product">
+              <div class="slider__clip js-slider-product-slides" data-start-image-src="{{ _product.image }}">
+                {{ slides_images }}
+              </div><!-- /.slider__clip -->
+
+              <div class="slider__thumbs js-slider-product-thumbs">
+                {{ thumbs_images }}
+              </div><!-- /.slider__thumbs -->
+            </div><!-- /.slider-product -->
+          </div><!-- /.section__imagеs -->
+        </div><!-- /.section__content-slider -->
+
+        <div class="section__content-body">
+          <div class="section__content-inner">
+            <div class="section__reviews">
+
+            </div><!-- /.section__reviews -->
+
+            <span class="section__price price js-product-price prod" product_id="{{product.id}}" product_handle="{{product.handle}}" product_variant_id="{{product.selected_or_first_available_variant.id}}"product_variant_sku="{{product.selected_or_first_available_variant.sku}}" product_variant_price="{{product.selected_or_first_available_variant.price}}" product_variant_compare_price="{{product.selected_or_first_available_variant.compare_at_price}}">
+                {%- include 'price', _product: _product, product: product -%}
+              </span><!-- /.section__price price -->
+  
+              {% form 'product', product, class: "form-product section__form" %}
+              <div class="form__body">
+                <div class="form__row is-hidden">
+                  <div class="form__controls">
+                    <select name="id" id="product-select" class="product-single__variants js-select-global">
+                      {% for variant in product.variants %}
+                      {%- include 'price' with variant, echo: false -%}
+  
+                      <option
+                      value="{{- variant.id -}}"
+                      data-price="{{- output -}}"
+                      data-option-1="{{ variant.option1 }}"
+                      data-option-2="{{ variant.option2 }}"
+                      data-option-3="{{ variant.option3 }}"
+                      data-inventory="{{ variant.inventory_quantity }}"
+                      data-variant-image="{{ variant.image }}"
+  
+                      {% if _product.id == variant.id %}
+                      selected
+                      {% endif %}
+  
+                      {% unless variant.available %}
+                      disabled
+                      {% endunless %}
+                      >
+                      {{- variant.title -}}
+                    </option>
+                    {% endfor %}
+                  </select>
+                </div><!-- /.form__controls -->
+              </div><!-- /.form__row -->
+  
+              {%- unless product.variants.size == 1 and _product.title contains 'Default Title' -%}
+              {%- for option in product.options_with_values -%}
+              {%- assign option_name = option.name -%}
+              {%- assign option_handle = option_name | handle -%}
+              {%- assign option_position = option.position -%}
+              {%- assign option_index = option_position | minus: 1 -%}
+              {%- assign option_product = _product.options[option_index] -%}
+  
+              <div class="form__row form__row--{{ option_handle }}">
+                <div class="form__controls">
+                  <div class="radios">
+                    <ul>
+                      {% if product.metafields.accentuate.linked_product != '' %}
+                      {% assign linked_handle = product.metafields.accentuate.linked_product %}
+                      {% assign linked_product = all_products[linked_handle] %}
+                      {% assign title_array = linked_product.title | split: ' - ' %}
+                      <script>
+                        console.log('{{ product.metafields.accentuate.linked_product }}');
+                      </script>
+                      {% if linked_product.title contains '4oz' %}
+                      <li style="display:list-item!important">
+                        <div class="radio radios__radio">
+                          <a href="{{ linked_product.url }}" >
+                            {{ title_array[1] }} - Box of 12
+                          </a>
+                        </div><!-- /.radio -->
+                      </li>
+                      {% endif %}
+                      {% endif %}
+  
+                      {% for variant_title in option.values %}
+                      <li{% if option_product == variant_title %} class="is-current"{% endif %}>
+                        <div class="radio radios__radio">
+                          <a href="#" data-value-title="{{ variant_title }}" data-value="{{ variant_title | handle }}" data-option="{{ option_position }}" data-index="{{ forloop.index0 }}" data-option-name="{{ option_name }}" data-option-name-handle="{{ option_handle }}">
+                            {{ variant_title }}
+                          </a>
+                        </div><!-- /.radio -->
+                      </li>
+                      {% endfor %}
+  
+                      {% if product.metafields.accentuate.linked_product != '' %}
+                      {% assign linked_handle = product.metafields.accentuate.linked_product %}
+                      {% assign linked_product = all_products[linked_handle] %}
+                      {% assign title_array = linked_product.title | split: ' - ' %}
+                      {% if linked_product.title contains '2oz' %}
+                      <li style="display:list-item!important">
+                        <div class="radio radios__radio">
+                          <a href="{{ linked_product.url }}" >
+                            {{ title_array[1] }} - Box of 12
+                          </a>
+                        </div><!-- /.radio -->
+                      </li>
+                      {% endif %}
+                      {% endif %}
+  
+  
+                    </ul>
+                  </div><!-- /.radios -->
+                </div><!-- /.form__controls -->
+              </div><!-- /.form__row -->
+              {%- endfor -%}
+              {%- endunless -%}
+            </div><!-- /.form__body -->
+  
+            <div class="message_notice">{{product.metafields.accentuate.notice_message}}</div>
+            <div class="form__foot">
+              <div class="form__bar">
+                <div class="qty qty--secondary js-qty">
+                  <span class="qty__label">{{ 'products.product.qty' | t }}</span>
+    
+                  <div class="qty__inner">
+                    <span class="qty__btn qty__btn--minus" tabindex="0" role="button">-</span>
+                    <label class="sr-only" for="field-quantity" >Quantity</label>
+                    <input type="number" class="field-quantity qty__field" id="field-quantity" name="quantity" value="1" min="1">
+                    <span class="qty__btn qty__btn--plus" tabindex="0" role="button">+</span>
+    
+                  </div><!-- /.qty__inner -->
+                </div><!-- /.qty -->
+              </div><!-- /.form__bar -->
+              {% unless product.metafields.accentuate.out_of_stock %}
+              <button
+              type="submit"
+              name="add"
+              class="btn btn--block form__btn js-product-btn"
+  
+              {% unless _product.available %}
+              disabled
+              {% endunless %}
+              >
+              <span>
+                {{- 'products.product.add_to_cart' | t -}}
+              </span>
+  
+              <span>
+                {{ 'products.product.sold_out' | t }}
+              </span>
+            </button>
+            {% else %}
+            <button
+            type="submit"
+            name="add"
+            class="btn btn--block form__btn js-product-btn"
+            disabled
+            >
+            <span style="display:block!important;">
+              Sold Out
+            </span>
+          </button>
+          {% endunless %}
+        </div><!-- /.form__foot -->
+        {% endform %}
+            {%- if product.content != blank -%}
+            <div class="section__entry entry">
+              <svg xmlns="http://www.w3.org/2000/svg" width="624" height="3" viewBox="0 0 624 3" fill="none">
+                <path d="M622 1.5H2" stroke="#4E3629" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-dasharray="0 10"/>
+              </svg>
+              <h3 class="accordion-trigger">
+                <span>Yummy Details</span>
+                <span class="accordion-icon plus-icon">
+                  <svg class="inactive-svg" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                    <path d="M9 0V16" stroke="#0086D6" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M17 8H1" stroke="#0086D6" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <span class="accordion-icon minus-icon">
+                  <svg class="active-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="2" viewBox="0 0 18 2" fill="none">
+                    <path d="M17 1H1" stroke="#0086D6" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </h3>
+              <div class="accordion-content">
+                {{ product.content }}
+              </div>
+            </div>
+            {%- endif -%}
+
+            <script>
+              current_product={{product|json}};
+            </script>
+
+      {%- assign product_details_image_bottom = product.metafields.product_details.image_bottom -%}
+      {%- assign product_details_image_bottom_mobile = product.metafields.product_details.image_bottom_mobile -%}
+      {%- if product_details_image_bottom != blank or product_details_image_bottom_mobile != blank -%}
+      {%- if product_details_image_bottom != blank -%}
+      <div class="section__content-image{% if product_details_image_bottom_mobile != blank %} hidden-xs{% endif %}">
+        <ul>
+          {%- for idx in (1..product_details_image_bottom.size) -%}
+          {%- assign product_meta_logo_image = product_details_image_bottom[forloop.index0] -%}
+
+          <li>
+            <img src="{{ product_meta_logo_image.src }}" alt="{{ product_meta_logo_image.alt }}">
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div><!-- /.section__content-image -->
+      {%- endif -%}
+
+      {%- if product_details_image_bottom_mobile != blank -%}
+      <div class="section__content-image{% if product_details_image_bottom != blank %} hidden-sm hidden-md hidden-lg{% endif %}">
+        <ul>
+          {%- for idx in (1..product_details_image_bottom_mobile.size) -%}
+          {%- assign product_meta_logo_image_mobile = product_details_image_bottom_mobile[forloop.index0] -%}
+
+          <li>
+            <img src="{{ product_meta_logo_image_mobile.src }}" alt="{{ product_meta_logo_image_mobile.alt }}">
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div><!-- /.section__content-image -->
+      {%- endif -%}
+      {%- endif -%}
+
+      <div class="section__content-actions">
+        <a href="#" class="link-primary js-btn-scroll" data-js-target-scroll="#section-accordion">{{ 'products.product.link_scroll_text' | t }}</a>
+      </div><!-- /.section__content-actions -->
+    </div><!-- /.section__content-inner -->
+  </div><!-- /.section__content-body -->
+</div><!-- /.section__content -->
+</div><!-- /.section__body -->
+</div><!-- /.section__holder -->
+</div><!-- /.shell -->
+</section><!-- /.section-product -->
+
+<section class="section-accordion section-accordion--primary" id="section-accordion">
+  <div class="shell">
+    <div class="section__body">
+      <div class="accordion accordion--primary js-accordion">
+        <div class="accordion__container">
+          {%- if product.metafields.accordion_row_1.title != blank and product.metafields.accordion_row_1.text != blank -%}
+          <div class="accordion__section">
+            <div class="accordion__head js-accordion-head">
+              <h4 class="h4 h4--small accordion__title">{{ product.metafields.accordion_row_1.title | newline_to_br }}</h4><!-- /.accordion__title -->
+            </div><!-- /.accordion__head -->
+
+            <div class="accordion__body">
+              <div class="accordion__inner">
+                <div class="accordion__content entry">
+                  {{ product.metafields.accordion_row_1.text }}
+                  {{ product.metafields.accordion_row_1.ingredients }}
+                  {{ product.metafields.accordion_row_1.facts }}
+                </div><!-- /.accordion__content -->
+              </div><!-- /.accordion__inner -->
+            </div><!-- /.accordion__body -->
+          </div><!-- /.accordion__section -->
+          {%- endif -%}
+
+          {%- if product.metafields.accordion_row_2.text != blank or product.metafields.accordion_row_2.image != blank -%}
+          {%- if product.metafields.accordion_row_2.title != blank -%}
+          <div class="accordion__section">
+            <div class="accordion__head js-accordion-head">
+              <h4 class="h4 h4--small accordion__title">{{ product.metafields.accordion_row_2.title | newline_to_br }}</h4><!-- /.accordion__title -->
+            </div><!-- /.accordion__head -->
+
+            <div class="accordion__body">
+              <div class="accordion__inner">
+                {%- if product.metafields.accordion_row_2.text != blank -%}
+                <div class="accordion__content entry">
+                  {{ product.metafields.accordion_row_2.text }}
+                </div><!-- /.accordion__content -->
+                {%- endif -%}
+
+                {%- if product.metafields.accordion_row_2.image != blank -%}
+                <div class="accordion__image">
+                  <img src="{{ product.metafields.accordion_row_2.image[0].src }}" alt="{{ product.metafields.accordion_row_2.image[0].alt }}">
+                </div><!-- /.accordion__image -->
+                {%- endif -%}
+              </div><!-- /.accordion__inner -->
+            </div><!-- /.accordion__body -->
+          </div><!-- /.accordion__section -->
+          {%- endif -%}
+          {%- endif -%}
+
+          <div class="accordion__section">
+            <div class="accordion__head js-accordion-head">
+              <h4 class="h4 h4--small accordion__title">{{ 'products.product.reviews_title' | t }}</h4><!-- /.accordion__title -->
+            </div><!-- /.accordion__head -->
+
+            <div class="accordion__body">
+              <div class="reviews">
+                <!-- yotpo -->
+                <div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}" data-price="{{ variant.price | money_without_currency }}"
+                ·        		data-currency=“{{ shop.currency }}” data-description=“{{ product.description | escape }}“>
+                {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+                {%- assign time_now = 'now' | date: '%s' %}
+                {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+                {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+                {%- assign yotpo_main_widget_last_updated = product.metafields.yotpo.main_widget_update_time | date: '%s' %}
+                {%- assign diff_seconds_from_last_main_widget_update = time_now | minus: yotpo_main_widget_last_updated %}
+                {%- if yotpo_live_time and diff_seconds_from_live < 86400 or yotpo_main_widget_last_updated and diff_seconds_from_last_main_widget_update < 86400 -%}
+                {%- assign yotpo_main_widget_obsolete = false %}
+                {%- else %}
+                {%- assign yotpo_main_widget_obsolete = true %}
+                {%- endif %}
+                {%- if yotpo_offload_content == 'yes' and yotpo_main_widget_obsolete != true -%}
+                {%- for field in product.metafields.yotpo_reviews -%}
+                {{ field | last }}
+                {%- endfor -%}
+                {%- endif %}
+              </div>
+              <!-- ./yotpo -->
+              {% comment %}<div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>{% endcomment %}
+            </div><!-- /.reviews -->
+          </div><!-- /.accordion__body -->
+        </div><!-- /.accordion__section -->
+      </div><!-- /.accordion__container -->
+    </div><!-- /.accordion js-accordion -->
+  </div><!-- /.section__body -->
+</div><!-- /.shell -->
+</section><!-- /.section-accordion -->
+
+{% section 'product-recommendation'%}
+
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>
+
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+  document.querySelector('.js-product-btn').addEventListener('click',function (){
+    _learnq.push(['track', 'Added to Cart', item]);
+  });
+</script>
+
+<div class="yotpo-widget-instance" data-yotpo-instance-id="605159" data-yotpo-product-id="{{ product.id }}" data-yotpo-name="{{ product.title | escape }}" data-yotpo-url="{{ shop.url }}{{ product.url }}" data-yotpo-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-yotpo-description="{{ product.description | escape }}"></div>

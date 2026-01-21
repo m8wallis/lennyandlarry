@@ -1,0 +1,19 @@
+{%- render 'section-triangles-top' section_title: page.title, section_modifier: 'section--triangles-secondary section--page-form' -%}
+
+{%- capture wholesale_form -%}
+  <div class="section__form">
+    {%- render 'wholesale-form' -%}
+  </div><!-- /.section__form -->
+{%- endcapture -%}
+
+<section class="section-default section-default--page-form">
+  <div class="shell">
+    <div class="section__inner">
+      <div class="section__body">
+        <div class="section__entry entry">
+          {{ page.content | replace: '<p>----</p>', wholesale_form | replace: '----', wholesale_form }}
+        </div><!-- /.section__entry -->
+      </div><!-- /.section__body -->
+    </div><!-- /.section__inner -->
+  </div><!-- /.shell -->
+</section><!-- /.section-default -->

@@ -1,0 +1,145 @@
+{%- assign account_title = 'customer.addresses.title' | t -%}
+
+{%- render 'section-triangles-top' section_title: account_title, section_modifier: 'section--triangles-secondary section--addresses' -%}
+
+<section class="section-default section-default--addresses">
+	<div class="shell">
+		<div class="section__bar">
+			<a href="/account/logout" class="link link--blue">{{ 'customer.account.log_out' | t }}</a>
+		</div><!-- /.section__bar -->
+
+		<div class="section__body">
+			<div class="section__content">
+				<div class="addresses">
+					{%- paginate customer.addresses by 5 -%}
+						{%- for address in customer.addresses -%}
+							{%- assign address_first_name = address.first_name -%}
+							{%- assign address_last_name = address.last_name -%}
+
+							<div class="popup__content mfp-hide" id="form-address-{{ address.id }}">
+								<div class="form form--address" id="edit_address_{{address.id}}">
+									{%- form 'customer_address', address -%}
+										{%- if form.errors -%}
+											<div class="form__error">
+												{{- form.errors | default_errors -}}
+											</div><!-- /.form__error -->
+										{%- endif -%}
+
+										<div class="form__body">
+											{%- include 'form-address-body', index: form.id -%}
+										</div><!-- /.form__body -->
+
+										<div class="form__actions">
+											<ul>
+												<li>
+													<a href="#" class="form__btn form__btn--inverse btn js-popup-inline-close">
+														{{- 'customer.addresses.cancel' | t -}}
+													</a>
+												</li>
+
+												<li>
+													<button type="submit" class="form__btn btn">
+														{{- 'customer.addresses.update' | t -}}
+													</button>
+												</li>
+											</ul>
+										</div><!-- /.form__actions -->
+									{%- endform -%}
+								</div><!-- /.form -->
+							</div><!-- /.popup__content -->
+
+							<div class="address address--inline {% if address.id == customer.default_address.id %}address--default{% endif %}" id="view_address_{{ address.id }}">
+								{%- assign address_name = address_first_name | append: ' ' | append: address_last_name -%}
+								<div class="address__body">
+									{%- render 'address-element' customer_name: address_name -%}
+								</div><!-- /.address__body -->
+
+								<div class="address__actions">
+									<ul>
+										<li>
+											<a href="#form-address-{{ address.id }}" class="js-popup-inline">{{ 'customer.addresses.edit' | t }}</a>
+										</li>
+
+										<li>
+											{{- 'customer.addresses.delete' | t | delete_customer_address_link: address.id -}}
+										</li>
+									</ul>
+								</div><!-- /.address__actions -->
+							</div><!-- /.address -->
+						{%- endfor -%}
+
+						{%- include 'pagination', label: true, prev_next : true, pager: true -%}
+					{% endpaginate %}
+				</div><!-- /.addresses -->
+
+				<div class="section__actions">
+					{%- if customer.addresses.size == 0 -%}
+						<p class="section__empty">
+							{{ 'customer.addresses.empty' | t }}
+						</p>
+					{%- endif -%}
+
+					<a href="#form-address-new" class="btn btn--large js-popup-inline">
+						{{- 'customer.addresses.add_new' | t -}}
+					</a>
+				</div><!-- /.addresses__actions -->
+
+				<div class="popup__content mfp-hide" id="form-address-new">
+					<div class="form form--address form--address-new">
+						{%- form 'customer_address', customer.new_address -%}
+							{%- if form.errors -%}
+								<div class="form__error">
+									{{ form.errors | default_errors }}
+								</div><!-- /.form__error -->
+							{%- endif -%}
+
+							<div class="form__body">
+								{%- include 'form-address-body', index: 'new' -%}
+							</div><!-- /.form__body -->
+
+							<div class="form__actions">
+								<ul>
+									<li>
+										<a href="#" class="form__btn form__btn--inverse btn js-popup-inline-close">
+											{{- 'customer.addresses.cancel' | t -}}
+										</a>
+									</li>
+
+									<li>
+										<button type="submit" class="form__btn btn">
+											{{- 'customer.addresses.add' | t -}}
+										</button>
+									</li>
+								</ul>
+							</div><!-- /.form__actions -->
+						{%- endform -%}
+					</div><!-- /.form -->
+				</div><!-- /.popup__content -->
+			</div><!-- /.section__content -->
+		</div><!-- /.section__body -->
+	</div><!-- /.shell -->
+</section><!-- /.section-default -->
+<script type="text/javascript"> 
+              
+  $(document).ready(function() { 
+    setTimeout(function(){
+        setInterval(function(){
+        /*Enter hit fire search in search text box*/
+        $(".js-dont-deliver-message").remove();
+        $( '#form-address-new .form__actions button' ).prop("disabled", false); 
+        //        var address=$("#checkout_shipping_address_address1").val().replace(/[.*-_~+?^${}()|[\]\\]/g, "");
+        var address=$("#field-address-").val().replace(/[\W]/g, "");
+        address= address.replace(/ /g,"");
+
+        if (address.toLowerCase().indexOf("pobox") > -1) {
+        
+          $("#field-address-").parent('.form__controls').prepend("<span style='display:inline-block; margin:0 0 5px; color: red;' class='js-dont-deliver-message'>Sorry, we currently are unable to deliver to P.O. Boxes. Please enter a valid residential or business address.</span>");
+          $( '#form-address-new .form__actions button' ).prop("disabled", true); 
+        }
+      //
+      }, 100);
+    }, 1000);
+  });
+  
+  
+  </script>

@@ -1,0 +1,63 @@
+{%- assign subtitle = 'blogs.blog.title' | t -%}
+
+<div class="blog-hero">
+  {% if section.settings.banner_url != blank %}
+    <a href="{{ section.settings.banner_url }}" >
+  {% endif %}
+  <img width="1920" height="500" src="{{ section.settings.banner | img_url: 'master' }}" alt="{{ section.settings.banner.alt }}" />
+  {% if section.settings.banner_url != blank %}
+    </a>
+  {% endif %}
+</div>
+
+{%- render 'blog-element' _section: section.settings -%}
+
+{% if section.settings.cta_copy != blank and section.settings.cta_url != blank %}
+  <div class="blog-cta">
+    <a href="{{ section.settings.cta_url }}" class="btn btn--cta">
+      {{ section.settings.cta_copy }}
+    </a>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Blog",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner",
+      "label": "Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_url",
+      "label": "Banner URL"
+    },
+    {
+      "type": "text",
+      "id": "cta_copy",
+      "label": "CTA Copy"
+    },
+    {
+      "type": "text",
+      "id": "cta_url",
+      "label": "CTA URL"
+    },
+    {
+      "type": "article",
+      "id": "featured_article",
+      "label": "Featured Article"
+    },
+    {
+      "type": "range",
+      "id": "articles_per_page",
+      "min": 1,
+      "max": 48,
+      "step": 1,
+      "label": "Articles Per Page",
+      "default": 16
+    }
+  ]
+}
+{% endschema %}

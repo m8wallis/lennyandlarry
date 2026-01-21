@@ -1,0 +1,465 @@
+{%- assign date_format = 'date_formats.short' | t -%}
+{%- assign published_at = page.published_at | date: date_format -%}
+{%- assign subtitle = 'page.general.posted_on_date' | t: date: published_at -%}
+{%- capture subtitle_html -%}
+<div class="section__meta">
+    <span>Updated October 3, 2022
+    </span>
+</div><!-- /.section__meta -->
+{%- endcapture -%}
+{%- render 'section-triangles-top' section_subtitle_html: subtitle_html, section_title: page.title, section_modifier: 'section--triangles-secondary section--page', section_subtitle_pos_bottom: true -%}
+<section class="section-default section-default--page">
+    <div class="shell shell--small">
+        <div class="section__body">
+<div class="section__entry entry">
+    <p>Thank you for your interest in opening a wholesale account with Lenny &amp; Larry's. Our Wholesale Program allows your company to receive discounted prices for purchasing our products in bulk. We encourage you to sign up for our Wholesale Program if you feel like our product compliments your brand!</p>
+    <p>Before proceeding, please review our terms and policies below. If your company fits within the parameters, please fill out the application below. We will notify you once your application has been reviewed (could take up to 5-10 business days). Please respond to your application in 60 days. If we do not receive correspondence on your application in 60 days between communication, the application will automatically be deleted, and you will have to provide a new application to be reconsidered. Upon approval, we will then send you an email so that you can place your first online order!</p>
+    <p>If you already have a Lenny &amp; Larry's account, <a href="/account/login">please login</a> now before completing the application.</p>
+</div><!-- /.section__entry -->
+        </div><!-- /.section__body -->
+    </div><!-- /.shell -->
+</section><!-- /.section-default -->
+<section class="whole-sale-second-para">
+    <div class="shell shell--small">
+        <div class="section__body">
+
+        <p>----</p>
+        <h4>lenny &amp; larry’s wholesale terms and conditions</h4>
+        <h5>wholesale account terms &amp; policies</h5>
+          
+			{% section 'wholesaleText' %}
+      </div>
+    </div>
+
+</section>
+
+<section class="section-default section-default--page whole-sale-login-section">
+    <div class="shell shell--small">
+        <div class="section__body">
+<div class="">Already have an account? <a href="/account/login" class="link link--blue">Login here</a></div>
+</div>
+    </div>
+</section>
+<div class="form form--triangles form--xsmall form--register js-form-validate">
+    <form method="post" class="whole-sale-from-section" action="/account" id="create_customer" accept-charset="UTF-8">
+       <div class="form__container">
+            <div class="shell">
+                  <div class="form__holder">
+                        <div id="message-success-account-creation"></div>
+                        <div id="message-error-account-creation"></div>
+                    {{ form.errors | default_errors }}
+                    <div class="form-message form-message--error" style="display:none">
+                    </div>
+                    <input type="hidden" id="customer_tags" name="customer[tags]" value="wholesale_pending" />
+                    <div class="form__body">
+                        <h4>Customer information</h4>
+                        <div class="form-outer">
+                        <div class="form__row{{- error_first_name -}}">
+                            <label for="field-first-name"
+                                class="form__label">{{- 'customer.register.first_name' | t -}}</label>
+                            <div class="form__controls">
+                                <input type="text" class="field" name="customer[first_name]" id="field-first-name"
+                                    value="{{- form.first_name -}}"
+                                    placeholder="{{- 'customer.register.first_name' | t -}}*"">
+                            </div><!-- /.form__controls -->
+                        </div><!-- /.form__row -->
+                        <div class="form__row{{- error_last_name -}}">
+                            <label for="field-last-name"
+                                class="form__label">{{- 'customer.register.last_name' | t -}}</label>
+                            <div class="form__controls">
+                                <input type="text" class="field" name="customer[last_name]" id="field-last-name"
+                                    value="{{- form.last_name -}}"
+                                    placeholder="{{- 'customer.register.last_name' | t -}}*">
+                            </div><!-- /.form__controls -->
+                        </div><!-- /.form__row -->
+                        <div class="form__row{{- error_email -}}">
+                            <label for="field-email" class="form__label">{{- 'customer.register.email' | t -}}</label>
+                            <div class="form__controls">
+                                <input type="email" class="field" name="customer[email]" id="field-email"
+                                    value="{{- form.email -}}" placeholder="{{- 'customer.register.email' | t -}}*"
+                                    required>
+                            </div><!-- /.form__controls -->
+                        </div><!-- /.form__row -->
+                        <div class="form__row{{- error_password -}}">
+                            <label for="field-password"
+                                class="form__label">{{- 'customer.register.password' | t -}}</label>
+                            <div class="form__controls">
+                                <input type="password" class="field js-pass" name="customer[password]"
+                                    id="field-password" value="" placeholder="{{- 'customer.register.password' | t -}}*"
+                                    required>
+                            </div><!-- /.form__controls -->
+                        </div><!-- /.form__row -->
+                        <div class="form__row">
+                            <label for="field-password2"
+                                class="form__label">{{- 'customer.register.confirm_password' | t -}}</label>
+                            <div class="form__controls">
+                                <input type="password" class="field js-pass-confirm" name="customer-pass-confirm"
+                                    id="field-password2" value=""
+                                    placeholder="{{- 'customer.register.confirm_password' | t -}}*" required>
+                            </div><!-- /.form__controls -->
+                        </div><!-- /.form__row -->
+                        <!-- Custom fields-->
+                        <div class="form__row">
+                            <label for="CompanyName" class="form__label">Company Name</label>
+                            <input type="text" class="field" placeholder="Company Name*" name="customer[note][CompanyName]" id="CustomerFormCompanyName"
+                                autocapitalize="words">
+                        </div>
+                        <div class="form__row">
+                            <label for="PhoneNumber" class="form__label">Phone Number</label>
+                            <input type="text" class="field" placeholder="Phone Number*" name="customer[note][PhoneNumber]" id="CustomerFormPhoneNumber"
+                                autocapitalize="words">
+                        </div>
+                        <div class="form__row">
+                            <label for="AlternatePhoneNumber" class="form__label">Alternate Phone Number
+                                (optional)</label>
+                            <input type="text" class="field" placeholder="Alternate Phone Number (optional)" name="customer[note][AlternatePhoneNumber]"
+                                id="CustomerFormAlternatePhoneNumber" autocapitalize="words">
+                        </div>
+                        <div class="form__row">
+                            <label for="TaxID" class="form__label">Tax ID/ABN/VAT Number
+                            </label>
+                            <input type="text" class="field" placeholder="Tax ID/ABN/VAT Number*" name="customer[note][TaxID]" id="CustomerFormTaxID"
+                                autocapitalize="words">
+                        </div>
+                        <div class="form__row">
+                            <label for="Website"  class="form__label">Website</label>
+                            <input type="text" class="field" placeholder="Website*" name="customer[note][Website]" id="CustomerFormWebsite"
+                                autocapitalize="words">
+                        </div>
+                        <div class="form__row full-width">
+                            <label for="Description" class="form__label">Tell us a little about yourself so that we
+                                can
+                                verify your business identity
+                            </label>
+                           <textarea class="field" placeholder="Tell us a little about yourself so that we can verify your business identity*" name="customer[note][Description]" id="CustomerFormDescription"
+                                autocapitalize="words"></textarea>
+                        </div>
+                        </div>
+                        <h4 style="margin-bottom: 5px;">Shipping address</h4>
+                      <p style="margin-bottom: 20px;">We do not ship wholesale products to residential or PO Boxes</p>
+                        <!-- shipping address -->
+                        <div class="form-outer">
+                        <div class="form__row">
+                            <label for="Address1" class="form__label">Address1 </label>
+                            <input type="text" placeholder="Address1" class="field"  name="customer[note][Address1]" id="CustomerFormAddress1"
+                                autocapitalize="words"></div>
+                        <div class="form__row">
+                            <label for="Address2" class="form__label">Address2</label>
+                            <input type="text" placeholder="Address2"  class="field" name="customer[note][Address2]" id="CustomerFormAddress2"
+                                autocapitalize="words"></div>
+                        <div class="form__row">
+                            <label for="City" class="form__label">City</label>
+                            <input type="text" placeholder="City"  class="field" name="customer[note][City]" id="CustomerFormCity" autocapitalize="words">
+                        </div>
+                        <div class="form__row">
+                            <label for="Country" class="form__label">Country</label>
+                         <!--  <input type="text" placeholder="Country"  class="field" name="customer[note][Country]" id="CustomerFormCountry"
+                                autocapitalize="words"></div>
+                            -->
+                            <select id="CustomerFormCountry" class="field" name="customer[note][Country]">
+<option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="form__row">
+                            <label for="State" class="form__label">State</label>
+                           <!-- <input type="text" placeholder="State"  class="field" name="customer[note][State]" id="CustomerFormState"
+                                autocapitalize="words">-->
+                                <select id="CustomerFormState" class="field" name="customer[note][State]">
+                                    <option value="">Select</option>
+                                                                </select>
+                        </div>
+                        <div class="form__row">
+                            <label for="Zip" class="form__label">Zip/Postal Code</label>
+                            <input type="text" placeholder="Zip/Postal Code"  class="field" name="customer[note][Zip]" id="CustomerFormZip" autocapitalize="words">
+                        </div>
+                    </div><!-- /.form__body -->
+                    </div>
+                    <div class="form__foot">
+                        <div class="checkbox form__checkbox">
+                            <input type="checkbox"  name="customer[accepts_marketing]" id="field-checkbox">
+                            <label for="field-checkbox">Accept Email Marketing</label>
+                        </div><!-- /.checkbox -->
+                        <div class="form__actions">
+                            <ul>
+                                <li>
+                                    <input type="submit" value="submit application" class="form__btn btn btn--xlarge js-create-account-wholesale">
+                                  <!--  <input type="submit" value="Register">-->
+                                </li>
+                            </ul>
+                        </div><!-- /.form__actions -->
+                    </div><!-- /.form__foot -->
+                </div><!-- /.form__holder -->
+            </div><!-- /.shell -->
+        </div>
+    </form>
+</div><!-- /.form -->
+
+
+<script>
+    $(document).ready(function ($) {
+        $('#message-success-account-creation').hide();
+        $('#message-error-account-creation').hide();
+    });
+    
+
+    $('#create_customer').submit(function (event) {
+        event.preventDefault();
+        var data = $(this).serialize();
+        console.log(data);
+
+ 		window.dataLayer = window.dataLayer || [];
+
+        window.dataLayer.push({
+          'event': 'form_submit',
+          'formname': 'wholesale_application_submit'
+        });
+    });
+    $(".js-create-account-wholesale").click(function (e) {
+        var ogFirstName = $('#field-first-name').val();
+        var oglastName = $('#field-last-name').val();
+        var ogemail = $('#field-email').val();
+        var ogpassword = $('#field-password').val();
+        var ogconfirmPassword = $('#field-password2').val();
+        var ogcompanyName = $('#CustomerFormCompanyName').val();
+        var ogphoneNumber = $('#CustomerFormPhoneNumber').val();
+        var ogalternatePhoneNumber = $('#CustomerFormAlternatePhoneNumber').val();
+        var ogtaxID = $('#CustomerFormTaxID').val();
+        var ogwebsite = $('#CustomerFormWebsite').val();
+        var ogdescription = $('#CustomerFormDescription').val();
+        var ogaddress1 = $('#CustomerFormAddress1').val();
+        var ogaddress2 = $('#CustomerFormAddress2').val();
+        var ogcity = $('#CustomerFormCity').val();
+        var ogcountry = $('#CustomerFormCountry option:selected').text();
+        var ogstate = $('#CustomerFormState').val();
+        var ogzip = $('#CustomerFormZip').val();
+        var ogacceptMarketing = $('#field-checkbox').val();
+        var customerTag = $('#customer_tags').val();
+
+        errorValidation(ogFirstName, oglastName, ogemail, ogpassword, ogconfirmPassword, ogcompanyName, ogphoneNumber, ogalternatePhoneNumber, ogtaxID, ogwebsite, ogdescription, ogaddress1, ogaddress2, ogcity, ogcountry, ogstate, ogzip, ogacceptMarketing,customerTag)
+        //errorValidation(ogFirstName, oglastName, ogemail, ogpassword, ogconfirmPassword, honeyPotFirstName, honeyPotLasttName, honeyPotEmail, honeyPotPassword)
+       
+    });
+    /* Error validation check */
+function errorValidation(ogFirstName, oglastName, ogemail, ogpassword, ogconfirmPassword, ogcompanyName, ogphoneNumber, ogalternatePhoneNumber, ogtaxID, ogwebsite, ogdescription, ogaddress1, ogaddress2, ogcity, ogcountry, ogstate, ogzip, ogacceptMarketing,customerTag)
+{
+    console.log(ogpassword);
+    console.log(ogconfirmPassword);
+    if ($.trim(ogFirstName) == '' || $.trim(oglastName) == '' || $.trim(ogemail) == '' || ogpassword == '' || ogphoneNumber == '' || ogcompanyName == '' || ogtaxID == '' || ogwebsite == '' || ogdescription == '') {
+        errMsg = "Please enter the required fields";
+        // console.log("Empty:  " + success);
+        $('.form-message--error').html("<p>" + errMsg + "</p>");
+        $('.form-message--error').show();
+        success = false;
+      }
+      else if (!validateEmail(ogemail)) {
+        errMsg = "Invalid Email";
+        // console.log("invalid Email: " + success);
+        $('.form-message--error').html("<p>" + errMsg + "</p>");
+        $('.form-message--error').show();
+        success = false;
+      }
+      else if (ogpassword != ogconfirmPassword) {
+        errMsg = "Password and Confirm Password don't match";
+        // console.log("password not match: " + success);
+        $('.form-message--error').html("<p>" + errMsg + "</p>");
+        $('.form-message--error').show();
+        success = false;
+      }
+      else if (ogpassword.length < 8) {
+        errMsg = "Password should be more then 7 characters";
+        $('.form-message--error').html("<p>" + errMsg + "</p>");
+        $('.form-message--error').show();
+        success = false;
+      }
+      else {
+        success = true;
+        // console.log(success);
+        if (success) {
+            $('.form-message--error').hide();
+          /* Pass the values of the honeypot into the main shpify form */
+          createAccount(ogFirstName, oglastName, ogemail, ogpassword, customerTag, ogcompanyName, ogphoneNumber, ogalternatePhoneNumber, ogtaxID, ogwebsite, ogdescription, ogaddress1, ogaddress2, ogcity, ogcountry, ogstate, ogzip, ogacceptMarketing);
+        }
+        //createCustomerAccount(firstName, lastName, email, password, tags, success)
+      }
+}
+    /* create account function */
+    function createAccount(ogFirstName, oglastName, ogemail, ogpassword, customerTag, ogcompanyName, ogphoneNumber, ogalternatePhoneNumber, ogtaxID, ogwebsite, ogdescription, ogaddress1, ogaddress2, ogcity, ogcountry, ogstate, ogzip, ogacceptMarketing) {
+        console.log("Create account function called");
+        var escapeData = {
+            firstName: escape(ogFirstName),
+            lastName: escape(oglastName),
+            email: escape(ogemail),
+            password: escape(ogpassword).replace(/\+/g, '%2B'),
+            tags: escape(customerTag),
+            ogcompanyName: escape(ogcompanyName),
+            ogphoneNumber: escape(ogphoneNumber),
+            ogalternatePhoneNumber: escape(ogalternatePhoneNumber),
+            ogtaxID: escape(ogtaxID),
+            ogwebsite: escape(ogwebsite),
+            ogdescription: escape(ogdescription),
+            ogaddress1: escape(ogaddress1),
+            ogaddress2: escape(ogaddress2),
+            ogcity: escape(ogcity),
+            ogcountry: escape(ogcountry),
+            ogstate: escape(ogstate),
+            ogzip: escape(ogzip),
+            ogacceptMarketing: escape(ogacceptMarketing)
+        }
+        // console.log(escapeData);
+        // console.log(escapeData.firstName);
+        // console.log(escapeData.lastName);
+        // console.log(escapeData.email);
+        // console.log(escapeData.password);
+        // console.log(escapeData.tags);
+        // console.log(escapeData.ogacceptMarketing);
+        // console.log(escapeData.ogcompanyName);
+        // console.log(escapeData.ogaddress1);
+        // console.log(escapeData.ogaddress2);
+        // console.log(escapeData.ogcity);
+        // console.log(escapeData.ogcountry);
+        // console.log(escapeData.ogstate);
+        // console.log(escapeData.ogzip);
+        // console.log(escapeData.ogphoneNumber);
+        var data = 'form_type=create_customer&utf8=%E2%9C%93&customer%5Bfirst_name%5D=';
+        data += escapeData.firstName;
+        data += '&customer%5Blast_name%5D=';
+        data += escapeData.lastName;
+        data += '&customer%5Bemail%5D=';
+        data += escapeData.email;
+        data += '&customer%5Bpassword%5D=';
+        data += escapeData.password;
+        data += '&customer%5Btags%5D=';
+        data += escapeData.tags;
+        // data += '&customer%5Bnote%5D%5BCompanyName%5D=';
+        // data += escapeData.ogcompanyName;
+        // data += '&customer%5Bnote%5D%5BPhoneNumber%5D=';
+        // data += escapeData.ogphoneNumber;
+        data += '&customer%5Bnote%5D%5BAlternatePhoneNumber%5D=';
+        data += escapeData.ogalternatePhoneNumber;
+        data += '&customer%5Bnote%5D%5BTaxID%5D=';
+        data += escapeData.ogtaxID;
+        data += '&customer%5Bnote%5D%5BWebsite%5D=';
+        data += escapeData.ogwebsite;
+        data += '&customer%5Bnote%5D%5BDescription%5D=';
+        data += escapeData.ogdescription;
+        // data += '&customer%5Bnote%5D%5BAddress1%5D=';
+        // data += escapeData.ogaddress1;
+        // data += '&customer%5Bnote%5D%5BAddress2%5D=';
+        // data += escapeData.ogaddress2;
+        // data += '&customer%5Bnote%5D%5BCity%5D=';
+        // data += escapeData.ogcity;
+        // data += '&customer%5Bnote%5D%5BCountry%5D=';
+        // data += escapeData.ogcountry;
+        // data += '&customer%5Bnote%5D%5BState%5D=';
+        // data += escapeData.ogstate;
+        // data += '&customer%5Bnote%5D%5BZip%5D=';
+        // data += escapeData.ogzip;
+        data += '&customer%5Baccepts_marketing%5D=';
+        data += escapeData.ogacceptMarketing;
+        //var data = 'form_type=create_customer&utf8=%E2%9C%93&customer%5Bfirst_name%5D=' + escapeData.firstName + '&customer%5Blast_name%5D=' + escapeData.lastName + '&customer%5Bemail%5D=' + escapeData.email + '&customer%5Bpassword%5D=' + escapeData.password;
+        $.post('/account', data)
+            .done(function (data) {
+          console.log(data);
+                var logErrors = jQuery(data).find('.form-message--error').text();
+                var logErrors1 = jQuery(data).find('.errors').text();
+                if ((logErrors != '' && logErrors != 'undefined') || (logErrors1 != '' && logErrors1 != 'undefined')) {
+                    console.log(logErrors);
+                    $('.form-message--error').html("<p>" + logErrors + "</p>");
+                    $('.form-message--error').html("<p>" + logErrors1 + "</p>");
+                    $('.form-message--error').show();
+                    $('#message-success-account-creation').hide();
+                   
+                }
+                else {
+                    console.log("Thank you for submitting wholesale account opening request. We are processing your request for approval. We'll get back to you as soon as possible.");
+                    $('#message-success-account-creation').html("Thank you for submitting wholesale account opening request. We are processing your request for approval. We'll get back to you as soon as possible.");
+                    $('#message-success-account-creation').show();
+                    $('#message-error-account-creation').hide();
+                    clearform();
+                    postAccountCreation(escapeData.email, escapeData.password, escapeData.firstName, escapeData.lastName, escapeData.ogcompanyName, escapeData.ogaddress1, escapeData.ogaddress2, escapeData.ogcity, escapeData.ogcountry, escapeData.ogstate, escapeData.ogzip, escapeData.ogphoneNumber)
+                }
+            }).fail(function ( jqXHR, textStatus) { console.log('error could not submit: ' + textStatus);
+            $('#message-error-account-creation').html("Something went wrong. Please contact <a href='help@lennylarry.com'>help@lennylarry.com</a>");
+                    $('#message-error-account-creation').show();
+                    $('html,body').animate({
+                            scrollTop: $("#message-error-account-creation").offset().top -200
+                        });
+        });
+        return false;
+    }
+    /* Post Account Creation
+    user for loggin into the system  */
+    function postAccountCreation(email, password, firstName, lastName, companyName, address1, address2, city, country, state, zip, phoneNumber) {
+        var data = 'form_type=customer_login&utf8=%E2%9C%93&customer%5Bemail%5D=' + email + '&customer%5Bpassword%5D=' + password;
+        $.post('/account/login', data)
+            .done(function (data) {
+                var logErrors = $(data).find('.errors').text();
+                if (logErrors != "" && logErrors != 'undefined') {
+                    console.log(logErrors);
+                    $('.form-message--error').html("<p>" + logErrors + "</p>");
+                    $('.form-message--error').show();
+                    $('#message-success-account-creation').hide();
+                } else {
+                    console.log('success Login');
+                    addAddress(firstName, lastName, companyName, address1, address2, city, country, state, zip, phoneNumber);
+                }
+            }).fail(function () { console.log('error'); });
+        return false;
+    }
+    /* Add Address */
+    function addAddress(firstName, lastName, companyName, address1, address2, city, country, state, zip, phoneNumber) {
+        console.log("Add Address Called");
+        // console.log(firstName);
+        // console.log(lastName);
+        // console.log(companyName);
+        // console.log(address1);
+        // console.log(address2);
+        // console.log(city);
+        // console.log(country);
+        // console.log(state);
+        // console.log(zip);
+        // console.log(phoneNumber);
+        var data = 'form_type=customer_address&utf8=%E2%9C%93&address%5Bfirst_name%5D=' + firstName + '&address%5Blast_name%5D=' + lastName + '&address%5Bcompany%5D=' + companyName + '&address%5Baddress1%5D=' + address1 + '&address%5Baddress2%5D=' + address2 + '&address%5Bcity%5D=' + city + '&address%5Bcountry%5D=' + country + '&address%5Bprovince%5D=' + state + '&address%5Bzip%5D=' + zip + '&address%5Bphone%5D=' + phoneNumber;
+        $.post('/account/addresses', data)
+            .done(function (data) {
+                var logErrors = $(data).find('.errors').text();
+                if (logErrors != "" && logErrors != 'undefined') {
+                    console.log(logErrors);
+                    $('.form-message--error').html("<p>" + logErrors + "</p>");
+                    $('.form-message--error').show();
+                    $('#message-success-account-creation').hide();
+                   
+                } else {
+                    console.log('success Address');
+                    $.ajax({
+                        url: "/account/logout",
+                        context: document.body
+                    }).done(function () {
+                        clearform();
+                        // document.location.href = '/account/login';
+                        $('html,body').animate({
+                            scrollTop: $("#message-success-account-creation").offset().top -200
+                        });
+                    });
+                }
+            }).fail(function () { console.log('error');
+           
+        });
+    }
+    /* Clear form */
+    function clearform() {
+        $(".field").val('');
+        $("#CustomerFormState").empty();
+       $("#CustomerFormState").append("<option value=''>Select</option>");
+    }
+    /* validate email */
+    function validateEmail($email) {
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    return emailReg.test($email);
+  }
+</script>
+<style>
+    .hide {
+        display: none;
+    }
+</style>

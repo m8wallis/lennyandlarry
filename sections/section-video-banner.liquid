@@ -1,0 +1,52 @@
+<section class="video-banner" id="video-banner--{{ section.id }}">
+  <video class="hero__bg" autoplay loop muted controls playsinline>
+    <source
+      src="{{ section.settings.video.sources[1].url }}"
+    >
+  </video>
+</section>
+
+<script>
+  jQuery(document).ready(function ($) {
+    const videos = $('#video-banner--{{ section.id }} video');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+
+          if (entry.isIntersecting) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      },
+      {
+        threshold: 0.5, // play only when at least 50% visible
+      }
+    );
+
+    videos.each(function () {
+      observer.observe(this);
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Section Video Banner",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video File"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Video Banner"
+    }
+  ]
+}
+{% endschema %}

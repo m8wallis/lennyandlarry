@@ -1,0 +1,221 @@
+{%- assign _section = section.settings -%}
+{%- assign section_title = _section.title -%}
+{%- assign section_subtitle = _section.subtitle -%}
+{%- assign _blocks = section.blocks -%}
+{%- assign items_html = '' -%}
+
+{%- if _blocks.size > 0 -%}
+{%- for block in _blocks -%}
+{%- assign _block = block.settings -%}
+{%- assign block_image = _block.image -%}
+{%- assign block_subtitle = _block.subtitle -%}
+{%- assign block_title = _block.title -%}
+{%- assign block_price = _block.price -%}
+{%- assign block_btn_text = _block.btn_text -%}
+{%- assign block_btn_link = _block.btn_link -%}
+{%- assign block_btn_html = '' -%}
+{% assign prodhan = '' %}
+{% if _block.btn_link contains 'products' %}
+{% assign prodhan =  block.settings.btn_link | remove: "https://www.lennylarry.com" |  split: "/" | last %}
+{% assign _product = all_products[prodhan] %}
+
+		<script>
+          console.log('{{ prodhan }}');
+          console.log('{{ _product.handle }}');
+		</script>
+   {% endif %}
+
+   {%- if block_btn_text != blank and block_btn_link != blank -%}
+   {%- capture block_btn_html -%}
+   <a href="{{ block_btn_link }}" class="btn product-item__btn">{{ block_btn_text }}</a>
+   {%- endcapture -%}
+   {%- endif -%}
+
+   {%- if block_image != blank or block_subtitle != blank or block_title != blank or block_btn_html != '' -%}
+   {%- capture items_html -%}
+   {{ items_html }}
+
+   <div class="product-item product-item--primary product-items__item">
+    <div class="product-item__inner">
+      {%- if block_image != blank -%}
+      <div class="product-item__image">
+        <figure>
+          {% assign old_url =  block_image | img_url: 'master' %}
+          {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '580', options: 'dpr:2' %}{% endcapture %}
+          <img src="{{ imageboss_url }}" alt="{{ block_title }}}">
+        </figure>
+        <div class="product-item__actions">
+          {{ block_btn_html }}
+        </div><!-- /.product-item__actions -->
+      </div><!-- /.product-item__image -->
+      {%- endif -%}
+
+      {%- if block_subtitle != blank or block_title != blank or block_btn_html != '' -%}
+      <div class="product-item__content">
+        {%- if block_btn_html != '' -%}
+        <div class="product-item__content-body">
+        {% if _product.metafields.accentuate.notice_message != blank %}
+          {% if _product.metafields.accentuate.notice_message contains "Limited Time" %}
+            {% assign tag_color = 'tag_red' %}
+          {% elsif _product.metafields.accentuate.notice_message contains "%" %}
+            {% assign tag_color = 'tag_yellow' %}
+        {% endif %}
+          
+        <div class="message_notice {{ tag_color }}">{{ _product.metafields.accentuate.notice_message }}</div>
+        {% endif %}
+
+        </div><!-- /.product-item__content-body -->
+        {%- endif -%}
+        {%- if block_subtitle != blank or block_title != blank -%}
+        <div class="product-item__content-head">
+          {%- if block_subtitle != blank -%}
+          <h3 class="product-item__subtitle title-rust h6">{{ block_subtitle | newline_to_br }}</h3><!-- /.product-item__subtitle -->
+          {%- endif -%}
+
+          {%- if block_title != blank -%}
+          <h4 class="product-item__title">{{ block_title | newline_to_br }}</h4><!-- /.product-item__title -->
+          {%- endif -%}
+
+          {%- if block_price != blank -%}
+          <h4 class="price">{{ block_price }}</h4>
+          {%- endif -%}
+
+          {%- if prodhan != blank -%}
+          <!-- yotpo -->
+          <div class="yotpo bottomLine"
+          data-product-id="{{ _product.id }}">
+          {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+          {%- assign time_now = 'now' | date: '%s' %}
+          {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+          {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+          {%- assign yotpo_bottomline_last_updated = _product.metafields.yotpo.catalog_bottomline_update_time | date: '%s' %}
+          {%- assign diff_seconds_from_last_bottomline_update = time_now | minus: yotpo_bottomline_last_updated %}
+          {%- if yotpo_live_time and diff_seconds_from_live < 86400 or yotpo_bottomline_last_updated and diff_seconds_from_last_bottomline_update < 86400 -%}
+          {%- assign yotpo_bottomline_obsolete = false %}
+          {%- else %}
+          {%- assign yotpo_bottomline_obsolete = true %}
+          {%- endif %}
+          {%- if yotpo_offload_content == 'yes' and yotpo_bottomline_obsolete != true -%}
+          {{ _product.metafields.yotpo.catalog_bottomline }}
+          {%- endif %}
+        </div>
+        <!-- ./yotpo -->
+        {% endif %}
+
+        {% assign handleArray = block_btn_link | split: '/' %}
+        <div class="product-item__reviews" style="margin-top:-20px;">
+          <span class="shopify-product-reviews-badge" data-id="{{ all_products[handleArray[2]].id }}"></span>
+        </div>
+
+
+      </div><!-- /.product-item__content-head -->
+      {%- endif -%}
+    </div><!-- /.product-item__content -->
+    {%- endif -%}
+  </div><!-- /.product-item__inner -->
+</div><!-- /.product-item -->
+{%- endcapture -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+
+{%- if section_title != blank or section_subtitle != blank or items_html != '' -%}
+<section class="section section--products">
+  <div class="">
+    {%- if section_subtitle != blank or section_title != blank -%}
+    <header class="section__head shell">
+      {%- if section_subtitle != blank -%}
+      <h2 class="section__subtitle h4 h4--mobile-small title-hollie">{{ section_subtitle | newline_to_br }}</h2><!-- /.section__subtitle -->
+      {%- endif -%}
+
+      {%- if section_title != blank -%}
+        <div class="section__title">
+          <div class="dotted-line">
+          </div>
+          <h2><span>{{ section_title | newline_to_br }}</span></h2>
+          <svg xmlns="http://www.w3.org/2000/svg" width="624" height="3" viewBox="0 0 624 3" fill="none">
+            <path d="M622 1.5H2" stroke="#4E3629" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-dasharray="0 10"></path>
+          </svg>
+          <div class="dotted-line">
+          </div>
+         </div>
+      {%- endif -%}
+    </header><!-- /.section__head -->
+    {%- endif -%}
+
+    {%- if items_html != '' -%}
+    <div class="section__body shell">
+      <div class="product-items product-items--primary js-slider-products-resize">
+        {{ items_html }}
+      </div><!-- /.product-items -->
+    </div><!-- /.section__body -->
+    {%- endif -%}
+  </div><!-- /.shell -->
+</section><!-- /.section -->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Section Products",
+  "settings": [
+  {
+    "type": "textarea",
+    "id": "subtitle",
+    "label": "Subtitle",
+    "default": "Our most popular treats"
+  },
+  {
+    "type": "textarea",
+    "id": "title",
+    "label": "Title",
+    "default": "Bite into this"
+  }
+  ],
+  "blocks": [
+  {
+    "type": "item",
+    "name": "Item",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "The Complete Cookie®"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Chocolate Chip"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Order Now"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    }
+    ]
+  }
+  ],
+  "presets": [
+  {
+    "name": "Section Products"
+  }
+  ]
+}
+{% endschema %}

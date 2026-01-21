@@ -1,0 +1,30 @@
+{% case fragment %}
+	{% when 'head' %}
+		<div class="section__head">
+			<h1 class="section__title">
+				{{- 'customer.account.title' | t -}}
+			</h1><!-- /.section__title -->
+		</div><!-- /.section__head -->
+	{% when 'sidebar' %}
+		<aside class="section__aside">
+			<ul>
+				<li{% if template contains 'account' %} class="active"{% endif %}>
+					<a href="/account">
+						{{- 'customer.account.dashboard' | t -}}
+					</a>
+				</li>
+
+				<li{% if template contains 'addresses' %} class="active"{% endif %}>
+					<a href="/account/addresses">
+						{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+					</a>
+				</li>
+
+				<li>
+					{{- 'customer.account.log_out' | t | customer_logout_link -}}
+				</li>
+			</ul>
+		</aside><!-- /.section__aside -->
+{% endcase %}
+
+{%- assign fragment = '' -%}

@@ -1,0 +1,22 @@
+{%- assign section_title = 'collections.general.title' | t -%}
+{%- assign exclude = 'frontpage' | split: ',' -%}
+
+{%- render 'section-triangles-top' section_title: section_title, section_modifier: 'section--collection' -%}
+
+<section class="section-default section-default--collections">
+	<div class="shell">
+		<div class="section__body">
+           {%- paginate collections by 48 -%}
+				<div class="collection-items">
+					{%- for collection in collections -%}
+						{%- if exclude contains collection.handle -%}
+							{%- continue -%}
+						{%- endif -%}
+
+						{%- include 'collection-item' _collection: collection, modifier: 'collection-items__item' -%}
+					{%- endfor -%}
+				</div><!-- /.collection-items -->
+			{%- endpaginate -%}
+		</div><!-- /.section__body -->
+	</div><!-- /.shell -->
+</section><!-- /.section-default -->

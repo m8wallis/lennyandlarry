@@ -1,0 +1,88 @@
+{%- assign _section = section.settings -%}
+{%- assign _blocks = section.blocks -%}
+{%- assign items_html = '' -%}
+
+{%- if _blocks.size > 0 -%}
+{%- for block in _blocks -%}
+{%- assign _block = block.settings -%}
+{%- assign block_image = _block.image -%}
+{%- assign block_link = _block.link -%}
+
+{%- if block_image != blank -%}
+{%- capture items_html -%}
+{{ items_html }}
+
+<div class="slider__slide">
+  <div class="slider__slide-image">
+    {%- if block_link != blank -%}
+    <a href="{{ block_link }}" target="_blank" class="slider__slide-link"></a>
+    {%- endif -%}
+
+    {% assign old_url =  block_image | img_url: 'master' %}
+    {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '100', options: 'dpr:2' %}{% endcapture %}
+    <img src="{{ imageboss_url }}" alt="List Logo">
+  </div><!-- /.slider__slide-image -->
+</div><!-- /.slider__slide -->
+{%- endcapture -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+
+{%- if items_html != '' -%}
+<section class="section section--logos-slider">
+  <div class="shell">
+    <div class="section__body">
+      {% if section.settings.subtitle != blank %}
+        <h3>{{ section.settings.subtitle }}</h3>
+      {% endif %}
+
+      <div class="section__inner">
+        <div class="slider-logos js-slider-logos">
+          <div class="slider__clip">
+            <div class="slider__slides">
+              {{ items_html }}
+            </div><!-- /.slider__slides -->
+          </div><!-- /.slider__clip -->
+        </div><!-- /.slider -->
+      </div><!-- /.section__inner -->
+    </div><!-- /.section__body -->
+  </div><!-- /.shell -->
+</section><!-- /.section -->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Section Logos Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Logos Slider"
+    }
+  ]
+}
+{% endschema %}
+

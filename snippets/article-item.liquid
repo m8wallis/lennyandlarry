@@ -1,0 +1,76 @@
+{%- assign _article = _article | default: '' -%}
+{%- assign _article_tags_hide = _article_tags_hide | default: false -%}
+{%- assign _article_featured = _article_featured | default: false -%}
+{%- assign _article_video_link = _article_video_link | default: _article.metafields.article_details.popup_video_link -%}
+
+<article class="article-item {{ _article_modifier }}">
+	<div class="article-item__inner">
+		{%- if _article.image -%}
+		<div class="article-item__image">
+			{% assign old_url =  _article.image | img_url: 'master' %}
+			{% capture imageboss_url %}{% render 'imageboss' src:old_url, operation: 'width', size: '580', options: 'dpr:2' %}{% endcapture %}
+			<a {% if _article_video_link != blank %}href="{{- _article_video_link -}}" class="js-popup-video"{% else %}href="{{- _article.url -}}"{% endif %}
+			style="background-image: url({{- imageboss_url -}})">
+			{%- if _article_video_link != blank -%}
+			<i class="ico-play article-item__icon">
+				{%- render 'svg-elements' name: 'play' -%}
+			</i>
+			{%- endif -%}
+		</a>
+	</div><!-- /.article-item__image -->
+	{%- endif -%}
+
+	<div class="article-item__content">
+		{%- if _article_tags_hide == false and _article.tags.size > 0 -%}
+		<div class="article-item__tags title-rust{% if _article_featured %} h5 h5--mobile-small{% endif %}">
+			{{ _article.tags | join: ',' }}
+		</div><!-- /.article-item__tags -->
+		{%- endif -%}
+
+		{%- if _article_featured -%}
+		<h3 class="article-item__title h3 h3--mobile-large">
+			{% if is_video %}
+			{{- _article.title -}}
+			{% else %}
+			<a href="{{- _article.url -}}">
+				{{- _article.title -}}
+			</a>
+			{% endif %}
+		</h3><!-- /.article-item__title -->
+		{%- else -%}
+		<h5 class="article-item__title h5 h5--mobile-small title-rust">
+			{% if is_video %}
+			{{- _article.title -}}
+			{% else %}
+			<a href="{{- _article.url -}}">
+				{{- _article.title -}}
+			</a>
+			{% endif %}
+		</h5><!-- /.article-item__title -->
+		{%- endif -%}
+
+		<div class="article-item__meta">
+			{%- assign date_format = 'date_formats.short' | t -%}
+			{%- assign published_at = _article.published_at | date: date_format -%}
+
+			{{- published_at -}}
+		</div><!-- /.article-item__meta -->
+
+		{%- if _article_featured and _article.content != blank -%}
+		<div class="article-item__entry entry">
+			<p>
+				{{ _article.content | strip_html | truncatewords: 25 }}
+			</p>
+		</div><!-- /.article-item__entry -->
+		{%- endif -%}
+
+		{% unless is_video %}
+		<div class="article-item__actions">
+			<a href="{{ _article.url }}" class="link-primary">{{ 'blogs.article.read_more' | t }}</a>
+		</div><!-- /.article-item__actions -->
+		{% endunless %}
+	</div><!-- /.article-item__content -->
+</div><!-- /.article-item__inner -->
+</article><!-- /.article-item -->
+
+{%- assign _article = '' -%}

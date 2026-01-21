@@ -1,0 +1,130 @@
+{%- assign _product = _product | default: '' -%}
+{%- assign first_available_variant = _product.selected_or_first_available_variant -%}
+{%- assign badge_prefix = 'products.product.badge_prefix' | t -%}
+{%- assign badge_string = '' -%}
+
+{%- if _product != empty -%}
+{%- if _product.tags.size > 0 -%}
+{%- for _tag in _product.tags -%}
+{%- if _tag contains badge_prefix -%}
+{%- assign badge_string = _tag | remove: badge_prefix | strip | handle -%}
+
+{% break %}
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+
+<div class="product-item {% unless product.available %}product-item--sold-out{% endunless %} {{ modifier }}">
+  {% form 'product', _product, class: "form-product-small product-item__form" %}
+  <input type="hidden" name="id" value="{{ first_available_variant.id }}">
+  <div class="product-item__inner">
+    <div class="product-item__image">
+      <a href="{{ _product.url | within: collection }}"></a>
+
+      <figure>
+        {% assign old_url =  _product.featured_image | img_url: 'master' %}
+        {% capture imageboss_url %}{% render 'imageboss' src:old_url, operation: 'width', size: '600', options: 'dpr:2' %}{% endcapture %}
+        <img src="{{ imageboss_url }}" alt="{{ _product.title }}">
+      </figure>
+      <div class="product-item__actions">
+         {% unless _product.metafields.accentuate.out_of_stock %}
+         <button
+         type="submit"
+         name="add"
+         class="btn form__btn product-item__btn js-product-btn"
+  
+         {% unless _product.available %}
+         disabled
+         {% endunless %}
+         >
+         {% if _product.available %}
+         {{- 'products.product.product_item_add_to_cart' | t -}}
+         {%else%}
+         Sold Out
+         {% endif %}
+  
+       </button>
+       {% else %}
+       <button
+       type="submit"
+       name="add"
+       class="btn form__btn product-item__btn js-product-btn"
+       disabled
+       >
+       Sold Out
+     </button>
+   {% endunless %}
+   </div><!-- /.product-item__actions -->
+      {%- if badge_string != '' -%}
+      <div class="product-item__badge badge-{{ badge_string }}"></div><!-- /.product-item__badge -->
+      {%- endif -%}
+    </div><!-- /.product-item__image -->
+
+    <div class="product-item__content">
+      <div class="product-item__content-head">
+        {% if _product.metafields.accentuate.notice_message != blank %}
+          {% if _product.metafields.accentuate.notice_message contains "Limited Time" %}
+            {% assign tag_color = 'tag_red' %}
+          {% elsif _product.metafields.accentuate.notice_message contains "%" %}
+            {% assign tag_color = 'tag_yellow' %}
+          {% elsif _product.metafields.accentuate.notice_message contains "Best Seller" %}
+            {% assign tag_color = 'tag_blue' %}
+        {% endif %}
+          
+        <div class="message_notice {{ tag_color }}">{{ _product.metafields.accentuate.notice_message }}</div>
+        {% endif %}
+        {%- if _product.metafields.product_details.subtitle != blank -%}
+        <h6 class="product-item__subtitle h6 h6--mobile-small title-rust">{{ _product.metafields.product_details.subtitle | newline_to_br }}</h6><!-- /.product-item__subtitle -->
+        {%- endif -%}
+
+        <h4 class="product-item__title h4 h4--mobile-small">
+          <a href="{{ _product.url | within: collection }}">
+            {{- _product.title -}}
+          </a>
+        </h4>
+        <div class="product-item__footer">
+          <div class="product-item__bar">
+          <div class="product-item__price price coll" product_id="{{_product.id}}" product_handle="{{_product.handle}}" product_variant_id="{{_product.selected_or_first_available_variant.id}}"product_variant_sku="{{_product.selected_or_first_available_variant.sku}}" product_variant_price="{{_product.selected_or_first_available_variant.price}}" product_variant_compare_price="{{_product.selected_or_first_available_variant.compare_at_price}}">
+            {%- render 'price' with _product -%}
+          </div><!-- /.product-item__price -->
+        </div><!-- /.product-inline__bar -->
+        <div class="product-item__reviews">
+            <!-- <span class="shopify-product-reviews-badge" data-id="{{ _product.id }}"></span> -->
+            
+            <div class="yotpo bottomLine"
+            data-product-id="{{ _product.id }}">
+            {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+            {%- assign time_now = 'now' | date: '%s' %}
+            {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+            {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+            {%- assign yotpo_bottomline_last_updated = _product.metafields.yotpo.catalog_bottomline_update_time | date: '%s' %}
+            {%- assign diff_seconds_from_last_bottomline_update = time_now | minus: yotpo_bottomline_last_updated %}
+            {%- if yotpo_live_time and diff_seconds_from_live < 86400 or yotpo_bottomline_last_updated and diff_seconds_from_last_bottomline_update < 86400 -%}
+            {%- assign yotpo_bottomline_obsolete = false %}
+            {%- else %}
+            {%- assign yotpo_bottomline_obsolete = true %}
+            {%- endif %}
+            {%- if yotpo_offload_content == 'yes' and yotpo_bottomline_obsolete != true -%}
+            {{ _product.metafields.yotpo.catalog_bottomline }}
+            {%- endif %}
+          </div>
+  
+        </div><!-- /.product-item__reviews -->
+    </div><!-- /.product-item__footer -->
+    </div><!-- /.product-item__content-head -->
+    {%- assign product_in_collects = '[' -%}
+    {%- for collection in _product.collections -%} 
+    {%- assign product_in_collects = product_in_collects | append: '{"collection_id":"' | append: collection.id | append: '","product_id":"' | append: _product.id | append: '"' | append: ',"product_handle":"' | append: _product.handle | append: '"}' -%}
+    {% if forloop.last == false %}
+    {%- assign product_in_collects =  product_in_collects | append: ',' -%}
+    {% endif %}
+    {%- endfor -%}
+    {%- assign product_in_collects =  product_in_collects | append: ']' -%}
+    <span class="col_clct" clct='{{product_in_collects}}'></span>
+
+</div><!-- /.product-item__content -->
+</div><!-- /.product-item__inner -->
+{% endform%}
+</div><!-- /.product-item -->
+{%- endif -%}
+{%- assign _product = '' -%}

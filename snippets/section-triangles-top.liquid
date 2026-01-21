@@ -1,0 +1,70 @@
+{%- assign section_subtitle = section_subtitle | default: '' -%}
+{%- assign section_subtitle_html = section_subtitle_html | default: '' -%}
+{%- assign section_subtitle_pos_bottom = section_subtitle_pos_bottom | default: false -%}
+{%- assign section_title = section_title | default: '' -%}
+{%- assign section_content = section_content | default: '' -%}
+{%- assign section_modifier = section_modifier | default: '' -%}
+{%- assign section_entry = section_entry | default: false -%}
+
+{%- if section_subtitle != blank or section_subtitle_html != blank or section_title != blank or section_content != blank -%}
+  <section class="section section--triangles {{ section_modifier }}">
+    <div class="shell">
+      <div class="section__holder">
+        {%- if section_subtitle != blank or section_subtitle_html != blank or section_title != blank -%}
+          {%- assign section_subtitle_holder = '' -%}
+
+          {%- if section_subtitle_html != blank or section_subtitle != blank -%}
+            {%- capture section_subtitle_holder -%}
+              {%- if section_subtitle_html != blank -%}
+                {{ section_subtitle_html }}
+              {%- endif -%}
+
+              {%- if section_subtitle != blank -%}
+                <h4 class="section__subtitle h4 h4--mobile-small title-hollie">{{ section_subtitle | newline_to_br }}</h4><!-- /.section__subtitle -->
+              {%- endif -%}
+            {%- endcapture -%}
+          {%- endif -%}
+
+          <header class="section__head">
+            {%- if section_subtitle_pos_bottom == false and section_subtitle_holder != '' -%}
+              {{ section_subtitle_holder }}
+            {%- endif -%}
+
+            {%- if section_title != blank -%}
+              <div class="section__title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="250" height="4" viewBox="0 0 250 4" fill="none">
+                  <path d="M287.561 2.5L0 2" stroke="#4E3629" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-dasharray="0 10"/>
+                </svg>
+                <h1 class="h2 section__title">
+                  <span>{{ section_title | newline_to_br }}</span>
+                </h1><!-- /.section__title -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="250" height="4" viewBox="0 0 250 4" fill="none">
+                  <path d="M288.5 2.5L1.75 2" stroke="#4E3629" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-dasharray="0 10"/>
+                </svg>
+              </div>
+              
+            {%- endif -%}
+
+            {%- if section_subtitle_pos_bottom and section_subtitle_holder != '' -%}
+              {{ section_subtitle_holder }}
+            {%- endif -%}
+          </header><!-- /.section__head -->
+        {%- endif -%}
+
+        {%- if section_content != blank -%}
+          {%- if section_entry == false -%}
+            {% unless page.handle == 'drop-us-a-line' %}
+                <div class="section__body">
+                  <div class="section__entry">
+                    {{ section_content }}
+                  </div><!-- /.section__entry -->
+                </div><!-- /.section__body -->
+            {% endunless %}
+          {%- else -%}
+            {{ section_content }}
+          {%- endif -%}
+        {%- endif -%}
+      </div><!-- /.section__holder -->
+    </div><!-- /.shell -->
+  </section><!-- /.section -->
+{%- endif -%}

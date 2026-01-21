@@ -1,0 +1,155 @@
+
+{%- assign _section = section.settings -%}
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__inner">
+      <div class="footer__content {% comment %} hidden-xs hidden-sm {% endcomment %}">
+        {% comment %}Footer Menu{% endcomment %}
+        <nav class="footer__nav">
+          {%- assign footer_menu = _section.footer_menu | default: 'footer' -%}
+
+          {%- render 'menu', handle: footer_menu -%}
+        </nav><!-- /.footer__nav -->
+      </div><!-- /.footer__content -->
+
+      <div class="footer__aside">
+        {%- render 'subscribe' subscribe_object: _section -%}
+
+        {%- render 'socials' socials_modifier: 'footer__socials' -%}
+      </div><!-- /.footer__aside -->
+    </div><!-- /.footer__inner -->
+
+    {%- if _section.copyright != blank or _section.footer_bottom_menu != blank -%}
+      <div class="footer__bar">
+        {%- if _section.footer_bottom_menu != blank -%}
+          <nav class="footer__nav-inline">
+            {%- render 'menu', handle: _section.footer_bottom_menu -%}
+          </nav><!-- /.footer__nav-inline -->
+        {%- endif -%}
+
+        {%- if _section.copyright != blank -%}
+          <div class="copyright footer__copyright">
+            {%- assign current_year = 'now' | date: '%Y' -%}
+            {{ _section.copyright | replace: '[year]', current_year }}
+          </div><!-- /.copyright -->
+        {%- endif -%}
+      </div><!-- /.footer__bar -->
+    {%- endif -%}
+  </div><!-- /.shell -->
+</footer><!-- /.footer -->
+
+
+<script>
+  // Yotpo Rewards Account Creation Newsletter Signup
+jQuery( document ).ready( function( $ ) {
+  {% if customer.accepts_marketing == true %}
+
+  var customerEmail = '{{ customer.email }}';
+
+    var data = { 
+      type: 'CustomAction',
+      action_name: 'Newsletter Sign Up',
+      customer_email: customerEmail
+    };
+
+    $.ajax({
+      url: 'https://app.swellrewards.com/api/v2/actions',
+      type: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'json',
+      headers: { 
+        'x-guid': 'qdooTb_IRmRqm2M8AJs9NA',
+        'x-api-key': 'YxZW5pIC6x3Flk7aru0cTwtt'
+      },
+      // async: false,
+      success: function(msg) {
+          // alert(msg);
+      }
+    });   
+  {% endif %}
+
+ window.addEventListener("klaviyoForms", function(e) { 
+    console.log(  e.detail.formId );
+    if (e.detail.type == 'submit' && e.detail.formId == 'TeYc63' ) {
+      window.dataLayer = window.dataLayer || [];
+
+      window.dataLayer.push({  
+        'event': 'form_submit',
+        'formname': 'newsletter_subscription'
+      });
+
+    }
+    if (e.detail.type == 'submit' && e.detail.formId == 'QpuNUh' ) {
+      window.dataLayer = window.dataLayer || [];
+
+      window.dataLayer.push({  
+        'event': 'form_submit',
+        'formname': 'popup_10%_off_form_submit'
+      });
+
+    }
+
+  });
+} );
+
+</script>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "footer-outer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Subscribe"
+    },
+    {
+      "type": "textarea",
+      "id": "subscribe_title",
+      "label": "Subscribe Title",
+      "default": "Connect with us"
+    },
+    {
+      "type": "textarea",
+      "id": "subscribe_text",
+      "label": "Subscribe Text",
+      "default": "Let’s be friends! Sign up for new flavor launches, awesome deals, and more."
+    },
+    {
+      "type": "textarea",
+      "id": "subscribe_embed",
+      "label": "Subscribe Embed Form"
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Menu"
+    },
+    {
+      "type": "header",
+      "content": "Copyright"
+    },
+    {
+      "type": "richtext",
+      "id": "copyright",
+      "label": "Copyright",
+      "info": "Use [year] to set the current year."
+    },
+    {
+      "type": "header",
+      "content": "Bottom Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_bottom_menu",
+      "label": "Menu"
+    }
+  ]
+}
+{% endschema %}

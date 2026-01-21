@@ -1,0 +1,22 @@
+{%- assign date_format = 'date_formats.short' | t -%}
+{%- assign published_at = page.published_at | date: date_format -%}
+{%- assign subtitle = 'page.general.posted_on_date' | t: date: published_at -%}
+{%- capture subtitle_html -%}
+	<div class="section__meta">
+		<span>{{ subtitle }}</span>
+	</div><!-- /.section__meta -->
+{%- endcapture -%}
+
+{%- render 'section-triangles-top' section_subtitle_html: subtitle_html, section_title: page.title, section_modifier: 'section--triangles-secondary section--page', section_subtitle_pos_bottom: true -%}
+
+{%- if page.content != blank -%}
+	<section class="section-default section-default--page">
+		<div class="shell shell--small">
+			<div class="section__body">
+				<div class="section__entry entry">
+					{{ page.content }}
+				</div><!-- /.section__entry -->
+			</div><!-- /.section__body -->
+		</div><!-- /.shell -->
+	</section><!-- /.section-default -->
+{%- endif -%}

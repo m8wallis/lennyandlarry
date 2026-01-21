@@ -1,0 +1,215 @@
+
+{%- assign _block = _block | default: blank -%}
+{%- assign block_product = _block.product | default: blank -%}
+{%- assign _product = all_products[block_product] -%}
+
+<script type="application/json" class="bold-product-json">{{ _product | json }}</script>
+
+{%- assign block_image = _block.image -%}
+{%- assign block_subtitle = _block.subtitle -%}
+{%- assign block_title = _block.title -%}
+{%- assign block_price = _block.price -%}
+{%- assign block_variant = _block.variant -%}
+{%- assign block_description = _block.description -%}
+{%- assign block_link_text = _block.link_text -%}
+{%- assign block_link_url = _block.link_url -%}
+
+{%- assign item_image = '' -%}
+{%- assign item_subtitle = '' -%}
+{%- assign item_title = '' -%}
+{%- assign item_price = '' -%}
+{%- assign item_variant = '' -%}
+{%- assign item_description = '' -%}
+{%- assign item_link_url = '' -%}
+
+{%- if block_image != blank -%}
+{%- assign item_image = block_image -%}
+{%- elsif _product != blank and _product.featured_image != blank -%}
+{%- assign item_image = _product.featured_image -%}
+{%- endif -%}
+
+{%- if block_subtitle != blank -%}
+{%- assign item_subtitle = block_subtitle -%}
+{%- elsif _product != blank and _product.metafields.product_details.subtitle != blank -%}
+{%- assign item_subtitle = _product.metafields.product_details.subtitle -%}
+{%- endif -%}
+
+{%- if block_title != blank -%}
+{%- assign item_title = block_title -%}
+{%- elsif _product != blank -%}
+{%- assign item_title = _product.title -%}
+{%- endif -%}
+
+{%- if _product != blank -%}
+{%- assign item_id = _product.id -%}
+{%- endif -%}
+
+
+{%- if block_price != blank -%}
+{%- assign item_price = block_price -%}
+{%- elsif _product != blank -%}
+<!-- Logic - If customer tag is whole sale +  approved when show 10% discount-->
+
+{%- if customer.tags contains 'wholesale' -%}
+{% assign discountedPrice =  _product.price | times: 10.00 | divided_by: 100.0%}
+{%- assign item_price = _product.price | minus: discountedPrice | money -%}
+{%else%}
+{%- assign item_price = _product.price | money -%}
+{%- endif -%}
+{%- endif -%}
+
+{%- if block_variant != blank -%}
+{%- assign item_variant = block_variant -%}
+{%- elsif _product != blank -%}
+{%- unless _product.selected_or_first_available_variant.title contains 'Default Title' -%}
+{%- assign item_variant = _product.selected_or_first_available_variant.title -%}
+{%- endunless -%}
+{%- endif -%}
+
+{%- if block_description != blank -%}
+{%- assign item_description = block_description -%}
+{%- elsif _product != blank and _product.description != blank -%}
+{%- assign item_description = _product.description -%}
+{%- endif -%}
+
+{%- if block_link_url != blank -%}
+{%- assign item_link_url = block_link_url -%}
+{%- elsif _product != blank -%}
+{%- assign item_link_url = _product.url | within: collection -%}
+{%- endif -%}
+
+{%- capture product_inline_html -%}
+<div class="product-inline__inner">
+  {%- if item_image != '' -%}
+  <div class="product-inline__image">
+    {% assign old_url =  item_image | img_url: 'master' %}
+    {% capture imageboss_url %}{% render 'imageboss' src:old_url, operation: 'width', size: '1240', options: 'dpr:2' %}{% endcapture %}
+    <img src="{{ imageboss_url }}" alt="{{ item_title }}">
+  </div><!-- /.product-inline__image -->
+  {%- endif -%}
+
+  <div class="product-inline__content">
+    {%- if item_subtitle != '' -%}
+    <h3 class="product-inline__subtitle title-rust h6">{{ item_subtitle | newline_to_br }}</h3><!-- /.product-inline__subtitle -->
+    {%- endif -%}
+
+    {%- if item_title != '' -%}
+    <h4 class="product-inline__title h3">{{ item_title | newline_to_br }}</h4><!-- /.product-inline__title -->
+    {%- endif -%}
+
+    <div class="product-item__reviews" style="margin-top:-5px;margin-bottom:15px;">
+      <span class="shopify-product-reviews-badge" data-id="{{ item_id }}"></span>
+    </div>
+
+    {%- if item_price != '' or item_variant != '' -%}
+    <div class="product-inline__bar">
+      {%- if item_price != '' -%}
+      <div class="product-inline__price price wsaio-pid-{{_product.id}}" product_id="{{_product.id}}" product_handle="{{_product.handle}}" product_variant_id="{{_product.selected_or_first_available_variant.id}}"
+      product_variant_sku="{{_product.selected_or_first_available_variant.sku}}" product_variant_price="{{_product.selected_or_first_available_variant.price}}"
+      product_variant_compare_price="{{_product.selected_or_first_available_variant.compare_at_price}}">
+
+      <span class="money" data-product-id="{{ _product.id }}">{{ item_price }}</span>
+    </div><!-- /.product-inline__price -->
+    {%- endif -%}
+
+    {%- if item_variant != '' -%}
+    <div class="product-inline__variant">
+      {{ item_variant }}
+    </div><!-- /.product-inline__variant -->
+    {%- endif -%}
+  </div><!-- /.product-inline__bar -->
+  {%- endif -%}
+
+  <!-- yotpo -->
+  <div class="yotpo bottomLine" data-product-id="{{ _product.id }}">
+    {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+    {%- assign time_now = 'now' | date: '%s' %}
+    {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+    {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+    {%- assign yotpo_bottomline_last_updated = _product.metafields.yotpo.catalog_bottomline_update_time | date: '%s' %}
+    {%- assign diff_seconds_from_last_bottomline_update = time_now | minus: yotpo_bottomline_last_updated %}
+    {%- if yotpo_live_time and diff_seconds_from_live < 86400 or yotpo_bottomline_last_updated and diff_seconds_from_last_bottomline_update < 86400 -%}
+    {%- assign yotpo_bottomline_obsolete = false %}
+    {%- else %}
+    {%- assign yotpo_bottomline_obsolete = true %}
+    {%- endif %}
+    {%- if yotpo_offload_content == 'yes' and yotpo_bottomline_obsolete != true -%}
+    {{ _product.metafields.yotpo.catalog_bottomline }}
+    {%- endif %}
+  </div>
+  <!-- ./yotpo -->
+
+
+  {%- if item_description != '' -%}
+  <div class="product-inline__description entry">
+    {{ item_description }}
+  </div><!-- /.product-inline__description -->
+  {%- endif -%}
+
+  {%- if _product != blank -%}
+  <div class="product-inline__row">
+    <div class="qty qty--primary product-inline__qty js-qty">
+      <div class="qty__inner">
+       <span class="qty__btn qty__btn--minus" tabindex="0" role="button">-</span>
+       <label class="sr-only" for="field-quantity-{{ _product.handle }}">Quantity</label>
+       <input type="number" class="field-quantity qty__field" id="field-quantity-{{ _product.handle }}"  name="quantity" value="1" min="1">
+       <span class="qty__btn qty__btn--plus" tabindex="0" role="button">+</span>
+
+     </div><!-- /.qty__inner --> 
+   </div><!-- /.qty -->
+
+   <button
+   type="submit"
+   name="add" 
+   class="btn btn--large form__btn js-product-btn"
+
+   {% unless _product.available %}
+   disabled
+   {% endunless %}
+   >
+   <span>{{- 'products.product.add_to_cart' | t -}}</span>
+ </button>
+</div><!-- /.product-inline__row -->
+{%- endif -%}
+
+{%- if block_link_text != blank and item_link_url != '' -%}
+<div class="product-inline__actions">
+  <a href="{{ item_link_url }}" class="link-primary">{{ block_link_text }}</a>
+</div><!-- /.product-inline__actions -->
+{%- endif -%}
+</div><!-- /.product-inline__content -->
+</div><!-- /.product-inline__inner -->
+{%- endcapture -%}
+
+<div class="product-inline">
+  {%- if _product != blank -%}
+  {% form 'product', _product, class: "form-product-small product-inline__form js-form-product" %}
+  <div class="product-item__select is-hidden">
+    <select name="id" class="select product-single__variants">
+      {% for variant in _product.variants %}
+      {%- render 'price' with variant, echo: false -%}
+
+      <option
+      value="{{- variant.id -}}"
+      data-price="{{- output -}}"
+
+      {% if _product.selected_or_first_available_variant.id == variant.id %}
+      selected
+      {% endif %}
+
+      {% unless variant.available %}
+      disabled
+      {% endunless %}
+      >
+      {{- variant.title -}}
+    </option>
+    {% endfor %}
+  </select>
+</div><!-- /.product-item__select -->
+
+{{ product_inline_html }}
+{% endform %}
+{%- else -%}
+{{ product_inline_html }}
+{%- endif -%}
+</div><!-- /.product-inline -->

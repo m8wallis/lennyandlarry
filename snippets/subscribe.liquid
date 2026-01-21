@@ -1,0 +1,29 @@
+{%- assign subscribe_object = subscribe_object | default: '' -%}
+
+{%- if subscribe_object.subscribe_title != blank or subscribe_object.subscribe_text != blank or subscribe_object.subscribe_embed != blank -%}
+  <div class="subscribe {{ additional_class }}">
+    {%- if subscribe_object.subscribe_title != blank or subscribe_object.subscribe_text != blank -%}
+      <div class="subscribe__head">
+        {%- if subscribe_object.subscribe_title != blank -%}
+          <h4 class="subscribe__title">
+            <span></span>
+
+            {{ subscribe_object.subscribe_title | newline_to_br }}
+          </h4>
+        {%- endif -%}
+
+        {%- if subscribe_object.subscribe_text != blank -%}
+          <div class="subscribe__entry">
+            <p>{{ subscribe_object.subscribe_text | newline_to_br }}</p>
+          </div><!-- /.subscribe__entry -->
+        {%- endif -%}
+      </div><!-- /.subscribe__head -->
+    {%- endif -%}
+
+    
+      <div class="subscribe__body">
+        <div class="klaviyo-form-TeYc63"></div>
+      </div><!-- /.subscribe__body -->
+    
+  </div><!-- /.subscribe -->
+{%- endif -%}

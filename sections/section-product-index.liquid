@@ -1,0 +1,168 @@
+{%- assign _section = section.settings -%}
+{%- assign section_title = _section.title -%}
+{%- assign section_subtitle = _section.subtitle -%}
+{%- assign _blocks = section.blocks -%}
+{%- assign items_html = '' -%}
+
+{%- if _blocks.size > 0 -%}
+  {%- for block in _blocks -%}
+    {%- assign _block = block.settings -%}
+    {%- assign block_product = _block.product -%}
+    {%- assign block_image = _block.image -%}
+    {%- assign block_subtitle = _block.subtitle -%}
+    {%- assign block_title = _block.title -%}
+    {%- assign block_price = _block.price -%}
+    {%- assign block_variant = _block.variant -%}
+    {%- assign block_description = _block.description -%}
+
+    {%- if block_product != blank or block_image != blank or block_title != blank or block_subtitle != blank or block_price != blank or block_variant != blank or block_description != blank -%}
+      {%- capture items_html -%}
+        {{ items_html }}
+
+        <div class="slider__slide">
+          {%- render 'product-inline', _block: _block -%}
+        </div><!-- /.slider__slide -->
+      {%- endcapture -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if section_title != blank or section_subtitle != blank or items_html != '' -%}
+  <section class="section section--white section--white-overlay section--product section--product--index">
+    <div class="shell shell--wide">
+      <div class="section__container">
+        {%- if section_subtitle != blank or section_title != blank -%}
+          <header class="section__head shell shell--wide">
+            {%- if section_subtitle != blank -%}
+              <h4 class="section__subtitle h4 h4--mobile-small title-hollie">{{ section_subtitle | newline_to_br }}</h4><!-- /.section__subtitle -->
+            {%- endif -%}
+
+            {%- if section_title != blank -%}
+                <div class="section__title">
+                  <div class="dotted-line">
+                  </div>
+                  <h2><span>{{ section_title | newline_to_br }}</span></h2>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="624" height="3" viewBox="0 0 624 3" fill="none">
+                    <path d="M622 1.5H2" stroke="#4E3629" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-dasharray="0 10"></path>
+                  </svg>
+                  <div class="dotted-line">
+                  </div>
+                </div>
+              {%- endif -%}
+          </header><!-- /.section__head -->
+        {%- endif -%}
+
+        {%- if items_html != '' -%}
+          <div class="section__body shell">
+            <div class="slider-products js-slider">
+              <div class="slider__clip">
+                <div class="slider__slides">
+                  {{ items_html }}
+                </div><!-- /.slider__slides -->
+              </div><!-- /.slider__clip -->
+            </div><!-- /.slider-products -->
+          </div><!-- /.section__body -->
+
+          {%- render 'image-mobile-check' section_image: _section.image_bottom, section_image_mobile: _section.image_bottom_mobile, image_check_class: 'section__bg section__bg--bottom', image_check_res_desktop: '876x' -%}
+        {%- endif -%}
+      </div><!-- /.section__container -->
+    </div><!-- /.shell -->
+  </section><!-- /.section -->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Section Product",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "New to the shop"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Fresh out of the Oven!"
+    },
+    {
+      "type": "header",
+      "content": "Image Bottom"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bottom",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bottom_mobile",
+      "label": "Image Mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "header",
+          "content": "Product Options"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price"
+        },
+        {
+          "type": "textarea",
+          "id": "variant",
+          "label": "Variant"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "View more of what’s new in the shop ▸"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Product"
+    }
+  ]
+}
+{% endschema %}

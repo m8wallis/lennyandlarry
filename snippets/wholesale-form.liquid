@@ -1,0 +1,242 @@
+{%- assign select_options = select_options | default: '' -%}
+
+<div class="form form--wholesale">
+  {% form 'contact' %}
+    {%- assign attr_company = 'wholesale.form.company' | t -%}
+    {%- assign attr_company_handle = attr_company | handle -%}
+    {%- assign attr_first_name = 'wholesale.form.first_name' | t -%}
+    {%- assign attr_first_name_handle = attr_first_name | handle -%}
+    {%- assign attr_last_name = 'wholesale.form.last_name' | t -%}
+    {%- assign attr_last_name_handle = attr_last_name | handle -%}
+    {%- assign attr_email = 'wholesale.form.email' | t -%}
+    {%- assign attr_email_handle = attr_email | handle -%}
+    {%- assign attr_pass = 'wholesale.form.password' | t -%}
+    {%- assign attr_pass_handle = attr_pass | handle -%}
+    {%- assign attr_address = 'wholesale.form.address' | t -%}
+    {%- assign attr_address_handle = attr_address | handle -%}
+    {%- assign attr_apt = 'wholesale.form.apt' | t -%}
+    {%- assign attr_apt_handle = attr_apt | handle -%}
+    {%- assign attr_state = 'wholesale.form.state' | t -%}
+    {%- assign attr_state_handle = attr_state | handle -%}
+    {%- assign attr_city = 'wholesale.form.city' | t -%}
+    {%- assign attr_city_handle = attr_city | handle -%}
+    {%- assign attr_country = 'wholesale.form.country' | t -%}
+    {%- assign attr_country_handle = attr_country | handle -%}
+    {%- assign attr_zip = 'wholesale.form.zip' | t -%}
+    {%- assign attr_zip_handle = attr_zip | handle -%}
+    {%- assign attr_phone = 'wholesale.form.phone' | t -%}
+    {%- assign attr_phone_handle = attr_phone | handle -%}
+    {%- assign attr_company_website = 'wholesale.form.company_website' | t -%}
+    {%- assign attr_company_website_handle = attr_company_website | handle -%}
+    {%- assign attr_ein = 'wholesale.form.ein' | t -%}
+    {%- assign attr_ein_handle = attr_ein | handle -%}
+    {%- assign attr_type = 'wholesale.form.type' | t -%}
+    {%- assign attr_type_handle = attr_type | handle -%}
+    {%- assign attr_place = 'wholesale.form.place' | t -%}
+    {%- assign attr_place_handle = attr_place | handle -%}
+    {%- assign attr_notes = 'wholesale.form.notes' | t -%}
+    {%- assign attr_notes_handle = attr_notes | handle -%}
+    {%- assign attr_checkbox = 'wholesale.form.checkbox' | t -%}
+    {%- assign attr_checkbox_handle = attr_checkbox | handle -%}
+
+    {%- if form.errors -%}
+      <div class="form__message form__message--error">
+        {{- form.errors | default_errors -}}
+      </div><!-- /.form-notice -->
+    {%- endif -%}
+
+    {%- if form.posted_successfully? -%}
+      <div class="form__message form__message--success">
+        {{- 'wholesale.form.post_success' | t -}}
+      </div><!-- /.form-alert -->
+    {%- endif -%}
+
+    <div class="form__body">
+      <div class="form__group">
+        <div class="form__cols">
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-company" class="form__label">{{ attr_company }}</label>
+
+              <input type="text" id="wholesale-company" class="field" name="contact[{{ attr_company_handle }}]" placeholder="{{ attr_company }}" autocapitalize="words">
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-first-name" class="form__label">{{ attr_first_name }}</label>
+
+              <input type="text" id="wholesale-first-name" class="field" name="contact[{{ attr_first_name_handle }}]" placeholder="{{ attr_first_name }}" autocapitalize="words" value="{{ customer.first_name }}">
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-last-name" class="form__label">{{ attr_last_name }}</label>
+
+              <input type="text" id="wholesale-last-name" class="field" name="contact[{{ attr_last_name_handle }}]" placeholder="{{ attr_last_name }}" autocapitalize="words" value="{{ customer.last_name }}">
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+        </div><!-- /.form__cols -->
+
+        <div class="form__cols">
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-email" class="form__label">{{ attr_email }}</label>
+
+              <input type="email" id="wholesale-email" class="field" name="contact[email]" placeholder="{{ attr_email }}" autocorrect="off" autocapitalize="off" value="{{ customer.email }}" required>
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-password" class="form__label">{{ attr_pass }}</label>
+
+              <input type="password" id="wholesale-password" class="field" name="contact[attr_pass_handle]" placeholder="{{ attr_pass }}" autocapitalize="words">
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+        </div><!-- /.form__cols -->
+      </div><!-- /.form__group -->
+
+      <div class="form__group">
+        <div class="form__cols">
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-address" class="form__label">{{ attr_address }}</label>
+
+              <input type="text" id="wholesale-address" class="field" name="contact[{{ attr_address_handle }}]" placeholder="{{ attr_address }}" autocapitalize="words">
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-apt" class="form__label">{{ attr_apt }}</label>
+
+              <input type="text" id="wholesale-apt" class="field" name="contact[{{ attr_apt_handle }}]" placeholder="{{ attr_apt }}" autocapitalize="words">
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+        </div><!-- /.form__cols -->
+
+        <div class="form__cols">
+          <div class="form__col">
+            <div class="form__cols">
+              <div class="form__col" id="wholesale-province" style="display: none;">
+                <div class="form__row">
+                  <label for="wholesale-state" class="form__label" >
+                    {{ attr_state }}
+                  </label>
+
+                  <div class="select js-select-province">
+                    <select id="wholesale-state" name="contact[{{ attr_state_handle }}]" data-default="{{ form.province }}"></select>
+                  </div><!-- /.select -->
+                </div><!-- /.form__row -->
+              </div><!-- /.form__col -->
+
+              <div class="form__col form__col--2of3">
+                <div class="form__row">
+                  <label for="wholesale-city" class="form__label">{{ attr_city }}</label>
+
+                  <input type="text" id="wholesale-city" class="field" name="contact[{{ attr_city_handle }}]" placeholder="{{ attr_city }}" autocapitalize="words">
+                </div><!-- /.form__row -->
+              </div><!-- /.form__col -->
+            </div><!-- /.form__cols -->
+          </div><!-- /.form__col -->
+
+          <div class="form__col">
+            <div class="form__cols">
+              <div class="form__col">
+                <div class="form__row">
+                  <label for="wholesale-country" class="form__label" >
+                    {{ attr_country }}
+                  </label>
+
+                  <div class="select js-select-country">
+                    <select id="wholesale-country" name="contact[{{ attr_country_handle }}]" data-default="{{ form.country }}">{{ country_option_tags }}</select>
+                  </div><!-- /.select -->
+                </div><!-- /.form__row -->
+              </div><!-- /.form__col -->
+
+              <div class="form__col form__col--2of3">
+                <div class="form__row">
+                  <label for="wholesale-zip" class="form__label">{{ attr_zip }}</label>
+
+                  <input type="text" id="wholesale-zip" class="field" name="contact[{{ attr_zip_handle }}]" placeholder="{{ attr_zip }}" autocapitalize="words">
+                </div><!-- /.form__row -->
+              </div><!-- /.form__col -->
+            </div><!-- /.form__cols -->
+          </div><!-- /.form__col -->
+        </div><!-- /.form__cols -->
+      </div><!-- /.form__group -->
+
+      <div class="form__group">
+        <div class="form__cols">
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-phone" class="form__label">{{ attr_phone }}</label>
+
+              <input type="text" id="wholesale-phone" class="field" name="contact[{{ attr_phone_handle }}]" placeholder="{{ attr_phone }}" autocapitalize="words">
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-company-website" class="form__label">{{ attr_company_website }}</label>
+
+              <input type="text" id="wholesale-company-website" class="field" name="contact[{{ attr_company_website_handle }}]" placeholder="{{ attr_company_website }}" autocapitalize="words">
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-ein" class="form__label">{{ attr_ein }}</label>
+
+              <input type="text" id="wholesale-ein" class="field" name="contact[{{ attr_ein_handle }}]" placeholder="{{ attr_ein }}" autocapitalize="words">
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+        </div><!-- /.form__cols -->
+
+        <div class="form__cols">
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-type" class="form__label">{{ attr_type }}</label>
+
+              <input type="text" id="wholesale-type" class="field" name="contact[{{ attr_type_handle }}]" placeholder="{{ attr_type }}" autocapitalize="words">
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-place" class="form__label">{{ attr_place }}</label>
+
+              <input place="text" id="wholesale-place" class="field" name="contact[{{ attr_place_handle }}]" placeholder="{{ attr_place }}" autocapitalize="words">
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+        </div><!-- /.form__cols -->
+
+        <div class="form__cols">
+          <div class="form__col">
+            <div class="form__row">
+              <label for="wholesale-notes" class="form__label">{{ attr_notes }}</label>
+
+              <textarea rows="10" id="wholesale-notes" class="field textarea" name="contact[{{ attr_notes_handle }}]" placeholder="{{ attr_notes }}" required></textarea>
+            </div><!-- /.form__row -->
+          </div><!-- /.form__col -->
+
+          <div class="form__col">
+            <div class="form__actions">
+              <div class="checkbox form__checkbox">
+                <input type="checkbox" name="contact[{{ attr_checkbox_handle }}]" id="wholesale-checkbox">
+
+                <label for="wholesale-checkbox">{{ attr_checkbox }}</label>
+
+                <button type="submit" class="form__btn btn btn--block">
+                  {{- 'wholesale.form.submit' | t -}}
+                </button>
+              </div><!-- /.checkbox -->
+            </div><!-- /.form__actions -->
+          </div><!-- /.form__col -->
+        </div><!-- /.form__cols -->
+      </div><!-- /.form__group -->
+    </div><!-- /.form__body -->
+  {% endform %}
+</div><!-- /.form -->

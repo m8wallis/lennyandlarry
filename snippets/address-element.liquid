@@ -1,0 +1,32 @@
+{%- assign customer_name = customer_name | default: customer.name -%}
+
+{%- if customer_name -%}
+  <p>
+    <strong>{{ customer_name }}</strong>
+  </p>
+{%- endif -%}
+
+{%- if customer.default_address.address1 or customer.default_address.zip or customer.default_address.city or customer.default_address.phone -%}
+  <p>
+    {%- if customer.default_address.address1 -%}
+      {{ customer.default_address.address1 }}, <br>
+    {%- endif -%}
+
+    {%- if customer.default_address.city -%}
+      {{ customer.default_address.city }},
+    {%- endif -%}
+
+    {%- if customer.default_address.province_code -%}
+      {{ customer.default_address.province_code }}
+    {%- endif -%}
+
+    {%- if customer.default_address.zip -%}
+      {{ customer.default_address.zip }}
+    {%- endif -%}
+
+    {%- if customer.default_address.phone -%}
+      <br>
+      {{ customer.default_address.phone }}
+    {%- endif -%}
+  </p>
+{%- endif -%}

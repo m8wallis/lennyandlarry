@@ -1,0 +1,67 @@
+{% comment %}Set variables{% endcomment %}
+{%- assign menu_handle = handle -%}
+{%- assign menu_class_name = class | default: 'menu' -%}
+{%- assign menu_dropdown = menu_dropdown_flag | default: false -%}
+{%- assign prev_title = prev_title | default: menu_handle -%}
+
+{%- if menu_dropdown -%}
+  {%- assign menu_items_array = menu_handle -%}
+{%- else -%}
+  {%- assign menu_items_array = linklists[menu_handle].links -%}
+{%- endif -%}
+
+{% comment %}Class naming{% endcomment %}
+{%- assign menu_class_dropdown = '__dropdown' | prepend: menu_class_name -%}
+{%- assign menu_class_item  = '__item' | prepend: menu_class_name -%}
+{%- assign menu_class_have_dropdown = '__item--has-dropdown' | prepend: menu_class_name | prepend: ' ' -%}
+{%- assign menu_active_class = '--active' | prepend: menu_class_item -%}
+{%- assign menu_class_item_active_children = '--ancestor-active' | prepend: menu_class_item -%}
+
+{%- if menu_dropdown -%}
+  <ul class="{{menu_class_dropdown}}">
+{%- else -%}
+  <ul>
+{%- endif -%}
+  {%- for _link in menu_items_array -%}
+    {%- assign menu_dropdown = false -%}
+    {%- assign _link_handle = prev_title | append: '-' | append: _link.title | handle -%}
+
+    {%- if _link.links.size > 0 or linklists[_link_handle] != empty -%}
+      {%- assign menu_dropdown = true -%}
+      {%- if _link.links.size > 0 -%}
+        {%- assign menu_dropdown_items = _link.links -%}
+      {%- else -%}
+        {%- assign menu_dropdown_items = linklists[_link_handle].links -%}
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if _link.active -%}
+      {%- assign menu_class_item_name = menu_class_item | append: ' ' | append: menu_active_class -%}
+    {%- else -%}
+      {%- assign menu_class_item_name = menu_class_item -%}
+    {%- endif -%}
+
+    {%- capture list_classes -%}
+      {{- menu_class_item_name -}}
+      {%- if menu_dropdown -%}
+        {{- menu_class_have_dropdown | append: ' ' -}}
+      {%- endif -%}
+      {%- if _link.child_active -%}
+        {{- menu_class_item_active_children | append: ' ' -}}
+      {%- endif -%}
+    {%- endcapture -%}
+
+    <li
+      class="{{list_classes}}">
+      <a href="{{ _link.url }}"{% if _link.title contains '**' %} class="is-alt"{% endif %}>
+        <span>
+          {{- _link.title | remove: '**' -}}
+        </span>
+      </a>
+      {%- if menu_dropdown -%}
+        {%- assign prev_title_text = _link.title | handle -%}
+        {%- render 'menu' handle: menu_dropdown_items, prev_title: prev_title_text, menu_dropdown_flag: true -%}
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>

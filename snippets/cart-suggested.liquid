@@ -1,0 +1,81 @@
+{% assign sug_one_obj = all_products[settings.sug_product_one] %}
+{% assign sug_two_obj = all_products[settings.sug_product_two] %}
+{% assign sug_three_obj = all_products[settings.sug_product_three] %}
+
+
+{% if sug_one_obj != blank or  sug_two_obj != blank or sug_three_obj != blank %}
+<div class="suggested-products">
+  <div class="inner">
+    <h5 class="title-rust">{{ settings.sug_product_title }}</h5>
+
+    <!-- Logic - If customer tag is whole sale +  approved when show 10% discount-->
+
+    {% assign finalPriceOne = sug_one_obj.price | money%}
+    {% assign finalPriceTwo = sug_two_obj.price | money%}
+    {% assign finalPriceThree = sug_three_obj.price | money%}
+    
+    {% if sug_one_obj != blank %}
+    <div class="sug-product sug-product--one" data-title="{{ sug_one_obj.title }}">
+      <a href="{{ sug_one_obj.url }}" class="prod_url">
+        {% assign old_url =  sug_one_obj.images.first | img_url: 'master' %}
+        {% capture imageboss_url %}{% render 'imageboss' src:old_url, operation: 'width', size: '80', options: 'dpr:2' %}{% endcapture %}
+        <img src="{{ imageboss_url }}" alt="{{ sug_one_obj.title }}" width="80px">
+      </a>
+      <div>
+        <a href="{{ sug_one_obj.url }}">
+          <span class="sug-prod__title">{{sug_one_obj.title }}</span>
+        </a>
+        <span class="sug-prod__price" data-attr-price={{finalPriceOne}}>{{ finalPriceOne }}</span>
+        <form method="post" action="/cart/add">
+         <input type="hidden" name="id" value="{{ sug_one_obj.variants.first.id }}" />
+         <input min="1" type="hidden" id="quantity" name="quantity" value="1" />
+         <input type="submit" value="Add to cart" class="btn" />
+       </form>
+     </div>
+   </div> 
+   {% endif %}
+
+   {% if sug_two_obj != blank %}
+   <div class="sug-product sug-product--two" data-title="{{ sug_two_obj.title }}">
+    <a href="{{ sug_two_obj.url }}" class="prod_url">
+        {% assign old_url =  sug_two_obj.images.first | img_url: 'master' %}
+        {% capture imageboss_url %}{% render 'imageboss' src:old_url, operation: 'width', size: '80', options: 'dpr:2' %}{% endcapture %}
+      <img src="{{ imageboss_url }}" alt="{{ asug_two_obj.title }}" width="80px">
+    </a>
+    <div>
+      <a href="{{ sug_two_obj.url }}">
+        <span class="sug-prod__title">{{ sug_two_obj.title }}</span>
+      </a>
+      <span class="sug-prod__price" data-attr-price={{finalPriceTwo}}>{{ finalPriceTwo }}</span>
+      <form method="post" action="/cart/add">
+       <input type="hidden" name="id" value="{{ sug_two_obj.variants.first.id }}" />
+       <input min="1" type="hidden" id="quantity" name="quantity" value="1" />
+       <input type="submit" value="Add to cart" class="btn" />
+     </form>
+   </div>
+ </div> 
+ {% endif %} 
+
+ {% if sug_three_obj != blank %}
+ <div class="sug-product sug-product--three" data-title="{{ sug_three_obj.title }}">
+  <a href="{{ sug_three_obj.url }}" class="prod_url">
+        {% assign old_url =  sug_three_obj.images.first | img_url: 'master' %}
+        {% capture imageboss_url %}{% render 'imageboss' src:old_url, operation: 'width', size: '80', options: 'dpr:2' %}{% endcapture %}
+    <img src="{{ imageboss_url }}" alt="{{ sug_three_obj.title }}" width="80px">
+  </a>
+  <div>
+    <a href="{{ sug_three_obj.url }}">
+      <span class="sug-prod__title">{{ sug_three_obj.title }}</span>
+    </a>
+    <span class="sug-prod__price" data-attr-price={{finalPriceThree}}>{{ finalPriceThree }}</span>
+    <form method="post" action="/cart/add">
+     <input type="hidden" name="id" value="{{ sug_three_obj.variants.first.id }}" />
+     <input min="1" type="hidden" id="quantity" name="quantity" value="1" />
+     <input type="submit" value="Add to cart" class="btn" />
+   </form>
+ </div>
+</div> 
+{% endif %}
+</div>
+</div>
+{%  endif %}

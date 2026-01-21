@@ -1,0 +1,117 @@
+{%- assign _section = section.settings -%}
+{%- assign _blocks = section.blocks -%}
+{%- assign items_html = '' -%}
+
+{%- if _blocks.size > 0 -%}
+{%- for block in _blocks -%}
+{%- assign _block = block.settings -%}
+
+{%- if _block.image != blank or _block.title != blank -%}
+{%- capture items_html -%}
+{{ items_html }}
+
+<li>
+  <div>
+    {%- if _block.link != blank -%}
+    <a href="{{ _block.link }}"></a>
+    {%- endif -%}
+
+    {%- if _block.image != blank -%}
+    <figure>
+      {{ _block.image | img_url: '80x' | img_tag }}
+    </figure>
+    {%- endif -%}
+
+    {%- if _block.title != blank -%}
+    <h6 class="title-rust">{{ _block.title | newline_to_br }}</h6>
+    {%- endif -%}
+  </div>
+</li>
+{%- endcapture -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+
+<section class="section-default section-default--contacts">
+  <div class="shell">
+    <div class="section__body contact-section">
+      {%- if _section.image != blank or _section.text != blank or items_html != '' -%}
+      <aside class="section__aside">
+        {%- if _section.image != blank -%}
+        <div class="section__image">
+          <figure>
+            {% assign old_url =  _section.image | img_url: 'master' %}
+            {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '9210', options: 'dpr:2' %}{% endcapture %}
+            <img src="{{ imageboss_url }}">
+          </figure>
+        </div><!-- /.section__image -->
+        {%- endif -%}
+
+
+        <div class="section__entry entry">
+         {{ page.content }}
+       </div>
+
+
+       {%- if items_html != '' -%}
+       <ul class="list-inline-items section__inline-items">
+        {{ items_html }}
+      </ul><!-- /.list-inline-items -->
+      {%- endif -%}
+    </aside><!-- /.section__aside -->
+    {%- endif -%}
+
+
+  </div><!-- /.section__body -->
+</div><!-- /.shell -->
+</section><!-- /.section-default -->
+
+{% schema %}
+{
+  "name": "Section Contacts",
+  "settings": [
+  {
+    "type": "header",
+    "content": "Form"
+  },
+  {
+    "type": "textarea",
+    "id": "select_options",
+    "label": "Select Options",
+    "info": "Every row is a new option"
+  },
+  {
+    "type": "header",
+    "content": "Content"
+  },
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+  }
+  ],
+  "blocks": [
+  {
+    "type": "item",
+    "name": "Item",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+    ]
+  }
+  ]
+}
+{% endschema %}

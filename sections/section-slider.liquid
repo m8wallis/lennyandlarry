@@ -1,0 +1,284 @@
+{%- assign _blocks = section.blocks -%}
+{%- assign slides_html = '' -%}
+
+{%- if _blocks.size > 0 -%}
+  {%- for block in _blocks -%}
+    {%- assign _block = block.settings -%}
+
+    {%- if _block.image != blank -%}
+      {%- capture slides_html -%}
+        {{ slides_html }}
+
+        <div class="slider__slide slider__align-{{ block.settings.slider_alignment }}">
+          {%- if _block.link != blank -%}
+            <a href="{{ _block.link }}" class="slider__slide-link"></a>
+          {%- endif -%}
+          <div class="slider__wrapper">
+          {% if block.settings.slider_alignment == 'none' %}
+            <!-- NO TEXT -->
+          {%- endif -%}
+          
+          {% if block.settings.slider_alignment == 'left' %}
+            <div class="slider__details-container">
+              <div class="slider__details-wrapper">
+              {%- if _block.eyebrow_text != blank -%}
+                <div class="slider__details-eyebrow">
+                  {%  if block.settings.highlight_color == '#ffffff' %}
+                    <span class="mobile-dark" style="color: {{ block.settings.highlight_color }};">{{ _block.eyebrow_text }}</span>
+                  {% else %}
+                    <span style="color: {{ block.settings.highlight_color }};">{{ _block.eyebrow_text }}</span>
+                  {%- endif -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="453" height="7" viewBox="0 0 453 7" fill="none">
+                    <path d="M3 3L459 3.5" stroke="white" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 20"/>
+                  </svg>
+                </div>
+              {%- endif -%}
+              {%- if _block.slider_heading != blank  -%}
+                {%  if block.settings.highlight_color == '#ffffff' %}
+                  <h2 class="slider__slide-heading mobile-dark" style="color: {{ block.settings.highlight_color }};">{{ _block.slider_heading }}</h2>
+                {% else %}
+                  <h2 class="slider__slide-heading" style="color: {{ block.settings.highlight_color }};">{{ _block.slider_heading }}</h2>
+                {%- endif -%}
+              {%- endif -%}
+              {%- if _block.slider_description != blank  -%}
+                {%  if block.settings.highlight_color == '#ffffff' %}
+                  <p class="slider__slide-description mobile-dark" style="color: {{ block.settings.description_color }};">{{ _block.slider_description }}</p>
+                {% else %}
+                  <p class="slider__slide-description" style="color: {{ block.settings.description_color }};">{{ _block.slider_description }}</p>
+                {%- endif -%}
+              {%- endif -%}
+              {%- if _block.slider_button_text != blank  -%}
+              <div class="button-wrapper">
+                <a href="{{ _block.slider_button_url }}" class="slider__slide-button" style="background: {{ block.settings.slider_button_background_color }}; color: {{ block.settings.slider_button_text_color }};">{{ _block.slider_button_text }}</a>
+              </div>
+              {%- endif -%}
+              </div> <!-- LEFT ALIGNED -->
+            </div><!-- .slider__details-container -->
+          {%- endif -%} 
+                    
+          {% if block.settings.slider_alignment == 'center' %}
+            <div class="slider__details-container">
+              <div class="slider__details-wrapper">
+              {%- if _block.eyebrow_text != blank -%}
+                <div class="slider__details-eyebrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="215" height="7" viewBox="0 0 215 7" fill="none">
+                    <path d="M3 3.5H221" stroke="white" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 20"/>
+                  </svg>
+                  {%  if block.settings.highlight_color == '#ffffff' %}
+                    <span class="mobile-dark" style="color: {{ block.settings.highlight_color }};">{{ _block.eyebrow_text }}</span>
+                  {% else %}
+                    <span style="color: {{ block.settings.highlight_color }};">{{ _block.eyebrow_text }}</span>
+                  {%- endif -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="215" height="7" viewBox="0 0 215 7" fill="none">
+                    <path d="M3 3.5H221" stroke="white" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 20"/>
+                  </svg>
+                </div>
+              {%- endif -%}
+              {%- if _block.slider_heading != blank  -%}
+                {%  if block.settings.highlight_color == '#ffffff' %}
+                  <h2 class="slider__slide-heading mobile-dark" style="color: {{ block.settings.highlight_color }};">{{ _block.slider_heading }}</h2>
+                {% else %}
+                  <h2 class="slider__slide-heading" style="color: {{ block.settings.highlight_color }};">{{ _block.slider_heading }}</h2>
+                {%- endif -%}
+              {%- endif -%}
+              {%- if _block.slider_description != blank  -%}
+                {%  if block.settings.highlight_color == '#ffffff' %}
+                  <p class="slider__slide-description mobile-dark" style="color: {{ block.settings.description_color }};">{{ _block.slider_description }}</p>
+                {% else %}
+                  <p class="slider__slide-description" style="color: {{ block.settings.description_color }};">{{ _block.slider_description }}</p>
+                {%- endif -%}
+              {%- endif -%}
+              {%- if _block.slider_button_text != blank  -%}
+              <div class="button-wrapper">
+                <a href="{{ _block.slider_button_url }}" class="slider__slide-button" style="background: {{ block.settings.slider_button_background_color }}; color: {{ block.settings.slider_button_text_color }};">{{ _block.slider_button_text }}</a>
+              </div>
+              {%- endif -%}
+              </div> <!-- CENTER ALIGNED-->
+            </div><!-- .slider__details-container -->
+          {%- endif -%}
+          
+          {% if block.settings.slider_alignment == 'right' %}
+            <div class="slider__details-container">
+              <div class="slider__details-wrapper">
+              {%- if _block.eyebrow_text != blank -%}
+                <div class="slider__details-eyebrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="451" height="7" viewBox="0 0 451 7" fill="none">
+                      <path d="M0 3L457 3.5" stroke="white" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 20"/>
+                    </svg>
+                  {%  if block.settings.highlight_color == '#ffffff' %}
+                    <span class="mobile-dark" style="color: {{ block.settings.highlight_color }};">{{ _block.eyebrow_text }}</span>
+                  {% else %}
+                    <span style="color: {{ block.settings.highlight_color }};">{{ _block.eyebrow_text }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+              {%- if _block.slider_heading != blank  -%}
+                {%  if block.settings.highlight_color == '#ffffff' %}
+                  <h2 class="slider__slide-heading mobile-dark" style="color: {{ block.settings.highlight_color }};">{{ _block.slider_heading }}</h2>
+                {% else %}
+                  <h2 class="slider__slide-heading" style="color: {{ block.settings.highlight_color }};">{{ _block.slider_heading }}</h2>
+                {%- endif -%}
+              {%- endif -%}
+              {%- if _block.slider_description != blank  -%}
+                {%  if block.settings.highlight_color == '#ffffff' %}
+                  <p class="slider__slide-description mobile-dark" style="color: {{ block.settings.description_color }};">{{ _block.slider_description }}</p>
+                {% else %}
+                  <p class="slider__slide-description" style="color: {{ block.settings.description_color }};">{{ _block.slider_description }}</p>
+                {%- endif -%}
+              {%- endif -%}
+              {%- if _block.slider_button_text != blank  -%}
+              <div class="button-wrapper">
+                <a href="{{ _block.slider_button_url }}" class="slider__slide-button" style="background: {{ block.settings.slider_button_background_color }}; color: {{ block.settings.slider_button_text_color }};">{{ _block.slider_button_text }}</a>
+              </div>
+              {%- endif -%}
+              </div> <!-- RIGHT ALIGNED -->
+            </div><!-- .slider__details-container -->
+          {%- endif -%}
+          {%  if block.settings.highlight_color == '#ffffff' %}
+              
+            {%- endif -%}
+          {%- render 'image-mobile-check' section_image: _block.image, section_image_mobile: _block.image_mobile, image_check_class: 'slider__slide-image', image_check_res_desktop: '2880x' -%}
+
+          </div><!-- /.slider__wrapper -->
+        </div><!-- /.slider__slide -->
+      {%- endcapture -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if slides_html != '' -%}
+  <section class="section-slider">
+    <div class="homeSlider__wrapper">
+      <div class="section__holder">
+        <div class="section__ramp section__ramp--left">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="100,0 100,100 0,100" style="fill:#f4f7fc;stroke:transparent;stroke-width:0;" />
+          </svg>
+        </div>
+        <div class="section__ramp section__ramp--right">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="0,0 0,100 100,100" style="fill:#f4f7fc;stroke:transparent;stroke-width:0;" />
+          </svg>
+        </div>
+        <div class="section__body">
+          <div class="slider js-slider">
+            <div class="slider__clip">
+              <div class="slider__slides">
+                {{ slides_html }}
+              </div><!-- /.slider__slides -->
+            </div><!-- /.slider__clip -->
+          </div><!-- /.slider -->
+        </div><!-- /.section__body -->
+      </div><!-- /.section__holder -->
+    </div><!-- /.shell -->
+  </section><!-- /.section-slider -->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Section Slider",
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "color",
+          "id": "highlight_color",
+          "label": "Slider Text Color",
+          "default": "#0086D6",
+          "info": "Eyebrow and Heading Color"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "JPG 2880 x 1012 px"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile",
+          "info": "JPG 960 x 600 px"
+        },
+        {
+          "type": "select",
+          "id": "slider_alignment",
+          "label": "Slider alignment",
+          "options": [
+            {
+              "value": "none",
+              "label": "No Text"
+            },
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "eyebrow_text",
+          "label": "Eyebrow Text"
+        },
+        {
+          "type": "text",
+          "id": "slider_heading",
+          "label": "Slider Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "slider_description",
+          "label": "Slider Description"
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "Description Text Color",
+          "default": "#4E3629"
+        },
+        {
+          "type": "text",
+          "id": "slider_button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "slider_button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "color",
+          "id": "slider_button_text_color",
+          "label": "Button Text Color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "slider_button_background_color",
+          "label": "Button Background Color",
+          "default": "#00507F"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Slider"
+    }
+  ]
+}
+{% endschema %}

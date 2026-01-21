@@ -1,0 +1,69 @@
+{%- assign _section = section.settings -%}
+{%- assign section_title = _section.title -%}
+{%- assign section_subtitle = _section.subtitle -%}
+{%- assign section_blog = _section.blog -%}
+
+{%- if section_title != blank or section_subtitle != blank or section_blog != blank -%}
+  <section class="section section--blog-about">
+    <div class="shell">
+      <div class="section__container">
+        {%- if section_subtitle != blank or section_title != blank -%}
+          <header class="section__head">
+            {%- if section_subtitle != blank -%}
+              <h4 class="section__subtitle h4 h4--mobile-small title-hollie">{{ section_subtitle | newline_to_br }}</h4><!-- /.section__subtitle -->
+            {%- endif -%}
+
+            {%- if section_title != blank -%}
+              <h3 class="h3 h3--mobile-large section__title">
+                <span>{{ section_title | newline_to_br }}</span>
+              </h3><!-- /.section__title -->
+            {%- endif -%}
+          </header><!-- /.section__head -->
+        {%- endif -%}
+
+        {%- if section_blog != blank -%}
+          {%- assign _blog = blogs[section_blog] -%}
+
+          {%- if _blog.articles.size > 0 -%}
+            <div class="section__body">
+              <div class="article-items">
+                {%- for _article in _blog.articles limit: 4 -%}
+                  {%- render 'article-item' _article: _article, _article_modifier: 'article-item--primary article-items__item', _article_tags_hide: true -%}
+                {%- endfor -%}
+              </div><!-- /.article-items -->
+            </div><!-- /.section__body -->
+
+            <div class="section__actions">
+              <a href="{{ _blog.url }}" class="btn btn--blue btn--inverse btn--large">{{ 'blogs.article.view_blog' | t }}</a>
+            </div><!-- /.section__actions -->
+          {%- endif -%}
+        {%- endif -%}
+      </div><!-- /.section__container -->
+    </div><!-- /.shell -->
+  </section><!-- /.section -->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Section Blog",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Fresh from"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "The Lenny & Larry’s Blog"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,64 @@
+{%- assign announcement_bar_target_price = announcement_bar_target_price | default: settings.cart_target_price -%}
+{%- if customer.tags contains 'swell_vip_the boss' or customer.tags contains 'swell_vip_tough cookie' -%}
+{%- assign announcement_bar_target_price = '35.00' -%}
+{%- endif -%}
+
+
+{%- assign announcement_bar = announcement_bar | default: _section.announcement_bar -%}
+{%- assign announcement_bar_text_after = announcement_bar_text_after | default: _section.announcement_bar_text_after -%}
+{%- assign free_shipping_flag = false -%}
+{%- assign bar_html = '' -%}
+{%- assign bar_modifier = '' -%}
+{%- assign bar_html_freeshipping = '' -%}
+{%- assign bar_freeshipping_modifier = '' -%}
+{%- assign difference_price = '' -%}
+{%- assign data_bar_html = '' -%}
+{%- assign price_string = '{{ price }}' -%}
+
+{%- if announcement_bar_target_price != blank and announcement_bar != blank and announcement_bar contains price_string -%}
+  {%- assign announcement_bar_target_price = announcement_bar_target_price | remove: '.' | remove: ',' | plus: 0 -%}
+
+  {%- if announcement_bar_target_price > 0 -%}
+    {%- assign data_bar_html = 'data-js-target-price="' | append: announcement_bar_target_price | append: '"' -%}
+
+    {%- if announcement_bar_target_price >= cart.total_price -%}
+      {%- assign difference_price = 0 -%}
+      {%- assign difference_price = announcement_bar_target_price | minus: cart.total_price | money -%}
+    {%- else -%}
+      {%- assign free_shipping_flag = true -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- if free_shipping_flag -%}
+  {%- assign bar_modifier = 'is-alt' -%}
+{%- endif -%}
+
+{%- if announcement_bar != blank -%}
+  {%- capture bar_html -%}
+    <div class="class-until">
+      {%- assign price_string_replaced = '<span>' | append: difference_price | append: '</span>' -%}
+      <p>{{ announcement_bar | replace: price_string, price_string_replaced | newline_to_br }}</p>
+    </div><!-- /.class-until -->
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if announcement_bar_text_after != blank -%}
+  {%- capture bar_html_freeshipping -%}
+    <div class="class-after">
+      <p>{{ announcement_bar_text_after | newline_to_br }}</p>
+    </div><!-- /.class-after -->
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if bar_html != '' or bar_html_freeshipping != '' -%}
+  <div class="js-elem-inner {{ bar_modifier }}"{% if data_bar_html != '' %} {{ data_bar_html }}{% endif %}>
+    {%- if bar_html != '' -%}
+      {{ bar_html }}
+    {%- endif -%}
+
+    {%- if bar_html_freeshipping != '' -%}
+      {{ bar_html_freeshipping }}
+    {%- endif -%}
+  </div>
+{%- endif -%}

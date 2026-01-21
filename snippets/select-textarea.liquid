@@ -1,0 +1,15 @@
+{%- assign selector = selector | default: blank -%}
+
+{%- if selector != blank -%}
+  {%- assign select_options = selector | newline_to_br -%}
+
+  {%- if select_options contains '<br />' -%}
+    {%- assign select_options_rows = select_options | split: '<br />' -%}
+
+    {%- for select_option_row in select_options_rows -%}
+      <option value="{{ select_option_row }}">{{ select_option_row }}</option>
+    {%- endfor -%}
+  {%- else -%}
+    <option value="{{ selector }}">{{ selector }}</option>
+  {%- endif -%}
+{%- endif -%}

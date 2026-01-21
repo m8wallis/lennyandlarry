@@ -1,0 +1,118 @@
+{%- assign _section = section.settings -%}
+{%- assign _blocks = section.blocks -%}
+{%- assign items_html = '' -%}
+
+{%- if _blocks.size > 0 -%}
+  {%- for block in _blocks -%}
+    {%- assign _block = block.settings -%}
+    {%- assign block_title = _block.title -%}
+    {%- assign block_text = _block.text -%}
+
+    {%- if block_title != blank or block_text != blank -%}
+      {%- capture items_html -%}
+        {{ items_html }}
+
+        <div class="slider__slide">
+          <div class="testimonial">
+            {%- if block_title != blank -%}
+              <div class="testimonial__entry">
+                <h5 class="h5 h5--large title-rust">
+                  {{ block_title | newline_to_br }}
+                </h5>
+              </div><!-- /.testimonial__entry -->
+            {%- endif -%}
+
+            {%- if block_text != blank -%}
+              <div class="testimonial__text">
+                <span>{{ block_text | newline_to_br }}</span>
+              </div><!-- /.testimonial__text -->
+            {%- endif -%}
+          </div><!-- /.testimonial -->
+        </div><!-- /.slider__slide -->
+      {%- endcapture -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if items_html != '' -%}
+  <section class="section section--white section--white-overlay section--testimonials">
+    <div class="shell">
+      <div class="section__container">
+        {%- render 'image-mobile-check' _section: _section, image_check_class: 'section__bg section__bg--top', image_check_res_desktop: '828x' -%}
+
+        <div class="section__body">
+          <div class="section__inner">
+            <div class="slider-testimonials js-slider">
+              <div class="slider__clip">
+                <div class="slider__slides">
+                  {{ items_html }}
+                </div><!-- /.slider__slides -->
+              </div><!-- /.slider__clip -->
+            </div><!-- /.slider -->
+          </div><!-- /.section__inner -->
+        </div><!-- /.section__body -->
+
+        {%- render 'image-mobile-check' section_image: _section.image_bottom, section_image_mobile: _section.image_bottom_mobile, image_check_class: 'section__bg section__bg--bottom', image_check_res_desktop: '876x' -%}
+      </div><!-- /.section__container -->
+    </div><!-- /.shell -->
+  </section><!-- /.section -->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Section Testimonials",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image Top"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "header",
+      "content": "Image Bottom"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bottom",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bottom_mobile",
+      "label": "Image Mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Testimonials"
+    }
+  ]
+}
+{% endschema %}

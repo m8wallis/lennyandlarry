@@ -1,0 +1,45 @@
+{% assign share_url = shop.url | append: request.path  %}
+{% assign share_url_encoded = share_url | url_encode %}
+{% assign share_title = article.title | default: product.title | default: page.title | default: collection.title %}
+{% assign share_title_encoded = share_title | url_encode %}
+{% assign share_image = article.image | default: product.featured_image | collection.image | img_url: '800x' | url_encode %}
+{%- assign mailto_title_prefix_label = 'general.share.share_email_prefix' | t -%}
+{% assign mailto_title_prefix = mailto_title_prefix_label | append: ' ' %}
+
+{% capture mailto_body %}
+{{ share_url }}{% endcapture %}
+
+{% capture share_links %}
+link|Get Link|{{ share_url }}
+facebook|Facebook|https://facebook.com/sharer/sharer.php?u={{ share_url_encoded }}
+twitter|Twitter|https://twitter.com/intent/tweet/?text={{ share_title_encoded }}&amp;url={{ share_url_encoded }}
+email|Send Email|mailto:?subject={{ mailto_title_prefix | append: share_title_encoded }}&amp;body={{ mailto_body | url_encode }}
+{% endcapture %}
+{% assign share_links = share_links | newline_to_br | split: '<br />' %}
+
+<div class="share {{ share_modifier }}">
+  <h6 class="title-rust">{{ 'general.share.title' | t }}</h6>
+
+  <ul>
+    {% for share_link in share_links %}
+      {% assign link = share_link | strip | split: '|' %}
+      {%- if link == empty -%}
+        {%- continue -%}
+      {%- endif -%}
+
+      <li>
+        <a href="{{ link[2] }}"{% if forloop.index != 5 %} target="_blank"{% endif %} title="{{ link[1] }}" aria-label="{{ link[1] }}"{% if forloop.index == 2 %} class="js-link-copy"{% endif %}>
+          <i class="ico-{{ link[0] }} ico-{{ link[0] }}--small">
+            {%- render 'svg-elements' name: link[0] -%}
+          </i>
+
+          <span>{{ link[1] }}</span>
+        </a>
+      </li>
+
+      {%- if share_stop_loop != blank and forloop.index == share_stop_loop -%}
+        {% break %}
+      {%- endif -%}
+    {% endfor %}
+  </ul>
+</div><!-- /.share -->

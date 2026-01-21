@@ -1,0 +1,95 @@
+
+
+{%- assign output = '' -%}
+{%- assign echo = echo | default: true -%}
+{%- assign __product = price | default: product -%}
+
+{%- if __product != empty -%}
+
+{% if __product.variants.size > 1%}
+{%assign countVariant = true%}
+{%endif%}
+<!-- Logic - If customer tag is whole sale +  approved when show 10% discount-->
+{% if customer.tags contains 'wholesale'%}
+{% assign discountedPrice =  __product.price | times: 10.00 | divided_by: 100.0%}
+{% assign finalPrice = __product.price | minus: discountedPrice | money%}
+{%else%}
+{% assign finalPrice = __product.price | money%}
+{%endif%}
+
+	{%- if echo == true -%}
+      	{% if customer.tags contains 'wholesale'%}
+            {% if __product.compare_at_price > __product.price %}
+
+                <ins class="price__amount--new">
+                  <span class="money--wrapper">
+                      <span class="money" data-product-id="{{ __product.id }}">{{__product.price | money}}</span>
+                    </span>
+                </ins>
+
+                <del class="price__amount--new">
+                    <span class="money--new">
+                    {{ __product.compare_at_price | money }}
+                    </span><!-- /.money -->
+                </del>
+            {%- else -%}
+
+
+            <div class="price__amount--new">
+              <div class="money--wrapper">
+                <span class="money" data-product-id="{{ __product.id }}"></span>
+              </div><!-- /.money -->
+			</div>
+            {%- endif -%}
+
+
+<style>
+  .money--wrapper{
+    position:relative;
+  }
+  .moneyCalc{
+    background: white;
+    position: absolute;
+    top: 0;
+  }
+</style>
+
+
+		{% else %}
+			{% if __product.compare_at_price > __product.price %}
+
+                <ins class="price__amount--new">
+                  <span class="money">
+                      <span>{{__product.price | money}}</span>
+                    </span>
+                </ins>
+
+                <del class="price__amount--new">
+                    <span class="money">
+                    {{ __product.compare_at_price | money }}
+                    </span><!-- /.money -->
+                </del>
+            {%- else -%}
+
+
+            <div class="price__amount--new" style="display: flex;">
+              <div data-count-variant={{countVariant}} data-attr-price={{finalPrice}} class="money">
+                <span>{{__product.price | money}} </span>
+              </div><!-- /.money -->
+              {% if product.metafields.sleepless.case_count != blank %}
+              <div><span style="">&nbsp;- {{ product.metafields.sleepless.case_count }}</span> </div>
+      	{% endif %}
+                </div>
+            {%- endif -%}
+      	{% endif %}
+	{%- else -%}
+	
+		{%- capture output -%}
+		{%- include 'price' with __product, echo: true -%}
+		{%- endcapture -%}
+
+		{%- assign output = output | strip_newlines | remove: '	' | replace: '"', "'" -%}
+	{%- endif -%}
+{%- endif -%}
+
+{%- assign __product = '' -%}

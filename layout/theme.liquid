@@ -1,0 +1,139 @@
+<html lang="{{ shop.locale }}">
+  <head>
+    <!-- cache flush -->
+    {%- include 'settings' -%}
+    {%- include 'head' -%}
+
+    {{ content_for_header }}
+    
+    {%- render 'bold-pr' -%}
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/1.1.0/rivets-cart.min.js"></script>
+	<script type="text/javascript">
+      jQuery(function() {
+        CartJS.init({{ cart | json }});
+      });
+    </script>
+     <meta name="google-site-verification" content="M9crkfi0-GuaAZjVMoTuKuGRJ08x9Y38-fZ_XBCkJxA" />   
+
+    <meta name="google-site-verification" content="gxPW2qFk3oraKR0RbGYTbGx9VOmmr5M_lYBfaL4rxBU" />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                                                          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                                })(window,document,'script','dataLayer','GTM-NP3BN9P');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Google Site Verification -->
+	<meta name="google-site-verification" content="nccL0UVxfliAYcgqG1BFqKrPKL9XB9rteRCgChKiQzg" />
+    <!-- End Google Site Verification -->
+
+  <!-- {{ 'sm-style.scss.css' | asset_url | stylesheet_tag }} -->
+  {% include 'under-construction' %}  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/qdooTb_IRmRqm2M8AJs9NA" async></script>
+
+    
+  <!-- Yotpo -->
+<script type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/7ALujm6rLr1fv3szVmrPbAUvG1vHt9DzT7XSeD2d/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
+<!-- end of Yotpo -->
+  <!-- GSSTART Show variants. Do not change -->
+{% if request.path contains "/products/" %}{% else %}<script  type="text/javascript"> 
+  gsVSCollectionId = {% if collection.id > 1 %} "{{ collection.id }}" {% else %} "0" {% endif %}; gsVSCollectionTags = '{{ current_tags | join: '&' | replace: "'", "\'" }}';  gsCollectionProdCnt = {% if collection.id > 1 %} {{ collection.products_count }} {% else %} 0 {% endif %}  ;			
+  gsCollection = {
+    {% if collection.products %}      {% paginate collection.products by 50 %}        {% for product in collection.products %} {% assign imagescount = product.images | size %}            {% if imagescount > 1 %}             '{{ product.handle }}' : [ 
+                {% for image in product.images  limit:2 %} "{{ image | img_url: '256x' }}", {% endfor %}
+                ],
+            {% endif %}        {% endfor %}      {% endpaginate %}    {% endif %}  };
+</script>  
+
+{% if request.path contains "/products/" %}{% else %}{% if request.path contains "/collections/" %}<script type="text/javascript" src="https://gravity-apps.com/variantmanager/js/shopify/image_swap4551.js?v={{ shop.metafields["gscode"]["gsvariants"] }}"></script>{% endif %}{% endif %}{% endif %}
+<!-- Show variants code end. Do not change GSEND -->
+<!-- Start of LittledataLayer -->
+{% include 'LittledataLayer' %}
+<!-- End of LittledataLayer --> 
+
+{% if request.path contains '/collections/vendors' %}
+  <meta name="robots" content="noindex">
+{% endif %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    {%- include 'schema_data' -%}
+</head>
+
+  <body class="{{ template_class }}">
+    
+    <style>
+      .spr-badge{
+        display:none;
+      }
+    </style>
+    
+    
+    {% if customer.tags contains 'wholesale'%}
+    
+    <div id="wholesaleActive"></div>
+    {% endif %}
+    
+    
+    <span class="customer_address" data='{{customer.addresses | json}}'></span>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NP3BN9P"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <div class="wrapper">
+      {%- section 'header' -%}
+
+      {%- section 'badges' -%}
+
+      <div class="main js-main">
+        {%include 'waio_conditions'%}
+        {%if waio_allow%}
+        {{ content_for_layout }}
+        {%endif%}
+      </div><!-- /.main -->
+
+      {%- section 'footer' -%}
+    </div><!-- /.wrapper -->
+    {%- include 'ie-modal' -%}
+    {{ theme_scripts }}
+    
+    {% if template == 'page' %}
+ {% include 'wholesale-all-in-one' %}
+{% else %}
+ {% if customer %}
+ {% include 'wholesale-all-in-one' %}
+ {% endif %} 
+{% endif %}
+
+    <!-- GSSTART Show variants BODY. Do not change -->{% if collection.products %}
+<div style="display: none !important;">
+  {% paginate collection.products by 50 %}{% for product in collection.products %}{% assign imagescount = product.images | size %}{% if imagescount > 1 %}
+  <div style="display: none !important;" class="gsProductVariants" gsProductHandler="{{ product.handle }}" >{% assign variantImgsUsedStr = "" %} {% assign variantBySizeUsedStr = "" %}{% assign sizeoptionnr = 0 %}
+{% for option in product.options %}{% capture optioncaseins %}{{option | downcase}}{% endcapture %}{% if optioncaseins contains "size" or optioncaseins contains "rösse" or optioncaseins contains "المقاس" or optioncaseins contains "oko" or optioncaseins contains "eden" or optioncaseins contains "größe" or optioncaseins contains "éret" or optioncaseins contains "ozmiar" or optioncaseins contains "torlek" or optioncaseins contains "aille" or optioncaseins contains "aglia" or optioncaseins contains "alla" or optioncaseins contains "amaño" or optioncaseins contains "גודל" or optioncaseins contains "サイズ" or optioncaseins contains "taille" or optioncaseins contains "eggiseno" or optioncaseins contains "aat" or optioncaseins contains "tamanho" or optioncaseins contains "rrelse" or optioncaseins contains "siza" %}{% assign sizeoptionnr = forloop.index %}{% if product.options.size == 1 %}{% assign sizeoptionnr = 0 %}{% endif %}{% if optioncaseins contains "color" or optioncaseins contains "colour" or optioncaseins contains "farge"  %}{% assign sizeoptionnr = 0 %}{% endif %}{% endif %}{% endfor %}
+    {% for variant in product.variants %}{% assign featuredImageSize = variant.featured_image | size %}{% if featuredImageSize > 0  %}{% if variantImgsUsedStr contains "IGNOREGS" %}{% else %}{% assign variantImgsUsedStr = variantImgsUsedStr | append: variant.featured_image %}{% assign canAddVariant = true %}{% if sizeoptionnr == 1 %}{% assign optionCheckVal = ";" | append: variant.option2 | append: variant.option3 | append: ";" %}{% if variantBySizeUsedStr contains optionCheckVal %}{% assign canAddVariant = true %}{% else %}{% assign variantBySizeUsedStr = variantBySizeUsedStr | append: ";" | append: variant.option2 | append: variant.option3 | append: ";" %}{% endif %}{% endif %}
+    {% if sizeoptionnr == 2 %}{% assign optionCheckVal = ";" | append: variant.option1 | append: variant.option3 | append: ";" %}{% if variantBySizeUsedStr contains optionCheckVal %}
+                {% assign canAddVariant = true %}{% else %}{% assign variantBySizeUsedStr = variantBySizeUsedStr | append: ";" | append: variant.option1 | append: variant.option3 | append: ";" %}{% endif %}{% endif %} {% if sizeoptionnr == 3 %}{% assign optionCheckVal = ";" | append: variant.option1 | append: variant.option2 | append: ";" %}{% if variantBySizeUsedStr contains optionCheckVal %}
+                {% assign canAddVariant = true %}{% else %}{% assign variantBySizeUsedStr = variantBySizeUsedStr | append: ";" | append: variant.option1 | append: variant.option2 | append: ";" %}{% endif %}{% endif %} {% if canAddVariant == true %}
+    <p vcontinue="{{ variant.inventory_policy }}" vquantity="{{ variant.inventory_quantity }}" vavailable="{{ variant.available }}" variantpriceid="{{ variant.id }}" originalcompprice='{{ product.compare_at_price_min | money_without_trailing_zeros | escape }}' originalprice='{{ product.price | money_without_trailing_zeros | escape }}' minprice='{{ product.price_min | money_without_trailing_zeros | escape }}' comparePrice='{{ variant.compare_at_price | money_without_trailing_zeros | escape }}' variantPrice='{{ variant.price | money_without_trailing_zeros | escape }}'></p>
+    <p varianttitleid="{{ variant.id }}" sizeoptionnr="{{ sizeoptionnr }}" optionuidtwo="{{ product.id }}{{ variant.option2 | escape }}" optiontwo="{{ variant.option2 | escape }}" originaltitle="{{ product.title | escape }}" variantTitle="{{ variant.title | escape }}" optionuid="{{ product.id }}{{ variant.option1 | escape }}"></p>
+       <span variantid="{{ variant.id }}" imgwidth="{{ variant.featured_image.width }}" imgheight="{{ variant.featured_image.height }}" gsvariantimage="{{ variant.featured_image | img_url: '256x' }}"></span>
+    {% endif %}{% endif %}{% endif %}{% endfor %}
+  </div>{% endif %}{% endfor %}{% endpaginate %}{% endif %}
+  {% if collection.products %}
+        <div style="display: none !important;" class="gsProductImages" >
+        {% paginate collection.products by 50 %}{% for product in collection.products %} {% assign imagescount = product.images | size %}{% if imagescount > 1 %}{% for image in product.images  limit:1 %}
+                                        <span gsProductHandle="{{ product.handle }}" firstImage="{{ image | img_url: '256x' }}"></span>
+                                {% endfor %}{% endif %}{% endfor %}{% endpaginate %}
+  </div>
+  </div>
+    {% endif %} <!-- Show variants code end BODY. Do not change GSEND -->{% if template == 'article'  %}
+  {{ 'responsive-img-map.js' | asset_url | script_tag }}<!--here-->
+{% endif %}
+</body>
+</html>

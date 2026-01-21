@@ -1,0 +1,13 @@
+{%- assign widget_cart_modifier = widget_cart_modifier | default: '' -%}
+
+<div class="widget-cart {{ widget_cart_modifier }} js-widget-cart" id="widget-cart">
+  <span class="widget__overlay js-btn-toggle" data-class="is-expanded" data-target="#widget-cart"></span>
+
+  <div class="widget__container">
+    
+    <div class="form-cart-small js-cart-container widget__form">
+    </div><!-- /.form-cart -->
+    {% render 'cart-suggested' %}
+  </div><!-- /.widget__container -->
+</div><!-- /.widget-cart -->
+ 

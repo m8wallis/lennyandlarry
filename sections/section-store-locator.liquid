@@ -1,0 +1,117 @@
+{%- assign _section = section.settings -%}
+{%- assign _blocks = section.blocks -%}
+{%- assign blocks_html = '' -%}
+{%- assign subtitle = 'store_locator.general.subtitle' | t -%}
+
+{%- render 'section-triangles-top' section_subtitle: subtitle, section_title: page.title, section_modifier: 'section--triangles-secondary section--store-locator' -%}
+
+{% comment %}{%- if page.content != blank -%}{%- endif -%}
+{% endcomment %}
+<section class="section section--map">
+  <div class="shell">
+    <div class="section__body">
+      <h3 class="h4 h4--mobile-small section__title soon-title">{{ _section.subtitle }}</h3>
+      <div class="map">
+        {% comment %} {{ page.content }} {% endcomment %}
+        <script src="//destinilocators.com/lennyandlarrys/site/install/"></script>
+      </div><!-- /.map -->
+    </div><!-- /.section__body -->
+  </div><!-- /.shell -->
+</section><!-- /.section -->
+
+{%- if _blocks.size > 0 -%}
+{%- for block in _blocks -%}
+{%- assign _block = block.settings -%}
+
+{%- if _block.image != blank -%}
+{%- capture blocks_html -%}
+{{ blocks_html }}
+
+<li>
+  <div>
+    {%- if _block.link != blank -%}
+    <a href="{{ _block.link }}"></a>
+    {%- endif -%}
+
+    <figure>
+      {% assign old_url =  _block.image | img_url: 'master' %}
+      {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '466', options: 'dpr:2' %}{% endcapture %}
+      <img src="{{ imageboss_url }}"">
+    </figure>
+  </div>
+</li>
+{%- endcapture -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+
+{%- if _section.title != blank or _section.text != blank or blocks_html != '' -%}
+<section class="section-default section-default--map">
+  <div class="shell">
+    {%- if _section.title != blank or _section.text != blank -%}
+    <header class="section__head">
+      {%- if _section.title != blank -%}
+      <h4 class="h4 h4--mobile-small section__title">{{ _section.title | newline_to_br }}</h4><!-- /.section__title -->
+      {%- endif -%}
+
+      {%- if _section.text != blank -%}
+      <div class="section__entry">
+        <p>{{ _section.text | newline_to_br }}</p>
+      </div><!-- /.section__entry -->
+      {%- endif -%}
+    </header><!-- /.section__head -->
+    {%- endif -%}
+
+    {%- if blocks_html != '' -%}
+    <div class="section__body">
+      <ul class="list-images">
+        {{ blocks_html }}
+      </ul><!-- /.list-images -->
+    </div><!-- /.section__body -->
+    {%- endif -%}
+  </div><!-- /.shell -->
+</section><!-- /.section-default -->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Store Locator",
+  "settings": [
+  {
+    "type": "textarea",
+    "id": "subtitle",
+    "label": "Main Subtitle"
+  },
+  {
+    "type": "textarea",
+    "id": "title",
+    "label": "Title",
+    "default": "lenny & larry’s is also sold at these retailers:"
+  },
+  {
+    "type": "textarea",
+    "id": "text",
+    "label": "Text",
+    "default": "(Please call your local store to confirm availability)"
+  }
+  ],
+  "blocks": [
+  {
+    "type": "image",
+    "name": "Image",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+    ]
+  }
+  ]
+}
+{% endschema %}

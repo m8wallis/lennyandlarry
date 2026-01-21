@@ -1,0 +1,87 @@
+{%- assign _section = section.settings -%}
+{%- assign _blocks = section.blocks -%}
+{%- assign blocks_html = '' -%}
+{%- assign subtitle = 'faq.general.subtitle' | t -%}
+
+{%- render 'section-triangles-top' section_subtitle: subtitle, section_title: page.title, section_content: page.content, section_modifier: 'section--triangles-secondary section--alt section--faq' -%}
+
+{%- if _blocks.size > 0 -%}
+  {%- for block in _blocks -%}
+    {%- assign _block = block.settings -%}
+
+    {%- if _block.title != blank and _block.text != blank -%}
+      {%- capture blocks_html -%}
+        {{ blocks_html }}
+
+        <div class="accordion__section">
+          <div class="accordion__head js-accordion-head">
+            <h4 class="h4 h4--small accordion__title">{{ _block.title | newline_to_br }}</h4><!-- /.accordion__title -->
+          </div><!-- /.accordion__head -->
+
+          <div class="accordion__body">
+            <div class="accordion__inner">
+              <div class="accordion__content">
+                <div class="accordion__entry entry">
+                  {{ _block.text }}
+                </div><!-- /.accordion__entry -->
+              </div><!-- /.accordion__content -->
+            </div><!-- /.accordion__inner -->
+          </div><!-- /.accordion__body -->
+        </div><!-- /.accordion__section -->
+      {%- endcapture -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if _section.text != blank or blocks_html != '' -%}
+  <section class="section-accordion section-accordion--secondary">
+    <div class="shell">
+      <div class="section__body">
+        <div class="accordion accordion--secondary js-accordion">
+          {%- if _section.text != blank -%}
+            <div class="accordion__text entry">
+              {{ _section.text }}
+            </div><!-- /.accordion__text -->
+          {%- endif -%}
+
+          {%- if blocks_html != '' -%}
+            <div class="accordion__container">
+              {{ blocks_html }}
+            </div><!-- /.accordion__container -->
+          {%- endif -%}
+        </div><!-- /.accordion js-accordion -->
+      </div><!-- /.section__body -->
+    </div><!-- /.shell -->
+  </section><!-- /.section-accordion -->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion",
+      "name": "Accordion",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

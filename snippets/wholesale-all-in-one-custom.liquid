@@ -1,0 +1,168 @@
+
+{% comment %}
+=> File: wholesale-all-in-one-custom.liquid
+=> Write your extra work in this file
+=> Don't write <script> tag, it was already included,
+=> Write liquid, jquery and javascript code only
+=> See documentation at https://docs.google.com/document/d/19DAJWPtnmNbPV7i-3jysb9h8BAs6poxU4u0EBqUqkRw
+{% endcomment %}
+//console.log("file wholesale-all-in-one-custom.liquid is working");
+if(WholesaleAIO.ws_settings.enable_app){
+  {% if template.name == 'product'%}
+    WholesaleAllInOne.productTemplate({
+      productId : "default", //provide current product id
+      variantId : "default", //provide selected variant id
+      price : "default", //provide selected variant's price or product price
+      priceDesign : "default", //price design can override existing style of price shown
+      saleBadgeDirectParent : "default", //find value
+      SaleBadgeDirectChild : "default", //find value
+      saleLabelHTML : "default", //default value is 'Saved [[saved_amount]]'. This string must include [[saved_amount]]
+      saleLabelMode : "default", //default value 'percent', others 'fixed_amount'
+      saleLabelPosition : "default", // default value is same, valid values are after,before,append,prepend
+      quickView : "default", //boolean, default false. Can be true or false
+      quickViewQBSelector : "default", //where quantity break table will shown, Default value form[action='/cart/add']
+      priceSelector : "default", //default value is 'waio'
+      qbTableSelector : "form[action='/cart/add']:after", //default value is '.add-to-cart' button;
+    });
+  
+  // Uncomment when there are related products at product (page) template.
+  /***
+      WholesaleAllInOne.relatedProducts({
+        elementSelector : ".waio-collection-grid", // If null, it will get value from app's developer tool
+        dataIdSelector : "data-item-id", // If null, it will get value from app's developer tool
+        dataPriceSelector : "data-price", // If null, it will get value from app's developer tool
+        dataVariantSelector : "data-variant-id", // variant id attribute data-variant-id
+        priceDesign : null, // default null
+        saleBadgeDirectParent : null, // default null
+        SaleBadgeDirectChild : null, // default null
+        saleLabelMode : null, // default null
+        saleLabelHTML : null, // default null
+        saleLabelPosition : "same", // default value is same, valid values are after,before,append,prepend
+      });
+  ***/
+  
+ // Home & Collection & Search &  other pages
+  {% elsif template.name != 'product' and template.name != 'cart' %} 
+    WholesaleAllInOne.HCSRPTemplate({
+      elementSelector : ".waio-collection-grid", // If null, it will get value from app's developer tool
+      dataIdSelector : "data-item-id", // If null, it will get value from app's developer tool
+      dataPriceSelector : "data-price", // If null, it will get value from app's developer tool
+      dataVariantSelector : "data-variant-id", // variant id attribute data-variant-id
+      priceDesign : null, // default null
+      saleBadgeDirectParent : null, // default null
+      SaleBadgeDirectChild : null, // default null
+      saleLabelMode : null, // default null
+      saleLabelHTML : null, // default null
+      saleLabelPosition : "same", // default value is same, valid values are after,before,append,prepend
+    });
+  {% else %}
+  WholesaleAllInOne.cartDiscount({
+    shippingMessageElement: "[waio-subtotal]:after"
+  });
+  {% endif %}
+}
+else{
+  console.warn("ALERT! 'Wholesale All In One' was disabled");
+}
+
+// Method One - Quick view 
+/**     
+  window.selected_variant_id  =	PRODUCT_OBJECT_VARIABLE.selected_variant_id;
+  window.current_product      =	PRODUCT_OBJECT_VARIABLE.product;
+  WholesaleAllInOne.quickView({
+    productId : window.current_product, //provide current product id
+    variantId : window.selected_variant_id, //provide selected variant id
+    price : "default", //provide selected variant's price or product price
+    priceDesign : "default", //price design can override existing style of price shown
+    saleBadgeDirectParent : "default", //find value
+    SaleBadgeDirectChild : "default", //find value
+    saleLabelHTML : "default", //default value is 'Saved [[saved_amount]]'. This string must include [[saved_amount]]
+    saleLabelMode : "default", //default value 'percent', others 'fixed_amount'
+    saleLabelPosition : "same", // default value is same, valid values are after,before,append,prepend
+    quickView : true, //boolean, default false. Can be true or false
+    quickViewQBSelector : "default", //where quantity break table will shown, Default value????
+    priceSelector : "default", //default value is 'waio'
+    qbTableSelector : "default", //default value is '.add-to-cart' button;
+    quickViewHandleAttr: "data-handle",
+    quickViewButton: ".quick-view-button",
+    // productHandle: productHandle, // Product handle is required only when product price or id is not found or undefined.
+  });
+**/
+
+// Method TWO - Quick view 
+	/**
+    $(document).ready(function(){
+      var quickviewSelector = ".productitem--action-trigger.button-secondary";
+      var gridSelector = ".productitem";
+      var modalSelector = ".modal-content";
+      $(document).on("click",  quickviewSelector , function() {
+        var productHandle = $(this).parents(gridSelector).find("a").attr("href");
+        var check = 0;
+        var _inverval = setInterval(function(){
+          check = check + 1;
+          if($(modalSelector).find("form[action='/cart/add']").length){              
+            WholesaleAllInOne.quickView({
+              productId : "default", //provide current product id
+              variantId : "default", //provide selected variant id
+              price : "default", //provide selected variant's price or product price
+              priceDesign : "default", //price design can override existing style of price shown
+              saleBadgeDirectParent : "default", //find value
+              SaleBadgeDirectChild : "default", //find value
+              saleLabelHTML : "default", //default value is 'Saved [[saved_amount]]'. This string must include [[saved_amount]]
+              saleLabelMode : "default", //default value 'percent', others 'fixed_amount'
+              saleLabelPosition : "same", // default value is same, valid values are after,before,append,prepend
+              quickView : true, //boolean, default false. Can be true or false
+              quickViewQBSelector : "default", //where quantity break table will shown, Default value????
+              priceSelector : "default", //default value is 'waio'
+              qbTableSelector : "default", //default value is '.add-to-cart' button;
+              quickViewHandleAttr: "data-handle",
+              quickViewButton: ".quick-view-button",
+              // productHandle: productHandle, // Product handle is required only when product price or id is not found.
+            });
+            clearInterval(_inverval);
+          }
+          if(check == 10){
+            clearInterval(_inverval);
+          }
+        }, 500);
+      });
+    });
+  **/
+
+{% if template.name == 'product' or template.name == 'index' %}
+
+// Method 1: 
+/***
+ * variant change by wholesale native function. See documentation for further asistance 
+ * WholesaleAllInOne.variantChanged();//will detect variant change
+ * ***/
+
+// Method 2:
+// By shopify option selection file. See instructions at https://wholesales.digitalcoo.com/docs/variant-change-instructions
+/**
+// When using "waio-option-selection.js" file, use bellow function to get callback when variant is changed.
+WholesaleAllInOne.variantCallBack = function(variant, selector, product){
+  current_product||(current_product=product);
+  selected_variant_id=variant.id;
+  WholesaleAllInOne.productTemplate({
+    productId: product.id,
+    variantId: variant.id,
+    price: variant.price,
+    //compareAtPrice: variant.compareAtPrice,
+    //priceSelector: ".waio-product-template"
+  });
+}
+**/
+{% endif %}
+
+/**
+WholesaleAllInOne.callback = function(data){
+  console.log("-------------------");
+  console.log(data);
+  console.log("-------------------");
+}
+**/
+
+// Write down your additional scripts
+
+

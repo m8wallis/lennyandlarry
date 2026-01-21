@@ -1,0 +1,160 @@
+{%- assign _section = section.settings -%}
+{%- assign section_title = _section.title -%}
+{%- assign section_subtitle = _section.subtitle -%}
+{%- assign content_image = _section.image -%}
+{%- assign content_subtitle = _section.content_subtitle -%}
+{%- assign content_title = _section.content_title -%}
+{%- assign content_text = _section.content_text -%}
+{%- assign content_btn_text = _section.btn_text -%}
+{%- assign content_btn_link = _section.btn_link -%}
+{%- assign featured_item_html = '' -%}
+{%- assign featured_item_btn = '' -%}
+
+{%- if content_btn_text != blank and content_btn_link != blank -%}
+  {%- capture featured_item_btn -%}
+    <a href="{{ content_btn_link }}" class="btn btn--block featured-item__btn">{{ content_btn_text }}</a>
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if content_image != blank or content_subtitle != blank or content_title != blank or content_text != blank or featured_item_btn != '' -%}
+  {%- capture featured_item_html -%}
+    <div class="featured-item">
+      <div class="featured-item__inner">
+        {%- if content_image != blank -%}
+          <div class="featured-item__image">
+            {{ content_image | img_url: '1240x' | img_tag }}
+          </div><!-- /.featured-item__image -->
+        {%- endif -%}
+
+        <div class="featured-item__content">
+          {%- if content_subtitle != blank -%}
+            <h5 class="featured-item__subtitle h5 h5--mobile-small title-rust">{{ content_subtitle | newline_to_br }}</h5><!-- /.featured-item__subtitle -->
+          {%- endif -%}
+
+          {%- if content_title != blank -%}
+            <h4 class="featured-item__title h4 h4--mobile-small">{{ content_title | newline_to_br }}</h4><!-- /.featured-item__title -->
+          {%- endif -%}
+
+          {%- if content_text != blank -%}
+            <div class="featured-item__entry entry">
+              <p>{{ content_text | newline_to_br }}</p>
+            </div><!-- /.featured-item__entry -->
+          {%- endif -%}
+
+          {%- if featured_item_btn != '' -%}
+            <div class="featured-item__actions">
+              {{ featured_item_btn }}
+            </div><!-- /.featured-item__actions -->
+          {%- endif -%}
+        </div><!-- /.featured-item__content -->
+      </div><!-- /.featured-item__inner -->
+    </div><!-- /.featured-item -->
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if section_title != blank or section_subtitle != blank or featured_item_html != '' -%}
+  <section class="section section--white section--white-overlay section--image-text">
+    <div class="shell">
+      <div class="section__container">
+        {%- if section_subtitle != blank or section_title != blank -%}
+          <header class="section__head">
+            {%- if section_subtitle != blank -%}
+              <h4 class="section__subtitle h4 h4--mobile-small title-hollie">{{ section_subtitle | newline_to_br }}</h4><!-- /.section__subtitle -->
+            {%- endif -%}
+
+            {%- if section_title != blank -%}
+              <h2 class="section__title">
+                <span>{{ section_title | newline_to_br }}</span>
+              </h2><!-- /.section__title -->
+            {%- endif -%}
+          </header><!-- /.section__head -->
+        {%- endif -%}
+
+        {%- if featured_item_html != '' -%}
+          <div class="section__body">
+            {{ featured_item_html }}
+          </div><!-- /.section__body -->
+
+          {%- render 'image-mobile-check' section_image: _section.image_bottom, section_image_mobile: _section.image_bottom_mobile, image_check_class: 'section__bg section__bg--bottom', image_check_res_desktop: '876x' -%}
+        {%- endif -%}
+      </div><!-- /.section__container -->
+    </div><!-- /.shell -->
+  </section><!-- /.section -->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Section Image Text",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Introducing"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Our Newest Bites"
+    },
+    {
+      "type": "header",
+      "content": "Image Bottom"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bottom",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bottom_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "content_subtitle",
+      "label": "Subtitle",
+      "default": "Innovation never stops at Lenny & Larryʼs and now we present"
+    },
+    {
+      "type": "textarea",
+      "id": "content_title",
+      "label": "Title",
+      "default": "the keto cookie™"
+    },
+    {
+      "type": "textarea",
+      "id": "content_text",
+      "label": "Text",
+      "default": "Indulge guilt-free in our tasty new vegan treat!"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Shop All Keto Cookie™ Flavors"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    }
+  ]
+}
+{% endschema %}
+<style>
+  .section--white-overlay.section--image-text:before{
+    display:none;
+  }
+</style>

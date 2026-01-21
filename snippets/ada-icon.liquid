@@ -1,0 +1,7 @@
+ <!-- ADA Icon -->
+ <a href="https://www.levelaccess.com/a/lenny-and-larrys/" target="_blank">
+    {% assign old_url =  'eA_Icon.png' | asset_img_url: 'master' %}
+    {% capture imageboss_url %}{% render 'imageboss' src:old_url, operation: 'width', size: '55', options: 'dpr:2' %}{% endcapture %}
+    <img src="{{ imageboss_url }}" class="ada-icon" alt="Level Access Accessibility Icon">
+</a>
+<!-- /ADA Icon -->
