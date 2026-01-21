@@ -150,10 +150,10 @@
   <div class="product-inline__row">
     <div class="qty qty--primary product-inline__qty js-qty">
       <div class="qty__inner">
-       <span class="qty__btn qty__btn--minus" tabindex="0" role="button">-</span>
+       <span class="qty__btn qty__btn--minus" tabindex="0" role="button" aria-label="Decrease quantity for {{ _product.title }}">-</span>
        <label class="sr-only" for="field-quantity-{{ _product.handle }}">Quantity</label>
        <input type="number" class="field-quantity qty__field" id="field-quantity-{{ _product.handle }}"  name="quantity" value="1" min="1">
-       <span class="qty__btn qty__btn--plus" tabindex="0" role="button">+</span>
+       <span class="qty__btn qty__btn--plus" tabindex="0" role="button" aria-label="Increase quantity for {{ _product.title }}">+</span>
 
      </div><!-- /.qty__inner --> 
    </div><!-- /.qty -->

@@ -98,8 +98,8 @@
 
 					<div class="giftcard__actions">
 						<a href="{{ shop.url }}" class="btn" target="_blank">{{ 'gift_cards.issued.shop_link' | t }}</a>
-						<a href="#" class="action-link" onclick="window.print();">
-							<i class="action-link__print"></i>{{ 'gift_cards.issued.print' | t }}
+						<a href="#" class="action-link" onclick="window.print();" aria-label="Print gift card">
+							<i class="action-link__print" aria-hidden="true"></i>{{ 'gift_cards.issued.print' | t }}
 						</a>
 					</div>
 

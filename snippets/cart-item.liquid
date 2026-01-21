@@ -23,10 +23,10 @@
       
       <div class="qty qty--primary product-inline__qty js-qty ">
         <div class="qty__inner" data-id="{{line_item.variant_id}}">
-          <span class="qty__btn qty__btn--minus js-qty-mini" tabindex="0" role="button">-</span>
+          <span class="qty__btn qty__btn--minus js-qty-mini" tabindex="0" role="button" aria-label="Decrease quantity for {{ line_item.product.title }}">-</span>
           <label class="sr-only" for="field-quantity-{{ line_item.product.handle }}">Quantity</label>
           <input type="number" {% comment %}onblur="this.form.submit();"{% endcomment %} class="field-quantity qty__field" id="field-quantity-{{ line_item.product.handle }}"  name="quantity" value="{{ line_item.quantity }}" min="1">
-          <span class="qty__btn qty__btn--plus js-qty-mini" tabindex="0" role="button">+</span>
+          <span class="qty__btn qty__btn--plus js-qty-mini" tabindex="0" role="button" aria-label="Increase quantity for {{ line_item.product.title }}">+</span>
         </div><!-- /.qty__inner --> 
       </div><!-- /.qty -->
     </div><!-- /.cart-item__content -->

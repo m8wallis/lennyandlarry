@@ -125,10 +125,10 @@ if (url.match("nav_to_checkout").length > 0) {
                         <td class="table__quantity" data-heading="{{- 'cart.label.quantity' | t -}}">
                           <div class="qty qty--primary js-qty">
                             <div class="qty__inner">
-                              <span class="qty__btn qty__btn--minus" tabindex="0" role="button">-</span>
+                              <span class="qty__btn qty__btn--minus" tabindex="0" role="button" aria-label="Decrease quantity">-</span>
                               <label class="sr-only" for="field-quantity">Quantity</label>
                               <input type="number" class="field-quantity qty__field" id="field-quantity" name="updates[]" value="{{- line_item.quantity -}}" min="1">
-                              <span class="qty__btn qty__btn--plus" tabindex="0" role="button">+</span>
+                              <span class="qty__btn qty__btn--plus" tabindex="0" role="button" aria-label="Increase quantity">+</span>
                               
                             </div><!-- /.qty__inner -->
                           </div><!-- /.qty -->
