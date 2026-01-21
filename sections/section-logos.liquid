@@ -15,11 +15,11 @@
 <li>
   <div>
     {%- if block_link != blank -%}
-    <a href="{{ block_link }}"></a>
+    <a href="{{ block_link }}" aria-label="{% if block_image.alt != blank %}{{ block_image.alt }}{% else %}Visit logo {{ forloop.index }}{% endif %}"></a>
     {%- endif -%}
     {% assign old_url =  block_image | img_url: 'master' %}
     {% capture imageboss_url %}{% include 'imageboss' src:old_url, operation: 'width', size: '100', options: 'dpr:2' %}{% endcapture %}
-    <img src="{{ imageboss_url }}" alt="List Logo">
+    <img src="{{ imageboss_url }}" alt="{% if block_image.alt != blank %}{{ block_image.alt }}{% else %}Logo {{ forloop.index }}{% endif %}" loading="lazy">
   </div>
 </li>
 {%- endcapture -%}

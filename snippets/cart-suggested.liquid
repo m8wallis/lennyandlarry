@@ -19,7 +19,7 @@
       <a href="{{ sug_one_obj.url }}" class="prod_url">
         {% assign old_url =  sug_one_obj.images.first | img_url: 'master' %}
         {% capture imageboss_url %}{% render 'imageboss' src:old_url, operation: 'width', size: '80', options: 'dpr:2' %}{% endcapture %}
-        <img src="{{ imageboss_url }}" alt="{{ sug_one_obj.title }}" width="80px">
+        <img src="{{ imageboss_url }}" alt="{% if sug_one_obj.featured_image.alt != blank %}{{ sug_one_obj.featured_image.alt }}{% else %}{{ sug_one_obj.title }}{% endif %}" width="80px" loading="lazy">
       </a>
       <div>
         <a href="{{ sug_one_obj.url }}">
@@ -40,7 +40,7 @@
     <a href="{{ sug_two_obj.url }}" class="prod_url">
         {% assign old_url =  sug_two_obj.images.first | img_url: 'master' %}
         {% capture imageboss_url %}{% render 'imageboss' src:old_url, operation: 'width', size: '80', options: 'dpr:2' %}{% endcapture %}
-      <img src="{{ imageboss_url }}" alt="{{ asug_two_obj.title }}" width="80px">
+      <img src="{{ imageboss_url }}" alt="{% if sug_two_obj.featured_image.alt != blank %}{{ sug_two_obj.featured_image.alt }}{% else %}{{ sug_two_obj.title }}{% endif %}" width="80px" loading="lazy">
     </a>
     <div>
       <a href="{{ sug_two_obj.url }}">
@@ -61,7 +61,7 @@
   <a href="{{ sug_three_obj.url }}" class="prod_url">
         {% assign old_url =  sug_three_obj.images.first | img_url: 'master' %}
         {% capture imageboss_url %}{% render 'imageboss' src:old_url, operation: 'width', size: '80', options: 'dpr:2' %}{% endcapture %}
-    <img src="{{ imageboss_url }}" alt="{{ sug_three_obj.title }}" width="80px">
+    <img src="{{ imageboss_url }}" alt="{% if sug_three_obj.featured_image.alt != blank %}{{ sug_three_obj.featured_image.alt }}{% else %}{{ sug_three_obj.title }}{% endif %}" width="80px" loading="lazy">
   </a>
   <div>
     <a href="{{ sug_three_obj.url }}">

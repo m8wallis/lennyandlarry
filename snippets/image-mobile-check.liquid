@@ -6,7 +6,15 @@
 {%- assign image_check_meta = image_check_meta | default: false -%}
 {%- assign image_check_bg = image_check_bg | default: false -%}
 {%- assign section_image_alt = section_image_alt | default: section_image.alt -%}
-{%- assign section_image_mobile_alt = section_image_mobile_alt | default: section_image_mobile.alt -%}
+{%- if section_image_mobile_alt == blank -%}
+  {%- if section_image_mobile.alt != blank -%}
+    {%- assign section_image_mobile_alt = section_image_mobile.alt -%}
+  {%- elsif section_image_alt != blank -%}
+    {%- assign section_image_mobile_alt = section_image_alt | append: ' (mobile)' -%}
+  {%- else -%}
+    {%- assign section_image_mobile_alt = 'Mobile image' -%}
+  {%- endif -%}
+{%- endif -%}
 
 {%- if section_image != blank -%}
   {%- assign image_class = image_check_class -%}

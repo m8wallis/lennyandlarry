@@ -1,7 +1,7 @@
 <div class="cart-item {{ modifier }}" data-lineid="{{ line_item.id }}" >
   <div class="cart-item__container">
-    <div class="cart-item__image" style="background-image: url({{ line_item | img_url: '200x' }})" role="img" aria-label="{{ line_item.alt }}">
-      <a href="{{- line_item.url -}}"></a>
+    <div class="cart-item__image" style="background-image: url({{ line_item | img_url: '200x' }})" role="img" aria-label="{% if line_item.image.alt != blank %}{{ line_item.image.alt }}{% else %}{{ line_item.product.title }}{% endif %}">
+      <a href="{{- line_item.url -}}" aria-label="View {{ line_item.product.title }}"></a>
     </div><!-- /.cart-item__image -->
 
     <div class="cart-item__content">
