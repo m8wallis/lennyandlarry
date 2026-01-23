@@ -12,14 +12,14 @@
   .ie-modal .ie-modal__close { position: absolute; top: -15px; right: -10px; transform: scaleY(0.85); color: #666; font-weight: 700; }
 </style>
 
-<div id="ie-modal" class="ie-modal hidden">
-  <div id="ie-modal-close-bg" class="ie-modal__bg"></div><!-- /.ie-modal__bg -->
+<div id="ie-modal" class="ie-modal hidden" role="dialog" aria-labelledby="ie-modal-title" aria-modal="true">
+  <div id="ie-modal-close-bg" class="ie-modal__bg" aria-label="Close modal"></div><!-- /.ie-modal__bg -->
 
   <div class="ie-modal__inner">
     <header class="ie-modal__head">
-      <h3 class="h2">Did you know that your Internet Browser is out of date?</h3>
+      <h3 class="h2" id="ie-modal-title">Did you know that your Internet Browser is out of date?</h3>
 
-      <a href="#" id="ie-close-modal" class="ie-modal__close">X</a>
+      <a href="#" id="ie-close-modal" class="ie-modal__close" aria-label="Close modal">X</a>
     </header><!-- /.ie-modal__head -->
 
     <div class="ie-modal__body">

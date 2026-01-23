@@ -1,12 +1,12 @@
 
 {%- assign _section = section.settings -%}
 
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="shell">
     <div class="footer__inner">
       <div class="footer__content {% comment %} hidden-xs hidden-sm {% endcomment %}">
         {% comment %}Footer Menu{% endcomment %}
-        <nav class="footer__nav">
+        <nav class="footer__nav" role="navigation" aria-label="Footer navigation">
           {%- assign footer_menu = _section.footer_menu | default: 'footer' -%}
 
           {%- render 'menu', handle: footer_menu -%}
@@ -23,7 +23,7 @@
     {%- if _section.copyright != blank or _section.footer_bottom_menu != blank -%}
       <div class="footer__bar">
         {%- if _section.footer_bottom_menu != blank -%}
-          <nav class="footer__nav-inline">
+          <nav class="footer__nav-inline" role="navigation" aria-label="Footer bottom navigation">
             {%- render 'menu', handle: _section.footer_bottom_menu -%}
           </nav><!-- /.footer__nav-inline -->
         {%- endif -%}

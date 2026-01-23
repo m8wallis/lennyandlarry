@@ -12,7 +12,7 @@ _section.announcement_bar, announcement_bar_text_after: _section.announcement_ba
 {%- endif -%}
 
 {%- endcapture -%}
-<header class="header js-header" id="header">
+<header class="header js-header" id="header" role="banner">
   {%- if calc_freeshipping != '' -%}
   <div class="header__bar js-header-bar">
     <div class="shell header__shell">
@@ -40,13 +40,13 @@ _section.announcement_bar, announcement_bar_text_after: _section.announcement_ba
 
         <div class="flex-end">
           {% comment %}Main Menu{% endcomment %}
-          <nav class="nav js-nav header__nav{% if _section.mobile_main_menu != blank %} hidden-xs hidden-sm{% endif %}">
+          <nav class="nav js-nav header__nav{% if _section.mobile_main_menu != blank %} hidden-xs hidden-sm{% endif %}" role="navigation" aria-label="Main navigation">
             {%- assign main_menu = _section.main_menu | default: 'main-menu' -%}
 
             {%- render 'main-menu', handle: main_menu, _blocks: section.blocks, _section: _section -%}
           </nav><!-- /.nav -->
 
-          <nav class="nav-utilities nav-utilities--primary header__nav-utilities hidden-xs hidden-sm">
+          <nav class="nav-utilities nav-utilities--primary header__nav-utilities hidden-xs hidden-sm" role="navigation" aria-label="Utility navigation">
             <ul>
               <li>
                 <a href="#" class="nav-utilities__search-btn js-btn-toggle" data-js-class="is-search-expanded"
@@ -91,12 +91,12 @@ _section.announcement_bar, announcement_bar_text_after: _section.announcement_ba
       <div class="header__content">
 
         {%- if _section.mobile_main_menu != blank -%}
-        <nav class="nav js-nav header__nav">
+        <nav class="nav js-nav header__nav" role="navigation" aria-label="Mobile navigation">
           {%- render 'menu', handle: _section.mobile_main_menu -%}
         </nav><!-- /.nav -->
         {%- endif -%}
 
-        <nav class="nav-utilities nav-utilities--primary header__nav-utilities">
+        <nav class="nav-utilities nav-utilities--primary header__nav-utilities" role="navigation" aria-label="Mobile utility navigation">
           <ul>
             <li>
               <a href="#" class="nav-utilities__search-btn js-btn-toggle" data-js-class="is-search-expanded"
@@ -140,7 +140,7 @@ _section.announcement_bar, announcement_bar_text_after: _section.announcement_ba
     {%- render 'socials' socials_modifier: 'header__socials' -%}
 
     {%- if _section.mobile_bottom_menu != blank -%}
-    <nav class="nav-block js-nav header__nav-block">
+    <nav class="nav-block js-nav header__nav-block" role="navigation" aria-label="Mobile bottom navigation">
       {%- render 'menu', handle: _section.mobile_bottom_menu -%}
     </nav><!-- /.nav-block -->
     {%- endif -%}
@@ -168,7 +168,7 @@ _section.announcement_bar, announcement_bar_text_after: _section.announcement_ba
 
         </div><!-- /.header__content -->
         <div class="header__actions ">
-          <nav class="nav-utilities nav-utilities--secondary header__nav-utilities-secondary hidden-md hidden-lg">
+          <nav class="nav-utilities nav-utilities--secondary header__nav-utilities-secondary hidden-md hidden-lg" role="navigation" aria-label="Secondary utility navigation">
             <ul>
               <li>
                 <a href="/cart"

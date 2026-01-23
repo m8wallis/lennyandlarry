@@ -91,12 +91,12 @@
 
       {%- section 'badges' -%}
 
-      <div class="main js-main">
+      <main class="main js-main" role="main">
         {%include 'waio_conditions'%}
         {%if waio_allow%}
         {{ content_for_layout }}
         {%endif%}
-      </div><!-- /.main -->
+      </main><!-- /.main -->
 
       {%- section 'footer' -%}
     </div><!-- /.wrapper -->
