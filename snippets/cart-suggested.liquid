@@ -26,7 +26,7 @@
           <span class="sug-prod__title">{{sug_one_obj.title }}</span>
         </a>
         <span class="sug-prod__price" data-attr-price={{finalPriceOne}}>{{ finalPriceOne }}</span>
-        <form method="post" action="/cart/add">
+        <form method="post" action="/cart/add" aria-label="Add {{ sug_one_obj.title }} to cart">
          <input type="hidden" name="id" value="{{ sug_one_obj.variants.first.id }}" />
          <input min="1" type="hidden" id="quantity" name="quantity" value="1" />
          <input type="submit" value="Add to cart" class="btn" />
@@ -47,7 +47,7 @@
         <span class="sug-prod__title">{{ sug_two_obj.title }}</span>
       </a>
       <span class="sug-prod__price" data-attr-price={{finalPriceTwo}}>{{ finalPriceTwo }}</span>
-      <form method="post" action="/cart/add">
+      <form method="post" action="/cart/add" aria-label="Add {{ sug_two_obj.title }} to cart">
        <input type="hidden" name="id" value="{{ sug_two_obj.variants.first.id }}" />
        <input min="1" type="hidden" id="quantity" name="quantity" value="1" />
        <input type="submit" value="Add to cart" class="btn" />
@@ -68,7 +68,7 @@
       <span class="sug-prod__title">{{ sug_three_obj.title }}</span>
     </a>
     <span class="sug-prod__price" data-attr-price={{finalPriceThree}}>{{ finalPriceThree }}</span>
-    <form method="post" action="/cart/add">
+    <form method="post" action="/cart/add" aria-label="Add {{ sug_three_obj.title }} to cart">
      <input type="hidden" name="id" value="{{ sug_three_obj.variants.first.id }}" />
      <input min="1" type="hidden" id="quantity" name="quantity" value="1" />
      <input type="submit" value="Add to cart" class="btn" />
